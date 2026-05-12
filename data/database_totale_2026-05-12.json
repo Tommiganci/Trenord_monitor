@@ -1,20 +1,20 @@
 {
   "data": "2026-05-12",
-  "ultima_scansione": "2026-05-12T21:20:28",
+  "ultima_scansione": "2026-05-12T23:02:50",
   "treni": {
     "25017": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -2,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "05:11",
+      "orario_programmato": "05:13",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -43,6 +43,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -51,16 +55,16 @@
     "25219": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "05:49",
+      "orario_programmato": "05:45",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -89,6 +93,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -97,16 +105,16 @@
     "25021": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -1,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "06:19",
+      "orario_programmato": "06:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -135,6 +143,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -143,16 +155,16 @@
     "25223": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "06:52",
+      "orario_programmato": "06:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -181,6 +193,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -189,16 +205,16 @@
     "25025": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 7,
+      "ritardo_attuale": 0,
       "ritardo_picco": 7,
-      "ritardo_capolinea": 7,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "07:27",
+      "orario_programmato": "07:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -227,6 +243,10 @@
         {
           "ts": "21:20",
           "rit": 7
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -235,16 +255,16 @@
     "25227": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "07:51",
+      "orario_programmato": "07:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -273,6 +293,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -281,16 +305,16 @@
     "25029": {
       "stato": "RITARDO",
       "critico": true,
-      "ritardo_attuale": 24,
+      "ritardo_attuale": 0,
       "ritardo_picco": 24,
-      "ritardo_capolinea": 24,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "08:44",
+      "orario_programmato": "08:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -319,6 +343,10 @@
         {
           "ts": "21:20",
           "rit": 24
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -327,16 +355,16 @@
     "25231": {
       "stato": "RITARDO",
       "critico": true,
-      "ritardo_attuale": 21,
+      "ritardo_attuale": 0,
       "ritardo_picco": 21,
-      "ritardo_capolinea": 21,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "09:11",
+      "orario_programmato": "08:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -365,6 +393,10 @@
         {
           "ts": "21:20",
           "rit": 21
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -373,16 +405,16 @@
     "25033": {
       "stato": "RITARDO",
       "critico": true,
-      "ritardo_attuale": 25,
+      "ritardo_attuale": 0,
       "ritardo_picco": 25,
-      "ritardo_capolinea": 25,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "09:45",
+      "orario_programmato": "09:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -411,6 +443,10 @@
         {
           "ts": "21:20",
           "rit": 25
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -419,16 +455,16 @@
     "25235": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 13,
+      "ritardo_attuale": 0,
       "ritardo_picco": 13,
-      "ritardo_capolinea": 13,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "10:03",
+      "orario_programmato": "09:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -457,6 +493,10 @@
         {
           "ts": "21:20",
           "rit": 13
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -465,16 +505,16 @@
     "25037": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "10:19",
+      "orario_programmato": "10:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -503,6 +543,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -511,16 +555,16 @@
     "25239": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "10:49",
+      "orario_programmato": "10:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -549,6 +593,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -565,8 +613,8 @@
       "orario_programmato": "11:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -594,6 +642,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -603,16 +655,16 @@
     "25243": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "11:53",
+      "orario_programmato": "11:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -641,6 +693,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -649,16 +705,16 @@
     "25045": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "12:22",
+      "orario_programmato": "12:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -687,6 +743,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -695,16 +755,16 @@
     "25247": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": -2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "12:48",
+      "orario_programmato": "12:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -733,6 +793,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -741,16 +805,16 @@
     "25049": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 8,
+      "ritardo_attuale": 0,
       "ritardo_picco": 8,
-      "ritardo_capolinea": 8,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "13:28",
+      "orario_programmato": "13:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -779,6 +843,10 @@
         {
           "ts": "21:20",
           "rit": 8
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -795,8 +863,8 @@
       "orario_programmato": "13:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -824,6 +892,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -833,16 +905,16 @@
     "25053": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "14:21",
+      "orario_programmato": "14:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -871,6 +943,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -879,16 +955,16 @@
     "25255": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "14:53",
+      "orario_programmato": "14:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -917,6 +993,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -925,16 +1005,16 @@
     "25057": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "15:21",
+      "orario_programmato": "15:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -963,6 +1043,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -971,16 +1055,16 @@
     "25259": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "15:49",
+      "orario_programmato": "15:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1009,6 +1093,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1017,16 +1105,16 @@
     "25061": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 9,
+      "ritardo_attuale": 0,
       "ritardo_picco": 9,
-      "ritardo_capolinea": 9,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "16:29",
+      "orario_programmato": "16:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1055,6 +1143,10 @@
         {
           "ts": "21:20",
           "rit": 9
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1063,16 +1155,16 @@
     "25263": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 9,
+      "ritardo_attuale": 0,
       "ritardo_picco": 9,
-      "ritardo_capolinea": 9,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "16:59",
+      "orario_programmato": "16:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1101,6 +1193,10 @@
         {
           "ts": "21:20",
           "rit": 9
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1109,16 +1205,16 @@
     "25065": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 10,
+      "ritardo_attuale": 0,
       "ritardo_picco": 10,
-      "ritardo_capolinea": 10,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "17:30",
+      "orario_programmato": "17:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1147,6 +1243,10 @@
         {
           "ts": "21:20",
           "rit": 10
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1155,16 +1255,16 @@
     "25267": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 8,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "17:52",
+      "orario_programmato": "17:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1193,6 +1293,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1201,16 +1305,16 @@
     "25069": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "18:22",
+      "orario_programmato": "18:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1239,6 +1343,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1247,16 +1355,16 @@
     "25271": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
-      "orario_programmato": "18:52",
+      "orario_programmato": "18:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1285,6 +1393,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1293,16 +1405,16 @@
     "25073": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "19:19",
+      "orario_programmato": "19:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1331,6 +1443,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1339,16 +1455,16 @@
     "25075": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "19:52",
+      "orario_programmato": "19:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1377,6 +1493,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1385,16 +1505,16 @@
     "25077": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 10,
+      "ritardo_attuale": 0,
       "ritardo_picco": 10,
-      "ritardo_capolinea": 10,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "20:30",
+      "orario_programmato": "20:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1423,6 +1543,10 @@
         {
           "ts": "21:20",
           "rit": 10
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1431,16 +1555,16 @@
     "25079": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "20:52",
+      "orario_programmato": "20:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1469,6 +1593,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1477,16 +1605,16 @@
     "25081": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "21:19",
+      "orario_programmato": "21:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1515,6 +1643,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1523,16 +1655,16 @@
     "25187": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": -2,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "21:41",
+      "orario_programmato": "21:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1561,6 +1693,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1569,16 +1705,16 @@
     "25085": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "22:19",
+      "orario_programmato": "22:20",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1607,6 +1743,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1615,16 +1755,16 @@
     "25087": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "22:52",
+      "orario_programmato": "22:50",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1653,6 +1793,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1669,8 +1813,8 @@
       "orario_programmato": "05:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1698,6 +1842,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -1707,16 +1855,16 @@
     "25018": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "06:11",
+      "orario_programmato": "06:09",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1745,6 +1893,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1753,16 +1905,16 @@
     "25020": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "06:42",
+      "orario_programmato": "06:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1791,6 +1943,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1799,16 +1955,16 @@
     "25221": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "06:47",
+      "orario_programmato": "06:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1837,6 +1993,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1845,16 +2005,16 @@
     "25024": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "07:41",
+      "orario_programmato": "07:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1883,6 +2043,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1891,16 +2055,16 @@
     "25225": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "07:47",
+      "orario_programmato": "07:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1929,6 +2093,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1937,16 +2105,16 @@
     "25028": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "08:44",
+      "orario_programmato": "08:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -1975,6 +2143,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1983,16 +2155,16 @@
     "25229": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 9,
+      "ritardo_attuale": 0,
       "ritardo_picco": 10,
-      "ritardo_capolinea": 9,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "08:52",
+      "orario_programmato": "08:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2021,6 +2193,10 @@
         {
           "ts": "21:20",
           "rit": 9
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2029,16 +2205,16 @@
     "25032": {
       "stato": "RITARDO",
       "critico": true,
-      "ritardo_attuale": 18,
+      "ritardo_attuale": 0,
       "ritardo_picco": 20,
-      "ritardo_capolinea": 18,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "09:57",
+      "orario_programmato": "09:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2067,6 +2243,10 @@
         {
           "ts": "21:20",
           "rit": 18
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2075,16 +2255,16 @@
     "25036": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 10,
+      "ritardo_attuale": 0,
       "ritardo_picco": 10,
-      "ritardo_capolinea": 10,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "10:49",
+      "orario_programmato": "10:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2113,6 +2293,10 @@
         {
           "ts": "21:20",
           "rit": 10
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2121,16 +2305,16 @@
     "25040": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "11:42",
+      "orario_programmato": "11:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2159,6 +2343,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2167,16 +2355,16 @@
     "25044": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 7,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "12:42",
+      "orario_programmato": "12:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2205,6 +2393,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2213,16 +2405,16 @@
     "25048": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "13:40",
+      "orario_programmato": "13:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2251,6 +2443,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2259,16 +2455,16 @@
     "25249": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "13:45",
+      "orario_programmato": "13:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2297,6 +2493,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2313,8 +2513,8 @@
       "orario_programmato": "14:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2342,6 +2542,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -2359,8 +2563,8 @@
       "orario_programmato": "14:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2388,6 +2592,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -2397,16 +2605,16 @@
     "25056": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 8,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "15:44",
+      "orario_programmato": "15:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2435,6 +2643,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2443,16 +2655,16 @@
     "25257": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "15:47",
+      "orario_programmato": "15:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2481,6 +2693,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2489,16 +2705,16 @@
     "25060": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 10,
+      "ritardo_attuale": 0,
       "ritardo_picco": 10,
-      "ritardo_capolinea": 10,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "16:49",
+      "orario_programmato": "16:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2527,6 +2743,10 @@
         {
           "ts": "21:20",
           "rit": 10
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2535,16 +2755,16 @@
     "25261": {
       "stato": "INATTIVO",
       "critico": true,
-      "ritardo_attuale": 16,
+      "ritardo_attuale": 0,
       "ritardo_picco": 16,
-      "ritardo_capolinea": 16,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "16:59",
+      "orario_programmato": "16:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2573,6 +2793,10 @@
         {
           "ts": "21:20",
           "rit": 16
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2581,16 +2805,16 @@
     "25064": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "17:41",
+      "orario_programmato": "17:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2619,6 +2843,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2627,16 +2855,16 @@
     "25265": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 7,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "17:48",
+      "orario_programmato": "17:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2665,6 +2893,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2673,16 +2905,16 @@
     "25068": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 8,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "18:41",
+      "orario_programmato": "18:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2711,6 +2943,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2719,16 +2955,16 @@
     "25269": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -2,
+      "ritardo_capolinea": 0,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "18:41",
+      "orario_programmato": "18:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2757,6 +2993,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2765,16 +3005,16 @@
     "25072": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "19:38",
+      "orario_programmato": "19:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2803,6 +3043,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2819,8 +3063,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2848,6 +3092,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -2857,16 +3105,16 @@
     "25076": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "20:41",
+      "orario_programmato": "20:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2895,6 +3143,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2911,8 +3163,8 @@
       "orario_programmato": "20:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2941,6 +3193,10 @@
         {
           "ts": "21:20",
           "rit": 0
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2949,16 +3205,16 @@
     "25080": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "21:44",
+      "orario_programmato": "21:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -2987,6 +3243,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -2995,16 +3255,16 @@
     "25082": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "22:11",
+      "orario_programmato": "22:09",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3033,6 +3293,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -3041,16 +3305,16 @@
     "25084": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 10,
+      "ritardo_attuale": 0,
       "ritardo_picco": 10,
-      "ritardo_capolinea": 10,
+      "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "22:49",
+      "orario_programmato": "22:39",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3079,6 +3343,10 @@
         {
           "ts": "21:20",
           "rit": 10
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -3087,16 +3355,16 @@
     "25192": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -4,
-      "ritardo_picco": -4,
-      "ritardo_capolinea": -4,
+      "ritardo_attuale": -3,
+      "ritardo_picco": -3,
+      "ritardo_capolinea": -3,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "CHIASSO",
-      "orario_programmato": "23:05",
+      "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3125,6 +3393,10 @@
         {
           "ts": "21:20",
           "rit": -4
+        },
+        {
+          "ts": "23:02",
+          "rit": -3
         }
       ],
       "linea": "S11",
@@ -3133,16 +3405,16 @@
     "25503": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "04:32",
+      "orario_programmato": "04:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3171,6 +3443,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3179,16 +3455,16 @@
     "25201": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -1,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "07:02",
+      "orario_programmato": "07:03",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3217,6 +3493,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3225,16 +3505,16 @@
     "25507": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "06:34",
+      "orario_programmato": "06:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3263,6 +3543,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3271,16 +3555,16 @@
     "25509": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "07:33",
+      "orario_programmato": "07:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3309,6 +3593,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3317,16 +3605,16 @@
     "25511": {
       "stato": "RITARDO",
       "critico": true,
-      "ritardo_attuale": 73,
+      "ritardo_attuale": 0,
       "ritardo_picco": 73,
-      "ritardo_capolinea": 73,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "09:44",
+      "orario_programmato": "08:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3355,6 +3643,10 @@
         {
           "ts": "21:20",
           "rit": 73
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3371,8 +3663,8 @@
       "orario_programmato": "09:31",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 14,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 16,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3400,6 +3692,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -3409,16 +3705,16 @@
     "25517": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 7,
+      "ritardo_attuale": 0,
       "ritardo_picco": 7,
-      "ritardo_capolinea": 7,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "11:38",
+      "orario_programmato": "11:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3447,6 +3743,10 @@
         {
           "ts": "21:20",
           "rit": 7
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3463,8 +3763,8 @@
       "orario_programmato": "12:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3492,6 +3792,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -3501,16 +3805,16 @@
     "25521": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "13:34",
+      "orario_programmato": "13:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3539,6 +3843,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3547,16 +3855,16 @@
     "25523": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "14:35",
+      "orario_programmato": "14:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3585,6 +3893,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3593,16 +3905,16 @@
     "25525": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "15:34",
+      "orario_programmato": "15:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3631,6 +3943,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3639,16 +3955,16 @@
     "25527": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 11,
+      "ritardo_attuale": 0,
       "ritardo_picco": 11,
-      "ritardo_capolinea": 11,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
       "orario_programmato": "16:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3677,6 +3993,10 @@
         {
           "ts": "21:20",
           "rit": 11
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3685,16 +4005,16 @@
     "25529": {
       "stato": "INATTIVO",
       "critico": true,
-      "ritardo_attuale": 17,
+      "ritardo_attuale": 0,
       "ritardo_picco": 17,
-      "ritardo_capolinea": 17,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "17:48",
+      "orario_programmato": "17:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3723,6 +4043,10 @@
         {
           "ts": "21:20",
           "rit": 17
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3731,16 +4055,16 @@
     "25531": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "18:35",
+      "orario_programmato": "18:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3769,6 +4093,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3777,16 +4105,16 @@
     "25533": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "19:32",
+      "orario_programmato": "19:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3815,6 +4143,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3823,16 +4155,16 @@
     "25535": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 6,
+      "ritardo_attuale": 0,
       "ritardo_picco": 6,
-      "ritardo_capolinea": 6,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "20:37",
+      "orario_programmato": "20:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3861,6 +4193,10 @@
         {
           "ts": "21:20",
           "rit": 6
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3869,16 +4205,16 @@
     "25537": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "21:36",
+      "orario_programmato": "21:31",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3907,6 +4243,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3915,16 +4255,16 @@
     "25502": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -1,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "05:42",
+      "orario_programmato": "05:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3953,6 +4293,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -3961,16 +4305,16 @@
     "25506": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -2,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "06:41",
+      "orario_programmato": "06:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -3999,6 +4343,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4007,16 +4355,16 @@
     "25508": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -2,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "07:41",
+      "orario_programmato": "07:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4045,6 +4393,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4053,16 +4405,16 @@
     "25510": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "08:47",
+      "orario_programmato": "08:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4091,6 +4443,10 @@
         {
           "ts": "21:20",
           "rit": 4
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4107,8 +4463,8 @@
       "orario_programmato": "09:43",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4136,6 +4492,10 @@
         },
         {
           "ts": "21:20",
+          "rit": 0
+        },
+        {
+          "ts": "23:02",
           "rit": 0
         }
       ],
@@ -4145,16 +4505,16 @@
     "25514": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 12,
+      "ritardo_attuale": 0,
       "ritardo_picco": 12,
-      "ritardo_capolinea": 12,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
       "orario_programmato": "10:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4183,6 +4543,10 @@
         {
           "ts": "21:20",
           "rit": 12
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4191,16 +4555,16 @@
     "25516": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
       "orario_programmato": "11:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4229,6 +4593,10 @@
         {
           "ts": "21:20",
           "rit": -2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4237,16 +4605,16 @@
     "25518": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": 0,
       "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "12:45",
+      "orario_programmato": "12:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4275,6 +4643,10 @@
         {
           "ts": "21:20",
           "rit": 2
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4283,16 +4655,16 @@
     "25520": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "13:46",
+      "orario_programmato": "13:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4321,6 +4693,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4329,16 +4705,16 @@
     "25522": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "14:44",
+      "orario_programmato": "14:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4367,6 +4743,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4375,16 +4755,16 @@
     "25524": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "15:44",
+      "orario_programmato": "15:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4413,6 +4793,10 @@
         {
           "ts": "21:20",
           "rit": 1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4421,16 +4805,16 @@
     "25526": {
       "stato": "INATTIVO",
       "critico": true,
-      "ritardo_attuale": 18,
+      "ritardo_attuale": 0,
       "ritardo_picco": 18,
-      "ritardo_capolinea": 18,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "17:01",
+      "orario_programmato": "16:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4459,6 +4843,10 @@
         {
           "ts": "21:20",
           "rit": 18
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4467,16 +4855,16 @@
     "25528": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "17:48",
+      "orario_programmato": "17:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4505,6 +4893,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4513,16 +4905,16 @@
     "25530": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 0,
       "ritardo_picco": 8,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "18:48",
+      "orario_programmato": "18:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4551,6 +4943,10 @@
         {
           "ts": "21:20",
           "rit": 5
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4559,16 +4955,16 @@
     "25532": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "19:46",
+      "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4597,6 +4993,10 @@
         {
           "ts": "21:20",
           "rit": 3
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4605,16 +5005,16 @@
     "25534": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": 6,
+      "ritardo_attuale": 0,
       "ritardo_picco": 6,
-      "ritardo_capolinea": 6,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "20:49",
+      "orario_programmato": "20:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4643,6 +5043,10 @@
         {
           "ts": "21:20",
           "rit": 6
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4651,16 +5055,16 @@
     "25536": {
       "stato": "INATTIVO",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 6,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "21:42",
+      "orario_programmato": "21:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4689,6 +5093,10 @@
         {
           "ts": "21:20",
           "rit": -1
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -4697,16 +5105,16 @@
     "25538": {
       "stato": "INATTIVO",
       "critico": true,
-      "ritardo_attuale": 22,
+      "ritardo_attuale": 0,
       "ritardo_picco": 22,
-      "ritardo_capolinea": 22,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "23:05",
+      "orario_programmato": "22:43",
       "note": "",
       "prima_rilevazione": "2026-05-12T10:14:01",
-      "ultima_rilevazione": "2026-05-12T21:20:28",
-      "scansioni": 7,
+      "ultima_rilevazione": "2026-05-12T23:02:50",
+      "scansioni": 8,
       "storico_ritardi": [
         {
           "ts": "10:14",
@@ -4735,6 +5143,10 @@
         {
           "ts": "21:20",
           "rit": 22
+        },
+        {
+          "ts": "23:02",
+          "rit": 0
         }
       ],
       "linea": "RE80",
