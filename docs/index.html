@@ -3,1093 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bollettino Trenord S11 & RE80</title>
+    <title>Dashboard Trenord S11 & RE80</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }
-        h1, h2, h3 { color: #ffffff; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .header-card { background-color: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #333; }
-        .stats-grid { display: flex; justify-content: space-around; margin-top: 15px; }
-        .stat-box { text-align: center; }
-        .disagio { font-size: 2.5em; font-weight: bold; color: #ffb142; }
-        .disagio-mese { font-size: 2.5em; font-weight: bold; color: #ffb142; }
-        table { width: 100%; border-collapse: collapse; background-color: #1e1e1e; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
-        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; }
-        th { background-color: #2c2c2c; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 0.9em; }
-        tr:hover { background-color: #2a2a2a; }
-        .critico { background-color: rgba(255, 82, 82, 0.1); border-left: 4px solid #ff5252; }
-        .regolare { border-left: 4px solid #33d9b2; }
-        .footer { text-align: center; margin-top: 30px; font-size: 0.8em; color: #888; }
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --text-main: #f0f0f0;
+            --text-muted: #8b92a5;
+            --accent: #3b82f6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --border-color: #2e3440;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        }
+
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .disagio-high { color: var(--danger); }
+        .disagio-med { color: var(--warning); }
+        .disagio-low { color: var(--success); }
+
+        .table-container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: rgba(255,255,255,0.02);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tr:hover {
+            background-color: rgba(255,255,255,0.03);
+            cursor: pointer;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .status-ok { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .status-warn { background-color: rgba(245, 158, 11, 0.15); color: var(--warning); }
+        .status-crit { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
+
+        .note-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Modal Styles per il Grafico */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 800px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover { color: #fff; }
+
+        .modal-title { margin-top: 0; }
+        .modal-subtitle { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            th, td { padding: 12px 10px; }
+            .hide-mobile { display: none; }
+        }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>Trenord Live Monitor</h1>
+        <div class="subtitle" id="last-update">Caricamento dati...</div>
+    </header>
+
     <div class="container">
-        <div class="header-card">
-            <h1>Bollettino Trenord (S11 & RE80)</h1>
-            <p>Dati aggiornati al: <strong>2026-05-12T10:14:01</strong></p>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <p style="margin:0; color:#888;">Disagio Oggi</p>
-                    <div class="disagio">6.8%</div>
-                    <p style="margin:0; font-size:0.9em;">(Critici: 7 / 103)</p>
-                </div>
-                <div class="stat-box">
-                    <p style="margin:0; color:#888;">Disagio Mensile</p>
-                    <div class="disagio-mese">6.8%</div>
-                    <p style="margin:0; font-size:0.9em;">(Critici: 7 / 103)</p>
-                </div>
+        
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-label">Disagio Oggi</div>
+                <div class="kpi-value" id="kpi-disagio">--%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Disagio Mese</div>
+                <div class="kpi-value" id="kpi-disagio-mese">--%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Treni Oggi</div>
+                <div class="kpi-value" id="kpi-totale">--</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Critici Oggi</div>
+                <div class="kpi-value status-crit" style="background:none;" id="kpi-critici">--</div>
             </div>
         </div>
-        
-        <table>
-            <thead>
-                <tr>
-                    <th>Treno</th>
-                    <th>Stato</th>
-                    <th>Rit. Attuale</th>
-                    <th>Rit. Picco</th>
-                    <th>Rit. Capolinea</th>
-                    <th>Orario Prog.</th>
-                    <th>Note</th>
-                </tr>
-            </thead>
-            <tbody>
 
-                <tr class="regolare">
-                    <td><strong>RE80 25201</strong></td>
-                    <td>✅</td>
-                    <td>-1'</td>
-                    <td>-1'</td>
-                    <td>-1'</td>
-                    <td>07:02</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25502</strong></td>
-                    <td>✅</td>
-                    <td>-1'</td>
-                    <td>-1'</td>
-                    <td>-1'</td>
-                    <td>05:42</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25503</strong></td>
-                    <td>⚠️</td>
-                    <td>1'</td>
-                    <td>1'</td>
-                    <td>1'</td>
-                    <td>04:32</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25506</strong></td>
-                    <td>✅</td>
-                    <td>-2'</td>
-                    <td>-2'</td>
-                    <td>-2'</td>
-                    <td>06:41</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25507</strong></td>
-                    <td>⚠️</td>
-                    <td>3'</td>
-                    <td>3'</td>
-                    <td>3'</td>
-                    <td>06:34</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25508</strong></td>
-                    <td>✅</td>
-                    <td>-2'</td>
-                    <td>-2'</td>
-                    <td>-2'</td>
-                    <td>07:41</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25509</strong></td>
-                    <td>⚠️</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>07:33</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>RE80 25510</strong></td>
-                    <td>⚠️</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>08:47</td>
-                    <td></td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>RE80 25511</strong></td>
-                    <td>🚨</td>
-                    <td>66'</td>
-                    <td>66'</td>
-                    <td>65'</td>
-                    <td>09:37</td>
-                    <td></td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>RE80 25512</strong></td>
-                    <td>❌</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>09:43</td>
-                    <td><strong>SOPPRESSO</strong> Treno cancellato</td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>RE80 25513</strong></td>
-                    <td>❌</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>09:31</td>
-                    <td><strong>SOPPRESSO</strong> Treno cancellato</td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25514</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>10:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25516</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>11:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25517</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>11:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25518</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>12:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25519</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>12:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25520</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>13:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25521</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>13:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25522</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>14:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25523</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>14:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25524</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>15:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25525</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>15:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25526</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>16:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25527</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>16:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25528</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>17:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25529</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>17:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25530</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>18:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25531</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>18:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25532</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>19:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25533</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>19:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25534</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>20:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25535</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>20:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25536</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>21:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25537</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>21:31</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>RE80 25538</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>22:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25016</strong></td>
-                    <td>✅</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>05:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25017</strong></td>
-                    <td>✅</td>
-                    <td>-2'</td>
-                    <td>-2'</td>
-                    <td>-2'</td>
-                    <td>05:11</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25018</strong></td>
-                    <td>⚠️</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>06:11</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25020</strong></td>
-                    <td>⚠️</td>
-                    <td>3'</td>
-                    <td>3'</td>
-                    <td>3'</td>
-                    <td>06:42</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25021</strong></td>
-                    <td>✅</td>
-                    <td>-1'</td>
-                    <td>-1'</td>
-                    <td>-1'</td>
-                    <td>06:19</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25024</strong></td>
-                    <td>⚠️</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>07:41</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25025</strong></td>
-                    <td>⚠️</td>
-                    <td>7'</td>
-                    <td>7'</td>
-                    <td>7'</td>
-                    <td>07:27</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25028</strong></td>
-                    <td>⚠️</td>
-                    <td>5'</td>
-                    <td>5'</td>
-                    <td>5'</td>
-                    <td>08:44</td>
-                    <td></td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>S11 25029</strong></td>
-                    <td>🚨</td>
-                    <td>24'</td>
-                    <td>24'</td>
-                    <td>24'</td>
-                    <td>08:44</td>
-                    <td></td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>S11 25032</strong></td>
-                    <td>🚨</td>
-                    <td>20'</td>
-                    <td>20'</td>
-                    <td>19'</td>
-                    <td>09:59</td>
-                    <td></td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>S11 25033</strong></td>
-                    <td>🚨</td>
-                    <td>21'</td>
-                    <td>21'</td>
-                    <td>21'</td>
-                    <td>09:41</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25036</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>10:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25037</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>10:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25040</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>11:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25041</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>11:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25044</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>12:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25045</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>12:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25048</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>13:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25049</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>13:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25052</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>14:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25053</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>14:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25056</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>15:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25057</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>15:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25060</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>16:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25061</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>16:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25064</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>17:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25065</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>17:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25068</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>18:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25069</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>18:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25072</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>19:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25073</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>19:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25075</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>19:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25076</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>20:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25077</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>20:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25079</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>20:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25080</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>21:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25081</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>21:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25082</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>22:09</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25084</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>22:39</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25085</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>22:20</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25087</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>22:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25187</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>21:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25192</strong></td>
-                    <td>✅</td>
-                    <td>-4'</td>
-                    <td>-4'</td>
-                    <td>-4'</td>
-                    <td>23:05</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25219</strong></td>
-                    <td>⚠️</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>05:49</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25221</strong></td>
-                    <td>⚠️</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>06:47</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25223</strong></td>
-                    <td>⚠️</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>06:52</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25225</strong></td>
-                    <td>⚠️</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>4'</td>
-                    <td>07:47</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25227</strong></td>
-                    <td>⚠️</td>
-                    <td>1'</td>
-                    <td>1'</td>
-                    <td>1'</td>
-                    <td>07:51</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25229</strong></td>
-                    <td>⚠️</td>
-                    <td>10'</td>
-                    <td>10'</td>
-                    <td>0'</td>
-                    <td>08:53</td>
-                    <td></td>
-                </tr>
-
-                <tr class="critico">
-                    <td><strong>S11 25231</strong></td>
-                    <td>🚨</td>
-                    <td>21'</td>
-                    <td>21'</td>
-                    <td>21'</td>
-                    <td>09:11</td>
-                    <td></td>
-                </tr>
-
-                <tr class="regolare">
-                    <td><strong>S11 25235</strong></td>
-                    <td>⚠️</td>
-                    <td>5'</td>
-                    <td>5'</td>
-                    <td>5'</td>
-                    <td>09:55</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25239</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>10:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25243</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>11:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25247</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>12:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25249</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>13:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25251</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>13:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25253</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>14:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25255</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>14:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25257</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>15:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25259</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>15:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25261</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>16:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25263</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>16:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25265</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>17:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25267</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>17:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25269</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>18:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25271</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>18:50</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25273</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>19:43</td>
-                    <td></td>
-                </tr>
-
-                <tr class="">
-                    <td><strong>S11 25277</strong></td>
-                    <td>⏳</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>20:43</td>
-                    <td></td>
-                </tr>
-
-            </tbody>
-        </table>
-        <div class="footer">
-            Generato automaticamente da Trenord Monitor
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Treno</th>
+                        <th>Stato</th>
+                        <th>Rit. Att.</th>
+                        <th>Rit. Capolinea</th>
+                        <th class="hide-mobile">Rit. Picco</th>
+                        <th class="hide-mobile">Orario Prog.</th>
+                        <th class="hide-mobile">Note</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr><td colspan="7" style="text-align:center;">Caricamento in corso...</td></tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <!-- Modal per Storico -->
+    <div id="chartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title" id="modal-treno-title">Dettaglio Treno</h2>
+            <div class="modal-subtitle" id="modal-treno-subtitle">Storico Ritardo</div>
+            <p id="modal-desc" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; border-left: 3px solid var(--accent); padding-left: 10px;">Questo grafico mostra l'andamento del ritardo al capolinea (in minuti) registrato nei vari giorni del mese. Ti permette di capire se il treno è cronicamente in ritardo (i giorni critici sono in rosso).</p>
+            <canvas id="delayChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Configurazione per export statico (GitHub Pages)
+        const IS_STATIC = true; // Verrà rimpiazzato con true da bollettino.py
+        const STATIC_DATA = {"data": "2026-05-12", "ultima_scansione": "2026-05-12T10:14:01", "treni": {"25017": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -2, "ritardo_picco": -2, "ritardo_capolinea": -2, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "05:11", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -2}], "linea": "S11", "numero": 25017}, "25219": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 4, "ritardo_picco": 4, "ritardo_capolinea": 4, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "05:49", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 4}], "linea": "S11", "numero": 25219}, "25021": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -1, "ritardo_picco": -1, "ritardo_capolinea": -1, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "06:19", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -1}], "linea": "S11", "numero": 25021}, "25223": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 2, "ritardo_picco": 2, "ritardo_capolinea": 2, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "06:52", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 2}], "linea": "S11", "numero": 25223}, "25025": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 7, "ritardo_picco": 7, "ritardo_capolinea": 7, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "07:27", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 7}], "linea": "S11", "numero": 25025}, "25227": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 1, "ritardo_picco": 1, "ritardo_capolinea": 1, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "07:51", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 1}], "linea": "S11", "numero": 25227}, "25029": {"stato": "RITARDO", "critico": true, "ritardo_attuale": 24, "ritardo_picco": 24, "ritardo_capolinea": 24, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "08:44", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 24}], "linea": "S11", "numero": 25029}, "25231": {"stato": "RITARDO", "critico": true, "ritardo_attuale": 21, "ritardo_picco": 21, "ritardo_capolinea": 21, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "09:11", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 21}], "linea": "S11", "numero": 25231}, "25033": {"stato": "RITARDO", "critico": true, "ritardo_attuale": 21, "ritardo_picco": 21, "ritardo_capolinea": 21, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "09:41", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 21}], "linea": "S11", "numero": 25033}, "25235": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 5, "ritardo_picco": 5, "ritardo_capolinea": 5, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "09:55", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 5}], "linea": "S11", "numero": 25235}, "25037": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "10:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25037}, "25239": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "10:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25239}, "25041": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "11:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25041}, "25243": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "11:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25243}, "25045": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "12:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25045}, "25247": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "12:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25247}, "25049": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "13:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25049}, "25251": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "13:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25251}, "25053": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "14:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25053}, "25255": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "14:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25255}, "25057": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "15:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25057}, "25259": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "15:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25259}, "25061": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "16:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25061}, "25263": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "16:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25263}, "25065": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "17:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25065}, "25267": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "17:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25267}, "25069": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "18:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25069}, "25271": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "RHO", "orario_programmato": "18:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25271}, "25073": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "19:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25073}, "25075": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "19:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25075}, "25077": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "20:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25077}, "25079": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "20:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25079}, "25081": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "21:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25081}, "25187": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "21:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25187}, "25085": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "22:20", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25085}, "25087": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO PORTA GARIBALDI", "orario_programmato": "22:50", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25087}, "25016": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "05:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25016}, "25018": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 2, "ritardo_picco": 2, "ritardo_capolinea": 2, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "06:11", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 2}], "linea": "S11", "numero": 25018}, "25020": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 3, "ritardo_picco": 3, "ritardo_capolinea": 3, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "06:42", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 3}], "linea": "S11", "numero": 25020}, "25221": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 4, "ritardo_picco": 4, "ritardo_capolinea": 4, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "06:47", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 4}], "linea": "S11", "numero": 25221}, "25024": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 2, "ritardo_picco": 2, "ritardo_capolinea": 2, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "07:41", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 2}], "linea": "S11", "numero": 25024}, "25225": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 4, "ritardo_picco": 4, "ritardo_capolinea": 4, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "07:47", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 4}], "linea": "S11", "numero": 25225}, "25028": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 5, "ritardo_picco": 5, "ritardo_capolinea": 5, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "08:44", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 5}], "linea": "S11", "numero": 25028}, "25229": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 10, "ritardo_picco": 10, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "08:53", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 10}], "linea": "S11", "numero": 25229}, "25032": {"stato": "RITARDO", "critico": true, "ritardo_attuale": 20, "ritardo_picco": 20, "ritardo_capolinea": 19, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "09:59", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 20}], "linea": "S11", "numero": 25032}, "25036": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "10:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25036}, "25040": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "11:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25040}, "25044": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "12:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25044}, "25048": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "13:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25048}, "25249": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "13:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25249}, "25052": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "14:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25052}, "25253": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "14:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25253}, "25056": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "15:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25056}, "25257": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "15:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25257}, "25060": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "16:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25060}, "25261": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "16:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25261}, "25064": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "17:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25064}, "25265": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "17:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25265}, "25068": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "18:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25068}, "25269": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "18:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25269}, "25072": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "19:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25072}, "25273": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "19:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25273}, "25076": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "20:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25076}, "25277": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "RHO", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "20:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25277}, "25080": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "21:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25080}, "25082": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "22:09", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25082}, "25084": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO PORTA GARIBALDI", "destinazione": "COMO S.GIOVANNI", "orario_programmato": "22:39", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "S11", "numero": 25084}, "25192": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -4, "ritardo_picco": -4, "ritardo_capolinea": -4, "origine": "MILANO PORTA GARIBALDI", "destinazione": "CHIASSO", "orario_programmato": "23:05", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -4}], "linea": "S11", "numero": 25192}, "25503": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 1, "ritardo_picco": 1, "ritardo_capolinea": 1, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "04:32", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 1}], "linea": "RE80", "numero": 25503}, "25201": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -1, "ritardo_picco": -1, "ritardo_capolinea": -1, "origine": "COMO S.GIOVANNI", "destinazione": "MILANO CENTRALE", "orario_programmato": "07:02", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -1}], "linea": "RE80", "numero": 25201}, "25507": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 3, "ritardo_picco": 3, "ritardo_capolinea": 3, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "06:34", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 3}], "linea": "RE80", "numero": 25507}, "25509": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 2, "ritardo_picco": 2, "ritardo_capolinea": 2, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "07:33", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 2}], "linea": "RE80", "numero": 25509}, "25511": {"stato": "RITARDO", "critico": true, "ritardo_attuale": 66, "ritardo_picco": 66, "ritardo_capolinea": 65, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "09:37", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 66}], "linea": "RE80", "numero": 25511}, "25513": {"stato": "SOPPRESSO", "critico": true, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "09:31", "note": "Treno cancellato", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 2, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25513}, "25517": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "11:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25517}, "25519": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "12:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25519}, "25521": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "13:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25521}, "25523": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "14:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25523}, "25525": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "15:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25525}, "25527": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "16:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25527}, "25529": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "17:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25529}, "25531": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "18:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25531}, "25533": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "19:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25533}, "25535": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "20:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25535}, "25537": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "CHIASSO", "destinazione": "MILANO CENTRALE", "orario_programmato": "21:31", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25537}, "25502": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -1, "ritardo_picco": -1, "ritardo_capolinea": -1, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "05:42", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -1}], "linea": "RE80", "numero": 25502}, "25506": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -2, "ritardo_picco": -2, "ritardo_capolinea": -2, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "06:41", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -2}], "linea": "RE80", "numero": 25506}, "25508": {"stato": "REGOLARE", "critico": false, "ritardo_attuale": -2, "ritardo_picco": -2, "ritardo_capolinea": -2, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "07:41", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": -2}], "linea": "RE80", "numero": 25508}, "25510": {"stato": "RITARDO", "critico": false, "ritardo_attuale": 4, "ritardo_picco": 4, "ritardo_capolinea": 4, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "08:47", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 4}], "linea": "RE80", "numero": 25510}, "25512": {"stato": "SOPPRESSO", "critico": true, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "09:43", "note": "Treno cancellato", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25512}, "25514": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "10:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25514}, "25516": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "11:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25516}, "25518": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "12:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25518}, "25520": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "13:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25520}, "25522": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "14:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25522}, "25524": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "15:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25524}, "25526": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "16:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25526}, "25528": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "17:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25528}, "25530": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "18:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25530}, "25532": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "19:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25532}, "25534": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "20:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25534}, "25536": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "21:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25536}, "25538": {"stato": "INATTIVO", "critico": false, "ritardo_attuale": 0, "ritardo_picco": 0, "ritardo_capolinea": 0, "origine": "MILANO CENTRALE", "destinazione": "CHIASSO", "orario_programmato": "22:43", "note": "", "prima_rilevazione": "2026-05-12T10:14:01", "ultima_rilevazione": "2026-05-12T10:14:01", "scansioni": 1, "storico_ritardi": [{"ts": "10:14", "rit": 0}], "linea": "RE80", "numero": 25538}}};
+        const STATIC_MONTHLY = {"disagio": 6.8, "treni_totali": 103, "treni_anomali": 7, "giorni": 1};
+        const STATIC_HISTORY = {"25017": [{"data": "2026-05-12", "ritardo_capolinea": -2, "critico": false, "stato": "REGOLARE"}], "25219": [{"data": "2026-05-12", "ritardo_capolinea": 4, "critico": false, "stato": "RITARDO"}], "25021": [{"data": "2026-05-12", "ritardo_capolinea": -1, "critico": false, "stato": "REGOLARE"}], "25223": [{"data": "2026-05-12", "ritardo_capolinea": 2, "critico": false, "stato": "RITARDO"}], "25025": [{"data": "2026-05-12", "ritardo_capolinea": 7, "critico": false, "stato": "RITARDO"}], "25227": [{"data": "2026-05-12", "ritardo_capolinea": 1, "critico": false, "stato": "RITARDO"}], "25029": [{"data": "2026-05-12", "ritardo_capolinea": 24, "critico": true, "stato": "RITARDO"}], "25231": [{"data": "2026-05-12", "ritardo_capolinea": 21, "critico": true, "stato": "RITARDO"}], "25033": [{"data": "2026-05-12", "ritardo_capolinea": 21, "critico": true, "stato": "RITARDO"}], "25235": [{"data": "2026-05-12", "ritardo_capolinea": 5, "critico": false, "stato": "RITARDO"}], "25037": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25239": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25041": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25243": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25045": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25247": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25049": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25251": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25053": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25255": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25057": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25259": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25061": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25263": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25065": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25267": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25069": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25271": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25073": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25075": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25077": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25079": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25081": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25187": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25085": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25087": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25016": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "REGOLARE"}], "25018": [{"data": "2026-05-12", "ritardo_capolinea": 2, "critico": false, "stato": "RITARDO"}], "25020": [{"data": "2026-05-12", "ritardo_capolinea": 3, "critico": false, "stato": "RITARDO"}], "25221": [{"data": "2026-05-12", "ritardo_capolinea": 4, "critico": false, "stato": "RITARDO"}], "25024": [{"data": "2026-05-12", "ritardo_capolinea": 2, "critico": false, "stato": "RITARDO"}], "25225": [{"data": "2026-05-12", "ritardo_capolinea": 4, "critico": false, "stato": "RITARDO"}], "25028": [{"data": "2026-05-12", "ritardo_capolinea": 5, "critico": false, "stato": "RITARDO"}], "25229": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "RITARDO"}], "25032": [{"data": "2026-05-12", "ritardo_capolinea": 19, "critico": true, "stato": "RITARDO"}], "25036": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25040": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25044": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25048": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25249": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25052": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25253": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25056": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25257": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25060": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25261": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25064": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25265": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25068": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25269": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25072": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25273": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25076": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25277": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25080": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25082": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25084": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25192": [{"data": "2026-05-12", "ritardo_capolinea": -4, "critico": false, "stato": "REGOLARE"}], "25503": [{"data": "2026-05-12", "ritardo_capolinea": 1, "critico": false, "stato": "RITARDO"}], "25201": [{"data": "2026-05-12", "ritardo_capolinea": -1, "critico": false, "stato": "REGOLARE"}], "25507": [{"data": "2026-05-12", "ritardo_capolinea": 3, "critico": false, "stato": "RITARDO"}], "25509": [{"data": "2026-05-12", "ritardo_capolinea": 2, "critico": false, "stato": "RITARDO"}], "25511": [{"data": "2026-05-12", "ritardo_capolinea": 65, "critico": true, "stato": "RITARDO"}], "25513": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": true, "stato": "SOPPRESSO"}], "25517": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25519": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25521": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25523": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25525": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25527": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25529": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25531": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25533": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25535": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25537": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25502": [{"data": "2026-05-12", "ritardo_capolinea": -1, "critico": false, "stato": "REGOLARE"}], "25506": [{"data": "2026-05-12", "ritardo_capolinea": -2, "critico": false, "stato": "REGOLARE"}], "25508": [{"data": "2026-05-12", "ritardo_capolinea": -2, "critico": false, "stato": "REGOLARE"}], "25510": [{"data": "2026-05-12", "ritardo_capolinea": 4, "critico": false, "stato": "RITARDO"}], "25512": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": true, "stato": "SOPPRESSO"}], "25514": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25516": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25518": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25520": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25522": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25524": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25526": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25528": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25530": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25532": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25534": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25536": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}], "25538": [{"data": "2026-05-12", "ritardo_capolinea": 0, "critico": false, "stato": "INATTIVO"}]};
+
+        let myChart = null;
+
+        function renderStatus(stato, critico) {
+            if(stato === "INATTIVO") {
+                return `<span class="status-badge" style="background-color:rgba(139, 146, 165, 0.15); color:var(--text-muted)">INATTIVO</span>`;
+            }
+            if(stato === "RITARDO") {
+                if(critico) return `<span class="status-badge status-crit">CRITICO</span>`;
+                return `<span class="status-badge status-warn">RITARDO</span>`;
+            }
+            if(stato !== "REGOLARE") {
+                return `<span class="status-badge status-crit">${stato}</span>`;
+            }
+            return `<span class="status-badge status-ok">REGOLARE</span>`;
+        }
+
+        function updateDashboard() {
+            if (IS_STATIC) {
+                renderDashboardData(STATIC_DATA);
+                renderMonthlyData(STATIC_MONTHLY);
+            } else {
+                fetch('/api/data')
+                    .then(res => res.json())
+                    .then(data => renderDashboardData(data))
+                    .catch(err => console.error("Errore fetch dati:", err));
+                    
+                fetch('/api/monthly_stats')
+                    .then(res => res.json())
+                    .then(mdata => renderMonthlyData(mdata))
+                    .catch(e => console.error("Errore fetch monthly:", e));
+            }
+        }
+        
+        function renderMonthlyData(mdata) {
+            if(!mdata) return;
+            let mEl = document.getElementById('kpi-disagio-mese');
+            mEl.innerText = `${mdata.disagio}%`;
+            mEl.className = 'kpi-value';
+            if(mdata.disagio > 20) mEl.classList.add('disagio-high');
+            else if(mdata.disagio > 5) mEl.classList.add('disagio-med');
+            else mEl.classList.add('disagio-low');
+        }
+
+        function renderDashboardData(data) {
+            if(!data || data.error) {
+                const err = data ? data.error : "Nessun dato";
+                document.getElementById('table-body').innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">${err}</td></tr>`;
+                return;
+            }
+
+            document.getElementById('last-update').innerText = `Ultimo aggiornamento scansione: ${data.ultima_scansione.replace('T', ' ')}`;
+
+            const treni = Object.values(data.treni || {});
+            
+            // Sorting
+            treni.sort((a, b) => {
+                if(a.linea !== b.linea) return a.linea.localeCompare(b.linea);
+                return a.numero - b.numero;
+            });
+
+            let numCritici = 0;
+            let tbodyHTML = '';
+
+            treni.forEach(t => {
+                if(t.critico) numCritici++;
+                
+                let ritCapClass = t.ritardo_capolinea > 15 ? 'color: var(--danger); font-weight:bold;' : '';
+                
+                const noteRaw = t.note || "";
+                let noteHtml = noteRaw;
+                if(["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato)) {
+                    noteHtml = `<span class="note-soppresso">${t.stato}</span> <span style="font-size:0.85em; color:var(--text-muted)">${noteRaw}</span>`;
+                }
+
+                const trenoData = encodeURIComponent(JSON.stringify({
+                    linea: t.linea, 
+                    numero: t.numero,
+                    origine: t.origine,
+                    destinazione: t.destinazione
+                }));
+                
+                let trClass = (t.critico && t.stato !== "INATTIVO") ? 'class="row-critico"' : '';
+
+                tbodyHTML += `
+                    <tr ${trClass} onclick="openModal('${trenoData}', ${t.numero})">
+                        <td><strong>${t.linea} ${t.numero}</strong></td>
+                        <td>${renderStatus(t.stato, t.critico)}</td>
+                        <td>${t.ritardo_attuale}'</td>
+                        <td style="${ritCapClass}">${t.ritardo_capolinea}'</td>
+                        <td class="hide-mobile">${t.ritardo_picco}'</td>
+                        <td class="hide-mobile">${t.orario_programmato}</td>
+                        <td class="hide-mobile"><div class="note-text">${noteHtml || '-'}</div></td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('table-body').innerHTML = tbodyHTML;
+            
+            // KPIs
+            document.getElementById('kpi-totale').innerText = treni.length;
+            document.getElementById('kpi-critici').innerText = numCritici;
+            
+            let disagio = treni.length > 0 ? ((numCritici / treni.length) * 100).toFixed(1) : 0;
+            let disagioEl = document.getElementById('kpi-disagio');
+            disagioEl.innerText = `${disagio}%`;
+            
+            disagioEl.className = 'kpi-value'; // reset
+            if(disagio > 20) disagioEl.classList.add('disagio-high');
+            else if(disagio > 5) disagioEl.classList.add('disagio-med');
+            else disagioEl.classList.add('disagio-low');
+        }
+
+        // Modal e Chart Logic
+        function openModal(trenoDataStr, numero) {
+            const t = JSON.parse(decodeURIComponent(trenoDataStr));
+            document.getElementById('chartModal').style.display = "flex";
+            document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`;
+            document.getElementById('modal-treno-subtitle').innerText = `${t.origine} ➔ ${t.destinazione}`;
+
+            if(IS_STATIC) {
+                renderChart(STATIC_HISTORY[numero] || []);
+            } else {
+                fetch(`/api/train_history/${numero}`)
+                    .then(res => res.json())
+                    .then(data => renderChart(data.history))
+                    .catch(err => console.error("Errore chart:", err));
+            }
+        }
+
+        function renderChart(historyArray) {
+            const ctx = document.getElementById('delayChart').getContext('2d');
+            if(myChart) myChart.destroy();
+
+            const labels = historyArray.map(h => h.data);
+            const delays = historyArray.map(h => h.ritardo_capolinea);
+            const colors = historyArray.map(h => h.critico ? '#ef4444' : '#3b82f6');
+
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Ritardo al capolinea',
+                        data: delays,
+                        backgroundColor: colors,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#2e3440' },
+                            ticks: { color: '#8b92a5' }
+                        },
+                        x: {
+                            grid: { color: '#2e3440' },
+                            ticks: { color: '#8b92a5' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('chartModal').style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            let modal = document.getElementById('chartModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Auto-refresh ogni 60 secondi
+        updateDashboard();
+        setInterval(updateDashboard, 60000);
+    </script>
 </body>
 </html>
