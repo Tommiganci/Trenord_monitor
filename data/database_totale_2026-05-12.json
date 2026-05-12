@@ -2157,6 +2157,116 @@
       ],
       "linea": "RE80",
       "numero": 25528
+    },
+    "25530": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "CHIASSO",
+      "orario_programmato": "18:43",
+      "note": "",
+      "prima_rilevazione": "2026-05-12T10:01:52",
+      "ultima_rilevazione": "2026-05-12T10:01:52",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "10:01",
+          "rit": 0
+        }
+      ],
+      "linea": "RE80",
+      "numero": 25530
+    },
+    "25532": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "CHIASSO",
+      "orario_programmato": "19:43",
+      "note": "",
+      "prima_rilevazione": "2026-05-12T10:01:52",
+      "ultima_rilevazione": "2026-05-12T10:01:52",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "10:01",
+          "rit": 0
+        }
+      ],
+      "linea": "RE80",
+      "numero": 25532
+    },
+    "25534": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "CHIASSO",
+      "orario_programmato": "20:43",
+      "note": "",
+      "prima_rilevazione": "2026-05-12T10:01:52",
+      "ultima_rilevazione": "2026-05-12T10:01:52",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "10:01",
+          "rit": 0
+        }
+      ],
+      "linea": "RE80",
+      "numero": 25534
+    },
+    "25536": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "CHIASSO",
+      "orario_programmato": "21:43",
+      "note": "",
+      "prima_rilevazione": "2026-05-12T10:01:52",
+      "ultima_rilevazione": "2026-05-12T10:01:52",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "10:01",
+          "rit": 0
+        }
+      ],
+      "linea": "RE80",
+      "numero": 25536
+    },
+    "25538": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "CHIASSO",
+      "orario_programmato": "22:43",
+      "note": "",
+      "prima_rilevazione": "2026-05-12T10:01:52",
+      "ultima_rilevazione": "2026-05-12T10:01:52",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "10:01",
+          "rit": 0
+        }
+      ],
+      "linea": "RE80",
+      "numero": 25538
     }
   }
 }

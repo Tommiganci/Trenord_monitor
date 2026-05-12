@@ -9,7 +9,10 @@
         h1, h2, h3 { color: #ffffff; }
         .container { max-width: 1000px; margin: 0 auto; }
         .header-card { background-color: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #333; }
-        .disagio { font-size: 2.5em; font-weight: bold; color: #ff5252; }
+        .stats-grid { display: flex; justify-content: space-around; margin-top: 15px; }
+        .stat-box { text-align: center; }
+        .disagio { font-size: 2.5em; font-weight: bold; color: #33d9b2; }
+        .disagio-mese { font-size: 2.5em; font-weight: bold; color: #33d9b2; }
         table { width: 100%; border-collapse: collapse; background-color: #1e1e1e; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
         th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; }
         th { background-color: #2c2c2c; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 0.9em; }
@@ -23,9 +26,19 @@
     <div class="container">
         <div class="header-card">
             <h1>Bollettino Trenord (S11 & RE80)</h1>
-            <p>Dati aggiornati al: <strong>2026-05-12T08:45:31</strong></p>
-            <div class="disagio">32.0%</div>
-            <p>Grado di Disagio (Treni critici: 33 / 103)</p>
+            <p>Dati aggiornati al: <strong>2026-05-12T10:01:52</strong></p>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <p style="margin:0; color:#888;">Disagio Oggi</p>
+                    <div class="disagio">1.9%</div>
+                    <p style="margin:0; font-size:0.9em;">(Critici: 2 / 103)</p>
+                </div>
+                <div class="stat-box">
+                    <p style="margin:0; color:#888;">Disagio Mensile</p>
+                    <div class="disagio-mese">1.9%</div>
+                    <p style="margin:0; font-size:0.9em;">(Critici: 2 / 103)</p>
+                </div>
+            </div>
         </div>
         
         <table>
@@ -114,11 +127,11 @@
 
                 <tr class="regolare">
                     <td><strong>RE80 25510</strong></td>
-                    <td>✅</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>0'</td>
-                    <td>08:45</td>
+                    <td>⚠️</td>
+                    <td>4'</td>
+                    <td>4'</td>
+                    <td>4'</td>
+                    <td>08:47</td>
                     <td></td>
                 </tr>
 
@@ -127,34 +140,34 @@
                     <td>⚠️</td>
                     <td>4'</td>
                     <td>4'</td>
-                    <td>0'</td>
+                    <td>4'</td>
                     <td>08:35</td>
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25512</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>09:43</td>
-                    <td></td>
+                    <td>Treno cancellato</td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25513</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>09:31</td>
-                    <td></td>
+                    <td>Treno cancellato</td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25514</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -162,9 +175,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25516</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -172,9 +185,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25517</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -182,9 +195,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25518</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -192,9 +205,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25519</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -202,9 +215,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25520</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -212,9 +225,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25521</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -222,9 +235,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25522</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -232,9 +245,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25523</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -242,9 +255,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25524</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -252,9 +265,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25525</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -262,9 +275,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25526</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -272,9 +285,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25527</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -282,9 +295,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25528</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -292,9 +305,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25529</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -302,9 +315,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25530</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -312,9 +325,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25531</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -322,9 +335,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25532</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -332,9 +345,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25533</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -342,9 +355,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25534</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -352,9 +365,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25535</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -362,9 +375,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25536</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -372,9 +385,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25537</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -382,9 +395,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>RE80 25538</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -392,44 +405,44 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25016</strong></td>
-                    <td>❌</td>
+                    <td>✅</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>05:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25017</strong></td>
-                    <td>❌</td>
+                    <td>✅</td>
                     <td>-2'</td>
                     <td>-2'</td>
                     <td>-2'</td>
                     <td>05:11</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25018</strong></td>
-                    <td>❌</td>
+                    <td>⚠️</td>
                     <td>2'</td>
                     <td>2'</td>
                     <td>2'</td>
                     <td>06:11</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25020</strong></td>
-                    <td>❌</td>
+                    <td>⚠️</td>
                     <td>3'</td>
                     <td>3'</td>
                     <td>3'</td>
                     <td>06:42</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
                 <tr class="regolare">
@@ -442,14 +455,14 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25024</strong></td>
-                    <td>❌</td>
+                    <td>⚠️</td>
                     <td>2'</td>
                     <td>2'</td>
                     <td>2'</td>
                     <td>07:41</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
                 <tr class="regolare">
@@ -462,59 +475,59 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
-                    <td><strong>S11 25028</strong></td>
-                    <td>❌</td>
-                    <td>5'</td>
-                    <td>5'</td>
-                    <td>0'</td>
-                    <td>08:44</td>
-                    <td><strong>LIMITATO</strong> </td>
-                </tr>
-
                 <tr class="regolare">
-                    <td><strong>S11 25029</strong></td>
+                    <td><strong>S11 25028</strong></td>
                     <td>⚠️</td>
-                    <td>3'</td>
                     <td>5'</td>
-                    <td>3'</td>
-                    <td>08:23</td>
+                    <td>5'</td>
+                    <td>5'</td>
+                    <td>08:44</td>
                     <td></td>
                 </tr>
 
                 <tr class="critico">
+                    <td><strong>S11 25029</strong></td>
+                    <td>🚨</td>
+                    <td>24'</td>
+                    <td>24'</td>
+                    <td>24'</td>
+                    <td>08:44</td>
+                    <td></td>
+                </tr>
+
+                <tr class="regolare">
                     <td><strong>S11 25032</strong></td>
-                    <td>❌</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>09:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td>⚠️</td>
+                    <td>13'</td>
+                    <td>13'</td>
+                    <td>13'</td>
+                    <td>09:52</td>
+                    <td></td>
                 </tr>
 
                 <tr class="regolare">
                     <td><strong>S11 25033</strong></td>
-                    <td>✅</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>09:20</td>
+                    <td>⚠️</td>
+                    <td>9'</td>
+                    <td>9'</td>
+                    <td>8'</td>
+                    <td>09:29</td>
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25036</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>10:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25037</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -522,19 +535,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25040</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>11:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25041</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -542,19 +555,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25044</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>12:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25045</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -562,19 +575,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25048</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>13:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25049</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -582,19 +595,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25052</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>14:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25053</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -602,19 +615,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25056</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>15:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25057</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -622,19 +635,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25060</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>16:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25061</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -642,19 +655,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25064</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>17:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25065</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -662,19 +675,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25068</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>18:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25069</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -682,19 +695,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25072</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>19:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25073</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -702,9 +715,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25075</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -712,19 +725,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25076</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>20:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25077</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -732,9 +745,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25079</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -742,19 +755,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25080</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>21:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25081</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -762,29 +775,29 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25082</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>22:09</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25084</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>22:39</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25085</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -792,9 +805,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25087</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -802,9 +815,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25187</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -812,14 +825,14 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25192</strong></td>
-                    <td>❌</td>
+                    <td>✅</td>
                     <td>-4'</td>
                     <td>-4'</td>
                     <td>-4'</td>
                     <td>23:05</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
                 <tr class="regolare">
@@ -832,14 +845,14 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25221</strong></td>
-                    <td>❌</td>
+                    <td>⚠️</td>
                     <td>4'</td>
                     <td>4'</td>
                     <td>4'</td>
                     <td>06:47</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
                 <tr class="regolare">
@@ -852,59 +865,59 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="regolare">
                     <td><strong>S11 25225</strong></td>
-                    <td>❌</td>
-                    <td>3'</td>
+                    <td>⚠️</td>
                     <td>4'</td>
-                    <td>2'</td>
-                    <td>07:46</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td>4'</td>
+                    <td>4'</td>
+                    <td>07:47</td>
+                    <td></td>
                 </tr>
 
                 <tr class="regolare">
                     <td><strong>S11 25227</strong></td>
                     <td>⚠️</td>
-                    <td>8'</td>
-                    <td>8'</td>
-                    <td>8'</td>
-                    <td>07:58</td>
+                    <td>1'</td>
+                    <td>1'</td>
+                    <td>1'</td>
+                    <td>07:51</td>
+                    <td></td>
+                </tr>
+
+                <tr class="regolare">
+                    <td><strong>S11 25229</strong></td>
+                    <td>⚠️</td>
+                    <td>12'</td>
+                    <td>12'</td>
+                    <td>11'</td>
+                    <td>08:55</td>
                     <td></td>
                 </tr>
 
                 <tr class="critico">
-                    <td><strong>S11 25229</strong></td>
-                    <td>❌</td>
-                    <td>2'</td>
-                    <td>2'</td>
-                    <td>0'</td>
-                    <td>08:45</td>
-                    <td><strong>LIMITATO</strong> </td>
-                </tr>
-
-                <tr class="regolare">
                     <td><strong>S11 25231</strong></td>
-                    <td>✅</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>08:50</td>
+                    <td>🚨</td>
+                    <td>21'</td>
+                    <td>21'</td>
+                    <td>21'</td>
+                    <td>09:11</td>
                     <td></td>
                 </tr>
 
                 <tr class="regolare">
                     <td><strong>S11 25235</strong></td>
-                    <td>✅</td>
+                    <td>⚠️</td>
+                    <td>5'</td>
+                    <td>5'</td>
                     <td>0'</td>
-                    <td>0'</td>
-                    <td>0'</td>
-                    <td>09:50</td>
+                    <td>09:55</td>
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25239</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -912,9 +925,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25243</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -922,9 +935,9 @@
                     <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25247</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -932,19 +945,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25249</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>13:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25251</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -952,19 +965,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25253</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>14:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25255</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -972,19 +985,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25257</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>15:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25259</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -992,19 +1005,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25261</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>16:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25263</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -1012,19 +1025,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25265</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>17:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25267</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -1032,19 +1045,19 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25269</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>18:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="regolare">
+                <tr class="">
                     <td><strong>S11 25271</strong></td>
-                    <td>✅</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
@@ -1052,24 +1065,24 @@
                     <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25273</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>19:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
-                <tr class="critico">
+                <tr class="">
                     <td><strong>S11 25277</strong></td>
-                    <td>❌</td>
+                    <td>⏳</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>0'</td>
                     <td>20:43</td>
-                    <td><strong>LIMITATO</strong> </td>
+                    <td></td>
                 </tr>
 
             </tbody>
