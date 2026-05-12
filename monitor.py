@@ -117,12 +117,12 @@ def calcola_stato(api_data, linea):
 
     # 2. Rilevamento Stato
     stato_calcolato = "REGOLARE"
-    if api_data.get("nonPartito", False) or (not fermate_raggiunte and ritardo_attuale == 0 and not api_data.get("stazioneUltimoRilevamento")):
-        stato_calcolato = "INATTIVO"
-    elif provvedimento == 1:
+    if provvedimento == 1:
         stato_calcolato = "SOPPRESSO"
     elif provvedimento == 2:
         stato_calcolato = "PARZ. SOPPRESSO"
+    elif api_data.get("nonPartito", False) or (not fermate_raggiunte and ritardo_attuale == 0 and not api_data.get("stazioneUltimoRilevamento")):
+        stato_calcolato = "INATTIVO"
     else:
         # Controlliamo la parola LIMITATO / TERMINA nei campi
         sub_desc = api_data.get("subTitle", "").upper()
