@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Trenord S11 & RE80</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #1a1d24;
+            --text-main: #f0f0f0;
+            --text-muted: #8b92a5;
+            --accent: #3b82f6;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+            --border-color: #2e3440;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        }
+
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .disagio-high { color: var(--danger); }
+        .disagio-med { color: var(--warning); }
+        .disagio-low { color: var(--success); }
+
+        .table-container {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: rgba(255,255,255,0.02);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr {
+            transition: background-color 0.2s ease;
+        }
+
+        tr:hover {
+            background-color: rgba(255,255,255,0.03);
+            cursor: pointer;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .status-ok { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
+        .status-warn { background-color: rgba(245, 158, 11, 0.15); color: var(--warning); }
+        .status-crit { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
+
+        .note-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Modal Styles per il Grafico */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 800px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover { color: #fff; }
+
+        .modal-title { margin-top: 0; }
+        .modal-subtitle { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            th, td { padding: 12px 10px; }
+            .hide-mobile { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Trenord Live Monitor</h1>
+        <div class="subtitle" id="last-update">Caricamento dati...</div>
+    </header>
+
+    <div class="container">
+        
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-label">Disagio Oggi</div>
+                <div class="kpi-value" id="kpi-disagio">--%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Disagio Mese</div>
+                <div class="kpi-value" id="kpi-disagio-mese">--%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Treni Oggi</div>
+                <div class="kpi-value" id="kpi-totale">--</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Critici Oggi</div>
+                <div class="kpi-value status-crit" style="background:none;" id="kpi-critici">--</div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Treno</th>
+                        <th>Stato</th>
+                        <th>Rit. Att.</th>
+                        <th>Rit. Capolinea</th>
+                        <th class="hide-mobile">Rit. Picco</th>
+                        <th class="hide-mobile">Orario Prog.</th>
+                        <th class="hide-mobile">Note</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr><td colspan="7" style="text-align:center;">Caricamento in corso...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal per Storico -->
+    <div id="chartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title" id="modal-treno-title">Dettaglio Treno</h2>
+            <div class="modal-subtitle" id="modal-treno-subtitle">Storico Ritardo</div>
+            <p id="modal-desc" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; border-left: 3px solid var(--accent); padding-left: 10px;">Questo grafico mostra l'andamento del ritardo al capolinea (in minuti) registrato nei vari giorni del mese. Ti permette di capire se il treno è cronicamente in ritardo (i giorni critici sono in rosso).</p>
+            <canvas id="delayChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <script>
+        let myChart = null;
+
+        function renderStatus(stato, critico) {
+            if(stato === "INATTIVO") {
+                return `<span class="status-badge" style="background-color:rgba(139, 146, 165, 0.15); color:var(--text-muted)">INATTIVO</span>`;
+            }
+            if(stato === "RITARDO") {
+                if(critico) return `<span class="status-badge status-crit">CRITICO</span>`;
+                return `<span class="status-badge status-warn">RITARDO</span>`;
+            }
+            if(stato !== "REGOLARE") {
+                return `<span class="status-badge status-crit">${stato}</span>`;
+            }
+            return `<span class="status-badge status-ok">REGOLARE</span>`;
+        }
+
+        function updateDashboard() {
+            fetch('/api/data')
+                .then(response => response.json())
+                .then(data => {
+                    if(data.error) {
+                        document.getElementById('table-body').innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">${data.error}</td></tr>`;
+                        return;
+                    }
+
+                    document.getElementById('last-update').innerText = `Ultimo aggiornamento scansione: ${data.ultima_scansione.replace('T', ' ')}`;
+
+                    const treni = Object.values(data.treni || {});
+                    
+                    // Sorting
+                    treni.sort((a, b) => {
+                        if(a.linea !== b.linea) return a.linea.localeCompare(b.linea);
+                        return a.numero - b.numero;
+                    });
+
+                    let numCritici = 0;
+                    let tbodyHTML = '';
+
+                    treni.forEach(t => {
+                        if(t.critico) numCritici++;
+                        
+                        let ritCapClass = t.ritardo_capolinea > 15 ? 'color: var(--danger); font-weight:bold;' : '';
+                        
+                        // Passiamo l'oggetto treno stringificato per il click
+                        const trenoData = encodeURIComponent(JSON.stringify(t));
+
+                        tbodyHTML += `
+                            <tr onclick="openModal('${trenoData}')">
+                                <td><strong>${t.linea} ${t.numero}</strong></td>
+                                <td>${renderStatus(t.stato, t.critico)}</td>
+                                <td>${t.ritardo_attuale}'</td>
+                                <td style="${ritCapClass}">${t.ritardo_capolinea}'</td>
+                                <td class="hide-mobile">${t.ritardo_picco}'</td>
+                                <td class="hide-mobile">${t.orario_programmato}</td>
+                                <td class="hide-mobile"><div class="note-text">${t.note || '-'}</div></td>
+                            </tr>
+                        `;
+                    });
+
+                    document.getElementById('table-body').innerHTML = tbodyHTML;
+                    
+                    // KPIs
+                    document.getElementById('kpi-totale').innerText = treni.length;
+                    document.getElementById('kpi-critici').innerText = numCritici;
+                    
+                    let disagio = treni.length > 0 ? ((numCritici / treni.length) * 100).toFixed(1) : 0;
+                    let disagioEl = document.getElementById('kpi-disagio');
+                    disagioEl.innerText = `${disagio}%`;
+                    
+                    disagioEl.className = 'kpi-value'; // reset
+                    if(disagio > 20) disagioEl.classList.add('disagio-high');
+                    else if(disagio > 5) disagioEl.classList.add('disagio-med');
+                    else disagioEl.classList.add('disagio-low');
+                    
+                    // Fetch monthly stats
+                    fetch('/api/monthly_stats')
+                        .then(res => res.json())
+                        .then(mdata => {
+                            let mEl = document.getElementById('kpi-disagio-mese');
+                            mEl.innerText = `${mdata.disagio}%`;
+                            mEl.className = 'kpi-value';
+                            if(mdata.disagio > 20) mEl.classList.add('disagio-high');
+                            else if(mdata.disagio > 5) mEl.classList.add('disagio-med');
+                            else mEl.classList.add('disagio-low');
+                        })
+                        .catch(e => console.error("Errore fetch monthly:", e));
+                })
+                .catch(err => console.error("Errore fetch dati:", err));
+        }
+
+        // Modal e Chart Logic
+        function openModal(trenoDataStr) {
+            const t = JSON.parse(decodeURIComponent(trenoDataStr));
+            document.getElementById('chartModal').style.display = "flex";
+            document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`;
+            document.getElementById('modal-treno-subtitle').innerText = `${t.origine} ➔ ${t.destinazione}`;
+
+            fetch(`/api/train_history/${t.numero}`)
+                .then(res => res.json())
+                .then(data => {
+                    const ctx = document.getElementById('delayChart').getContext('2d');
+                    if(myChart) myChart.destroy();
+
+                    const labels = data.history.map(h => h.data);
+                    const delays = data.history.map(h => h.ritardo_capolinea);
+                    const colors = data.history.map(h => h.critico ? '#ef4444' : '#3b82f6');
+
+                    myChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Ritardo al capolinea',
+                                data: delays,
+                                backgroundColor: colors,
+                                borderRadius: 4
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: { display: false }
+                            },
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    grid: { color: '#2e3440' },
+                                    ticks: { color: '#8b92a5' }
+                                },
+                                x: {
+                                    grid: { color: '#2e3440' },
+                                    ticks: { color: '#8b92a5' }
+                                }
+                            }
+                        }
+                    });
+                });
+        }
+
+        function closeModal() {
+            document.getElementById('chartModal').style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            let modal = document.getElementById('chartModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Auto-refresh ogni 60 secondi
+        updateDashboard();
+        setInterval(updateDashboard, 60000);
+    </script>
+</body>
+</html>
