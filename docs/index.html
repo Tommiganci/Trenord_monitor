@@ -243,7 +243,9 @@
         
         <div class="chart-container" style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); padding: 20px; margin-bottom: 30px; display: none;" id="monthly-chart-container">
             <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1rem; color: var(--text-muted);">Andamento Disagio Mensile</h3>
-            <canvas id="trendChart" width="100%" height="30"></canvas>
+            <div style="position: relative; height: 180px; width: 100%;">
+                <canvas id="trendChart"></canvas>
+            </div>
         </div>
 
         <div class="filters-container" style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
