@@ -44,21 +44,33 @@ def api_data():
 def api_monthly_stats():
     monthly_data = get_monthly_data()
     if not monthly_data:
-        return jsonify({"disagio": 0, "treni_totali": 0, "treni_anomali": 0, "giorni": 0})
+        return jsonify({"disagio": 0, "treni_totali": 0, "treni_anomali": 0, "giorni": 0, "trend": []})
     
     totale_treni = 0
     totale_anomali = 0
+    trend = []
+    
     for day_data in monthly_data:
         treni = day_data.get("treni", {})
-        totale_treni += len(treni)
-        totale_anomali += sum(1 for t in treni.values() if t.get("critico", False))
+        day_totale = len(treni)
+        day_anomali = sum(1 for t in treni.values() if t.get("critico", False))
+        
+        totale_treni += day_totale
+        totale_anomali += day_anomali
+        
+        day_disagio = (day_anomali / day_totale * 100) if day_totale > 0 else 0
+        trend.append({
+            "data": day_data.get("data", ""),
+            "disagio": round(day_disagio, 1)
+        })
         
     disagio = (totale_anomali / totale_treni * 100) if totale_treni > 0 else 0
     return jsonify({
         "disagio": round(disagio, 1),
         "treni_totali": totale_treni,
         "treni_anomali": totale_anomali,
-        "giorni": len(monthly_data)
+        "giorni": len(monthly_data),
+        "trend": trend
     })
 
 @app.route("/api/train_history/<numero>")

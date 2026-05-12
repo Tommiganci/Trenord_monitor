@@ -240,6 +240,44 @@
                 <div class="kpi-value status-crit" style="background:none;" id="kpi-critici">--</div>
             </div>
         </div>
+        
+        <div class="chart-container" style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); padding: 20px; margin-bottom: 30px; display: none;" id="monthly-chart-container">
+            <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1rem; color: var(--text-muted);">Andamento Disagio Mensile</h3>
+            <canvas id="trendChart" width="100%" height="30"></canvas>
+        </div>
+
+        <div class="filters-container" style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+            <input type="text" id="searchInput" placeholder="Cerca treno (es. 25016, Como...)" style="flex: 1; min-width: 200px; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--card-bg); color: var(--text-main); font-family: inherit;">
+            <div class="filter-buttons" style="display: flex; gap: 10px;">
+                <button class="filter-btn active" data-filter="all">Tutti</button>
+                <button class="filter-btn" data-filter="S11">S11</button>
+                <button class="filter-btn" data-filter="RE80">RE80</button>
+                <button class="filter-btn" data-filter="critici" style="border-color: var(--danger); color: var(--danger);">Solo Critici</button>
+            </div>
+        </div>
+
+        <style>
+            .filter-btn {
+                background-color: var(--bg-color);
+                color: var(--text-muted);
+                border: 1px solid var(--border-color);
+                padding: 8px 16px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.2s;
+                font-weight: 600;
+            }
+            .filter-btn:hover { background-color: var(--card-bg); }
+            .filter-btn.active {
+                background-color: var(--accent);
+                color: white;
+                border-color: var(--accent);
+            }
+            .filter-btn[data-filter="critici"].active {
+                background-color: var(--danger);
+                color: white;
+            }
+        </style>
 
         <div class="table-container">
             <table>
@@ -273,7 +311,32 @@
     </div>
 
     <script>
+        // Configurazione per export statico (GitHub Pages)
+        const IS_STATIC = false; // Verrà rimpiazzato con true da bollettino.py
+        const STATIC_DATA = null;
+        const STATIC_MONTHLY = null;
+        const STATIC_HISTORY = null;
+
         let myChart = null;
+        let trendChart = null;
+        
+        let allTrainsData = []; // Store per i filtri
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            currentSearch = e.target.value.toLowerCase();
+            renderTable();
+        });
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentFilter = e.target.dataset.filter;
+                renderTable();
+            });
+        });
 
         function renderStatus(stato, critico) {
             if(stato === "INATTIVO") {
@@ -290,126 +353,211 @@
         }
 
         function updateDashboard() {
-            fetch('/api/data')
-                .then(response => response.json())
-                .then(data => {
-                    if(data.error) {
-                        document.getElementById('table-body').innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">${data.error}</td></tr>`;
-                        return;
+            if (IS_STATIC) {
+                renderDashboardData(STATIC_DATA);
+                renderMonthlyData(STATIC_MONTHLY);
+            } else {
+                fetch('/api/data')
+                    .then(res => res.json())
+                    .then(data => renderDashboardData(data))
+                    .catch(err => console.error("Errore fetch dati:", err));
+                    
+                fetch('/api/monthly_stats')
+                    .then(res => res.json())
+                    .then(mdata => renderMonthlyData(mdata))
+                    .catch(e => console.error("Errore fetch monthly:", e));
+            }
+        }
+        
+        function renderMonthlyData(mdata) {
+            if(!mdata) return;
+            let mEl = document.getElementById('kpi-disagio-mese');
+            mEl.innerText = `${mdata.disagio}%`;
+            mEl.className = 'kpi-value';
+            if(mdata.disagio > 20) mEl.classList.add('disagio-high');
+            else if(mdata.disagio > 5) mEl.classList.add('disagio-med');
+            else mEl.classList.add('disagio-low');
+            
+            // Draw trend chart
+            if(mdata.trend && mdata.trend.length > 0) {
+                document.getElementById('monthly-chart-container').style.display = 'block';
+                const ctx = document.getElementById('trendChart').getContext('2d');
+                if(trendChart) trendChart.destroy();
+                
+                trendChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: mdata.trend.map(t => t.data.substring(5)), // Solo MM-DD
+                        datasets: [{
+                            label: 'Disagio %',
+                            data: mdata.trend.map(t => t.disagio),
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.3,
+                            pointBackgroundColor: mdata.trend.map(t => t.disagio > 20 ? '#ef4444' : (t.disagio > 5 ? '#f59e0b' : '#10b981'))
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            y: { beginAtZero: true, grid: { color: '#2e3440' }, ticks: { color: '#8b92a5', callback: v => v+'%' } },
+                            x: { grid: { display: false }, ticks: { color: '#8b92a5' } }
+                        }
                     }
+                });
+            }
+        }
 
-                    document.getElementById('last-update').innerText = `Ultimo aggiornamento scansione: ${data.ultima_scansione.replace('T', ' ')}`;
+        function renderDashboardData(data) {
+            if(!data || data.error) {
+                const err = data ? data.error : "Nessun dato";
+                document.getElementById('table-body').innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">${err}</td></tr>`;
+                return;
+            }
 
-                    const treni = Object.values(data.treni || {});
-                    
-                    // Sorting
-                    treni.sort((a, b) => {
-                        if(a.linea !== b.linea) return a.linea.localeCompare(b.linea);
-                        return a.numero - b.numero;
-                    });
+            document.getElementById('last-update').innerText = `Ultimo aggiornamento scansione: ${data.ultima_scansione.replace('T', ' ')}`;
 
-                    let numCritici = 0;
-                    let tbodyHTML = '';
+            const treni = Object.values(data.treni || {});
+            
+            // Sorting
+            treni.sort((a, b) => {
+                if(a.linea !== b.linea) return a.linea.localeCompare(b.linea);
+                return a.numero - b.numero;
+            });
+            
+            allTrainsData = treni;
+            renderTable();
+            
+            // Calcolo KPI sui treni totali (non filtrati)
+            let numCritici = 0;
+            treni.forEach(t => { if(t.critico) numCritici++; });
+            
+            document.getElementById('kpi-totale').innerText = treni.length;
+            document.getElementById('kpi-critici').innerText = numCritici;
+            
+            let disagio = treni.length > 0 ? ((numCritici / treni.length) * 100).toFixed(1) : 0;
+            let disagioEl = document.getElementById('kpi-disagio');
+            disagioEl.innerText = `${disagio}%`;
+            
+            disagioEl.className = 'kpi-value'; // reset
+            if(disagio > 20) disagioEl.classList.add('disagio-high');
+            else if(disagio > 5) disagioEl.classList.add('disagio-med');
+            else disagioEl.classList.add('disagio-low');
+        }
 
-                    treni.forEach(t => {
-                        if(t.critico) numCritici++;
-                        
-                        let ritCapClass = t.ritardo_capolinea > 15 ? 'color: var(--danger); font-weight:bold;' : '';
-                        
-                        // Passiamo l'oggetto treno stringificato per il click
-                        const trenoData = encodeURIComponent(JSON.stringify(t));
+        function renderTable() {
+            let tbodyHTML = '';
+            let count = 0;
+            
+            allTrainsData.forEach(t => {
+                // Applicazione Filtri
+                if(currentFilter === 'S11' && t.linea !== 'S11') return;
+                if(currentFilter === 'RE80' && t.linea !== 'RE80') return;
+                if(currentFilter === 'critici' && !t.critico) return;
+                
+                // Applicazione Ricerca
+                if(currentSearch) {
+                    const searchStr = `${t.linea} ${t.numero} ${t.origine} ${t.destinazione} ${t.stato} ${t.note || ''}`.toLowerCase();
+                    if(!searchStr.includes(currentSearch)) return;
+                }
+                
+                count++;
+                
+                let ritCapClass = t.ritardo_capolinea > 15 ? 'color: var(--danger); font-weight:bold;' : '';
+                
+                const noteRaw = t.note || "";
+                let noteHtml = noteRaw;
+                if(["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato)) {
+                    noteHtml = `<span class="note-soppresso">${t.stato}</span> <span style="font-size:0.85em; color:var(--text-muted)">${noteRaw}</span>`;
+                }
 
-                        tbodyHTML += `
-                            <tr onclick="openModal('${trenoData}')">
-                                <td><strong>${t.linea} ${t.numero}</strong></td>
-                                <td>${renderStatus(t.stato, t.critico)}</td>
-                                <td>${t.ritardo_attuale}'</td>
-                                <td style="${ritCapClass}">${t.ritardo_capolinea}'</td>
-                                <td class="hide-mobile">${t.ritardo_picco}'</td>
-                                <td class="hide-mobile">${t.orario_programmato}</td>
-                                <td class="hide-mobile"><div class="note-text">${t.note || '-'}</div></td>
-                            </tr>
-                        `;
-                    });
+                const trenoData = encodeURIComponent(JSON.stringify({
+                    linea: t.linea, 
+                    numero: t.numero,
+                    origine: t.origine,
+                    destinazione: t.destinazione
+                }));
+                
+                let trClass = (t.critico && t.stato !== "INATTIVO") ? 'class="row-critico"' : '';
 
-                    document.getElementById('table-body').innerHTML = tbodyHTML;
-                    
-                    // KPIs
-                    document.getElementById('kpi-totale').innerText = treni.length;
-                    document.getElementById('kpi-critici').innerText = numCritici;
-                    
-                    let disagio = treni.length > 0 ? ((numCritici / treni.length) * 100).toFixed(1) : 0;
-                    let disagioEl = document.getElementById('kpi-disagio');
-                    disagioEl.innerText = `${disagio}%`;
-                    
-                    disagioEl.className = 'kpi-value'; // reset
-                    if(disagio > 20) disagioEl.classList.add('disagio-high');
-                    else if(disagio > 5) disagioEl.classList.add('disagio-med');
-                    else disagioEl.classList.add('disagio-low');
-                    
-                    // Fetch monthly stats
-                    fetch('/api/monthly_stats')
-                        .then(res => res.json())
-                        .then(mdata => {
-                            let mEl = document.getElementById('kpi-disagio-mese');
-                            mEl.innerText = `${mdata.disagio}%`;
-                            mEl.className = 'kpi-value';
-                            if(mdata.disagio > 20) mEl.classList.add('disagio-high');
-                            else if(mdata.disagio > 5) mEl.classList.add('disagio-med');
-                            else mEl.classList.add('disagio-low');
-                        })
-                        .catch(e => console.error("Errore fetch monthly:", e));
-                })
-                .catch(err => console.error("Errore fetch dati:", err));
+                tbodyHTML += `
+                    <tr ${trClass} onclick="openModal('${trenoData}', ${t.numero})">
+                        <td><strong>${t.linea} ${t.numero}</strong></td>
+                        <td>${renderStatus(t.stato, t.critico)}</td>
+                        <td>${t.ritardo_attuale}'</td>
+                        <td style="${ritCapClass}">${t.ritardo_capolinea}'</td>
+                        <td class="hide-mobile">${t.ritardo_picco}'</td>
+                        <td class="hide-mobile">${t.orario_programmato}</td>
+                        <td class="hide-mobile"><div class="note-text">${noteHtml || '-'}</div></td>
+                    </tr>
+                `;
+            });
+
+            if(count === 0) {
+                tbodyHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-muted)">Nessun treno trovato</td></tr>`;
+            }
+
+            document.getElementById('table-body').innerHTML = tbodyHTML;
         }
 
         // Modal e Chart Logic
-        function openModal(trenoDataStr) {
+        function openModal(trenoDataStr, numero) {
             const t = JSON.parse(decodeURIComponent(trenoDataStr));
             document.getElementById('chartModal').style.display = "flex";
             document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`;
             document.getElementById('modal-treno-subtitle').innerText = `${t.origine} ➔ ${t.destinazione}`;
 
-            fetch(`/api/train_history/${t.numero}`)
-                .then(res => res.json())
-                .then(data => {
-                    const ctx = document.getElementById('delayChart').getContext('2d');
-                    if(myChart) myChart.destroy();
+            if(IS_STATIC) {
+                renderChart(STATIC_HISTORY[numero] || []);
+            } else {
+                fetch(`/api/train_history/${numero}`)
+                    .then(res => res.json())
+                    .then(data => renderChart(data.history))
+                    .catch(err => console.error("Errore chart:", err));
+            }
+        }
 
-                    const labels = data.history.map(h => h.data);
-                    const delays = data.history.map(h => h.ritardo_capolinea);
-                    const colors = data.history.map(h => h.critico ? '#ef4444' : '#3b82f6');
+        function renderChart(historyArray) {
+            const ctx = document.getElementById('delayChart').getContext('2d');
+            if(myChart) myChart.destroy();
 
-                    myChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: 'Ritardo al capolinea',
-                                data: delays,
-                                backgroundColor: colors,
-                                borderRadius: 4
-                            }]
+            const labels = historyArray.map(h => h.data);
+            const delays = historyArray.map(h => h.ritardo_capolinea);
+            const colors = historyArray.map(h => h.critico ? '#ef4444' : '#3b82f6');
+
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Ritardo al capolinea',
+                        data: delays,
+                        backgroundColor: colors,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#2e3440' },
+                            ticks: { color: '#8b92a5' }
                         },
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                legend: { display: false }
-                            },
-                            scales: {
-                                y: {
-                                    beginAtZero: true,
-                                    grid: { color: '#2e3440' },
-                                    ticks: { color: '#8b92a5' }
-                                },
-                                x: {
-                                    grid: { color: '#2e3440' },
-                                    ticks: { color: '#8b92a5' }
-                                }
-                            }
+                        x: {
+                            grid: { color: '#2e3440' },
+                            ticks: { color: '#8b92a5' }
                         }
-                    });
-                });
+                    }
+                }
+            });
         }
 
         function closeModal() {

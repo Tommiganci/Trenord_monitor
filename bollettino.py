@@ -129,126 +129,69 @@ def export_html(data):
         os.makedirs(DOCS_DIR)
 
     html_path = os.path.join(DOCS_DIR, "index.html")
+    template_path = os.path.join("templates", "index.html")
     
-    # Dati oggi
-    treni = data.get("treni", {})
-    totale_treni = len(treni)
-    treni_anomali = sum(1 for t in treni.values() if t.get("critico", False))
-    disagio = (treni_anomali / totale_treni * 100) if totale_treni > 0 else 0
+    if not os.path.exists(template_path):
+        print("Errore: template index.html non trovato!")
+        return
+
+    # Calcola statistiche mensili
+    monthly_data = get_monthly_data()
     
-    # Dati mese
-    m_data = get_monthly_data()
-    m_totale = 0
-    m_anomali = 0
-    for d in m_data:
-        m_treni = d.get("treni", {})
-        m_totale += len(m_treni)
-        m_anomali += sum(1 for t in m_treni.values() if t.get("critico", False))
-    disagio_mese = (m_anomali / m_totale * 100) if m_totale > 0 else 0
+    totale_treni = 0
+    totale_anomali = 0
+    trend = []
     
-    ultima_scansione = data.get("ultima_scansione", "")
-    sorted_treni = sorted(treni.values(), key=lambda x: (x.get("linea", ""), x.get("numero", 0)))
-
-    html_content = f"""<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bollettino Trenord S11 & RE80</title>
-    <style>
-        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #121212; color: #e0e0e0; margin: 0; padding: 20px; }}
-        h1, h2, h3 {{ color: #ffffff; }}
-        .container {{ max-width: 1000px; margin: 0 auto; }}
-        .header-card {{ background-color: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #333; }}
-        .stats-grid {{ display: flex; justify-content: space-around; margin-top: 15px; }}
-        .stat-box {{ text-align: center; }}
-        .disagio {{ font-size: 2.5em; font-weight: bold; color: { '#ff5252' if disagio > 20 else '#ffb142' if disagio > 5 else '#33d9b2' }; }}
-        .disagio-mese {{ font-size: 2.5em; font-weight: bold; color: { '#ff5252' if disagio_mese > 20 else '#ffb142' if disagio_mese > 5 else '#33d9b2' }; }}
-        table {{ width: 100%; border-collapse: collapse; background-color: #1e1e1e; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }}
-        th, td {{ padding: 12px 15px; text-align: left; border-bottom: 1px solid #333; }}
-        th {{ background-color: #2c2c2c; color: #fff; font-weight: 600; text-transform: uppercase; font-size: 0.9em; }}
-        tr:hover {{ background-color: #2a2a2a; }}
-        .critico {{ background-color: rgba(255, 82, 82, 0.1); border-left: 4px solid #ff5252; }}
-        .regolare {{ border-left: 4px solid #33d9b2; }}
-        .footer {{ text-align: center; margin-top: 30px; font-size: 0.8em; color: #888; }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header-card">
-            <h1>Bollettino Trenord (S11 & RE80)</h1>
-            <p>Dati aggiornati al: <strong>{ultima_scansione}</strong></p>
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <p style="margin:0; color:#888;">Disagio Oggi</p>
-                    <div class="disagio">{disagio:.1f}%</div>
-                    <p style="margin:0; font-size:0.9em;">(Critici: {treni_anomali} / {totale_treni})</p>
-                </div>
-                <div class="stat-box">
-                    <p style="margin:0; color:#888;">Disagio Mensile</p>
-                    <div class="disagio-mese">{disagio_mese:.1f}%</div>
-                    <p style="margin:0; font-size:0.9em;">(Critici: {m_anomali} / {m_totale})</p>
-                </div>
-            </div>
-        </div>
+    for day_data in monthly_data:
+        treni = day_data.get("treni", {})
+        day_totale = len(treni)
+        day_anomali = sum(1 for t in treni.values() if t.get("critico", False))
         
-        <table>
-            <thead>
-                <tr>
-                    <th>Treno</th>
-                    <th>Stato</th>
-                    <th>Rit. Attuale</th>
-                    <th>Rit. Picco</th>
-                    <th>Rit. Capolinea</th>
-                    <th>Orario Prog.</th>
-                    <th>Note</th>
-                </tr>
-            </thead>
-            <tbody>
-"""
-
-    for t in sorted_treni:
-        linea_num = f"{t.get('linea', '')} {t.get('numero', '')}"
-        stato = t.get("stato", "REGOLARE")
-        critico = t.get("critico", False)
+        totale_treni += day_totale
+        totale_anomali += day_anomali
         
-        row_class = "critico" if critico else "regolare"
-        if stato == "INATTIVO":
-            row_class = ""
-            
-        emoji = get_emoji_stato(stato, critico)
+        day_disagio = (day_anomali / day_totale * 100) if day_totale > 0 else 0
+        trend.append({
+            "data": day_data.get("data", ""),
+            "disagio": round(day_disagio, 1)
+        })
         
-        note = t.get('note', '')
-        if stato in ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]:
-            note = f"<strong>{stato}</strong> {note}"
+    disagio_mese = (totale_anomali / totale_treni * 100) if totale_treni > 0 else 0
+    
+    monthly_stats = {
+        "disagio": round(disagio_mese, 1),
+        "treni_totali": totale_treni,
+        "treni_anomali": totale_anomali,
+        "giorni": len(monthly_data),
+        "trend": trend
+    }
 
-        html_content += f"""
-                <tr class="{row_class}">
-                    <td><strong>{linea_num}</strong></td>
-                    <td>{emoji}</td>
-                    <td>{t.get('ritardo_attuale', 0)}'</td>
-                    <td>{t.get('ritardo_picco', 0)}'</td>
-                    <td>{t.get('ritardo_capolinea', 0)}'</td>
-                    <td>{t.get('orario_programmato', '')}</td>
-                    <td>{note}</td>
-                </tr>
-"""
+    # Calcola storico treni
+    train_history = {}
+    for day_data in monthly_data:
+        date_str = day_data.get("data", "")
+        for num_str, t in day_data.get("treni", {}).items():
+            if num_str not in train_history:
+                train_history[num_str] = []
+            train_history[num_str].append({
+                "data": date_str,
+                "ritardo_capolinea": t.get("ritardo_capolinea", 0),
+                "critico": t.get("critico", False),
+                "stato": t.get("stato", "REGOLARE")
+            })
 
-    html_content += """
-            </tbody>
-        </table>
-        <div class="footer">
-            Generato automaticamente da Trenord Monitor
-        </div>
-    </div>
-</body>
-</html>
-"""
+    with open(template_path, "r", encoding="utf-8") as f:
+        html = f.read()
+
+    html = html.replace("const IS_STATIC = false;", "const IS_STATIC = true;")
+    html = html.replace("const STATIC_DATA = null;", f"const STATIC_DATA = {json.dumps(data)};")
+    html = html.replace("const STATIC_MONTHLY = null;", f"const STATIC_MONTHLY = {json.dumps(monthly_stats)};")
+    html = html.replace("const STATIC_HISTORY = null;", f"const STATIC_HISTORY = {json.dumps(train_history)};")
 
     with open(html_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
+        f.write(html)
     
-    print(f"Esportazione HTML completata: {html_path}")
+    print(f"Esportazione HTML statica interattiva completata: {html_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Bollettino Trenord")

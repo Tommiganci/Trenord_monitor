@@ -26,11 +26,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Archive Old Data
+        run: python archive.py
+
       - name: Run Monitor (Raccolta Dati)
         run: python monitor.py
 
       - name: Generate HTML Bollettino
         run: python bollettino.py --export-html
+
+      - name: Telegram Alerts
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        run: python telegram_bot.py
 
       - name: Commit and Push Changes
         run: |
