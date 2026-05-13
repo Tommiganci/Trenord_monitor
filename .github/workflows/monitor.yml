@@ -2,7 +2,7 @@ name: Trenord Monitor
 
 on:
   schedule:
-    - cron: '0 4-22 * * *' # Ogni ora dalle 04:00 alle 22:00 UTC (06:00-00:00 ora italiana)
+    - cron: '17 4-22 * * *' # Ogni ora dalle 04:00 alle 22:00 UTC (06:00-00:00 ora italiana)
   workflow_dispatch: # Permette esecuzione manuale
 
 jobs:
