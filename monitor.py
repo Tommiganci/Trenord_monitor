@@ -150,8 +150,23 @@ def merge_dati(old_data, new_scan, now_dt):
             "storico_ritardi": [{"ts": time_min, "rit": new_scan["ritardo_attuale"]}]
         }
     
-    stato = new_scan["stato"] if new_scan["stato"] in ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"] else old_data["stato"]
-    is_critico = old_data.get("critico", False) or new_scan["ritardo_capolinea"] > 15 or stato in ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]
+    non_ok_states = ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]
+    old_stato = old_data["stato"]
+
+    if new_scan["stato"] in non_ok_states:
+        # Stato critico è sempre irreversibile
+        stato = new_scan["stato"]
+    elif old_stato == "INATTIVO" and new_scan["stato"] != "INATTIVO":
+        # Il treno era in attesa ed ora è partito: aggiorna lo stato
+        stato = new_scan["stato"]
+    elif old_stato in non_ok_states:
+        # Stato critico precedente: mantienilo
+        stato = old_stato
+    else:
+        # Per REGOLARE/RITARDO: non retrocedere mai a INATTIVO
+        stato = new_scan["stato"] if new_scan["stato"] != "INATTIVO" else old_stato
+
+    is_critico = old_data.get("critico", False) or new_scan["ritardo_capolinea"] > 15 or stato in non_ok_states
         
     ritardo_attuale = new_scan["ritardo_attuale"]
     ritardo_picco = max(old_data.get("ritardo_picco", 0), ritardo_attuale)
