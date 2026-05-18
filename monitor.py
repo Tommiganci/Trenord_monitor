@@ -197,6 +197,9 @@ def main():
                 db_data = json.load(f)
         except Exception as e:
             logging.error(f"Errore lettura {db_file}: {e}")
+
+    # FIX: aggiorna sempre ultima_scansione dopo il caricamento dal disco
+    db_data["ultima_scansione"] = now_it.isoformat()
             
     success_count = 0
             
