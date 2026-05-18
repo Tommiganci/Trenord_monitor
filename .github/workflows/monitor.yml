@@ -5,6 +5,10 @@ on:
     - cron: '13 4-22 * * *' # Ogni ora dalle 04:00 alle 22:00 UTC (06:00-00:00 ora italiana)
   workflow_dispatch: # Permette esecuzione manuale
 
+concurrency:
+  group: trenord-monitor
+  cancel-in-progress: false # Non cancellare run in corso, aspetta
+
 jobs:
   monitor:
     runs-on: ubuntu-latest
@@ -48,8 +52,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ docs/
           if ! git diff --staged --quiet; then
-            git commit -m "Auto-update data and dashboard"
-            git push
+            git commit -m "Auto-update data and dashboard [$(date '+%Y-%m-%d %H:%M')]"
+            git pull --rebase origin main
+            git push origin main
           else
             echo "Nessuna modifica da salvare"
           fi
