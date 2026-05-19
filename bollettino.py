@@ -88,6 +88,7 @@ def print_bollettino(data):
     print(f"GRADO DI DISAGIO: {disagio:.1f}%\n")
 
 def get_monthly_data():
+    """Legge i file del mese corrente."""
     if not os.path.exists(DATA_DIR):
         return []
     files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
@@ -98,6 +99,51 @@ def get_monthly_data():
             with open(f, "r", encoding="utf-8") as file:
                 monthly_data.append(json.load(file))
     return monthly_data
+
+def get_all_data():
+    """Legge tutti i file storici disponibili."""
+    if not os.path.exists(DATA_DIR):
+        return []
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    all_data = []
+    for f in sorted(files):
+        try:
+            with open(f, "r", encoding="utf-8") as file:
+                all_data.append(json.load(file))
+        except Exception as e:
+            logging.warning(f"Errore lettura {f}: {e}")
+    return all_data
+
+def compute_monthly_aggregates(all_data):
+    """Raggruppa i dati giornalieri per mese e calcola gli indici aggregati."""
+    mesi = {}
+    for day_data in all_data:
+        data_str = day_data.get("data", "")
+        if not data_str or len(data_str) < 7:
+            continue
+        mese_key = data_str[:7]  # YYYY-MM
+        treni = day_data.get("treni", {})
+        day_tot = len(treni)
+        day_an = sum(1 for t in treni.values() if t.get("critico", False))
+        if mese_key not in mesi:
+            mesi[mese_key] = {"treni_totali": 0, "treni_anomali": 0, "giorni": 0}
+        mesi[mese_key]["treni_totali"] += day_tot
+        mesi[mese_key]["treni_anomali"] += day_an
+        mesi[mese_key]["giorni"] += 1
+
+    result = []
+    for mese_key, stats in sorted(mesi.items(), reverse=True):
+        tot = stats["treni_totali"]
+        an = stats["treni_anomali"]
+        disagio = round((an / tot * 100) if tot > 0 else 0, 1)
+        result.append({
+            "data": mese_key,
+            "treni_totali": tot,
+            "treni_anomali": an,
+            "giorni": stats["giorni"],
+            "disagio": disagio
+        })
+    return result
 
 def print_monthly_report():
     monthly_data = get_monthly_data()
@@ -135,7 +181,7 @@ def export_html(data):
         print("Errore: template index.html non trovato!")
         return
 
-    # Calcola statistiche mensili
+    # Calcola statistiche del mese corrente (per KPI e grafico trend)
     monthly_data = get_monthly_data()
     
     totale_treni = 0
@@ -166,9 +212,10 @@ def export_html(data):
         "trend": trend
     }
 
-    # Calcola storico treni
+    # Calcola storico treni (tutti i mesi disponibili)
+    all_data = get_all_data()
     train_history = {}
-    for day_data in monthly_data:
+    for day_data in all_data:
         date_str = day_data.get("data", "")
         for num_str, t in day_data.get("treni", {}).items():
             if num_str not in train_history:
@@ -180,6 +227,9 @@ def export_html(data):
                 "stato": t.get("stato", "REGOLARE")
             })
 
+    # Calcola storico mensile aggregato (mese per mese)
+    monthly_aggregates = compute_monthly_aggregates(all_data)
+
     with open(template_path, "r", encoding="utf-8") as f:
         html = f.read()
 
@@ -187,6 +237,7 @@ def export_html(data):
     html = html.replace("const STATIC_DATA = null;", f"const STATIC_DATA = {json.dumps(data)};")
     html = html.replace("const STATIC_MONTHLY = null;", f"const STATIC_MONTHLY = {json.dumps(monthly_stats)};")
     html = html.replace("const STATIC_HISTORY = null;", f"const STATIC_HISTORY = {json.dumps(train_history)};")
+    html = html.replace("const STATIC_DAILY_TREND = null;", f"const STATIC_DAILY_TREND = {json.dumps(monthly_aggregates)};")
 
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html)

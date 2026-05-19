@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,9 +98,17 @@
             letter-spacing: 1px;
         }
 
-        .disagio-high { color: var(--danger); }
-        .disagio-med { color: var(--warning); }
-        .disagio-low { color: var(--success); }
+        .disagio-high {
+            color: var(--danger);
+        }
+
+        .disagio-med {
+            color: var(--warning);
+        }
+
+        .disagio-low {
+            color: var(--success);
+        }
 
         .table-container {
             background-color: var(--card-bg);
@@ -115,7 +124,7 @@
         }
 
         th {
-            background-color: rgba(255,255,255,0.02);
+            background-color: rgba(255, 255, 255, 0.02);
             color: var(--text-muted);
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -140,7 +149,7 @@
         }
 
         tr:hover {
-            background-color: rgba(255,255,255,0.03);
+            background-color: rgba(255, 255, 255, 0.03);
             cursor: pointer;
         }
 
@@ -153,9 +162,20 @@
             letter-spacing: 0.5px;
         }
 
-        .status-ok { background-color: rgba(16, 185, 129, 0.15); color: var(--success); }
-        .status-warn { background-color: rgba(245, 158, 11, 0.15); color: var(--warning); }
-        .status-crit { background-color: rgba(239, 68, 68, 0.15); color: var(--danger); }
+        .status-ok {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .status-warn {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+
+        .status-crit {
+            background-color: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+        }
 
         .note-text {
             color: var(--text-muted);
@@ -175,7 +195,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
             align-items: center;
             justify-content: center;
@@ -202,17 +222,34 @@
             transition: color 0.2s;
         }
 
-        .close-btn:hover { color: #fff; }
+        .close-btn:hover {
+            color: #fff;
+        }
 
-        .modal-title { margin-top: 0; }
-        .modal-subtitle { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+        .modal-title {
+            margin-top: 0;
+        }
+
+        .modal-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
 
         @media (max-width: 768px) {
-            th, td { padding: 12px 10px; }
-            .hide-mobile { display: none; }
+
+            th,
+            td {
+                padding: 12px 10px;
+            }
+
+            .hide-mobile {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -221,7 +258,7 @@
     </header>
 
     <div class="container">
-        
+
         <div class="kpi-container">
             <div class="kpi-card">
                 <div class="kpi-label">Disagio Oggi</div>
@@ -240,21 +277,49 @@
                 <div class="kpi-value status-crit" style="background:none;" id="kpi-critici">--</div>
             </div>
         </div>
-        
-        <div class="chart-container" style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); padding: 20px; margin-bottom: 30px; display: none;" id="monthly-chart-container">
-            <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1rem; color: var(--text-muted);">Andamento Disagio Mensile</h3>
+
+        <div class="chart-container"
+            style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); padding: 20px; margin-bottom: 30px; display: none;"
+            id="monthly-chart-container">
+            <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 1rem; color: var(--text-muted);">Andamento Disagio
+                Mensile</h3>
             <div style="position: relative; height: 180px; width: 100%;">
                 <canvas id="trendChart"></canvas>
             </div>
         </div>
 
-        <div class="filters-container" style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
-            <input type="text" id="searchInput" placeholder="Cerca treno (es. 25016, Como...)" style="flex: 1; min-width: 200px; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--card-bg); color: var(--text-main); font-family: inherit;">
+        <!-- Sezione Storico Affidabilità Mensile -->
+        <div id="daily-history-container" style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 30px; display: none;">
+            <div id="daily-history-header" onclick="toggleDailyHistory()" style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
+                <h3 style="margin: 0; font-size: 1rem; color: var(--text-muted);">&#128197; Storico Affidabilit&agrave; Mensile</h3>
+                <span id="daily-history-toggle-icon" style="color: var(--text-muted); font-size: 1.2rem; transition: transform 0.3s;">&#9660;</span>
+            </div>
+            <div id="daily-history-body" style="display: none; overflow: hidden;">
+                <table style="width:100%; border-collapse: collapse; font-size: 0.9rem;">
+                    <thead>
+                        <tr>
+                            <th style="padding: 10px 20px; text-align: left; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">Mese</th>
+                            <th style="padding: 10px 20px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">Giorni Mon.</th>
+                            <th style="padding: 10px 20px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">Treni Tot.</th>
+                            <th style="padding: 10px 20px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">Critici</th>
+                            <th style="padding: 10px 20px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">Disagio %</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daily-history-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="filters-container"
+            style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+            <input type="text" id="searchInput" placeholder="Cerca treno (es. 25016, Como...)"
+                style="flex: 1; min-width: 200px; padding: 10px 15px; border-radius: 8px; border: 1px solid var(--border-color); background-color: var(--card-bg); color: var(--text-main); font-family: inherit;">
             <div class="filter-buttons" style="display: flex; gap: 10px;">
                 <button class="filter-btn active" data-filter="all">Tutti</button>
                 <button class="filter-btn" data-filter="S11">S11</button>
                 <button class="filter-btn" data-filter="RE80">RE80</button>
-                <button class="filter-btn" data-filter="critici" style="border-color: var(--danger); color: var(--danger);">Solo Critici</button>
+                <button class="filter-btn" data-filter="critici"
+                    style="border-color: var(--danger); color: var(--danger);">Solo Critici</button>
             </div>
         </div>
 
@@ -269,12 +334,17 @@
                 transition: all 0.2s;
                 font-weight: 600;
             }
-            .filter-btn:hover { background-color: var(--card-bg); }
+
+            .filter-btn:hover {
+                background-color: var(--card-bg);
+            }
+
             .filter-btn.active {
                 background-color: var(--accent);
                 color: white;
                 border-color: var(--accent);
             }
+
             .filter-btn[data-filter="critici"].active {
                 background-color: var(--danger);
                 color: white;
@@ -295,7 +365,9 @@
                     </tr>
                 </thead>
                 <tbody id="table-body">
-                    <tr><td colspan="7" style="text-align:center;">Caricamento in corso...</td></tr>
+                    <tr>
+                        <td colspan="7" style="text-align:center;">Caricamento in corso...</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -307,7 +379,10 @@
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2 class="modal-title" id="modal-treno-title">Dettaglio Treno</h2>
             <div class="modal-subtitle" id="modal-treno-subtitle">Storico Ritardo</div>
-            <p id="modal-desc" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; border-left: 3px solid var(--accent); padding-left: 10px;">Questo grafico mostra l'andamento del ritardo al capolinea (in minuti) registrato nei vari giorni del mese. Ti permette di capire se il treno è cronicamente in ritardo (i giorni critici sono in rosso).</p>
+            <p id="modal-desc"
+                style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; border-left: 3px solid var(--accent); padding-left: 10px;">
+                Questo grafico mostra l'andamento del ritardo al capolinea (in minuti) registrato nei vari giorni del
+                mese. Ti permette di capire se il treno è cronicamente in ritardo (i giorni critici sono in rosso).</p>
             <canvas id="delayChart" width="400" height="200"></canvas>
         </div>
     </div>
@@ -318,10 +393,11 @@
         const STATIC_DATA = null;
         const STATIC_MONTHLY = null;
         const STATIC_HISTORY = null;
+        const STATIC_DAILY_TREND = null;
 
         let myChart = null;
         let trendChart = null;
-        
+
         let allTrainsData = []; // Store per i filtri
         let currentFilter = 'all';
         let currentSearch = '';
@@ -341,14 +417,14 @@
         });
 
         function renderStatus(stato, critico) {
-            if(stato === "INATTIVO") {
+            if (stato === "INATTIVO") {
                 return `<span class="status-badge" style="background-color:rgba(139, 146, 165, 0.15); color:var(--text-muted)">INATTIVO</span>`;
             }
-            if(stato === "RITARDO") {
-                if(critico) return `<span class="status-badge status-crit">CRITICO</span>`;
+            if (stato === "RITARDO") {
+                if (critico) return `<span class="status-badge status-crit">CRITICO</span>`;
                 return `<span class="status-badge status-warn">RITARDO</span>`;
             }
-            if(stato !== "REGOLARE") {
+            if (stato !== "REGOLARE") {
                 return `<span class="status-badge status-crit">${stato}</span>`;
             }
             return `<span class="status-badge status-ok">REGOLARE</span>`;
@@ -358,34 +434,38 @@
             if (IS_STATIC) {
                 renderDashboardData(STATIC_DATA);
                 renderMonthlyData(STATIC_MONTHLY);
+                renderDailyHistory(STATIC_DAILY_TREND);
             } else {
                 fetch('/api/data')
                     .then(res => res.json())
                     .then(data => renderDashboardData(data))
                     .catch(err => console.error("Errore fetch dati:", err));
-                    
+
                 fetch('/api/monthly_stats')
                     .then(res => res.json())
-                    .then(mdata => renderMonthlyData(mdata))
+                    .then(mdata => {
+                        renderMonthlyData(mdata);
+                        renderDailyHistory(mdata.trend);
+                    })
                     .catch(e => console.error("Errore fetch monthly:", e));
             }
         }
-        
+
         function renderMonthlyData(mdata) {
-            if(!mdata) return;
+            if (!mdata) return;
             let mEl = document.getElementById('kpi-disagio-mese');
             mEl.innerText = `${mdata.disagio}%`;
             mEl.className = 'kpi-value';
-            if(mdata.disagio > 20) mEl.classList.add('disagio-high');
-            else if(mdata.disagio > 5) mEl.classList.add('disagio-med');
+            if (mdata.disagio > 20) mEl.classList.add('disagio-high');
+            else if (mdata.disagio > 5) mEl.classList.add('disagio-med');
             else mEl.classList.add('disagio-low');
-            
+
             // Draw trend chart
-            if(mdata.trend && mdata.trend.length > 0) {
+            if (mdata.trend && mdata.trend.length > 0) {
                 document.getElementById('monthly-chart-container').style.display = 'block';
                 const ctx = document.getElementById('trendChart').getContext('2d');
-                if(trendChart) trendChart.destroy();
-                
+                if (trendChart) trendChart.destroy();
+
                 trendChart = new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -406,7 +486,7 @@
                         maintainAspectRatio: false,
                         plugins: { legend: { display: false } },
                         scales: {
-                            y: { beginAtZero: true, grid: { color: '#2e3440' }, ticks: { color: '#8b92a5', callback: v => v+'%' } },
+                            y: { beginAtZero: true, grid: { color: '#2e3440' }, ticks: { color: '#8b92a5', callback: v => v + '%' } },
                             x: { grid: { display: false }, ticks: { color: '#8b92a5' } }
                         }
                     }
@@ -414,8 +494,62 @@
             }
         }
 
+        function renderDailyHistory(trend) {
+            if (!trend || trend.length === 0) return;
+            const container = document.getElementById('daily-history-container');
+            const tbody = document.getElementById('daily-history-table-body');
+            container.style.display = 'block';
+
+            const MESI_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
+                             'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
+            function formatMese(key) {
+                // key = "YYYY-MM"
+                const parts = key.split('-');
+                if (parts.length < 2) return key;
+                const m = parseInt(parts[1], 10) - 1;
+                return `${MESI_IT[m] || parts[1]} ${parts[0]}`;
+            }
+
+            tbody.innerHTML = trend.map((d, idx) => {
+                const disagio = d.disagio !== undefined ? d.disagio : 0;
+                const colorStyle = disagio > 20 ? 'color: var(--danger); font-weight: 600;'
+                                 : disagio > 5  ? 'color: var(--warning); font-weight: 600;'
+                                 :                'color: var(--success);';
+                const rowBg = idx % 2 === 0 ? '' : 'background-color: rgba(255,255,255,0.015);';
+                const treni = d.treni_totali !== undefined ? d.treni_totali : '-';
+                const critici = d.treni_anomali !== undefined ? d.treni_anomali : '-';
+                const giorni = d.giorni !== undefined ? d.giorni : '-';
+                return `<tr style="${rowBg}">
+                    <td style="padding: 10px 20px; border-bottom: 1px solid var(--border-color); font-weight: 600;">${formatMese(d.data)}</td>
+                    <td style="padding: 10px 20px; text-align: right; border-bottom: 1px solid var(--border-color); color: var(--text-muted);">${giorni}</td>
+                    <td style="padding: 10px 20px; text-align: right; border-bottom: 1px solid var(--border-color);">${treni}</td>
+                    <td style="padding: 10px 20px; text-align: right; border-bottom: 1px solid var(--border-color);">${critici}</td>
+                    <td style="padding: 10px 20px; text-align: right; border-bottom: 1px solid var(--border-color); ${colorStyle}">${disagio.toFixed(1)}%</td>
+                </tr>`;
+            }).join('');
+
+            // Rimuovi border-bottom dall'ultima riga
+            const rows = tbody.querySelectorAll('tr');
+            if (rows.length > 0) {
+                rows[rows.length - 1].querySelectorAll('td').forEach(td => td.style.borderBottom = 'none');
+            }
+        }
+
+        function toggleDailyHistory() {
+            const body = document.getElementById('daily-history-body');
+            const icon = document.getElementById('daily-history-toggle-icon');
+            if (body.style.display === 'none') {
+                body.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                body.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
         function renderDashboardData(data) {
-            if(!data || data.error) {
+            if (!data || data.error) {
                 const err = data ? data.error : "Nessun dato";
                 document.getElementById('table-body').innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">${err}</td></tr>`;
                 return;
@@ -424,66 +558,66 @@
             document.getElementById('last-update').innerText = `Ultimo aggiornamento scansione: ${data.ultima_scansione.replace('T', ' ')}`;
 
             const treni = Object.values(data.treni || {});
-            
+
             // Sorting
             treni.sort((a, b) => {
-                if(a.linea !== b.linea) return a.linea.localeCompare(b.linea);
+                if (a.linea !== b.linea) return a.linea.localeCompare(b.linea);
                 return a.numero - b.numero;
             });
-            
+
             allTrainsData = treni;
             renderTable();
-            
+
             // Calcolo KPI sui treni totali (non filtrati)
             let numCritici = 0;
-            treni.forEach(t => { if(t.critico) numCritici++; });
-            
+            treni.forEach(t => { if (t.critico) numCritici++; });
+
             document.getElementById('kpi-totale').innerText = treni.length;
             document.getElementById('kpi-critici').innerText = numCritici;
-            
+
             let disagio = treni.length > 0 ? ((numCritici / treni.length) * 100).toFixed(1) : 0;
             let disagioEl = document.getElementById('kpi-disagio');
             disagioEl.innerText = `${disagio}%`;
-            
+
             disagioEl.className = 'kpi-value'; // reset
-            if(disagio > 20) disagioEl.classList.add('disagio-high');
-            else if(disagio > 5) disagioEl.classList.add('disagio-med');
+            if (disagio > 20) disagioEl.classList.add('disagio-high');
+            else if (disagio > 5) disagioEl.classList.add('disagio-med');
             else disagioEl.classList.add('disagio-low');
         }
 
         function renderTable() {
             let tbodyHTML = '';
             let count = 0;
-            
+
             allTrainsData.forEach(t => {
                 // Applicazione Filtri
-                if(currentFilter === 'S11' && t.linea !== 'S11') return;
-                if(currentFilter === 'RE80' && t.linea !== 'RE80') return;
-                if(currentFilter === 'critici' && !t.critico) return;
-                
+                if (currentFilter === 'S11' && t.linea !== 'S11') return;
+                if (currentFilter === 'RE80' && t.linea !== 'RE80') return;
+                if (currentFilter === 'critici' && !t.critico) return;
+
                 // Applicazione Ricerca
-                if(currentSearch) {
+                if (currentSearch) {
                     const searchStr = `${t.linea} ${t.numero} ${t.origine} ${t.destinazione} ${t.stato} ${t.note || ''}`.toLowerCase();
-                    if(!searchStr.includes(currentSearch)) return;
+                    if (!searchStr.includes(currentSearch)) return;
                 }
-                
+
                 count++;
-                
+
                 let ritCapClass = t.ritardo_capolinea > 15 ? 'color: var(--danger); font-weight:bold;' : '';
-                
+
                 const noteRaw = t.note || "";
                 let noteHtml = noteRaw;
-                if(["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato)) {
+                if (["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato)) {
                     noteHtml = `<span class="note-soppresso">${t.stato}</span> <span style="font-size:0.85em; color:var(--text-muted)">${noteRaw}</span>`;
                 }
 
                 const trenoData = encodeURIComponent(JSON.stringify({
-                    linea: t.linea, 
+                    linea: t.linea,
                     numero: t.numero,
                     origine: t.origine,
                     destinazione: t.destinazione
                 }));
-                
+
                 let trClass = (t.critico && t.stato !== "INATTIVO") ? 'class="row-critico"' : '';
 
                 tbodyHTML += `
@@ -499,7 +633,7 @@
                 `;
             });
 
-            if(count === 0) {
+            if (count === 0) {
                 tbodyHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-muted)">Nessun treno trovato</td></tr>`;
             }
 
@@ -513,7 +647,7 @@
             document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`;
             document.getElementById('modal-treno-subtitle').innerText = `${t.origine} ➔ ${t.destinazione}`;
 
-            if(IS_STATIC) {
+            if (IS_STATIC) {
                 renderChart(STATIC_HISTORY[numero] || []);
             } else {
                 fetch(`/api/train_history/${numero}`)
@@ -525,7 +659,7 @@
 
         function renderChart(historyArray) {
             const ctx = document.getElementById('delayChart').getContext('2d');
-            if(myChart) myChart.destroy();
+            if (myChart) myChart.destroy();
 
             const labels = historyArray.map(h => h.data);
             const delays = historyArray.map(h => h.ritardo_capolinea);
@@ -567,7 +701,7 @@
         }
 
         // Close modal when clicking outside
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             let modal = document.getElementById('chartModal');
             if (event.target == modal) {
                 closeModal();
@@ -579,4 +713,5 @@
         setInterval(updateDashboard, 60000);
     </script>
 </body>
+
 </html>

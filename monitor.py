@@ -132,13 +132,16 @@ def merge_dati(old_data, new_scan, now_dt):
     timestamp_str = now_dt.strftime("%Y-%m-%dT%H:%M:%S")
     time_min = now_dt.strftime("%H:%M")
     
+    non_ok_states = ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]
+
     if not old_data:
-        is_critico = new_scan["ritardo_capolinea"] > 15 or new_scan["stato"] in ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]
+        is_critico = new_scan["ritardo_capolinea"] > 15 or new_scan["stato"] in non_ok_states
         return {
             "stato": new_scan["stato"],
             "critico": is_critico,
             "ritardo_attuale": new_scan["ritardo_attuale"],
-            "ritardo_picco": new_scan["ritardo_attuale"],
+            # FIX: picco del ritardo al capolinea, non dell'attuale intra-corsa
+            "ritardo_picco": new_scan["ritardo_capolinea"],
             "ritardo_capolinea": new_scan["ritardo_capolinea"],
             "origine": new_scan["origine"],
             "destinazione": new_scan["destinazione"],
@@ -150,26 +153,31 @@ def merge_dati(old_data, new_scan, now_dt):
             "storico_ritardi": [{"ts": time_min, "rit": new_scan["ritardo_attuale"]}]
         }
     
-    non_ok_states = ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]
     old_stato = old_data["stato"]
 
     if new_scan["stato"] in non_ok_states:
-        # Stato critico è sempre irreversibile
+        # Stato grave è sempre irreversibile
         stato = new_scan["stato"]
     elif old_stato == "INATTIVO" and new_scan["stato"] != "INATTIVO":
         # Il treno era in attesa ed ora è partito: aggiorna lo stato
         stato = new_scan["stato"]
     elif old_stato in non_ok_states:
-        # Stato critico precedente: mantienilo
+        # Stato grave precedente: mantienilo
         stato = old_stato
     else:
         # Per REGOLARE/RITARDO: non retrocedere mai a INATTIVO
         stato = new_scan["stato"] if new_scan["stato"] != "INATTIVO" else old_stato
 
-    is_critico = old_data.get("critico", False) or new_scan["ritardo_capolinea"] > 15 or stato in non_ok_states
-        
+    # FIX: il flag critico per stato grave è irreversibile, ma quello da ritardo
+    # viene ricalcolato sulla base dello stato e del ritardo capolinea CORRENTE.
+    # Questo evita che una lettura errata notturna blocchi il treno come critico
+    # per tutta la giornata.
+    stato_critico_irreversibile = old_data.get("critico", False) and old_stato in non_ok_states
+    is_critico = stato_critico_irreversibile or new_scan["ritardo_capolinea"] > 15 or stato in non_ok_states
+
     ritardo_attuale = new_scan["ritardo_attuale"]
-    ritardo_picco = max(old_data.get("ritardo_picco", 0), ritardo_attuale)
+    # FIX: picco del ritardo al capolinea, non dell'attuale intra-corsa
+    ritardo_picco = max(old_data.get("ritardo_picco", 0), new_scan["ritardo_capolinea"])
     
     storico = old_data.get("storico_ritardi", [])
     if not storico or storico[-1]["ts"] != time_min:
