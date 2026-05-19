@@ -1,6 +1,6 @@
 {
   "data": "2026-05-19",
-  "ultima_scansione": "2026-05-19T22:05:28.831039+02:00",
+  "ultima_scansione": "2026-05-19T22:49:48.985477+02:00",
   "treni": {
     "25017": {
       "stato": "REGOLARE",
@@ -13,8 +13,8 @@
       "orario_programmato": "05:12",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -106,6 +106,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -123,8 +127,8 @@
       "orario_programmato": "05:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -217,6 +221,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -233,8 +241,8 @@
       "orario_programmato": "06:37",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -327,6 +335,10 @@
         {
           "ts": "22:05",
           "rit": 17
+        },
+        {
+          "ts": "22:49",
+          "rit": 17
         }
       ],
       "linea": "S11",
@@ -343,8 +355,8 @@
       "orario_programmato": "06:50",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -437,6 +449,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -453,8 +469,8 @@
       "orario_programmato": "07:24",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -547,6 +563,10 @@
         {
           "ts": "22:05",
           "rit": 4
+        },
+        {
+          "ts": "22:49",
+          "rit": 4
         }
       ],
       "linea": "S11",
@@ -563,8 +583,8 @@
       "orario_programmato": "07:48",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -657,6 +677,10 @@
         {
           "ts": "22:05",
           "rit": -2
+        },
+        {
+          "ts": "22:49",
+          "rit": -2
         }
       ],
       "linea": "S11",
@@ -673,8 +697,8 @@
       "orario_programmato": "08:26",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -767,6 +791,10 @@
         {
           "ts": "22:05",
           "rit": 6
+        },
+        {
+          "ts": "22:49",
+          "rit": 6
         }
       ],
       "linea": "S11",
@@ -783,8 +811,8 @@
       "orario_programmato": "08:50",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -877,6 +905,10 @@
         {
           "ts": "22:05",
           "rit": -5
+        },
+        {
+          "ts": "22:49",
+          "rit": -5
         }
       ],
       "linea": "S11",
@@ -893,8 +925,8 @@
       "orario_programmato": "09:19",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -987,6 +1019,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -1003,8 +1039,8 @@
       "orario_programmato": "09:49",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1097,6 +1133,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -1113,8 +1153,8 @@
       "orario_programmato": "10:23",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1207,6 +1247,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "S11",
@@ -1223,8 +1267,8 @@
       "orario_programmato": "10:50",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1317,6 +1361,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1333,8 +1381,8 @@
       "orario_programmato": "11:19",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1427,6 +1475,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -1443,8 +1495,8 @@
       "orario_programmato": "11:50",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1537,6 +1589,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -1553,8 +1609,8 @@
       "orario_programmato": "12:29",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1647,6 +1703,10 @@
         {
           "ts": "22:05",
           "rit": 9
+        },
+        {
+          "ts": "22:49",
+          "rit": 9
         }
       ],
       "linea": "S11",
@@ -1663,8 +1723,8 @@
       "orario_programmato": "12:47",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1757,6 +1817,10 @@
         {
           "ts": "22:05",
           "rit": -3
+        },
+        {
+          "ts": "22:49",
+          "rit": -3
         }
       ],
       "linea": "S11",
@@ -1773,8 +1837,8 @@
       "orario_programmato": "13:19",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1867,6 +1931,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -1883,8 +1951,8 @@
       "orario_programmato": "13:46",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -1977,6 +2045,10 @@
         {
           "ts": "22:05",
           "rit": -4
+        },
+        {
+          "ts": "22:49",
+          "rit": -4
         }
       ],
       "linea": "S11",
@@ -1993,8 +2065,8 @@
       "orario_programmato": "14:26",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2087,6 +2159,10 @@
         {
           "ts": "22:05",
           "rit": 6
+        },
+        {
+          "ts": "22:49",
+          "rit": 6
         }
       ],
       "linea": "S11",
@@ -2103,8 +2179,8 @@
       "orario_programmato": "14:47",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2197,6 +2273,10 @@
         {
           "ts": "22:05",
           "rit": -3
+        },
+        {
+          "ts": "22:49",
+          "rit": -3
         }
       ],
       "linea": "S11",
@@ -2213,8 +2293,8 @@
       "orario_programmato": "15:19",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2307,6 +2387,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -2323,8 +2407,8 @@
       "orario_programmato": "15:48",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2417,6 +2501,10 @@
         {
           "ts": "22:05",
           "rit": -2
+        },
+        {
+          "ts": "22:49",
+          "rit": -2
         }
       ],
       "linea": "S11",
@@ -2433,8 +2521,8 @@
       "orario_programmato": "16:23",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2527,6 +2615,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "S11",
@@ -2543,8 +2635,8 @@
       "orario_programmato": "16:46",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2636,6 +2728,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -4
+        },
+        {
+          "ts": "22:49",
           "rit": -4
         }
       ],
@@ -2653,8 +2749,8 @@
       "orario_programmato": "17:22",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2746,6 +2842,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 2
+        },
+        {
+          "ts": "22:49",
           "rit": 2
         }
       ],
@@ -2763,8 +2863,8 @@
       "orario_programmato": "17:45",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2857,6 +2957,10 @@
         {
           "ts": "22:05",
           "rit": -5
+        },
+        {
+          "ts": "22:49",
+          "rit": -5
         }
       ],
       "linea": "S11",
@@ -2873,8 +2977,8 @@
       "orario_programmato": "18:22",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -2967,6 +3071,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
@@ -2983,8 +3091,8 @@
       "orario_programmato": "18:51",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3077,6 +3185,10 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "S11",
@@ -3093,8 +3205,8 @@
       "orario_programmato": "19:26",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3187,6 +3299,10 @@
         {
           "ts": "22:05",
           "rit": 6
+        },
+        {
+          "ts": "22:49",
+          "rit": 6
         }
       ],
       "linea": "S11",
@@ -3203,8 +3319,8 @@
       "orario_programmato": "19:53",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3297,6 +3413,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "S11",
@@ -3313,8 +3433,8 @@
       "orario_programmato": "20:21",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3407,6 +3527,10 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "S11",
@@ -3423,8 +3547,8 @@
       "orario_programmato": "20:55",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3517,24 +3641,28 @@
         {
           "ts": "22:05",
           "rit": 5
+        },
+        {
+          "ts": "22:49",
+          "rit": 5
         }
       ],
       "linea": "S11",
       "numero": 25079
     },
     "25081": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": -1,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": -1,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "21:24",
+      "orario_programmato": "21:19",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3627,6 +3755,10 @@
         {
           "ts": "22:05",
           "rit": 4
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -3635,16 +3767,16 @@
     "25187": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 3,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -1,
       "origine": "CHIASSO",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "21:44",
+      "orario_programmato": "21:46",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3737,24 +3869,28 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "S11",
       "numero": 25187
     },
     "25085": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 2,
+      "ritardo_picco": 1,
+      "ritardo_capolinea": 1,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "22:20",
+      "orario_programmato": "22:22",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3847,24 +3983,28 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
       "numero": 25085
     },
     "25087": {
-      "stato": "REGOLARE",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 1,
       "ritardo_picco": 0,
       "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "22:50",
+      "orario_programmato": "22:51",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -3957,6 +4097,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "S11",
@@ -3973,8 +4117,8 @@
       "orario_programmato": "05:41",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4067,6 +4211,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
@@ -4083,8 +4231,8 @@
       "orario_programmato": "06:09",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4177,6 +4325,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -4193,8 +4345,8 @@
       "orario_programmato": "06:39",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4287,6 +4439,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -4303,8 +4459,8 @@
       "orario_programmato": "06:49",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4397,6 +4553,10 @@
         {
           "ts": "22:05",
           "rit": 6
+        },
+        {
+          "ts": "22:49",
+          "rit": 6
         }
       ],
       "linea": "S11",
@@ -4413,8 +4573,8 @@
       "orario_programmato": "07:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4507,6 +4667,10 @@
         {
           "ts": "22:05",
           "rit": 5
+        },
+        {
+          "ts": "22:49",
+          "rit": 5
         }
       ],
       "linea": "S11",
@@ -4523,8 +4687,8 @@
       "orario_programmato": "07:43",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4617,6 +4781,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -4633,8 +4801,8 @@
       "orario_programmato": "08:52",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4727,6 +4895,10 @@
         {
           "ts": "22:05",
           "rit": 13
+        },
+        {
+          "ts": "22:49",
+          "rit": 13
         }
       ],
       "linea": "S11",
@@ -4743,8 +4915,8 @@
       "orario_programmato": "08:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4836,6 +5008,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -4853,8 +5029,8 @@
       "orario_programmato": "09:38",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -4946,6 +5122,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -4963,8 +5143,8 @@
       "orario_programmato": "09:46",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5056,6 +5236,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 3
+        },
+        {
+          "ts": "22:49",
           "rit": 3
         }
       ],
@@ -5073,8 +5257,8 @@
       "orario_programmato": "10:39",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5166,6 +5350,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 0
+        },
+        {
+          "ts": "22:49",
           "rit": 0
         }
       ],
@@ -5183,8 +5371,8 @@
       "orario_programmato": "10:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5276,6 +5464,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 1
+        },
+        {
+          "ts": "22:49",
           "rit": 1
         }
       ],
@@ -5293,8 +5485,8 @@
       "orario_programmato": "11:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5386,6 +5578,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 3
+        },
+        {
+          "ts": "22:49",
           "rit": 3
         }
       ],
@@ -5403,8 +5599,8 @@
       "orario_programmato": "11:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5497,6 +5693,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -5513,8 +5713,8 @@
       "orario_programmato": "12:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5607,6 +5807,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "S11",
@@ -5623,8 +5827,8 @@
       "orario_programmato": "12:46",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5717,6 +5921,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "S11",
@@ -5733,8 +5941,8 @@
       "orario_programmato": "13:39",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5827,6 +6035,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "S11",
@@ -5843,8 +6055,8 @@
       "orario_programmato": "13:54",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -5937,6 +6149,10 @@
         {
           "ts": "22:05",
           "rit": 11
+        },
+        {
+          "ts": "22:49",
+          "rit": 11
         }
       ],
       "linea": "S11",
@@ -5953,8 +6169,8 @@
       "orario_programmato": "14:47",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6047,6 +6263,10 @@
         {
           "ts": "22:05",
           "rit": 8
+        },
+        {
+          "ts": "22:49",
+          "rit": 8
         }
       ],
       "linea": "S11",
@@ -6063,8 +6283,8 @@
       "orario_programmato": "14:55",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6157,6 +6377,10 @@
         {
           "ts": "22:05",
           "rit": 12
+        },
+        {
+          "ts": "22:49",
+          "rit": 12
         }
       ],
       "linea": "S11",
@@ -6173,8 +6397,8 @@
       "orario_programmato": "15:41",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6267,6 +6491,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
@@ -6283,8 +6511,8 @@
       "orario_programmato": "15:45",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6377,6 +6605,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
@@ -6393,8 +6625,8 @@
       "orario_programmato": "16:38",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6487,6 +6719,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -6503,8 +6739,8 @@
       "orario_programmato": "16:55",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6597,6 +6833,10 @@
         {
           "ts": "22:05",
           "rit": 12
+        },
+        {
+          "ts": "22:49",
+          "rit": 12
         }
       ],
       "linea": "S11",
@@ -6613,8 +6853,8 @@
       "orario_programmato": "17:47",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6707,6 +6947,10 @@
         {
           "ts": "22:05",
           "rit": 8
+        },
+        {
+          "ts": "22:49",
+          "rit": 8
         }
       ],
       "linea": "S11",
@@ -6723,8 +6967,8 @@
       "orario_programmato": "17:49",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6817,6 +7061,10 @@
         {
           "ts": "22:05",
           "rit": 6
+        },
+        {
+          "ts": "22:49",
+          "rit": 6
         }
       ],
       "linea": "S11",
@@ -6833,8 +7081,8 @@
       "orario_programmato": "18:59",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -6927,6 +7175,10 @@
         {
           "ts": "22:05",
           "rit": 20
+        },
+        {
+          "ts": "22:49",
+          "rit": 20
         }
       ],
       "linea": "S11",
@@ -6943,8 +7195,8 @@
       "orario_programmato": "18:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7037,6 +7289,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -7053,8 +7309,8 @@
       "orario_programmato": "19:48",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7147,6 +7403,10 @@
         {
           "ts": "22:05",
           "rit": 9
+        },
+        {
+          "ts": "22:49",
+          "rit": 9
         }
       ],
       "linea": "S11",
@@ -7163,8 +7423,8 @@
       "orario_programmato": "19:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7256,6 +7516,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -7273,8 +7537,8 @@
       "orario_programmato": "20:41",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7367,24 +7631,28 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
       "numero": 25076
     },
     "25277": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": -1,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -1,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "20:44",
+      "orario_programmato": "20:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7477,6 +7745,10 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "S11",
@@ -7485,16 +7757,16 @@
     "25080": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 4,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 1,
+      "ritardo_picco": 1,
+      "ritardo_capolinea": 1,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "21:43",
+      "orario_programmato": "21:40",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7587,24 +7859,28 @@
         {
           "ts": "22:05",
           "rit": 4
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "S11",
       "numero": 25080
     },
     "25082": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 4,
+      "ritardo_capolinea": 4,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "22:09",
+      "orario_programmato": "22:14",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7697,24 +7973,28 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 5
         }
       ],
       "linea": "S11",
       "numero": 25082
     },
     "25084": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 2,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "22:39",
+      "orario_programmato": "22:41",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7807,6 +8087,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "S11",
@@ -7823,8 +8107,8 @@
       "orario_programmato": "23:09",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -7916,6 +8200,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 0
+        },
+        {
+          "ts": "22:49",
           "rit": 0
         }
       ],
@@ -7933,8 +8221,8 @@
       "orario_programmato": "04:33",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8026,6 +8314,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 2
+        },
+        {
+          "ts": "22:49",
           "rit": 2
         }
       ],
@@ -8043,8 +8335,8 @@
       "orario_programmato": "07:02",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8136,6 +8428,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -8153,8 +8449,8 @@
       "orario_programmato": "06:33",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8246,6 +8542,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 2
+        },
+        {
+          "ts": "22:49",
           "rit": 2
         }
       ],
@@ -8263,8 +8563,8 @@
       "orario_programmato": "07:38",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8356,6 +8656,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 7
+        },
+        {
+          "ts": "22:49",
           "rit": 7
         }
       ],
@@ -8373,8 +8677,8 @@
       "orario_programmato": "08:31",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8467,6 +8771,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -8483,8 +8791,8 @@
       "orario_programmato": "09:30",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 46,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 48,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8576,6 +8884,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -8593,8 +8905,8 @@
       "orario_programmato": "11:39",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8687,6 +8999,10 @@
         {
           "ts": "22:05",
           "rit": 8
+        },
+        {
+          "ts": "22:49",
+          "rit": 8
         }
       ],
       "linea": "RE80",
@@ -8703,8 +9019,8 @@
       "orario_programmato": "12:40",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8797,6 +9113,10 @@
         {
           "ts": "22:05",
           "rit": 9
+        },
+        {
+          "ts": "22:49",
+          "rit": 9
         }
       ],
       "linea": "RE80",
@@ -8813,8 +9133,8 @@
       "orario_programmato": "13:33",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -8906,6 +9226,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 2
+        },
+        {
+          "ts": "22:49",
           "rit": 2
         }
       ],
@@ -8923,8 +9247,8 @@
       "orario_programmato": "14:35",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9017,6 +9341,10 @@
         {
           "ts": "22:05",
           "rit": 4
+        },
+        {
+          "ts": "22:49",
+          "rit": 4
         }
       ],
       "linea": "RE80",
@@ -9033,8 +9361,8 @@
       "orario_programmato": "15:33",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9127,6 +9455,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "RE80",
@@ -9143,8 +9475,8 @@
       "orario_programmato": "16:37",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9237,6 +9569,10 @@
         {
           "ts": "22:05",
           "rit": 6
+        },
+        {
+          "ts": "22:49",
+          "rit": 6
         }
       ],
       "linea": "RE80",
@@ -9253,8 +9589,8 @@
       "orario_programmato": "17:36",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9347,6 +9683,10 @@
         {
           "ts": "22:05",
           "rit": 5
+        },
+        {
+          "ts": "22:49",
+          "rit": 5
         }
       ],
       "linea": "RE80",
@@ -9363,8 +9703,8 @@
       "orario_programmato": "18:34",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9457,6 +9797,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "RE80",
@@ -9473,8 +9817,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9567,6 +9911,10 @@
         {
           "ts": "22:05",
           "rit": 12
+        },
+        {
+          "ts": "22:49",
+          "rit": 12
         }
       ],
       "linea": "RE80",
@@ -9583,8 +9931,8 @@
       "orario_programmato": "20:35",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9677,6 +10025,10 @@
         {
           "ts": "22:05",
           "rit": 4
+        },
+        {
+          "ts": "22:49",
+          "rit": 4
         }
       ],
       "linea": "RE80",
@@ -9686,15 +10038,15 @@
       "stato": "RITARDO",
       "critico": false,
       "ritardo_attuale": 2,
-      "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
       "orario_programmato": "21:33",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9786,6 +10138,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 2
+        },
+        {
+          "ts": "22:49",
           "rit": 2
         }
       ],
@@ -9803,8 +10159,8 @@
       "orario_programmato": "05:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -9896,6 +10252,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -9913,8 +10273,8 @@
       "orario_programmato": "06:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10006,6 +10366,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 1
+        },
+        {
+          "ts": "22:49",
           "rit": 1
         }
       ],
@@ -10023,8 +10387,8 @@
       "orario_programmato": "07:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10116,6 +10480,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -10133,8 +10501,8 @@
       "orario_programmato": "08:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10226,6 +10594,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 1
+        },
+        {
+          "ts": "22:49",
           "rit": 1
         }
       ],
@@ -10243,8 +10615,8 @@
       "orario_programmato": "09:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10336,6 +10708,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 1
+        },
+        {
+          "ts": "22:49",
           "rit": 1
         }
       ],
@@ -10353,8 +10729,8 @@
       "orario_programmato": "10:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10446,6 +10822,10 @@
         },
         {
           "ts": "22:05",
+          "rit": -1
+        },
+        {
+          "ts": "22:49",
           "rit": -1
         }
       ],
@@ -10463,8 +10843,8 @@
       "orario_programmato": "11:43",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10556,6 +10936,10 @@
         },
         {
           "ts": "22:05",
+          "rit": 0
+        },
+        {
+          "ts": "22:49",
           "rit": 0
         }
       ],
@@ -10573,8 +10957,8 @@
       "orario_programmato": "12:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10667,6 +11051,10 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "RE80",
@@ -10683,8 +11071,8 @@
       "orario_programmato": "13:45",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10777,6 +11165,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "RE80",
@@ -10793,8 +11185,8 @@
       "orario_programmato": "14:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10887,6 +11279,10 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "RE80",
@@ -10903,8 +11299,8 @@
       "orario_programmato": "15:44",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -10997,6 +11393,10 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": 1
         }
       ],
       "linea": "RE80",
@@ -11013,8 +11413,8 @@
       "orario_programmato": "16:42",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11107,6 +11507,10 @@
         {
           "ts": "22:05",
           "rit": -1
+        },
+        {
+          "ts": "22:49",
+          "rit": -1
         }
       ],
       "linea": "RE80",
@@ -11123,8 +11527,8 @@
       "orario_programmato": "17:46",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11217,6 +11621,10 @@
         {
           "ts": "22:05",
           "rit": 3
+        },
+        {
+          "ts": "22:49",
+          "rit": 3
         }
       ],
       "linea": "RE80",
@@ -11233,8 +11641,8 @@
       "orario_programmato": "18:45",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11327,6 +11735,10 @@
         {
           "ts": "22:05",
           "rit": 2
+        },
+        {
+          "ts": "22:49",
+          "rit": 2
         }
       ],
       "linea": "RE80",
@@ -11343,8 +11755,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11437,6 +11849,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 0
         }
       ],
       "linea": "RE80",
@@ -11453,8 +11869,8 @@
       "orario_programmato": "20:41",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11547,24 +11963,28 @@
         {
           "ts": "22:05",
           "rit": -2
+        },
+        {
+          "ts": "22:49",
+          "rit": -2
         }
       ],
       "linea": "RE80",
       "numero": 25534
     },
     "25536": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": -2,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -2,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "21:44",
+      "orario_programmato": "21:41",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11657,24 +12077,28 @@
         {
           "ts": "22:05",
           "rit": 1
+        },
+        {
+          "ts": "22:49",
+          "rit": -2
         }
       ],
       "linea": "RE80",
       "numero": 25536
     },
     "25538": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 5,
       "ritardo_picco": 0,
       "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "22:43",
+      "orario_programmato": "22:48",
       "note": "",
       "prima_rilevazione": "2026-05-19T00:10:31",
-      "ultima_rilevazione": "2026-05-19T22:05:28",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-19T22:49:48",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:10",
@@ -11767,6 +12191,10 @@
         {
           "ts": "22:05",
           "rit": 0
+        },
+        {
+          "ts": "22:49",
+          "rit": 5
         }
       ],
       "linea": "RE80",
