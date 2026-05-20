@@ -45,7 +45,7 @@ def print_bollettino(data):
         print("Nessun dato disponibile.")
         return
 
-    print(f"=== BOLLETTINO TRENORD (S11 & RE80) ===")
+    print(f"=== BOLLETTINO TRENORD ===")
     print(f"Data: {data.get('data')} - Ultimo aggiornamento: {data.get('ultima_scansione')}\n")
 
     # Header

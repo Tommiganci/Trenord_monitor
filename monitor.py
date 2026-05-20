@@ -4,50 +4,69 @@ import time
 import logging
 import requests
 import sys
+import glob
 from datetime import datetime
 import zoneinfo # Necessario per gestire il fuso orario in modo robusto
 
 # Configurazione Base
 BASE_URL = "http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno"
 DATA_DIR = "data"
-TRENI_FILE = "treni.txt"
+DIRETTRICI_DIR = "direttrici"
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
 
 # Forza il fuso orario italiano
 IT_TZ = zoneinfo.ZoneInfo("Europe/Rome")
 
-CAPOLINEA_ATTESI = {
-    "S11": ["COMO", "RHO", "GARIBALDI", "CHIASSO", "CENTRALE"],
-    "RE80": ["CHIASSO", "CENTRALE"]
-}
-
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def read_treni():
     treni = []
-    if not os.path.exists(TRENI_FILE):
-        logging.error(f"File {TRENI_FILE} non trovato.")
+    direttrici_files = glob.glob(os.path.join(DIRETTRICI_DIR, "*.txt"))
+    if not direttrici_files:
+        logging.error(f"Nessun file trovato in {DIRETTRICI_DIR}.")
         return treni
 
-    with open(TRENI_FILE, "r", encoding="utf-8") as f:
-        lines = f.readlines()
+    for file_path in direttrici_files:
+        basename = os.path.basename(file_path)
+        direttrice_nome, _ = os.path.splitext(basename)
+        capolinea_list = []
+        current_servizio = None
         
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith("#"):
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+        except Exception as e:
+            logging.error(f"Errore lettura file {file_path}: {e}")
             continue
             
-        numeri = line.replace(",", " ").replace(";", " ").split()
-        for num_str in numeri:
-            if not num_str.isdigit():
+        for line in lines:
+            line = line.strip()
+            if not line:
                 continue
-            numero = int(num_str)
-            if str(numero).startswith("255") or str(numero) == "25201":
-                linea = "RE80"
-            else:
-                linea = "S11"
-            treni.append({"linea": linea, "numero": numero})
-            
+                
+            if line.startswith("#"):
+                if "NOME:" in line:
+                    direttrice_nome = line.split("NOME:", 1)[1].strip()
+                elif "CAPOLINEA:" in line:
+                    caps_str = line.split("CAPOLINEA:", 1)[1].strip()
+                    capolinea_list = [c.strip().upper() for c in caps_str.replace(",", " ").replace(";", " ").split() if c.strip()]
+                elif "SERVIZIO:" in line:
+                    current_servizio = line.split("SERVIZIO:", 1)[1].strip()
+                continue
+                
+            numeri = line.replace(",", " ").replace(";", " ").split()
+            for num_str in numeri:
+                if not num_str.isdigit():
+                    continue
+                numero = int(num_str)
+                servizio = current_servizio if current_servizio else direttrice_nome
+                treni.append({
+                    "direttrice": direttrice_nome,
+                    "linea": servizio,
+                    "numero": numero,
+                    "capolinea": capolinea_list
+                })
+                
     return treni
 
 def fetch_stazione_origine(numero):
@@ -83,7 +102,7 @@ def fetch_andamento_treno(codice_stazione, numero, timestamp):
         logging.error(f"Errore andamento per {numero}: {e}")
         return None
 
-def calcola_stato(api_data, linea):
+def calcola_stato(api_data, linea, capolinea_attesi):
     provvedimento = api_data.get("provvedimento", 0)
     ritardo_attuale = api_data.get("ritardo", 0)
     origine = api_data.get("origine", "")
@@ -110,9 +129,9 @@ def calcola_stato(api_data, linea):
         sub_desc = api_data.get("subTitle", "").upper()
         if any(x in sub_desc for x in ["LIMITATO", "TERMINA", "SOPPRESS"]):
              stato_calcolato = "PARZ. SOPPRESSO"
-        elif linea in CAPOLINEA_ATTESI and fermate:
+        elif capolinea_attesi and fermate:
              ult_fermata_prog = fermate[-1].get("stazione", "").upper()
-             if all(cap not in ult_fermata_prog for cap in CAPOLINEA_ATTESI[linea]):
+             if all(cap not in ult_fermata_prog for cap in capolinea_attesi):
                  stato_calcolato = "LIMITATO"
                      
     if stato_calcolato == "REGOLARE" and ritardo_attuale > 0:
@@ -228,7 +247,9 @@ def main():
             
     for item in treni_da_monitorare:
         linea, num = item["linea"], item["numero"]
-        logging.info(f"Scansione {linea} {num}...")
+        direttrice = item["direttrice"]
+        capolinea_attesi = item["capolinea"]
+        logging.info(f"Scansione {direttrice} - {linea} {num}...")
         
         cod_staz, ts = fetch_stazione_origine(num)
         if not cod_staz:
@@ -238,9 +259,9 @@ def main():
         if not api_data:
             continue
             
-        parsed_data = calcola_stato(api_data, linea)
+        parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
         db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
-        db_data["treni"][str(num)].update({"linea": linea, "numero": num})
+        db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
         
         success_count += 1
         time.sleep(2) # Anti-ban
