@@ -1,6 +1,6 @@
 {
   "data": "2026-05-20",
-  "ultima_scansione": "2026-05-20T11:05:27.010060+02:00",
+  "ultima_scansione": "2026-05-20T12:05:27.245107+02:00",
   "treni": {
     "25017": {
       "stato": "RITARDO",
@@ -13,8 +13,8 @@
       "orario_programmato": "05:17",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -47,8 +47,13 @@
         {
           "ts": "11:05",
           "rit": 4
+        },
+        {
+          "ts": "12:05",
+          "rit": 4
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25017
     },
@@ -63,8 +68,8 @@
       "orario_programmato": "05:42",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -97,8 +102,13 @@
         {
           "ts": "11:05",
           "rit": -3
+        },
+        {
+          "ts": "12:05",
+          "rit": -3
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25219
     },
@@ -113,8 +123,8 @@
       "orario_programmato": "06:22",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -147,8 +157,13 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25021
     },
@@ -163,8 +178,8 @@
       "orario_programmato": "06:46",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -197,8 +212,13 @@
         {
           "ts": "11:05",
           "rit": -4
+        },
+        {
+          "ts": "12:05",
+          "rit": -4
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25223
     },
@@ -213,8 +233,8 @@
       "orario_programmato": "07:30",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -247,8 +267,13 @@
         {
           "ts": "11:05",
           "rit": 10
+        },
+        {
+          "ts": "12:05",
+          "rit": 10
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25025
     },
@@ -263,8 +288,8 @@
       "orario_programmato": "07:56",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -297,8 +322,13 @@
         {
           "ts": "11:05",
           "rit": 6
+        },
+        {
+          "ts": "12:05",
+          "rit": 6
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25227
     },
@@ -313,8 +343,8 @@
       "orario_programmato": "08:22",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -347,8 +377,13 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25029
     },
@@ -363,8 +398,8 @@
       "orario_programmato": "08:58",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -397,8 +432,13 @@
         {
           "ts": "11:05",
           "rit": 8
+        },
+        {
+          "ts": "12:05",
+          "rit": 8
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25231
     },
@@ -413,8 +453,8 @@
       "orario_programmato": "09:21",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -447,8 +487,13 @@
         {
           "ts": "11:05",
           "rit": 1
+        },
+        {
+          "ts": "12:05",
+          "rit": 1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25033
     },
@@ -463,8 +508,8 @@
       "orario_programmato": "09:57",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -497,24 +542,29 @@
         {
           "ts": "11:05",
           "rit": 7
+        },
+        {
+          "ts": "12:05",
+          "rit": 7
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25235
     },
     "25037": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 2,
+      "ritardo_attuale": -2,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": -2,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "10:22",
+      "orario_programmato": "10:18",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -547,24 +597,29 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": -2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25037
     },
     "25239": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
       "origine": "CARIMATE",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "11:09",
+      "orario_programmato": "11:12",
       "note": "Treno cancellato da COMO S.GIOVANNI a CARIMATE. Parte da CARIMATE.",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -597,24 +652,29 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 3
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25239
     },
     "25041": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 4,
+      "ritardo_picco": 1,
+      "ritardo_capolinea": 1,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "11:20",
+      "orario_programmato": "11:24",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -647,24 +707,29 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 4
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25041
     },
     "25243": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 2,
       "ritardo_picco": 0,
       "ritardo_capolinea": 0,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "11:50",
+      "orario_programmato": "11:52",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -697,8 +762,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25243
     },
@@ -713,8 +783,8 @@
       "orario_programmato": "12:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -747,8 +817,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25045
     },
@@ -763,8 +838,8 @@
       "orario_programmato": "12:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -797,8 +872,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25247
     },
@@ -813,8 +893,8 @@
       "orario_programmato": "13:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -847,8 +927,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25049
     },
@@ -863,8 +948,8 @@
       "orario_programmato": "13:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -897,8 +982,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25251
     },
@@ -913,8 +1003,8 @@
       "orario_programmato": "14:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -947,8 +1037,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25053
     },
@@ -963,8 +1058,8 @@
       "orario_programmato": "14:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -997,8 +1092,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25255
     },
@@ -1013,8 +1113,8 @@
       "orario_programmato": "15:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1047,8 +1147,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25057
     },
@@ -1063,8 +1168,8 @@
       "orario_programmato": "15:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1097,8 +1202,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25259
     },
@@ -1113,8 +1223,8 @@
       "orario_programmato": "16:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1147,8 +1257,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25061
     },
@@ -1163,8 +1278,8 @@
       "orario_programmato": "16:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1197,8 +1312,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25263
     },
@@ -1213,8 +1333,8 @@
       "orario_programmato": "17:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1247,8 +1367,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25065
     },
@@ -1263,8 +1388,8 @@
       "orario_programmato": "17:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1297,8 +1422,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25267
     },
@@ -1313,8 +1443,8 @@
       "orario_programmato": "18:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1347,8 +1477,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25069
     },
@@ -1363,8 +1498,8 @@
       "orario_programmato": "18:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1397,8 +1532,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25271
     },
@@ -1413,8 +1553,8 @@
       "orario_programmato": "19:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1447,8 +1587,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25073
     },
@@ -1463,8 +1608,8 @@
       "orario_programmato": "19:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1497,8 +1642,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25075
     },
@@ -1513,8 +1663,8 @@
       "orario_programmato": "20:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1547,8 +1697,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25077
     },
@@ -1563,8 +1718,8 @@
       "orario_programmato": "20:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1597,8 +1752,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25079
     },
@@ -1613,8 +1773,8 @@
       "orario_programmato": "21:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1647,8 +1807,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25081
     },
@@ -1663,8 +1828,8 @@
       "orario_programmato": "21:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1697,8 +1862,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25187
     },
@@ -1713,8 +1883,8 @@
       "orario_programmato": "22:20",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1747,8 +1917,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25085
     },
@@ -1763,8 +1938,8 @@
       "orario_programmato": "22:50",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1797,8 +1972,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25087
     },
@@ -1813,8 +1993,8 @@
       "orario_programmato": "05:47",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1847,8 +2027,13 @@
         {
           "ts": "11:05",
           "rit": 8
+        },
+        {
+          "ts": "12:05",
+          "rit": 8
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25016
     },
@@ -1863,8 +2048,8 @@
       "orario_programmato": "06:09",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1897,8 +2082,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25018
     },
@@ -1913,8 +2103,8 @@
       "orario_programmato": "06:41",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1947,8 +2137,13 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25020
     },
@@ -1963,8 +2158,8 @@
       "orario_programmato": "06:46",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -1997,8 +2192,13 @@
         {
           "ts": "11:05",
           "rit": 3
+        },
+        {
+          "ts": "12:05",
+          "rit": 3
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25221
     },
@@ -2013,8 +2213,8 @@
       "orario_programmato": "07:42",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2047,8 +2247,13 @@
         {
           "ts": "11:05",
           "rit": 3
+        },
+        {
+          "ts": "12:05",
+          "rit": 3
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25024
     },
@@ -2063,8 +2268,8 @@
       "orario_programmato": "07:47",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2097,8 +2302,13 @@
         {
           "ts": "11:05",
           "rit": 4
+        },
+        {
+          "ts": "12:05",
+          "rit": 4
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25225
     },
@@ -2113,8 +2323,8 @@
       "orario_programmato": "08:41",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2147,8 +2357,13 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25028
     },
@@ -2163,8 +2378,8 @@
       "orario_programmato": "08:43",
       "note": "Treno cancellato da SESTO S.GIOVANNI a COMO S.GIOVANNI. Arriva a SESTO S.GIOVANNI",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2197,8 +2412,13 @@
         {
           "ts": "11:05",
           "rit": -1
+        },
+        {
+          "ts": "12:05",
+          "rit": -1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25229
     },
@@ -2213,8 +2433,8 @@
       "orario_programmato": "09:48",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2247,24 +2467,29 @@
         {
           "ts": "11:05",
           "rit": 9
+        },
+        {
+          "ts": "12:05",
+          "rit": 9
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25032
     },
     "25036": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": -1,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -1,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "10:42",
+      "orario_programmato": "10:38",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2297,24 +2522,29 @@
         {
           "ts": "11:05",
           "rit": 3
+        },
+        {
+          "ts": "12:05",
+          "rit": -1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25036
     },
     "25040": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 4,
       "ritardo_picco": 0,
       "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "11:39",
+      "orario_programmato": "11:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2347,8 +2577,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 4
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25040
     },
@@ -2363,8 +2598,8 @@
       "orario_programmato": "12:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2397,8 +2632,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25044
     },
@@ -2413,8 +2653,8 @@
       "orario_programmato": "13:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2447,8 +2687,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25048
     },
@@ -2463,8 +2708,8 @@
       "orario_programmato": "13:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2497,8 +2742,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25249
     },
@@ -2513,8 +2763,8 @@
       "orario_programmato": "14:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2547,8 +2797,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25052
     },
@@ -2563,8 +2818,8 @@
       "orario_programmato": "14:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2597,8 +2852,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25253
     },
@@ -2613,8 +2873,8 @@
       "orario_programmato": "15:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2647,8 +2907,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25056
     },
@@ -2663,8 +2928,8 @@
       "orario_programmato": "15:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2697,8 +2962,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25257
     },
@@ -2713,8 +2983,8 @@
       "orario_programmato": "16:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2747,8 +3017,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25060
     },
@@ -2763,8 +3038,8 @@
       "orario_programmato": "16:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2797,8 +3072,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25261
     },
@@ -2813,8 +3093,8 @@
       "orario_programmato": "17:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2847,8 +3127,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25064
     },
@@ -2863,8 +3148,8 @@
       "orario_programmato": "17:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2897,8 +3182,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25265
     },
@@ -2913,8 +3203,8 @@
       "orario_programmato": "18:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2947,8 +3237,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25068
     },
@@ -2963,8 +3258,8 @@
       "orario_programmato": "18:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -2997,8 +3292,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25269
     },
@@ -3013,8 +3313,8 @@
       "orario_programmato": "19:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3047,8 +3347,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25072
     },
@@ -3063,8 +3368,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3097,8 +3402,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25273
     },
@@ -3113,8 +3423,8 @@
       "orario_programmato": "20:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3147,8 +3457,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25076
     },
@@ -3163,8 +3478,8 @@
       "orario_programmato": "20:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3197,8 +3512,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25277
     },
@@ -3213,8 +3533,8 @@
       "orario_programmato": "21:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3247,8 +3567,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25080
     },
@@ -3263,8 +3588,8 @@
       "orario_programmato": "22:09",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3297,8 +3622,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25082
     },
@@ -3313,8 +3643,8 @@
       "orario_programmato": "22:39",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3347,8 +3677,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25084
     },
@@ -3363,8 +3698,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3397,8 +3732,13 @@
         {
           "ts": "11:05",
           "rit": -3
+        },
+        {
+          "ts": "12:05",
+          "rit": -3
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25192
     },
@@ -3413,8 +3753,8 @@
       "orario_programmato": "04:31",
       "note": "Treno cancellato da MONZA a MILANO CENTRALE. Il treno oggi arriva a SESTO S.GIOVANNI.",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3447,8 +3787,13 @@
         {
           "ts": "11:05",
           "rit": 39
+        },
+        {
+          "ts": "12:05",
+          "rit": 39
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25503
     },
@@ -3463,8 +3808,8 @@
       "orario_programmato": "07:01",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3497,8 +3842,13 @@
         {
           "ts": "11:05",
           "rit": -2
+        },
+        {
+          "ts": "12:05",
+          "rit": -2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25201
     },
@@ -3513,8 +3863,8 @@
       "orario_programmato": "06:33",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3547,8 +3897,13 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25507
     },
@@ -3563,8 +3918,8 @@
       "orario_programmato": "07:37",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3597,8 +3952,13 @@
         {
           "ts": "11:05",
           "rit": 6
+        },
+        {
+          "ts": "12:05",
+          "rit": 6
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25509
     },
@@ -3613,8 +3973,8 @@
       "orario_programmato": "08:35",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3647,8 +4007,13 @@
         {
           "ts": "11:05",
           "rit": 4
+        },
+        {
+          "ts": "12:05",
+          "rit": 4
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25511
     },
@@ -3663,8 +4028,8 @@
       "orario_programmato": "09:40",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 16,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 17,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3697,24 +4062,29 @@
         {
           "ts": "11:05",
           "rit": 9
+        },
+        {
+          "ts": "12:05",
+          "rit": 9
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25513
     },
     "25517": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 1,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -1,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "11:31",
+      "orario_programmato": "11:32",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3747,8 +4117,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25517
     },
@@ -3763,8 +4138,8 @@
       "orario_programmato": "12:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3797,8 +4172,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25519
     },
@@ -3813,8 +4193,8 @@
       "orario_programmato": "13:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3847,8 +4227,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25521
     },
@@ -3863,8 +4248,8 @@
       "orario_programmato": "14:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3897,8 +4282,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25523
     },
@@ -3913,8 +4303,8 @@
       "orario_programmato": "15:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3947,8 +4337,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25525
     },
@@ -3963,8 +4358,8 @@
       "orario_programmato": "16:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -3997,8 +4392,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25527
     },
@@ -4013,8 +4413,8 @@
       "orario_programmato": "17:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4047,8 +4447,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25529
     },
@@ -4063,8 +4468,8 @@
       "orario_programmato": "18:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4097,8 +4502,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25531
     },
@@ -4113,8 +4523,8 @@
       "orario_programmato": "19:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4147,8 +4557,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25533
     },
@@ -4163,8 +4578,8 @@
       "orario_programmato": "20:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4197,8 +4612,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25535
     },
@@ -4213,8 +4633,8 @@
       "orario_programmato": "21:31",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4247,8 +4667,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25537
     },
@@ -4263,8 +4688,8 @@
       "orario_programmato": "05:51",
       "note": "Treno cancellato da MILANO CENTRALE a SESTO S.GIOVANNI. Parte da SESTO S.GIOVANNI.",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4297,8 +4722,13 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25502
     },
@@ -4313,8 +4743,8 @@
       "orario_programmato": "06:42",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4347,8 +4777,13 @@
         {
           "ts": "11:05",
           "rit": -1
+        },
+        {
+          "ts": "12:05",
+          "rit": -1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25506
     },
@@ -4363,8 +4798,8 @@
       "orario_programmato": "07:42",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4397,8 +4832,13 @@
         {
           "ts": "11:05",
           "rit": -1
+        },
+        {
+          "ts": "12:05",
+          "rit": -1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25508
     },
@@ -4413,8 +4853,8 @@
       "orario_programmato": "09:02",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4447,8 +4887,13 @@
         {
           "ts": "11:05",
           "rit": 19
+        },
+        {
+          "ts": "12:05",
+          "rit": 19
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25510
     },
@@ -4463,8 +4908,8 @@
       "orario_programmato": "09:45",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4497,24 +4942,29 @@
         {
           "ts": "11:05",
           "rit": 2
+        },
+        {
+          "ts": "12:05",
+          "rit": 2
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25512
     },
     "25514": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 4,
+      "ritardo_attuale": -1,
       "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_capolinea": -1,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "10:47",
+      "orario_programmato": "10:42",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4547,24 +4997,29 @@
         {
           "ts": "11:05",
           "rit": 4
+        },
+        {
+          "ts": "12:05",
+          "rit": -1
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25514
     },
     "25516": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
       "origine": "MILANO CENTRALE",
       "destinazione": "CHIASSO",
-      "orario_programmato": "11:43",
+      "orario_programmato": "11:46",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4597,8 +5052,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 3
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25516
     },
@@ -4613,8 +5073,8 @@
       "orario_programmato": "12:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4647,8 +5107,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25518
     },
@@ -4663,8 +5128,8 @@
       "orario_programmato": "13:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4697,8 +5162,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25520
     },
@@ -4713,8 +5183,8 @@
       "orario_programmato": "14:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4747,8 +5217,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25522
     },
@@ -4763,8 +5238,8 @@
       "orario_programmato": "15:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4797,8 +5272,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25524
     },
@@ -4813,8 +5293,8 @@
       "orario_programmato": "16:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4847,8 +5327,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25526
     },
@@ -4863,8 +5348,8 @@
       "orario_programmato": "17:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4897,8 +5382,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25528
     },
@@ -4913,8 +5403,8 @@
       "orario_programmato": "18:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4947,8 +5437,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25530
     },
@@ -4963,8 +5458,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -4997,8 +5492,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25532
     },
@@ -5013,8 +5513,8 @@
       "orario_programmato": "20:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -5047,8 +5547,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25534
     },
@@ -5063,8 +5568,8 @@
       "orario_programmato": "21:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -5097,8 +5602,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25536
     },
@@ -5113,8 +5623,8 @@
       "orario_programmato": "22:43",
       "note": "",
       "prima_rilevazione": "2026-05-20T00:22:51",
-      "ultima_rilevazione": "2026-05-20T11:05:27",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-20T12:05:27",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "00:22",
@@ -5147,8 +5657,13 @@
         {
           "ts": "11:05",
           "rit": 0
+        },
+        {
+          "ts": "12:05",
+          "rit": 0
         }
       ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25538
     }
