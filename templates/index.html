@@ -522,21 +522,11 @@
         function updateDashboard() {
             if (IS_STATIC) {
                 renderDashboardData(STATIC_DATA);
-                renderMonthlyData(STATIC_MONTHLY);
-                renderDailyHistory(STATIC_DAILY_TREND);
             } else {
                 fetch('/api/data')
                     .then(res => res.json())
                     .then(data => renderDashboardData(data))
                     .catch(err => console.error("Errore fetch dati:", err));
-
-                fetch('/api/monthly_stats')
-                    .then(res => res.json())
-                    .then(mdata => {
-                        renderMonthlyData(mdata);
-                        renderDailyHistory(mdata.trend);
-                    })
-                    .catch(e => console.error("Errore fetch monthly:", e));
             }
         }
 
@@ -769,6 +759,21 @@
             if (disagio > 20) disagioEl.classList.add('disagio-high');
             else if (disagio > 5) disagioEl.classList.add('disagio-med');
             else disagioEl.classList.add('disagio-low');
+            
+            // Aggiorna dati mensili e storico specifici per questa direttrice
+            if (IS_STATIC) {
+                const mdata = STATIC_MONTHLY[dirName] || { disagio: 0, trend: [] };
+                renderMonthlyData(mdata);
+                renderDailyHistory(STATIC_DAILY_TREND[dirName] || []);
+            } else {
+                fetch(`/api/monthly_stats?direttrice=${encodeURIComponent(dirName)}`)
+                    .then(res => res.json())
+                    .then(mdata => {
+                        renderMonthlyData(mdata);
+                        renderDailyHistory(mdata.trend);
+                    })
+                    .catch(e => console.error("Errore fetch monthly:", e));
+            }
             
             const servizi = [...new Set(dirTreni.map(t => t.linea))].filter(Boolean).sort();
             const filterButtonsContainer = document.getElementById('filter-buttons-container');

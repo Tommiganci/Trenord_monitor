@@ -170,6 +170,32 @@ def print_monthly_report():
     print(f"TOTALE ANOMALI: {totale_anomali} treni")
     print(f"GRADO DI DISAGIO MENSILE: {disagio:.1f}%")
 
+def load_treno_direttrice_mapping():
+    mapping = {}
+    import glob
+    direttrici_files = glob.glob(os.path.join("direttrici", "*.txt"))
+    for file_path in direttrici_files:
+        basename = os.path.basename(file_path)
+        direttrice_nome, _ = os.path.splitext(basename)
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+        except Exception:
+            continue
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith("#"):
+                if "NOME:" in line:
+                    direttrice_nome = line.split("NOME:", 1)[1].strip()
+                continue
+            numeri = line.replace(",", " ").replace(";", " ").split()
+            for num_str in numeri:
+                if num_str.isdigit():
+                    mapping[num_str] = direttrice_nome
+    return mapping
+
 def export_html(data):
     if not os.path.exists(DOCS_DIR):
         os.makedirs(DOCS_DIR)
@@ -181,39 +207,85 @@ def export_html(data):
         print("Errore: template index.html non trovato!")
         return
 
-    # Calcola statistiche del mese corrente (per KPI e grafico trend)
+    mapping = load_treno_direttrice_mapping()
+    direttrici = set(mapping.values())
+
     monthly_data = get_monthly_data()
-    
-    totale_treni = 0
-    totale_anomali = 0
-    trend = []
-    
-    for day_data in monthly_data:
-        treni = day_data.get("treni", {})
-        day_totale = len(treni)
-        day_anomali = sum(1 for t in treni.values() if t.get("critico", False))
+    all_data = get_all_data()
+
+    static_monthly = {}
+    static_daily_trend = {}
+
+    for d_name in direttrici:
+        totale_treni = 0
+        totale_anomali = 0
+        trend = []
         
-        totale_treni += day_totale
-        totale_anomali += day_anomali
-        
-        day_disagio = (day_anomali / day_totale * 100) if day_totale > 0 else 0
-        trend.append({
-            "data": day_data.get("data", ""),
-            "disagio": round(day_disagio, 1)
-        })
-        
-    disagio_mese = (totale_anomali / totale_treni * 100) if totale_treni > 0 else 0
-    
-    monthly_stats = {
-        "disagio": round(disagio_mese, 1),
-        "treni_totali": totale_treni,
-        "treni_anomali": totale_anomali,
-        "giorni": len(monthly_data),
-        "trend": trend
-    }
+        for day_data in monthly_data:
+            treni = day_data.get("treni", {})
+            treni_filtered = {
+                k: v for k, v in treni.items()
+                if v.get("direttrice") == d_name or mapping.get(k) == d_name
+            }
+            day_totale = len(treni_filtered)
+            day_anomali = sum(1 for t in treni_filtered.values() if t.get("critico", False))
+            
+            totale_treni += day_totale
+            totale_anomali += day_anomali
+            
+            day_disagio = (day_anomali / day_totale * 100) if day_totale > 0 else 0
+            trend.append({
+                "data": day_data.get("data", ""),
+                "disagio": round(day_disagio, 1),
+                "treni_totali": day_totale,
+                "treni_anomali": day_anomali
+            })
+            
+        disagio_mese = (totale_anomali / totale_treni * 100) if totale_treni > 0 else 0
+        static_monthly[d_name] = {
+            "disagio": round(disagio_mese, 1),
+            "treni_totali": totale_treni,
+            "treni_anomali": totale_anomali,
+            "giorni": len(monthly_data),
+            "trend": trend
+        }
+
+        # Calcola storico mensile aggregato (mese per mese)
+        mesi = {}
+        for day_data in all_data:
+            data_str = day_data.get("data", "")
+            if not data_str or len(data_str) < 7:
+                continue
+            mese_key = data_str[:7]
+            treni = day_data.get("treni", {})
+            treni_filtered = {
+                k: v for k, v in treni.items()
+                if v.get("direttrice") == d_name or mapping.get(k) == d_name
+            }
+            day_tot = len(treni_filtered)
+            day_an = sum(1 for t in treni_filtered.values() if t.get("critico", False))
+            
+            if mese_key not in mesi:
+                mesi[mese_key] = {"treni_totali": 0, "treni_anomali": 0, "giorni": 0}
+            mesi[mese_key]["treni_totali"] += day_tot
+            mesi[mese_key]["treni_anomali"] += day_an
+            mesi[mese_key]["giorni"] += 1
+            
+        aggregates = []
+        for mese_key, stats in sorted(mesi.items(), reverse=True):
+            tot = stats["treni_totali"]
+            an = stats["treni_anomali"]
+            disagio = round((an / tot * 100) if tot > 0 else 0, 1)
+            aggregates.append({
+                "data": mese_key,
+                "treni_totali": tot,
+                "treni_anomali": an,
+                "giorni": stats["giorni"],
+                "disagio": disagio
+            })
+        static_daily_trend[d_name] = aggregates
 
     # Calcola storico treni (tutti i mesi disponibili)
-    all_data = get_all_data()
     train_history = {}
     for day_data in all_data:
         date_str = day_data.get("data", "")
@@ -227,17 +299,14 @@ def export_html(data):
                 "stato": t.get("stato", "REGOLARE")
             })
 
-    # Calcola storico mensile aggregato (mese per mese)
-    monthly_aggregates = compute_monthly_aggregates(all_data)
-
     with open(template_path, "r", encoding="utf-8") as f:
         html = f.read()
 
     html = html.replace("const IS_STATIC = false;", "const IS_STATIC = true;")
     html = html.replace("const STATIC_DATA = null;", f"const STATIC_DATA = {json.dumps(data)};")
-    html = html.replace("const STATIC_MONTHLY = null;", f"const STATIC_MONTHLY = {json.dumps(monthly_stats)};")
+    html = html.replace("const STATIC_MONTHLY = null;", f"const STATIC_MONTHLY = {json.dumps(static_monthly)};")
     html = html.replace("const STATIC_HISTORY = null;", f"const STATIC_HISTORY = {json.dumps(train_history)};")
-    html = html.replace("const STATIC_DAILY_TREND = null;", f"const STATIC_DAILY_TREND = {json.dumps(monthly_aggregates)};")
+    html = html.replace("const STATIC_DAILY_TREND = null;", f"const STATIC_DAILY_TREND = {json.dumps(static_daily_trend)};")
 
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html)
