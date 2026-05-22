@@ -1,6 +1,6 @@
 {
   "data": "2026-05-21",
-  "ultima_scansione": "2026-05-22T20:05:26.802152+02:00",
+  "ultima_scansione": "2026-05-22T21:05:24.553940+02:00",
   "treni": {
     "2812": {
       "stato": "REGOLARE",
@@ -7396,8 +7396,8 @@
       "orario_programmato": "23:22",
       "note": "Treno giunto a destinazione dopo la mezzanotte con 46 minuti di ritardo.",
       "prima_rilevazione": "2026-05-21T00:41:29",
-      "ultima_rilevazione": "2026-05-22T20:05:26",
-      "scansioni": 33,
+      "ultima_rilevazione": "2026-05-22T21:05:24",
+      "scansioni": 34,
       "storico_ritardi": [
         {
           "ts": "00:41",
@@ -7529,6 +7529,10 @@
         },
         {
           "ts": "20:05",
+          "rit": 46
+        },
+        {
+          "ts": "21:05",
           "rit": 46
         }
       ],
@@ -11391,8 +11395,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-21T00:41:29",
-      "ultima_rilevazione": "2026-05-22T20:05:26",
-      "scansioni": 33,
+      "ultima_rilevazione": "2026-05-22T21:05:24",
+      "scansioni": 34,
       "storico_ritardi": [
         {
           "ts": "00:41",
@@ -11524,6 +11528,10 @@
         },
         {
           "ts": "20:05",
+          "rit": -1
+        },
+        {
+          "ts": "21:05",
           "rit": -1
         }
       ],
@@ -18699,8 +18707,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-21T00:41:29",
-      "ultima_rilevazione": "2026-05-22T20:05:26",
-      "scansioni": 33,
+      "ultima_rilevazione": "2026-05-22T21:05:24",
+      "scansioni": 34,
       "storico_ritardi": [
         {
           "ts": "00:41",
@@ -18832,6 +18840,10 @@
         },
         {
           "ts": "20:05",
+          "rit": -3
+        },
+        {
+          "ts": "21:05",
           "rit": -3
         }
       ],
