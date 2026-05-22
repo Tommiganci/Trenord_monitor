@@ -1,6 +1,6 @@
 {
   "data": "2026-05-21",
-  "ultima_scansione": "2026-05-21T23:45:34.112559+02:00",
+  "ultima_scansione": "2026-05-22T14:05:30.826357+02:00",
   "treni": {
     "2812": {
       "stato": "REGOLARE",
@@ -7393,11 +7393,11 @@
       "ritardo_capolinea": 46,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCO",
-      "orario_programmato": "23:21",
+      "orario_programmato": "23:22",
       "note": "Treno giunto a destinazione dopo la mezzanotte con 46 minuti di ritardo.",
       "prima_rilevazione": "2026-05-21T00:41:29",
-      "ultima_rilevazione": "2026-05-22T01:14:51",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-22T14:05:30",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:41",
@@ -7489,6 +7489,10 @@
         },
         {
           "ts": "01:14",
+          "rit": 46
+        },
+        {
+          "ts": "14:05",
           "rit": 46
         }
       ],
@@ -11348,11 +11352,11 @@
       "ritardo_capolinea": -1,
       "origine": "LECCO",
       "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "23:05",
+      "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-21T00:41:29",
-      "ultima_rilevazione": "2026-05-22T01:14:51",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-22T14:05:30",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:41",
@@ -11444,6 +11448,10 @@
         },
         {
           "ts": "01:14",
+          "rit": -1
+        },
+        {
+          "ts": "14:05",
           "rit": -1
         }
       ],
@@ -18616,11 +18624,11 @@
       "ritardo_capolinea": -3,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "CHIASSO",
-      "orario_programmato": "23:07",
+      "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-21T00:41:29",
-      "ultima_rilevazione": "2026-05-22T01:14:51",
-      "scansioni": 23,
+      "ultima_rilevazione": "2026-05-22T14:05:30",
+      "scansioni": 24,
       "storico_ritardi": [
         {
           "ts": "00:41",
@@ -18712,6 +18720,10 @@
         },
         {
           "ts": "01:14",
+          "rit": -3
+        },
+        {
+          "ts": "14:05",
           "rit": -3
         }
       ],
