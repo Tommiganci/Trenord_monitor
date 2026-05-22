@@ -4073,65 +4073,6 @@
       "linea": "S8",
       "numero": 24884
     },
-    "24886": {
-      "stato": "RITARDO",
-      "critico": true,
-      "ritardo_attuale": 46,
-      "ritardo_picco": 46,
-      "ritardo_capolinea": 46,
-      "origine": "MILANO CENTRALE",
-      "destinazione": "LECCO",
-      "orario_programmato": "00:08",
-      "note": "",
-      "prima_rilevazione": "2026-05-22T01:14:51",
-      "ultima_rilevazione": "2026-05-22T13:05:24",
-      "scansioni": 10,
-      "storico_ritardi": [
-        {
-          "ts": "01:14",
-          "rit": 46
-        },
-        {
-          "ts": "06:05",
-          "rit": 46
-        },
-        {
-          "ts": "07:05",
-          "rit": 46
-        },
-        {
-          "ts": "08:05",
-          "rit": 46
-        },
-        {
-          "ts": "09:05",
-          "rit": 46
-        },
-        {
-          "ts": "09:52",
-          "rit": 46
-        },
-        {
-          "ts": "10:05",
-          "rit": 46
-        },
-        {
-          "ts": "11:05",
-          "rit": 46
-        },
-        {
-          "ts": "12:05",
-          "rit": 46
-        },
-        {
-          "ts": "13:05",
-          "rit": 46
-        }
-      ],
-      "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
-      "linea": "S8",
-      "numero": 24886
-    },
     "24817": {
       "stato": "SOPPRESSO",
       "critico": true,
@@ -6255,65 +6196,6 @@
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
       "linea": "S8",
       "numero": 24887
-    },
-    "24889": {
-      "stato": "REGOLARE",
-      "critico": false,
-      "ritardo_attuale": -1,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
-      "origine": "LECCO",
-      "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "23:05",
-      "note": "",
-      "prima_rilevazione": "2026-05-22T01:14:51",
-      "ultima_rilevazione": "2026-05-22T13:05:24",
-      "scansioni": 10,
-      "storico_ritardi": [
-        {
-          "ts": "01:14",
-          "rit": -1
-        },
-        {
-          "ts": "06:05",
-          "rit": -1
-        },
-        {
-          "ts": "07:05",
-          "rit": -1
-        },
-        {
-          "ts": "08:05",
-          "rit": -1
-        },
-        {
-          "ts": "09:05",
-          "rit": -1
-        },
-        {
-          "ts": "09:52",
-          "rit": -1
-        },
-        {
-          "ts": "10:05",
-          "rit": -1
-        },
-        {
-          "ts": "11:05",
-          "rit": -1
-        },
-        {
-          "ts": "12:05",
-          "rit": -1
-        },
-        {
-          "ts": "13:05",
-          "rit": -1
-        }
-      ],
-      "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
-      "linea": "S8",
-      "numero": 24889
     },
     "25017": {
       "stato": "REGOLARE",
@@ -10267,65 +10149,6 @@
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25084
-    },
-    "25192": {
-      "stato": "REGOLARE",
-      "critico": false,
-      "ritardo_attuale": -3,
-      "ritardo_picco": -3,
-      "ritardo_capolinea": -3,
-      "origine": "MILANO PORTA GARIBALDI",
-      "destinazione": "CHIASSO",
-      "orario_programmato": "23:06",
-      "note": "",
-      "prima_rilevazione": "2026-05-22T01:14:51",
-      "ultima_rilevazione": "2026-05-22T13:05:24",
-      "scansioni": 10,
-      "storico_ritardi": [
-        {
-          "ts": "01:14",
-          "rit": -3
-        },
-        {
-          "ts": "06:05",
-          "rit": -3
-        },
-        {
-          "ts": "07:05",
-          "rit": -3
-        },
-        {
-          "ts": "08:05",
-          "rit": -3
-        },
-        {
-          "ts": "09:05",
-          "rit": -3
-        },
-        {
-          "ts": "09:52",
-          "rit": -3
-        },
-        {
-          "ts": "10:05",
-          "rit": -3
-        },
-        {
-          "ts": "11:05",
-          "rit": -3
-        },
-        {
-          "ts": "12:05",
-          "rit": -3
-        },
-        {
-          "ts": "13:05",
-          "rit": -3
-        }
-      ],
-      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
-      "linea": "S11",
-      "numero": 25192
     },
     "25503": {
       "stato": "REGOLARE",

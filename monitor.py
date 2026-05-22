@@ -69,22 +69,25 @@ def read_treni():
                 
     return treni
 
-def fetch_stazione_origine(numero):
+def fetch_stazioni_origine(numero):
     url = f"{BASE_URL}/cercaNumeroTrenoTrenoAutocomplete/{numero}"
+    risultati = []
     try:
         r = requests.get(url, headers=HEADERS, timeout=15)
         if r.status_code == 200 and r.text.strip():
             lines = r.text.strip().split("\n")
-            if lines:
-                parts = lines[0].split("|")
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                parts = line.split("|")
                 if len(parts) == 2:
                     subparts = parts[1].split("-")
                     if len(subparts) >= 3:
-                        return subparts[1], subparts[2]
-        return None, None
+                        risultati.append((subparts[1], subparts[2]))
     except Exception as e:
         logging.error(f"Errore autocomplete per {numero}: {e}")
-        return None, None
+    return risultati
 
 def fetch_andamento_treno(codice_stazione, numero, timestamp):
     url = f"{BASE_URL}/andamentoTreno/{codice_stazione}/{numero}/{timestamp}"
@@ -155,7 +158,7 @@ def calcola_stato(api_data, linea, capolinea_attesi):
         "ritardo_capolinea": ritardo_capolinea,
         "origine": origine,
         "destinazione": destinazione,
-        "orario_programmato": api_data.get("compOrarioPartenzaZeroEffettivo", ""),
+        "orario_programmato": api_data.get("compOrarioPartenzaZero", api_data.get("compOrarioPartenzaZeroEffettivo", "")),
         "note": api_data.get("subTitle", "")
     }
 
@@ -270,32 +273,37 @@ def main():
         capolinea_attesi = item["capolinea"]
         logging.info(f"Scansione {direttrice} - {linea} {num}...")
         
-        cod_staz, ts = fetch_stazione_origine(num)
-        if not cod_staz:
+        origini = fetch_stazioni_origine(num)
+        if not origini:
             continue
             
-        # Determina la data di partenza reale del treno dal timestamp di origine
-        try:
-            dep_dt = datetime.fromtimestamp(int(ts) / 1000, tz=IT_TZ)
-            dep_date_str = dep_dt.strftime("%Y-%m-%d")
-        except Exception as e:
-            logging.error(f"Errore conversione timestamp {ts} per treno {num}: {e}")
-            continue
+        for cod_staz, ts in origini:
+            # Determina la data di partenza reale del treno dal timestamp di origine
+            try:
+                dep_dt = datetime.fromtimestamp(int(ts) / 1000, tz=IT_TZ)
+                dep_date_str = dep_dt.strftime("%Y-%m-%d")
+            except Exception as e:
+                logging.error(f"Errore conversione timestamp {ts} per treno {num}: {e}")
+                continue
+                
+            # Limita l'aggiornamento a ieri, oggi e domani per evitare anomalie con vecchi dati
+            if abs((dep_dt.date() - now_it.date()).days) > 1:
+                continue
+                
+            api_data = fetch_andamento_treno(cod_staz, num, ts)
+            if not api_data:
+                continue
+                
+            parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
             
-        api_data = fetch_andamento_treno(cod_staz, num, ts)
-        if not api_data:
-            continue
+            # Recupera il database specifico per la data di partenza
+            db_data = get_db_data(dep_date_str)
             
-        parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
-        
-        # Recupera il database specifico per la data di partenza
-        db_data = get_db_data(dep_date_str)
-        
-        db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
-        db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
-        
-        success_count += 1
-        time.sleep(2) # Anti-ban
+            db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
+            db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
+            
+            success_count += 1
+            time.sleep(2) # Anti-ban
 
     if success_count == 0:
         logging.error("Zero treni aggiornati. Qualcosa non va con la connessione o le API.")
