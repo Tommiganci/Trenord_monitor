@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -49,7 +51,7 @@ jobs:
           git add data/ docs/
           if ! git diff --staged --quiet; then
             git commit -m "Auto-update data and dashboard [$(date '+%Y-%m-%d %H:%M')]"
-            git pull --rebase origin main
+            git pull --rebase -X theirs origin main
             git push origin main
           else
             echo "Nessuna modifica da salvare"
