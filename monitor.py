@@ -7,6 +7,7 @@ import sys
 import glob
 from datetime import datetime
 import zoneinfo # Necessario per gestire il fuso orario in modo robusto
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Configurazione Base
 BASE_URL = "http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno"
@@ -233,6 +234,40 @@ def merge_dati(old_data, new_scan, now_dt):
             "storico_ritardi": storico
     }
 
+def fetch_treno_data(item, now_date):
+    linea, num = item["linea"], item["numero"]
+    direttrice = item["direttrice"]
+    
+    origini = fetch_stazioni_origine(num)
+    if not origini:
+        return []
+        
+    scans = []
+    for cod_staz, ts in origini:
+        try:
+            dep_dt = datetime.fromtimestamp(int(ts) / 1000, tz=IT_TZ)
+            dep_date_str = dep_dt.strftime("%Y-%m-%d")
+        except Exception as e:
+            logging.error(f"Errore conversione timestamp {ts} per treno {num}: {e}")
+            continue
+            
+        if abs((dep_dt.date() - now_date).days) > 1:
+            continue
+            
+        api_data = fetch_andamento_treno(cod_staz, num, ts)
+        if not api_data:
+            continue
+            
+        scans.append({
+            "cod_staz": cod_staz,
+            "ts": ts,
+            "dep_date_str": dep_date_str,
+            "api_data": api_data
+        })
+        time.sleep(0.2) # Breve sleep tra origini dello stesso treno se ce ne sono più di una
+        
+    return scans
+
 def main():
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
@@ -244,6 +279,7 @@ def main():
         
     # Usa orario italiano per i log e scansioni
     now_it = datetime.now(IT_TZ)
+    now_date = now_it.date()
     
     # Cache per gestire più database per data di partenza in un singolo run
     loaded_dbs = {}
@@ -265,45 +301,37 @@ def main():
         loaded_dbs[date_str] = db_data
         return db_data
             
+    num_threads = int(os.environ.get("MONITOR_THREADS", "5"))
+    logging.info(f"Avvio scansione parallela di {len(treni_da_monitorare)} treni con {num_threads} thread...")
+    
+    results = []
+    with ThreadPoolExecutor(max_workers=num_threads) as executor:
+        futures = {executor.submit(fetch_treno_data, item, now_date): item for item in treni_da_monitorare}
+        for future in as_completed(futures):
+            item = futures[future]
+            try:
+                scans = future.result()
+                results.append((item, scans))
+            except Exception as e:
+                logging.error(f"Eccezione durante la scansione del treno {item['numero']}: {e}")
+                
     success_count = 0
-            
-    for item in treni_da_monitorare:
+    # Applichiamo i dati raccolti sequenzialmente nel database principale
+    for item, scans in results:
         linea, num = item["linea"], item["numero"]
         direttrice = item["direttrice"]
         capolinea_attesi = item["capolinea"]
-        logging.info(f"Scansione {direttrice} - {linea} {num}...")
         
-        origini = fetch_stazioni_origine(num)
-        if not origini:
-            continue
+        for scan in scans:
+            dep_date_str = scan["dep_date_str"]
+            api_data = scan["api_data"]
             
-        for cod_staz, ts in origini:
-            # Determina la data di partenza reale del treno dal timestamp di origine
-            try:
-                dep_dt = datetime.fromtimestamp(int(ts) / 1000, tz=IT_TZ)
-                dep_date_str = dep_dt.strftime("%Y-%m-%d")
-            except Exception as e:
-                logging.error(f"Errore conversione timestamp {ts} per treno {num}: {e}")
-                continue
-                
-            # Limita l'aggiornamento a ieri, oggi e domani per evitare anomalie con vecchi dati
-            if abs((dep_dt.date() - now_it.date()).days) > 1:
-                continue
-                
-            api_data = fetch_andamento_treno(cod_staz, num, ts)
-            if not api_data:
-                continue
-                
             parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
             
-            # Recupera il database specifico per la data di partenza
             db_data = get_db_data(dep_date_str)
-            
             db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
             db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
-            
             success_count += 1
-            time.sleep(2) # Anti-ban
 
     if success_count == 0:
         logging.error("Zero treni aggiornati. Qualcosa non va con la connessione o le API.")
