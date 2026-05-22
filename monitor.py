@@ -130,13 +130,14 @@ def calcola_stato(api_data, linea, capolinea_attesi):
         
         # Rileva fermate soppresse (actualFermataType == 3 o "3")
         has_suppressed_stops = any(f.get("actualFermataType") in [3, "3"] for f in fermate)
+        first_stop_suppressed = len(fermate) > 0 and fermate[0].get("actualFermataType") in [3, "3"]
         last_stop_suppressed = len(fermate) > 0 and fermate[-1].get("actualFermataType") in [3, "3"]
         
         # Parole chiave testuali nei dettagli/note
         is_limitato_text = any(x in sub_desc for x in ["LIMITATO", "TERMINA"])
         is_soppresso_text = any(x in sub_desc for x in ["SOPPRESS", "CANCELLAT"])
         
-        if last_stop_suppressed or is_limitato_text:
+        if first_stop_suppressed or last_stop_suppressed or is_limitato_text:
             stato_calcolato = "LIMITATO"
         elif has_suppressed_stops or is_soppresso_text:
             stato_calcolato = "PARZ. SOPPRESSO"
