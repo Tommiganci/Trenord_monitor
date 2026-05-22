@@ -538,8 +538,8 @@
       "numero": 2820
     },
     "2822": {
-      "stato": "RITARDO",
-      "critico": false,
+      "stato": "LIMITATO",
+      "critico": true,
       "ritardo_attuale": 9,
       "ritardo_picco": 13,
       "ritardo_capolinea": 9,
@@ -2785,8 +2785,8 @@
       "numero": 2829
     },
     "2831": {
-      "stato": "RITARDO",
-      "critico": false,
+      "stato": "PARZ. SOPPRESSO",
+      "critico": true,
       "ritardo_attuale": 1,
       "ritardo_picco": 4,
       "ritardo_capolinea": 1,

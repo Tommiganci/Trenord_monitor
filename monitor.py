@@ -127,8 +127,19 @@ def calcola_stato(api_data, linea, capolinea_attesi):
         stato_calcolato = "INATTIVO"
     else:
         sub_desc = api_data.get("subTitle", "").upper()
-        if any(x in sub_desc for x in ["LIMITATO", "TERMINA", "SOPPRESS"]):
-             stato_calcolato = "PARZ. SOPPRESSO"
+        
+        # Rileva fermate soppresse (actualFermataType == 3 o "3")
+        has_suppressed_stops = any(f.get("actualFermataType") in [3, "3"] for f in fermate)
+        last_stop_suppressed = len(fermate) > 0 and fermate[-1].get("actualFermataType") in [3, "3"]
+        
+        # Parole chiave testuali nei dettagli/note
+        is_limitato_text = any(x in sub_desc for x in ["LIMITATO", "TERMINA"])
+        is_soppresso_text = any(x in sub_desc for x in ["SOPPRESS", "CANCELLAT"])
+        
+        if last_stop_suppressed or is_limitato_text:
+            stato_calcolato = "LIMITATO"
+        elif has_suppressed_stops or is_soppresso_text:
+            stato_calcolato = "PARZ. SOPPRESSO"
         elif capolinea_attesi and fermate:
              ult_fermata_prog = fermate[-1].get("stazione", "").upper()
              if all(cap not in ult_fermata_prog for cap in capolinea_attesi):
@@ -227,21 +238,28 @@ def main():
         logging.error("Nessun treno da monitorare.")
         sys.exit(1)
         
-    # Usa orario italiano per i nomi dei file e log
+    # Usa orario italiano per i log e scansioni
     now_it = datetime.now(IT_TZ)
-    oggi_str = now_it.strftime("%Y-%m-%d")
-    db_file = os.path.join(DATA_DIR, f"database_totale_{oggi_str}.json")
     
-    db_data = {"data": oggi_str, "ultima_scansione": now_it.isoformat(), "treni": {}}
-    if os.path.exists(db_file):
-        try:
-            with open(db_file, "r", encoding="utf-8") as f:
-                db_data = json.load(f)
-        except Exception as e:
-            logging.error(f"Errore lettura {db_file}: {e}")
-
-    # FIX: aggiorna sempre ultima_scansione dopo il caricamento dal disco
-    db_data["ultima_scansione"] = now_it.isoformat()
+    # Cache per gestire più database per data di partenza in un singolo run
+    loaded_dbs = {}
+    
+    def get_db_data(date_str):
+        if date_str in loaded_dbs:
+            return loaded_dbs[date_str]
+            
+        db_file = os.path.join(DATA_DIR, f"database_totale_{date_str}.json")
+        db_data = {"data": date_str, "ultima_scansione": now_it.isoformat(), "treni": {}}
+        if os.path.exists(db_file):
+            try:
+                with open(db_file, "r", encoding="utf-8") as f:
+                    db_data = json.load(f)
+            except Exception as e:
+                logging.error(f"Errore lettura {db_file}: {e}")
+                
+        db_data["ultima_scansione"] = now_it.isoformat()
+        loaded_dbs[date_str] = db_data
+        return db_data
             
     success_count = 0
             
@@ -255,11 +273,23 @@ def main():
         if not cod_staz:
             continue
             
+        # Determina la data di partenza reale del treno dal timestamp di origine
+        try:
+            dep_dt = datetime.fromtimestamp(int(ts) / 1000, tz=IT_TZ)
+            dep_date_str = dep_dt.strftime("%Y-%m-%d")
+        except Exception as e:
+            logging.error(f"Errore conversione timestamp {ts} per treno {num}: {e}")
+            continue
+            
         api_data = fetch_andamento_treno(cod_staz, num, ts)
         if not api_data:
             continue
             
         parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
+        
+        # Recupera il database specifico per la data di partenza
+        db_data = get_db_data(dep_date_str)
+        
         db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
         db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
         
@@ -270,8 +300,15 @@ def main():
         logging.error("Zero treni aggiornati. Qualcosa non va con la connessione o le API.")
         sys.exit(1)
 
-    with open(db_file, "w", encoding="utf-8") as f:
-        json.dump(db_data, f, indent=2, ensure_ascii=False)
+    # Scrivi tutti i database caricati e aggiornati
+    for date_str, db_data in loaded_dbs.items():
+        db_file = os.path.join(DATA_DIR, f"database_totale_{date_str}.json")
+        try:
+            with open(db_file, "w", encoding="utf-8") as f:
+                json.dump(db_data, f, indent=2, ensure_ascii=False)
+            logging.info(f"Database salvato: {db_file}")
+        except Exception as e:
+            logging.error(f"Errore scrittura {db_file}: {e}")
             
     logging.info(f"Completato: {success_count} treni aggiornati.")
 
