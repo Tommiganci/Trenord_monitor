@@ -1,6 +1,6 @@
 {
   "data": "2026-05-23",
-  "ultima_scansione": "2026-05-24T00:03:49.381641+02:00",
+  "ultima_scansione": "2026-05-24T01:06:22.755632+02:00",
   "treni": {
     "2818": {
       "stato": "REGOLARE",
@@ -8770,18 +8770,18 @@
       "numero": 24884
     },
     "24886": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": -2,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": -2,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCO",
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-23T01:16:35",
-      "ultima_rilevazione": "2026-05-24T00:03:49",
-      "scansioni": 28,
+      "ultima_rilevazione": "2026-05-24T01:06:22",
+      "scansioni": 29,
       "storico_ritardi": [
         {
           "ts": "01:16",
@@ -8894,6 +8894,10 @@
         {
           "ts": "00:03",
           "rit": 1
+        },
+        {
+          "ts": "01:06",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -13733,7 +13737,7 @@
     "24889": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": -2,
       "ritardo_picco": 0,
       "ritardo_capolinea": -2,
       "origine": "LECCO",
@@ -13741,8 +13745,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-23T01:16:35",
-      "ultima_rilevazione": "2026-05-24T00:03:49",
-      "scansioni": 28,
+      "ultima_rilevazione": "2026-05-24T01:06:22",
+      "scansioni": 29,
       "storico_ritardi": [
         {
           "ts": "01:16",
@@ -13855,6 +13859,10 @@
         {
           "ts": "00:03",
           "rit": -1
+        },
+        {
+          "ts": "01:06",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -19079,16 +19087,16 @@
     "25192": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": -3,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -3,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "CHIASSO",
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-23T01:16:35",
-      "ultima_rilevazione": "2026-05-24T00:03:49",
-      "scansioni": 28,
+      "ultima_rilevazione": "2026-05-24T01:06:22",
+      "scansioni": 29,
       "storico_ritardi": [
         {
           "ts": "01:16",
@@ -19201,6 +19209,10 @@
         {
           "ts": "00:03",
           "rit": 0
+        },
+        {
+          "ts": "01:06",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
