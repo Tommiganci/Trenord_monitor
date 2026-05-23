@@ -1,6 +1,6 @@
 {
   "data": "2026-05-22",
-  "ultima_scansione": "2026-05-23T14:05:17.465237+02:00",
+  "ultima_scansione": "2026-05-23T14:06:05.802613+02:00",
   "treni": {
     "2812": {
       "stato": "RITARDO",
@@ -24646,8 +24646,8 @@
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-22T14:05:30",
-      "ultima_rilevazione": "2026-05-23T14:05:17",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-23T14:06:05",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "14:05",
@@ -24756,6 +24756,10 @@
         {
           "ts": "14:05",
           "rit": -2
+        },
+        {
+          "ts": "14:06",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -24773,8 +24777,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-22T14:05:30",
-      "ultima_rilevazione": "2026-05-23T14:05:17",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-23T14:06:05",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "14:05",
@@ -24883,6 +24887,10 @@
         {
           "ts": "14:05",
           "rit": -2
+        },
+        {
+          "ts": "14:06",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -24900,8 +24908,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-22T14:05:30",
-      "ultima_rilevazione": "2026-05-23T14:05:17",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-23T14:06:05",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "14:05",
@@ -25009,6 +25017,10 @@
         },
         {
           "ts": "14:05",
+          "rit": -4
+        },
+        {
+          "ts": "14:06",
           "rit": -4
         }
       ],
