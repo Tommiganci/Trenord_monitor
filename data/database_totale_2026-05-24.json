@@ -1,6 +1,6 @@
 {
   "data": "2026-05-24",
-  "ultima_scansione": "2026-05-25T00:07:30.223236+02:00",
+  "ultima_scansione": "2026-05-25T01:10:48.801039+02:00",
   "treni": {
     "2816": {
       "stato": "RITARDO",
@@ -6950,18 +6950,18 @@
       "numero": 24821
     },
     "24886": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": -2,
       "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_capolinea": -2,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCO",
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-24T00:03:49",
-      "ultima_rilevazione": "2026-05-25T00:07:30",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-25T01:10:48",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:03",
@@ -7078,6 +7078,10 @@
         {
           "ts": "00:07",
           "rit": 1
+        },
+        {
+          "ts": "01:10",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -9453,8 +9457,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-24T00:03:49",
-      "ultima_rilevazione": "2026-05-25T00:07:30",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-25T01:10:48",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:03",
@@ -9570,6 +9574,10 @@
         },
         {
           "ts": "00:07",
+          "rit": -2
+        },
+        {
+          "ts": "01:10",
           "rit": -2
         }
       ],
@@ -14822,9 +14830,9 @@
       "numero": 25503
     },
     "25192": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": 0,
       "ritardo_picco": 0,
       "ritardo_capolinea": 0,
       "origine": "MILANO PORTA GARIBALDI",
@@ -14832,8 +14840,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-24T00:03:49",
-      "ultima_rilevazione": "2026-05-25T00:07:30",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-25T01:10:48",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:03",
@@ -14950,6 +14958,10 @@
         {
           "ts": "00:07",
           "rit": 1
+        },
+        {
+          "ts": "01:10",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
