@@ -1,0 +1,75 @@
+{
+  "data": "2026-05-24",
+  "ultima_scansione": "2026-05-25T14:55:33.265339+02:00",
+  "treni": {
+    "24886": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "LECCO",
+      "orario_programmato": "23:22",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:55:33",
+      "ultima_rilevazione": "2026-05-25T14:55:33",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:55",
+          "rit": -2
+        }
+      ],
+      "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
+      "linea": "S8",
+      "numero": 24886
+    },
+    "24889": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "23:06",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:55:33",
+      "ultima_rilevazione": "2026-05-25T14:55:33",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:55",
+          "rit": -2
+        }
+      ],
+      "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
+      "linea": "S8",
+      "numero": 24889
+    },
+    "25192": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "CHIASSO",
+      "orario_programmato": "23:09",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:55:33",
+      "ultima_rilevazione": "2026-05-25T14:55:33",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:55",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
+      "linea": "S11",
+      "numero": 25192
+    }
+  }
+}
