@@ -1,6 +1,6 @@
 {
   "data": "2026-05-25",
-  "ultima_scansione": "2026-05-25T14:41:59.444623+02:00",
+  "ultima_scansione": "2026-05-25T14:47:44.018599+02:00",
   "treni": {
     "2818": {
       "stato": "REGOLARE",
@@ -13,8 +13,8 @@
       "orario_programmato": "09:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -62,6 +62,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -80,8 +84,8 @@
       "orario_programmato": "10:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -129,6 +133,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -147,8 +155,8 @@
       "orario_programmato": "08:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -196,6 +204,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -4
+        },
+        {
+          "ts": "14:47",
           "rit": -4
         }
       ],
@@ -214,8 +226,8 @@
       "orario_programmato": "06:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -263,6 +275,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -281,8 +297,8 @@
       "orario_programmato": "07:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -331,6 +347,10 @@
         {
           "ts": "14:41",
           "rit": -2
+        },
+        {
+          "ts": "14:47",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -340,7 +360,7 @@
     "2824": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 8,
+      "ritardo_attuale": 12,
       "ritardo_picco": 4,
       "ritardo_capolinea": 4,
       "origine": "MILANO CENTRALE",
@@ -348,8 +368,8 @@
       "orario_programmato": "12:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -398,6 +418,10 @@
         {
           "ts": "14:41",
           "rit": 8
+        },
+        {
+          "ts": "14:47",
+          "rit": 12
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -407,7 +431,7 @@
     "2828": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 3,
       "ritardo_picco": 4,
       "ritardo_capolinea": 4,
       "origine": "MILANO CENTRALE",
@@ -415,8 +439,8 @@
       "orario_programmato": "14:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -465,6 +489,10 @@
         {
           "ts": "14:41",
           "rit": 5
+        },
+        {
+          "ts": "14:47",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -482,8 +510,8 @@
       "orario_programmato": "11:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -532,6 +560,10 @@
         {
           "ts": "14:41",
           "rit": 6
+        },
+        {
+          "ts": "14:47",
+          "rit": 6
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -541,7 +573,7 @@
     "2826": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 4,
       "ritardo_picco": 2,
       "ritardo_capolinea": 2,
       "origine": "MILANO CENTRALE",
@@ -549,8 +581,8 @@
       "orario_programmato": "13:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -599,6 +631,10 @@
         {
           "ts": "14:41",
           "rit": 5
+        },
+        {
+          "ts": "14:47",
+          "rit": 4
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -616,8 +652,8 @@
       "orario_programmato": "15:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -665,6 +701,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -683,8 +723,8 @@
       "orario_programmato": "16:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -732,6 +772,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -750,8 +794,8 @@
       "orario_programmato": "19:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -799,6 +843,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -817,8 +865,8 @@
       "orario_programmato": "18:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -866,6 +914,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -884,8 +936,8 @@
       "orario_programmato": "17:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -933,6 +985,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -951,8 +1007,8 @@
       "orario_programmato": "20:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1000,6 +1056,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -1018,8 +1078,8 @@
       "orario_programmato": "05:49",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1067,6 +1127,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -1085,8 +1149,8 @@
       "orario_programmato": "21:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1134,6 +1198,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -1152,8 +1220,8 @@
       "orario_programmato": "05:28",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1201,6 +1269,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -1219,8 +1291,8 @@
       "orario_programmato": "06:12",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1268,6 +1340,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -1286,8 +1362,8 @@
       "orario_programmato": "07:00",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1335,6 +1411,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -1353,8 +1433,8 @@
       "orario_programmato": "08:41",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1402,6 +1482,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 4
+        },
+        {
+          "ts": "14:47",
           "rit": 4
         }
       ],
@@ -1420,8 +1504,8 @@
       "orario_programmato": "09:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1469,6 +1553,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 2
+        },
+        {
+          "ts": "14:47",
           "rit": 2
         }
       ],
@@ -1487,8 +1575,8 @@
       "orario_programmato": "10:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1536,6 +1624,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 2
+        },
+        {
+          "ts": "14:47",
           "rit": 2
         }
       ],
@@ -1554,8 +1646,8 @@
       "orario_programmato": "11:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1603,6 +1695,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -1621,8 +1717,8 @@
       "orario_programmato": "12:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1671,6 +1767,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -1680,7 +1780,7 @@
     "2829": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 6,
+      "ritardo_attuale": 4,
       "ritardo_picco": 6,
       "ritardo_capolinea": 5,
       "origine": "TIRANO",
@@ -1688,8 +1788,8 @@
       "orario_programmato": "13:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1738,6 +1838,10 @@
         {
           "ts": "14:41",
           "rit": 6
+        },
+        {
+          "ts": "14:47",
+          "rit": 4
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -1755,8 +1859,8 @@
       "orario_programmato": "15:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1804,6 +1908,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -1822,8 +1930,8 @@
       "orario_programmato": "16:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1872,6 +1980,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -1881,16 +1993,16 @@
     "2831": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 9,
-      "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_attuale": 7,
+      "ritardo_picco": 7,
+      "ritardo_capolinea": 7,
       "origine": "TIRANO",
       "destinazione": "MILANO CENTRALE",
       "orario_programmato": "14:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -1939,6 +2051,10 @@
         {
           "ts": "14:41",
           "rit": 9
+        },
+        {
+          "ts": "14:47",
+          "rit": 7
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -1956,8 +2072,8 @@
       "orario_programmato": "17:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2005,6 +2121,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -2023,8 +2143,8 @@
       "orario_programmato": "18:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2072,6 +2192,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -2090,8 +2214,8 @@
       "orario_programmato": "05:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2139,6 +2263,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -2157,8 +2285,8 @@
       "orario_programmato": "20:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2206,6 +2334,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -2224,8 +2356,8 @@
       "orario_programmato": "19:08",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2273,6 +2405,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -2291,8 +2427,8 @@
       "orario_programmato": "05:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2340,6 +2476,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -2358,8 +2498,8 @@
       "orario_programmato": "06:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2407,6 +2547,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 2
+        },
+        {
+          "ts": "14:47",
           "rit": 2
         }
       ],
@@ -2425,8 +2569,8 @@
       "orario_programmato": "07:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2474,6 +2618,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -2
+        },
+        {
+          "ts": "14:47",
           "rit": -2
         }
       ],
@@ -2492,8 +2640,8 @@
       "orario_programmato": "07:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2541,6 +2689,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -2559,8 +2711,8 @@
       "orario_programmato": "06:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2608,6 +2760,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -2626,8 +2782,8 @@
       "orario_programmato": "08:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2675,6 +2831,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -3
+        },
+        {
+          "ts": "14:47",
           "rit": -3
         }
       ],
@@ -2693,8 +2853,8 @@
       "orario_programmato": "08:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2742,6 +2902,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -2
+        },
+        {
+          "ts": "14:47",
           "rit": -2
         }
       ],
@@ -2760,8 +2924,8 @@
       "orario_programmato": "09:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2809,6 +2973,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -2
+        },
+        {
+          "ts": "14:47",
           "rit": -2
         }
       ],
@@ -2827,8 +2995,8 @@
       "orario_programmato": "09:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2876,6 +3044,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 5
+        },
+        {
+          "ts": "14:47",
           "rit": 5
         }
       ],
@@ -2894,8 +3066,8 @@
       "orario_programmato": "10:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -2944,6 +3116,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -2961,8 +3137,8 @@
       "orario_programmato": "10:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3011,6 +3187,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -3028,8 +3208,8 @@
       "orario_programmato": "11:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3078,6 +3258,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -3095,8 +3279,8 @@
       "orario_programmato": "11:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3144,6 +3328,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -3162,8 +3350,8 @@
       "orario_programmato": "12:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3211,6 +3399,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -3
+        },
+        {
+          "ts": "14:47",
           "rit": -3
         }
       ],
@@ -3229,8 +3421,8 @@
       "orario_programmato": "12:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3278,6 +3470,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -3296,8 +3492,8 @@
       "orario_programmato": "13:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3346,6 +3542,10 @@
         {
           "ts": "14:41",
           "rit": -3
+        },
+        {
+          "ts": "14:47",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -3355,16 +3555,16 @@
     "24848": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -2,
+      "ritardo_attuale": -3,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -2,
+      "ritardo_capolinea": -3,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "LECCO",
       "orario_programmato": "13:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3413,6 +3613,10 @@
         {
           "ts": "14:41",
           "rit": -2
+        },
+        {
+          "ts": "14:47",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -3430,8 +3634,8 @@
       "orario_programmato": "14:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3479,6 +3683,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3490,15 +3698,15 @@
       "stato": "RITARDO",
       "critico": false,
       "ritardo_attuale": 7,
-      "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_picco": 6,
+      "ritardo_capolinea": 6,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "LECCO",
       "orario_programmato": "14:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3546,6 +3754,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 7
+        },
+        {
+          "ts": "14:47",
           "rit": 7
         }
       ],
@@ -3564,8 +3776,8 @@
       "orario_programmato": "15:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3613,6 +3825,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3631,8 +3847,8 @@
       "orario_programmato": "15:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3680,6 +3896,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3698,8 +3918,8 @@
       "orario_programmato": "16:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3747,6 +3967,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3765,8 +3989,8 @@
       "orario_programmato": "16:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3814,6 +4038,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3832,8 +4060,8 @@
       "orario_programmato": "17:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3881,6 +4109,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3899,8 +4131,8 @@
       "orario_programmato": "17:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -3948,6 +4180,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -3966,8 +4202,8 @@
       "orario_programmato": "18:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4015,6 +4251,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4033,8 +4273,8 @@
       "orario_programmato": "18:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4082,6 +4322,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4100,8 +4344,8 @@
       "orario_programmato": "19:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4149,6 +4393,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4167,8 +4415,8 @@
       "orario_programmato": "19:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4216,6 +4464,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4234,8 +4486,8 @@
       "orario_programmato": "20:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4283,6 +4535,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4301,8 +4557,8 @@
       "orario_programmato": "20:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4350,6 +4606,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4368,8 +4628,8 @@
       "orario_programmato": "21:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4417,6 +4677,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4435,8 +4699,8 @@
       "orario_programmato": "22:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4484,6 +4748,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4502,8 +4770,8 @@
       "orario_programmato": "21:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4551,6 +4819,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4569,8 +4841,8 @@
       "orario_programmato": "22:52",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4618,6 +4890,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4636,8 +4912,8 @@
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4685,6 +4961,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4703,8 +4983,8 @@
       "orario_programmato": "05:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4752,6 +5032,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -4770,8 +5054,8 @@
       "orario_programmato": "05:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4819,6 +5103,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -4837,8 +5125,8 @@
       "orario_programmato": "06:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4886,6 +5174,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -4904,8 +5196,8 @@
       "orario_programmato": "06:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -4953,6 +5245,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 5
+        },
+        {
+          "ts": "14:47",
           "rit": 5
         }
       ],
@@ -4971,8 +5267,8 @@
       "orario_programmato": "07:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5020,6 +5316,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 5
+        },
+        {
+          "ts": "14:47",
           "rit": 5
         }
       ],
@@ -5038,8 +5338,8 @@
       "orario_programmato": "07:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5087,6 +5387,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -5105,8 +5409,8 @@
       "orario_programmato": "08:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5154,6 +5458,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -5172,8 +5480,8 @@
       "orario_programmato": "08:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5221,6 +5529,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 5
+        },
+        {
+          "ts": "14:47",
           "rit": 5
         }
       ],
@@ -5239,8 +5551,8 @@
       "orario_programmato": "09:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5288,6 +5600,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 5
+        },
+        {
+          "ts": "14:47",
           "rit": 5
         }
       ],
@@ -5306,8 +5622,8 @@
       "orario_programmato": "09:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5355,6 +5671,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -5373,8 +5693,8 @@
       "orario_programmato": "10:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5422,6 +5742,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -5440,8 +5764,8 @@
       "orario_programmato": "10:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5489,6 +5813,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -5507,8 +5835,8 @@
       "orario_programmato": "11:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5556,6 +5884,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -5574,8 +5906,8 @@
       "orario_programmato": "11:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5623,6 +5955,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -5641,8 +5977,8 @@
       "orario_programmato": "12:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5690,6 +6026,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -5708,8 +6048,8 @@
       "orario_programmato": "12:36",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5757,6 +6097,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -5775,8 +6119,8 @@
       "orario_programmato": "13:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5824,6 +6168,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -5842,8 +6190,8 @@
       "orario_programmato": "13:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5892,6 +6240,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -5899,18 +6251,18 @@
       "numero": 24849
     },
     "24853": {
-      "stato": "REGOLARE",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 1,
       "ritardo_picco": 0,
-      "ritardo_capolinea": -2,
+      "ritardo_capolinea": -1,
       "origine": "LECCO",
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "14:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -5959,6 +6311,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -5966,18 +6322,18 @@
       "numero": 24853
     },
     "24855": {
-      "stato": "REGOLARE",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": 1,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -1,
       "origine": "LECCO",
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "14:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6026,6 +6382,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)",
@@ -6043,8 +6403,8 @@
       "orario_programmato": "15:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6092,6 +6452,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6110,8 +6474,8 @@
       "orario_programmato": "16:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6159,6 +6523,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6177,8 +6545,8 @@
       "orario_programmato": "15:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6226,6 +6594,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6244,8 +6616,8 @@
       "orario_programmato": "17:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6293,6 +6665,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6311,8 +6687,8 @@
       "orario_programmato": "16:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6360,6 +6736,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6378,8 +6758,8 @@
       "orario_programmato": "18:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6427,6 +6807,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6445,8 +6829,8 @@
       "orario_programmato": "17:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6494,6 +6878,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6512,8 +6900,8 @@
       "orario_programmato": "18:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6561,6 +6949,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6579,8 +6971,8 @@
       "orario_programmato": "19:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6628,6 +7020,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6646,8 +7042,8 @@
       "orario_programmato": "19:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6695,6 +7091,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6713,8 +7113,8 @@
       "orario_programmato": "21:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6762,6 +7162,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6780,8 +7184,8 @@
       "orario_programmato": "20:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6829,6 +7233,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6847,8 +7255,8 @@
       "orario_programmato": "20:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6896,6 +7304,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6914,8 +7326,8 @@
       "orario_programmato": "21:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -6963,6 +7375,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -6981,8 +7397,8 @@
       "orario_programmato": "22:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7030,6 +7446,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -7048,8 +7468,8 @@
       "orario_programmato": "22:36",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7097,6 +7517,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -7115,8 +7539,8 @@
       "orario_programmato": "05:13",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7164,6 +7588,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -2
+        },
+        {
+          "ts": "14:47",
           "rit": -2
         }
       ],
@@ -7182,8 +7610,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7231,6 +7659,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -7249,8 +7681,8 @@
       "orario_programmato": "06:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7298,6 +7730,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -3
+        },
+        {
+          "ts": "14:47",
           "rit": -3
         }
       ],
@@ -7316,8 +7752,8 @@
       "orario_programmato": "05:45",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7365,6 +7801,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -4
+        },
+        {
+          "ts": "14:47",
           "rit": -4
         }
       ],
@@ -7383,8 +7823,8 @@
       "orario_programmato": "07:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7432,6 +7872,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -7450,8 +7894,8 @@
       "orario_programmato": "06:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7499,6 +7943,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -3
+        },
+        {
+          "ts": "14:47",
           "rit": -3
         }
       ],
@@ -7517,8 +7965,8 @@
       "orario_programmato": "07:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7566,6 +8014,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -3
+        },
+        {
+          "ts": "14:47",
           "rit": -3
         }
       ],
@@ -7584,8 +8036,8 @@
       "orario_programmato": "08:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7633,6 +8085,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 6
+        },
+        {
+          "ts": "14:47",
           "rit": 6
         }
       ],
@@ -7651,8 +8107,8 @@
       "orario_programmato": "08:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7700,6 +8156,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 11
+        },
+        {
+          "ts": "14:47",
           "rit": 11
         }
       ],
@@ -7718,8 +8178,8 @@
       "orario_programmato": "09:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7767,6 +8227,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -7785,8 +8249,8 @@
       "orario_programmato": "09:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7834,6 +8298,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -7852,8 +8320,8 @@
       "orario_programmato": "10:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7901,6 +8369,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -2
+        },
+        {
+          "ts": "14:47",
           "rit": -2
         }
       ],
@@ -7919,8 +8391,8 @@
       "orario_programmato": "10:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -7969,6 +8441,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -7986,8 +8462,8 @@
       "orario_programmato": "11:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8036,6 +8512,10 @@
         {
           "ts": "14:41",
           "rit": -3
+        },
+        {
+          "ts": "14:47",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -8053,8 +8533,8 @@
       "orario_programmato": "11:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8102,6 +8582,10 @@
         },
         {
           "ts": "14:41",
+          "rit": -1
+        },
+        {
+          "ts": "14:47",
           "rit": -1
         }
       ],
@@ -8120,8 +8604,8 @@
       "orario_programmato": "12:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8170,6 +8654,10 @@
         {
           "ts": "14:41",
           "rit": 5
+        },
+        {
+          "ts": "14:47",
+          "rit": 5
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -8187,8 +8675,8 @@
       "orario_programmato": "12:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8237,6 +8725,10 @@
         {
           "ts": "14:41",
           "rit": -2
+        },
+        {
+          "ts": "14:47",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -8254,8 +8746,8 @@
       "orario_programmato": "13:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8303,6 +8795,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 4
+        },
+        {
+          "ts": "14:47",
           "rit": 4
         }
       ],
@@ -8313,16 +8809,16 @@
     "25251": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 5,
+      "ritardo_attuale": 4,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 4,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "RHO",
       "orario_programmato": "13:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8371,6 +8867,10 @@
         {
           "ts": "14:41",
           "rit": 5
+        },
+        {
+          "ts": "14:47",
+          "rit": 4
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -8380,7 +8880,7 @@
     "25053": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 3,
+      "ritardo_attuale": 2,
       "ritardo_picco": 1,
       "ritardo_capolinea": 1,
       "origine": "COMO S.GIOVANNI",
@@ -8388,8 +8888,8 @@
       "orario_programmato": "14:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8438,6 +8938,10 @@
         {
           "ts": "14:41",
           "rit": 3
+        },
+        {
+          "ts": "14:47",
+          "rit": 2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -8455,8 +8959,8 @@
       "orario_programmato": "14:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8504,6 +9008,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8522,8 +9030,8 @@
       "orario_programmato": "15:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8571,6 +9079,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8589,8 +9101,8 @@
       "orario_programmato": "15:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8638,6 +9150,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8656,8 +9172,8 @@
       "orario_programmato": "16:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8705,6 +9221,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8723,8 +9243,8 @@
       "orario_programmato": "17:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8772,6 +9292,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8790,8 +9314,8 @@
       "orario_programmato": "16:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8839,6 +9363,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8857,8 +9385,8 @@
       "orario_programmato": "17:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8906,6 +9434,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8924,8 +9456,8 @@
       "orario_programmato": "18:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -8973,6 +9505,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -8991,8 +9527,8 @@
       "orario_programmato": "18:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9040,6 +9576,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9058,8 +9598,8 @@
       "orario_programmato": "19:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9107,6 +9647,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9125,8 +9669,8 @@
       "orario_programmato": "19:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9174,6 +9718,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9192,8 +9740,8 @@
       "orario_programmato": "20:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9241,6 +9789,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9259,8 +9811,8 @@
       "orario_programmato": "20:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9308,6 +9860,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9326,8 +9882,8 @@
       "orario_programmato": "21:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9375,6 +9931,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9393,8 +9953,8 @@
       "orario_programmato": "21:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9442,6 +10002,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -9460,8 +10024,8 @@
       "orario_programmato": "22:20",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9510,6 +10074,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9527,8 +10095,8 @@
       "orario_programmato": "05:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9577,6 +10145,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9594,8 +10166,8 @@
       "orario_programmato": "06:09",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9644,6 +10216,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9661,8 +10237,8 @@
       "orario_programmato": "06:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9711,6 +10287,10 @@
         {
           "ts": "14:41",
           "rit": 2
+        },
+        {
+          "ts": "14:47",
+          "rit": 2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9728,8 +10308,8 @@
       "orario_programmato": "06:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9778,6 +10358,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9795,8 +10379,8 @@
       "orario_programmato": "22:50",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9845,6 +10429,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9862,8 +10450,8 @@
       "orario_programmato": "07:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9912,6 +10500,10 @@
         {
           "ts": "14:41",
           "rit": 2
+        },
+        {
+          "ts": "14:47",
+          "rit": 2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9929,8 +10521,8 @@
       "orario_programmato": "07:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -9979,6 +10571,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -9996,8 +10592,8 @@
       "orario_programmato": "08:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10046,6 +10642,10 @@
         {
           "ts": "14:41",
           "rit": 4
+        },
+        {
+          "ts": "14:47",
+          "rit": 4
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10063,8 +10663,8 @@
       "orario_programmato": "08:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10113,6 +10713,10 @@
         {
           "ts": "14:41",
           "rit": 5
+        },
+        {
+          "ts": "14:47",
+          "rit": 5
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10130,8 +10734,8 @@
       "orario_programmato": "09:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10180,6 +10784,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10197,8 +10805,8 @@
       "orario_programmato": "10:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10246,6 +10854,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -10264,8 +10876,8 @@
       "orario_programmato": "11:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10314,6 +10926,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10331,8 +10947,8 @@
       "orario_programmato": "12:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10381,6 +10997,10 @@
         {
           "ts": "14:41",
           "rit": 3
+        },
+        {
+          "ts": "14:47",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10398,8 +11018,8 @@
       "orario_programmato": "13:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10448,6 +11068,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10457,16 +11081,16 @@
     "25249": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 7,
+      "ritardo_attuale": 5,
       "ritardo_picco": 7,
-      "ritardo_capolinea": 7,
+      "ritardo_capolinea": 4,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
       "orario_programmato": "13:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10515,6 +11139,10 @@
         {
           "ts": "14:41",
           "rit": 7
+        },
+        {
+          "ts": "14:47",
+          "rit": 5
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10522,18 +11150,18 @@
       "numero": 25249
     },
     "25052": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
+      "ritardo_attuale": -1,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -1,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "COMO S.GIOVANNI",
       "orario_programmato": "14:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10582,6 +11210,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10589,18 +11221,18 @@
       "numero": 25052
     },
     "25253": {
-      "stato": "INATTIVO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": -2,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -2,
       "origine": "RHO",
       "destinazione": "COMO S.GIOVANNI",
       "orario_programmato": "14:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10649,6 +11281,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -10666,8 +11302,8 @@
       "orario_programmato": "15:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10715,6 +11351,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -10733,8 +11373,8 @@
       "orario_programmato": "15:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10782,6 +11422,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -10800,8 +11444,8 @@
       "orario_programmato": "16:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10849,6 +11493,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -10867,8 +11515,8 @@
       "orario_programmato": "16:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10916,6 +11564,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -10934,8 +11586,8 @@
       "orario_programmato": "17:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -10983,6 +11635,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11001,8 +11657,8 @@
       "orario_programmato": "17:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11050,6 +11706,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11068,8 +11728,8 @@
       "orario_programmato": "18:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11117,6 +11777,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11135,8 +11799,8 @@
       "orario_programmato": "18:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11184,6 +11848,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11202,8 +11870,8 @@
       "orario_programmato": "19:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11251,6 +11919,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11269,8 +11941,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11318,6 +11990,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11336,8 +12012,8 @@
       "orario_programmato": "20:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11385,6 +12061,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11403,8 +12083,8 @@
       "orario_programmato": "20:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11452,6 +12132,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11470,8 +12154,8 @@
       "orario_programmato": "21:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11519,6 +12203,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11537,8 +12225,8 @@
       "orario_programmato": "22:09",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11586,6 +12274,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11604,8 +12296,8 @@
       "orario_programmato": "04:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11653,6 +12345,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 4
+        },
+        {
+          "ts": "14:47",
           "rit": 4
         }
       ],
@@ -11671,8 +12367,8 @@
       "orario_programmato": "22:39",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11720,6 +12416,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11738,8 +12438,8 @@
       "orario_programmato": "07:03",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11787,6 +12487,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 2
+        },
+        {
+          "ts": "14:47",
           "rit": 2
         }
       ],
@@ -11805,8 +12509,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11854,6 +12558,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -11872,8 +12580,8 @@
       "orario_programmato": "06:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11921,6 +12629,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 2
+        },
+        {
+          "ts": "14:47",
           "rit": 2
         }
       ],
@@ -11939,8 +12651,8 @@
       "orario_programmato": "07:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -11988,6 +12700,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 5
+        },
+        {
+          "ts": "14:47",
           "rit": 5
         }
       ],
@@ -12006,8 +12722,8 @@
       "orario_programmato": "08:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12055,6 +12771,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 8
+        },
+        {
+          "ts": "14:47",
           "rit": 8
         }
       ],
@@ -12073,8 +12793,8 @@
       "orario_programmato": "09:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12123,6 +12843,10 @@
         {
           "ts": "14:41",
           "rit": 10
+        },
+        {
+          "ts": "14:47",
+          "rit": 10
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -12140,8 +12864,8 @@
       "orario_programmato": "11:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12190,6 +12914,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -12207,8 +12935,8 @@
       "orario_programmato": "12:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12257,6 +12985,10 @@
         {
           "ts": "14:41",
           "rit": 1
+        },
+        {
+          "ts": "14:47",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -12274,8 +13006,8 @@
       "orario_programmato": "13:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12323,6 +13055,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 3
+        },
+        {
+          "ts": "14:47",
           "rit": 3
         }
       ],
@@ -12341,8 +13077,8 @@
       "orario_programmato": "15:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12391,6 +13127,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -12400,16 +13140,16 @@
     "25523": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 6,
+      "ritardo_attuale": 3,
       "ritardo_picco": 5,
-      "ritardo_capolinea": 5,
+      "ritardo_capolinea": 0,
       "origine": "CHIASSO",
       "destinazione": "MILANO CENTRALE",
       "orario_programmato": "14:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12458,6 +13198,10 @@
         {
           "ts": "14:41",
           "rit": 6
+        },
+        {
+          "ts": "14:47",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -12475,8 +13219,8 @@
       "orario_programmato": "16:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12524,6 +13268,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -12542,8 +13290,8 @@
       "orario_programmato": "17:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12591,6 +13339,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -12609,8 +13361,8 @@
       "orario_programmato": "19:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12658,6 +13410,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -12676,8 +13432,8 @@
       "orario_programmato": "18:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12725,6 +13481,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -12743,8 +13503,8 @@
       "orario_programmato": "20:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12792,6 +13552,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -12810,8 +13574,8 @@
       "orario_programmato": "21:31",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12859,6 +13623,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -12877,8 +13645,8 @@
       "orario_programmato": "05:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12926,6 +13694,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 1
+        },
+        {
+          "ts": "14:47",
           "rit": 1
         }
       ],
@@ -12944,8 +13716,8 @@
       "orario_programmato": "06:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -12994,6 +13766,10 @@
         {
           "ts": "14:41",
           "rit": -3
+        },
+        {
+          "ts": "14:47",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13011,8 +13787,8 @@
       "orario_programmato": "08:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13061,6 +13837,10 @@
         {
           "ts": "14:41",
           "rit": 2
+        },
+        {
+          "ts": "14:47",
+          "rit": 2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13078,8 +13858,8 @@
       "orario_programmato": "07:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13127,6 +13907,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13145,8 +13929,8 @@
       "orario_programmato": "09:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13195,6 +13979,10 @@
         {
           "ts": "14:41",
           "rit": -1
+        },
+        {
+          "ts": "14:47",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13212,8 +14000,8 @@
       "orario_programmato": "10:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13262,6 +14050,10 @@
         {
           "ts": "14:41",
           "rit": 6
+        },
+        {
+          "ts": "14:47",
+          "rit": 6
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13279,8 +14071,8 @@
       "orario_programmato": "11:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13329,6 +14121,10 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13346,8 +14142,8 @@
       "orario_programmato": "12:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13396,6 +14192,10 @@
         {
           "ts": "14:41",
           "rit": 3
+        },
+        {
+          "ts": "14:47",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13413,8 +14213,8 @@
       "orario_programmato": "13:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13463,6 +14263,10 @@
         {
           "ts": "14:41",
           "rit": 5
+        },
+        {
+          "ts": "14:47",
+          "rit": 5
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -13480,8 +14284,8 @@
       "orario_programmato": "14:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13529,6 +14333,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13547,8 +14355,8 @@
       "orario_programmato": "15:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13596,6 +14404,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13614,8 +14426,8 @@
       "orario_programmato": "17:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13663,6 +14475,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13681,8 +14497,8 @@
       "orario_programmato": "16:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13730,6 +14546,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13748,8 +14568,8 @@
       "orario_programmato": "18:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13797,6 +14617,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13815,8 +14639,8 @@
       "orario_programmato": "19:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13864,6 +14688,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13882,8 +14710,8 @@
       "orario_programmato": "20:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13931,6 +14759,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -13949,8 +14781,8 @@
       "orario_programmato": "21:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -13998,6 +14830,10 @@
         },
         {
           "ts": "14:41",
+          "rit": 0
+        },
+        {
+          "ts": "14:47",
           "rit": 0
         }
       ],
@@ -14016,8 +14852,8 @@
       "orario_programmato": "22:43",
       "note": "",
       "prima_rilevazione": "2026-05-25T00:07:30",
-      "ultima_rilevazione": "2026-05-25T14:41:59",
-      "scansioni": 12,
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 13,
       "storico_ritardi": [
         {
           "ts": "00:07",
@@ -14066,11 +14902,912 @@
         {
           "ts": "14:41",
           "rit": 0
+        },
+        {
+          "ts": "14:47",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "RE80",
       "numero": 25538
+    },
+    "24715": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -1,
+      "ritardo_picco": -1,
+      "ritardo_capolinea": -1,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "05:44",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": -1
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24715
+    },
+    "24717": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 2,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
+      "origine": "MONZA",
+      "destinazione": "LECCO",
+      "orario_programmato": "06:37",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 2
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24717
+    },
+    "24719": {
+      "stato": "LIMITATO",
+      "critico": true,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
+      "origine": "MONZA",
+      "destinazione": "MOLTENO",
+      "orario_programmato": "07:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 3
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24719
+    },
+    "24725": {
+      "stato": "LIMITATO",
+      "critico": true,
+      "ritardo_attuale": 4,
+      "ritardo_picco": 4,
+      "ritardo_capolinea": 4,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "VALMADRERA",
+      "orario_programmato": "08:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 4
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24725
+    },
+    "24733": {
+      "stato": "LIMITATO",
+      "critico": true,
+      "ritardo_attuale": 7,
+      "ritardo_picco": 4,
+      "ritardo_capolinea": 4,
+      "origine": "MONZA",
+      "destinazione": "VALMADRERA",
+      "orario_programmato": "10:33",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 7
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24733
+    },
+    "24729": {
+      "stato": "LIMITATO",
+      "critico": true,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 5,
+      "ritardo_capolinea": 5,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "VALMADRERA",
+      "orario_programmato": "09:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 5
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24729
+    },
+    "24737": {
+      "stato": "LIMITATO",
+      "critico": true,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
+      "origine": "MONZA",
+      "destinazione": "VALMADRERA",
+      "orario_programmato": "11:33",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 5
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24737
+    },
+    "24741": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
+      "origine": "MONZA",
+      "destinazione": "LECCO",
+      "orario_programmato": "12:33",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 3
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24741
+    },
+    "24743": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
+      "origine": "MONZA",
+      "destinazione": "BESANA",
+      "orario_programmato": "13:03",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": -2
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24743
+    },
+    "24745": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 6,
+      "ritardo_picco": 6,
+      "ritardo_capolinea": 6,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "13:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 6
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24745
+    },
+    "24749": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 4,
+      "ritardo_capolinea": 4,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "14:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 5
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24749
+    },
+    "24757": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "16:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24757
+    },
+    "24753": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "15:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24753
+    },
+    "24759": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "16:44",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24759
+    },
+    "24763": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "17:44",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24763
+    },
+    "24767": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "18:44",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24767
+    },
+    "24765": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "18:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24765
+    },
+    "24769": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "19:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24769
+    },
+    "24773": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO PORTA GARIBALDI",
+      "destinazione": "LECCO",
+      "orario_programmato": "20:17",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24773
+    },
+    "24720": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 10,
+      "ritardo_picco": 6,
+      "ritardo_capolinea": 6,
+      "origine": "LECCO",
+      "destinazione": "MONZA",
+      "orario_programmato": "05:16",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 10
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24720
+    },
+    "24724": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 5,
+      "ritardo_capolinea": 5,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "06:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 5
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24724
+    },
+    "24722": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 11,
+      "ritardo_picco": 6,
+      "ritardo_capolinea": 6,
+      "origine": "LECCO",
+      "destinazione": "MONZA",
+      "orario_programmato": "05:48",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 11
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24722
+    },
+    "24726": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 2,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "06:40",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 2
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24726
+    },
+    "24728": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "06:55",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 3
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24728
+    },
+    "24730": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "07:34",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24730
+    },
+    "24734": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 8,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
+      "origine": "MOLTENO",
+      "destinazione": "MONZA",
+      "orario_programmato": "08:53",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 8
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24734
+    },
+    "24732": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "08:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 3
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24732
+    },
+    "24736": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 3,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
+      "origine": "LECCO",
+      "destinazione": "MONZA",
+      "orario_programmato": "09:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 3
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24736
+    },
+    "24740": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 9,
+      "ritardo_picco": 5,
+      "ritardo_capolinea": 5,
+      "origine": "VALMADRERA",
+      "destinazione": "MONZA",
+      "orario_programmato": "10:13",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 9
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24740
+    },
+    "24744": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 1,
+      "ritardo_capolinea": 1,
+      "origine": "VALMADRERA",
+      "destinazione": "MONZA",
+      "orario_programmato": "11:13",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 5
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24744
+    },
+    "24748": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "VALMADRERA",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "12:13",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24748
+    },
+    "24752": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 4,
+      "ritardo_picco": 4,
+      "ritardo_capolinea": 4,
+      "origine": "VALMADRERA",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "13:13",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 4
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24752
+    },
+    "24754": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 4,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
+      "origine": "BESANA",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "14:15",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 4
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24754
+    },
+    "24760": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "15:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24760
+    },
+    "24756": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 5,
+      "ritardo_picco": 5,
+      "ritardo_capolinea": 5,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "14:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 5
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24756
+    },
+    "24768": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "17:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24768
+    },
+    "24764": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "16:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24764
+    },
+    "24772": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "18:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24772
+    },
+    "24776": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "LECCO",
+      "destinazione": "MILANO PORTA GARIBALDI",
+      "orario_programmato": "19:07",
+      "note": "",
+      "prima_rilevazione": "2026-05-25T14:47:44",
+      "ultima_rilevazione": "2026-05-25T14:47:44",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "14:47",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
+      "linea": "S7",
+      "numero": 24776
     }
   }
 }
