@@ -1,6 +1,6 @@
 {
   "data": "2026-05-26",
-  "ultima_scansione": "2026-05-26T23:05:24.796340+02:00",
+  "ultima_scansione": "2026-05-27T00:37:54.719004+02:00",
   "treni": {
     "2820": {
       "stato": "REGOLARE",
@@ -4658,18 +4658,18 @@
       "numero": 25507
     },
     "25192": {
-      "stato": "INATTIVO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": -2,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -2,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "CHIASSO",
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -4686,6 +4686,10 @@
         {
           "ts": "23:05",
           "rit": 0
+        },
+        {
+          "ts": "00:37",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -8508,18 +8512,18 @@
       "numero": 24819
     },
     "24886": {
-      "stato": "INATTIVO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 0,
+      "ritardo_attuale": -3,
       "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_capolinea": -3,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCO",
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -8536,6 +8540,10 @@
         {
           "ts": "23:05",
           "rit": 0
+        },
+        {
+          "ts": "00:37",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 39 (Lecco - Carnate - Milano P.ta Garibaldi)",
@@ -9768,18 +9776,18 @@
       "numero": 2247
     },
     "24889": {
-      "stato": "INATTIVO",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 1,
+      "ritardo_picco": 1,
+      "ritardo_capolinea": 1,
       "origine": "LECCO",
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -9796,6 +9804,10 @@
         {
           "ts": "23:05",
           "rit": 0
+        },
+        {
+          "ts": "00:37",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 39 (Lecco - Carnate - Milano P.ta Garibaldi)",
@@ -14880,16 +14892,16 @@
     "737": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 17,
-      "ritardo_picco": 12,
-      "ritardo_capolinea": 9,
+      "ritardo_attuale": 25,
+      "ritardo_picco": 16,
+      "ritardo_capolinea": 16,
       "origine": "TORINO PORTA NUOVA",
       "destinazione": "LECCE",
       "orario_programmato": "20:50",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -14906,6 +14918,10 @@
         {
           "ts": "23:05",
           "rit": 17
+        },
+        {
+          "ts": "00:37",
+          "rit": 25
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -14915,16 +14931,16 @@
     "735": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 6,
-      "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_attuale": 21,
+      "ritardo_picco": 20,
+      "ritardo_capolinea": 20,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCE",
       "orario_programmato": "21:50",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -14941,6 +14957,10 @@
         {
           "ts": "23:05",
           "rit": 6
+        },
+        {
+          "ts": "00:37",
+          "rit": 21
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -15020,16 +15040,16 @@
     "755": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 6,
-      "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_attuale": 21,
+      "ritardo_picco": 20,
+      "ritardo_capolinea": 20,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCE",
       "orario_programmato": "21:50",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -15046,6 +15066,10 @@
         {
           "ts": "23:05",
           "rit": 6
+        },
+        {
+          "ts": "00:37",
+          "rit": 21
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -15055,16 +15079,16 @@
     "757": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 17,
-      "ritardo_picco": 12,
-      "ritardo_capolinea": 9,
+      "ritardo_attuale": 25,
+      "ritardo_picco": 16,
+      "ritardo_capolinea": 16,
       "origine": "TORINO PORTA NUOVA",
       "destinazione": "LECCE",
       "orario_programmato": "20:50",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -15081,6 +15105,10 @@
         {
           "ts": "23:05",
           "rit": 17
+        },
+        {
+          "ts": "00:37",
+          "rit": 25
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -15160,16 +15188,16 @@
     "765": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 11,
-      "ritardo_picco": 9,
-      "ritardo_capolinea": 9,
+      "ritardo_attuale": 13,
+      "ritardo_picco": 14,
+      "ritardo_capolinea": 14,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCE",
       "orario_programmato": "21:15",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -15186,6 +15214,10 @@
         {
           "ts": "23:05",
           "rit": 0
+        },
+        {
+          "ts": "00:37",
+          "rit": 13
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -15370,16 +15402,16 @@
     "775": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": -3,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": -2,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
       "origine": "ROMA TERMINI",
       "destinazione": "TRIESTE CENTRALE",
       "orario_programmato": "22:35",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -15396,6 +15428,10 @@
         {
           "ts": "23:05",
           "rit": 0
+        },
+        {
+          "ts": "00:37",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -15755,16 +15791,16 @@
     "797": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 97,
-      "ritardo_picco": 95,
-      "ritardo_capolinea": 95,
+      "ritardo_attuale": 111,
+      "ritardo_picco": 115,
+      "ritardo_capolinea": 115,
       "origine": "TORINO PORTA NUOVA",
       "destinazione": "SALERNO",
       "orario_programmato": "20:30",
       "note": "Percorso deviato con fermate straordinarie",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 10,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -15780,6 +15816,10 @@
         },
         {
           "ts": "23:05",
+          "rit": 0
+        },
+        {
+          "ts": "00:37",
           "rit": 0
         }
       ],
@@ -15930,16 +15970,16 @@
     "754": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 6,
-      "ritardo_picco": 6,
-      "ritardo_capolinea": 5,
+      "ritardo_attuale": 11,
+      "ritardo_picco": 10,
+      "ritardo_capolinea": 10,
       "origine": "LECCE",
       "destinazione": "TORINO PORTA NUOVA",
       "orario_programmato": "20:25",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -15956,6 +15996,10 @@
         {
           "ts": "23:05",
           "rit": 6
+        },
+        {
+          "ts": "00:37",
+          "rit": 11
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -16210,16 +16254,16 @@
     "774": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
-      "origine": "CAMNAGO-LENTATE",
-      "destinazione": "MILANO CADORNA",
-      "orario_programmato": "19:25",
+      "ritardo_attuale": -2,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
+      "origine": "ROMA TERMINI",
+      "destinazione": "TRIESTE CENTRALE",
+      "orario_programmato": "22:35",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -16236,6 +16280,10 @@
         {
           "ts": "23:05",
           "rit": -1
+        },
+        {
+          "ts": "00:37",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -16313,7 +16361,7 @@
       "numero": 2513
     },
     "792": {
-      "stato": "INATTIVO",
+      "stato": "REGOLARE",
       "critico": false,
       "ritardo_attuale": 0,
       "ritardo_picco": 0,
@@ -16323,8 +16371,8 @@
       "orario_programmato": "23:44",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -16340,6 +16388,10 @@
         },
         {
           "ts": "23:05",
+          "rit": 0
+        },
+        {
+          "ts": "00:37",
           "rit": 0
         }
       ],
@@ -22788,18 +22840,18 @@
       "numero": 24616
     },
     "24685": {
-      "stato": "INATTIVO",
-      "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "stato": "RITARDO",
+      "critico": true,
+      "ritardo_attuale": 16,
+      "ritardo_picco": 16,
+      "ritardo_capolinea": 16,
       "origine": "NOVARA",
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:18",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -22816,6 +22868,10 @@
         {
           "ts": "23:05",
           "rit": 0
+        },
+        {
+          "ts": "00:37",
+          "rit": 16
         }
       ],
       "direttrice": "Direttrice 1 (Novara - Milano Passante - Treviglio)",
@@ -23874,17 +23930,17 @@
     },
     "24680": {
       "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 7,
-      "ritardo_picco": 7,
-      "ritardo_capolinea": 7,
+      "critico": true,
+      "ritardo_attuale": 58,
+      "ritardo_picco": 59,
+      "ritardo_capolinea": 59,
       "origine": "PIOLTELLO LIMITO",
       "destinazione": "NOVARA",
       "orario_programmato": "22:23",
       "note": "",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -23901,6 +23957,10 @@
         {
           "ts": "23:05",
           "rit": 7
+        },
+        {
+          "ts": "00:37",
+          "rit": 58
         }
       ],
       "direttrice": "Direttrice 1 (Novara - Milano Passante - Treviglio)",
@@ -23953,8 +24013,8 @@
       "orario_programmato": "22:53",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -23970,6 +24030,10 @@
         },
         {
           "ts": "23:05",
+          "rit": 0
+        },
+        {
+          "ts": "00:37",
           "rit": 0
         }
       ],
@@ -24048,18 +24112,18 @@
       "numero": 24719
     },
     "24684": {
-      "stato": "INATTIVO",
-      "critico": false,
+      "stato": "SOPPRESSO",
+      "critico": true,
       "ritardo_attuale": 0,
       "ritardo_picco": 0,
       "ritardo_capolinea": 0,
       "origine": "PIOLTELLO LIMITO",
       "destinazione": "NOVARA",
       "orario_programmato": "23:23",
-      "note": "",
+      "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-26T21:34:18",
-      "ultima_rilevazione": "2026-05-26T23:05:24",
-      "scansioni": 4,
+      "ultima_rilevazione": "2026-05-27T00:37:54",
+      "scansioni": 5,
       "storico_ritardi": [
         {
           "ts": "21:34",
@@ -24075,6 +24139,10 @@
         },
         {
           "ts": "23:05",
+          "rit": 0
+        },
+        {
+          "ts": "00:37",
           "rit": 0
         }
       ],
