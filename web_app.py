@@ -29,8 +29,9 @@ def load_treno_direttrice_mapping():
                 continue
             numeri = line.replace(",", " ").replace(";", " ").split()
             for num_str in numeri:
-                if num_str.isdigit():
-                    mapping[num_str] = direttrice_nome
+                clean_num = num_str.split("-")[0]
+                if clean_num.isdigit():
+                    mapping[clean_num] = direttrice_nome
     return mapping
 
 

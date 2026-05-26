@@ -57,15 +57,26 @@ def read_treni():
                 
             numeri = line.replace(",", " ").replace(";", " ").split()
             for num_str in numeri:
-                if not num_str.isdigit():
+                stazione_origine = None
+                if "-" in num_str:
+                    parts = num_str.split("-")
+                    if len(parts) == 2 and parts[0].isdigit():
+                        numero = int(parts[0])
+                        stazione_origine = parts[1].strip().upper()
+                    else:
+                        continue
+                elif num_str.isdigit():
+                    numero = int(num_str)
+                else:
                     continue
-                numero = int(num_str)
+                
                 servizio = current_servizio if current_servizio else direttrice_nome
                 treni.append({
                     "direttrice": direttrice_nome,
                     "linea": servizio,
                     "numero": numero,
-                    "capolinea": capolinea_list
+                    "capolinea": capolinea_list,
+                    "stazione_origine": stazione_origine
                 })
                 
     return treni
@@ -237,6 +248,7 @@ def merge_dati(old_data, new_scan, now_dt):
 def fetch_treno_data(item, now_date):
     linea, num = item["linea"], item["numero"]
     direttrice = item["direttrice"]
+    staz_orig_filtro = item.get("stazione_origine")
     
     origini = fetch_stazioni_origine(num)
     if not origini:
@@ -244,6 +256,9 @@ def fetch_treno_data(item, now_date):
         
     scans = []
     for cod_staz, ts in origini:
+        if staz_orig_filtro and cod_staz.upper() != staz_orig_filtro:
+            continue
+            
         try:
             dep_dt = datetime.fromtimestamp(int(ts) / 1000, tz=IT_TZ)
             dep_date_str = dep_dt.strftime("%Y-%m-%d")
