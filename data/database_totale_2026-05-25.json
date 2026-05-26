@@ -1,6 +1,6 @@
 {
   "data": "2026-05-25",
-  "ultima_scansione": "2026-05-26T06:05:29.890347+02:00",
+  "ultima_scansione": "2026-05-26T07:05:25.943478+02:00",
   "treni": {
     "2816": {
       "stato": "REGOLARE",
@@ -5263,8 +5263,8 @@
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-25T14:55:33",
-      "ultima_rilevazione": "2026-05-26T06:05:29",
-      "scansioni": 16,
+      "ultima_rilevazione": "2026-05-26T07:05:25",
+      "scansioni": 17,
       "storico_ritardi": [
         {
           "ts": "14:55",
@@ -5328,6 +5328,10 @@
         },
         {
           "ts": "06:05",
+          "rit": -1
+        },
+        {
+          "ts": "07:05",
           "rit": -1
         }
       ],
@@ -8121,8 +8125,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-25T14:55:33",
-      "ultima_rilevazione": "2026-05-26T06:05:29",
-      "scansioni": 16,
+      "ultima_rilevazione": "2026-05-26T07:05:25",
+      "scansioni": 17,
       "storico_ritardi": [
         {
           "ts": "14:55",
@@ -8186,6 +8190,10 @@
         },
         {
           "ts": "06:05",
+          "rit": -2
+        },
+        {
+          "ts": "07:05",
           "rit": -2
         }
       ],
@@ -13304,8 +13312,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-25T14:55:33",
-      "ultima_rilevazione": "2026-05-26T06:05:29",
-      "scansioni": 16,
+      "ultima_rilevazione": "2026-05-26T07:05:25",
+      "scansioni": 17,
       "storico_ritardi": [
         {
           "ts": "14:55",
@@ -13369,6 +13377,10 @@
         },
         {
           "ts": "06:05",
+          "rit": 2
+        },
+        {
+          "ts": "07:05",
           "rit": 2
         }
       ],
