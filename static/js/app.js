@@ -474,9 +474,9 @@ window.onclick = function (event) {
 updateDashboard();
 setInterval(updateDashboard, 60000);
 
-function handleEmailClick(event, email) {
+function handleEmailClick(el, email) {
     const performFeedback = () => {
-        const el = event.currentTarget;
+        if (!el) return;
         const originalText = el.innerHTML;
         el.innerHTML = "✉️ Copiata negli appunti!";
         setTimeout(() => {
