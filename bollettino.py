@@ -300,8 +300,26 @@ def export_html(data):
                 "stato": t.get("stato", "REGOLARE")
             })
 
+    css_path = os.path.join("static", "css", "style.css")
+    js_path = os.path.join("static", "js", "app.js")
+    
+    css_content = ""
+    js_content = ""
+    
+    if os.path.exists(css_path):
+        with open(css_path, "r", encoding="utf-8") as f:
+            css_content = f.read()
+            
+    if os.path.exists(js_path):
+        with open(js_path, "r", encoding="utf-8") as f:
+            js_content = f.read()
+
     with open(template_path, "r", encoding="utf-8") as f:
         html = f.read()
+
+    # Inline di CSS e JS
+    html = html.replace('<link rel="stylesheet" href="/static/css/style.css">', f'<style>\n{css_content}\n</style>')
+    html = html.replace('<script src="/static/js/app.js"></script>', f'<script>\n{js_content}\n</script>')
 
     html = html.replace("const IS_STATIC = false;", "const IS_STATIC = true;")
     html = html.replace("const STATIC_DATA = null;", f"const STATIC_DATA = {json.dumps(data)};")
