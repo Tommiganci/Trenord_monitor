@@ -475,12 +475,43 @@ updateDashboard();
 setInterval(updateDashboard, 60000);
 
 function handleEmailClick(event, email) {
-    navigator.clipboard.writeText(email).then(() => {
+    const performFeedback = () => {
         const el = event.currentTarget;
         const originalText = el.innerHTML;
         el.innerHTML = "✉️ Copiata negli appunti!";
         setTimeout(() => {
             el.innerHTML = originalText;
         }, 1500);
-    }).catch(() => {});
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+            performFeedback();
+        }).catch(() => {
+            fallbackCopy(email, performFeedback);
+        });
+    } else {
+        fallbackCopy(email, performFeedback);
+    }
+}
+
+function fallbackCopy(text, callback) {
+    try {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const successful = document.execCommand("copy");
+        document.body.removeChild(textArea);
+        if (successful && callback) {
+            callback();
+        }
+    } catch (err) {
+        console.error("Fallback copy failed: ", err);
+    }
 }
