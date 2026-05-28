@@ -1,6 +1,6 @@
 {
   "data": "2026-05-27",
-  "ultima_scansione": "2026-05-28T18:05:25.952332+02:00",
+  "ultima_scansione": "2026-05-28T18:24:00.655312+02:00",
   "treni": {
     "24613": {
       "stato": "RITARDO",
@@ -2281,8 +2281,8 @@
       "orario_programmato": "23:18",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -2390,6 +2390,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 2
+        },
+        {
+          "ts": "18:24",
           "rit": 2
         }
       ],
@@ -4361,8 +4365,8 @@
       "orario_programmato": "22:53",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -4470,6 +4474,10 @@
         },
         {
           "ts": "18:05",
+          "rit": -4
+        },
+        {
+          "ts": "18:24",
           "rit": -4
         }
       ],
@@ -4551,8 +4559,8 @@
       "orario_programmato": "23:23",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -4660,6 +4668,10 @@
         },
         {
           "ts": "18:05",
+          "rit": -2
+        },
+        {
+          "ts": "18:24",
           "rit": -2
         }
       ],
@@ -17935,8 +17947,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -18044,6 +18056,10 @@
         },
         {
           "ts": "18:05",
+          "rit": -4
+        },
+        {
+          "ts": "18:24",
           "rit": -4
         }
       ],
@@ -30032,8 +30048,8 @@
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -30141,6 +30157,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 0
+        },
+        {
+          "ts": "18:24",
           "rit": 0
         }
       ],
@@ -32364,8 +32384,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -32473,6 +32493,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 2
+        },
+        {
+          "ts": "18:24",
           "rit": 2
         }
       ],
@@ -40759,8 +40783,8 @@
       "orario_programmato": "21:50",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -40869,6 +40893,10 @@
         {
           "ts": "18:05",
           "rit": 3
+        },
+        {
+          "ts": "18:24",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -40886,8 +40914,8 @@
       "orario_programmato": "20:50",
       "note": "Percorso deviato con fermate straordinarie",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -40995,6 +41023,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 3
+        },
+        {
+          "ts": "18:24",
           "rit": 3
         }
       ],
@@ -41076,8 +41108,8 @@
       "orario_programmato": "21:50",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -41186,6 +41218,10 @@
         {
           "ts": "18:05",
           "rit": 3
+        },
+        {
+          "ts": "18:24",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -41203,8 +41239,8 @@
       "orario_programmato": "20:50",
       "note": "Percorso deviato con fermate straordinarie",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -41312,6 +41348,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 3
+        },
+        {
+          "ts": "18:24",
           "rit": 3
         }
       ],
@@ -41582,8 +41622,8 @@
       "orario_programmato": "21:15",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 38,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 39,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -41691,6 +41731,10 @@
         },
         {
           "ts": "18:05",
+          "rit": -7
+        },
+        {
+          "ts": "18:24",
           "rit": -7
         }
       ],
@@ -41835,8 +41879,8 @@
       "orario_programmato": "22:35",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 38,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 39,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -41944,6 +41988,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 0
+        },
+        {
+          "ts": "18:24",
           "rit": 0
         }
       ],
@@ -42718,8 +42766,8 @@
       "orario_programmato": "20:30",
       "note": "Percorso deviato con fermate straordinarie",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 54,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 56,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -42827,6 +42875,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 0
+        },
+        {
+          "ts": "18:24",
           "rit": 0
         }
       ],
@@ -43097,8 +43149,8 @@
       "orario_programmato": "20:25",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -43206,6 +43258,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 20
+        },
+        {
+          "ts": "18:24",
           "rit": 20
         }
       ],
@@ -43539,8 +43595,8 @@
       "orario_programmato": "22:35",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 38,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 39,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -43648,6 +43704,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 0
+        },
+        {
+          "ts": "18:24",
           "rit": 0
         }
       ],
@@ -43918,8 +43978,8 @@
       "orario_programmato": "23:44",
       "note": "",
       "prima_rilevazione": "2026-05-27T15:05:29",
-      "ultima_rilevazione": "2026-05-28T18:05:25",
-      "scansioni": 27,
+      "ultima_rilevazione": "2026-05-28T18:24:00",
+      "scansioni": 28,
       "storico_ritardi": [
         {
           "ts": "15:05",
@@ -44027,6 +44087,10 @@
         },
         {
           "ts": "18:05",
+          "rit": 0
+        },
+        {
+          "ts": "18:24",
           "rit": 0
         }
       ],
