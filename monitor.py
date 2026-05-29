@@ -139,7 +139,21 @@ def calcola_stato(api_data, linea, capolinea_attesi):
     elif provvedimento == 2:
         stato_calcolato = "PARZ. SOPPRESSO"
     elif api_data.get("nonPartito", False):
-        stato_calcolato = "INATTIVO"
+        orario_partenza_ms = api_data.get("orarioPartenza")
+        if orario_partenza_ms:
+            try:
+                dep_dt = datetime.fromtimestamp(orario_partenza_ms / 1000, tz=IT_TZ)
+                now_it = datetime.now(IT_TZ)
+                minuti_ritardo_partenza = (now_it - dep_dt).total_seconds() / 60.0
+                if minuti_ritardo_partenza > 90:
+                    stato_calcolato = "SOPPRESSO"
+                else:
+                    stato_calcolato = "INATTIVO"
+            except Exception as e:
+                logging.error(f"Errore calcolo timeout partenza: {e}")
+                stato_calcolato = "INATTIVO"
+        else:
+            stato_calcolato = "INATTIVO"
     else:
         sub_desc = api_data.get("subTitle", "").upper()
         
@@ -171,7 +185,9 @@ def calcola_stato(api_data, linea, capolinea_attesi):
         "origine": origine,
         "destinazione": destinazione,
         "orario_programmato": api_data.get("compOrarioPartenzaZero", api_data.get("compOrarioPartenzaZeroEffettivo", "")),
-        "note": api_data.get("subTitle", "")
+        "note": api_data.get("subTitle", ""),
+        "non_partito": api_data.get("nonPartito", False),
+        "provvedimento": provvedimento
     }
 
 def merge_dati(old_data, new_scan, now_dt):
@@ -200,12 +216,18 @@ def merge_dati(old_data, new_scan, now_dt):
         }
     
     old_stato = old_data["stato"]
+    new_non_partito = new_scan.get("non_partito", False)
+    new_provvedimento = new_scan.get("provvedimento", 0)
 
     if new_scan["stato"] in non_ok_states:
         # Stato grave è sempre irreversibile
         stato = new_scan["stato"]
-    elif old_stato == "INATTIVO" and new_scan["stato"] != "INATTIVO":
+    elif old_stato == "INATTIVO" and not new_non_partito:
         # Il treno era in attesa ed ora è partito: aggiorna lo stato
+        stato = new_scan["stato"]
+    elif old_stato == "SOPPRESSO" and not new_non_partito and new_provvedimento != 1:
+        # Il treno era segnato come SOPPRESSO (magari per timeout di partenza), ma ora è partito
+        # e non c'è un provvedimento ufficiale di soppressione. Ripristiniamo lo stato attivo.
         stato = new_scan["stato"]
     elif old_stato in non_ok_states:
         # Stato grave precedente: mantienilo
