@@ -1,6 +1,6 @@
 {
   "data": "2026-05-28",
-  "ultima_scansione": "2026-05-29T09:05:28.435537+02:00",
+  "ultima_scansione": "2026-05-29T10:05:27.050858+02:00",
   "treni": {
     "24613": {
       "stato": "REGOLARE",
@@ -3898,8 +3898,8 @@
       "orario_programmato": "23:18",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -4015,6 +4015,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 0
+        },
+        {
+          "ts": "10:05",
           "rit": 0
         }
       ],
@@ -7585,8 +7589,8 @@
       "orario_programmato": "22:53",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -7702,6 +7706,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 0
+        },
+        {
+          "ts": "10:05",
           "rit": 0
         }
       ],
@@ -7942,8 +7950,8 @@
       "orario_programmato": "23:23",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -8059,6 +8067,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 0
+        },
+        {
+          "ts": "10:05",
           "rit": 0
         }
       ],
@@ -34927,8 +34939,8 @@
       "orario_programmato": "23:09",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -35044,6 +35056,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 0
+        },
+        {
+          "ts": "10:05",
           "rit": 0
         }
       ],
@@ -55379,8 +55395,8 @@
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -55496,6 +55512,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 8
+        },
+        {
+          "ts": "10:05",
           "rit": 8
         }
       ],
@@ -59177,8 +59197,8 @@
       "orario_programmato": "23:06",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -59294,6 +59314,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 3
+        },
+        {
+          "ts": "10:05",
           "rit": 3
         }
       ],
@@ -74610,16 +74634,16 @@
     "757": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": -1,
+      "ritardo_attuale": -3,
       "ritardo_picco": 40,
-      "ritardo_capolinea": -1,
+      "ritardo_capolinea": 1,
       "origine": "TORINO PORTA NUOVA",
       "destinazione": "LECCE",
       "orario_programmato": "20:50",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -74736,6 +74760,10 @@
         {
           "ts": "09:05",
           "rit": -1
+        },
+        {
+          "ts": "10:05",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -74745,16 +74773,16 @@
     "755": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 7,
+      "ritardo_attuale": 5,
       "ritardo_picco": 40,
-      "ritardo_capolinea": 6,
+      "ritardo_capolinea": 5,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCE",
       "orario_programmato": "21:50",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -74871,6 +74899,10 @@
         {
           "ts": "09:05",
           "rit": 7
+        },
+        {
+          "ts": "10:05",
+          "rit": 5
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -75215,14 +75247,14 @@
       "critico": true,
       "ritardo_attuale": 18,
       "ritardo_picco": 39,
-      "ritardo_capolinea": 13,
+      "ritardo_capolinea": 33,
       "origine": "MILANO CENTRALE",
       "destinazione": "LECCE",
       "orario_programmato": "21:15",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 52,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 53,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -75338,6 +75370,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 18
+        },
+        {
+          "ts": "10:05",
           "rit": 18
         }
       ],
@@ -77021,8 +77057,8 @@
       "orario_programmato": "23:53",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 58,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 60,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -77138,6 +77174,10 @@
         },
         {
           "ts": "09:05",
+          "rit": -1405
+        },
+        {
+          "ts": "10:05",
           "rit": -1405
         }
       ],
@@ -77592,16 +77632,16 @@
     "754": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": 7,
+      "ritardo_attuale": 2,
       "ritardo_picco": 9,
-      "ritardo_capolinea": 7,
+      "ritardo_capolinea": 2,
       "origine": "LECCE",
       "destinazione": "TORINO PORTA NUOVA",
       "orario_programmato": "20:25",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -77718,6 +77758,10 @@
         {
           "ts": "09:05",
           "rit": 7
+        },
+        {
+          "ts": "10:05",
+          "rit": 2
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -78512,8 +78556,8 @@
       "orario_programmato": "22:35",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 52,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 53,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -78629,6 +78673,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 0
+        },
+        {
+          "ts": "10:05",
           "rit": 0
         }
       ],
@@ -78647,8 +78695,8 @@
       "orario_programmato": "23:44",
       "note": "",
       "prima_rilevazione": "2026-05-28T00:48:51",
-      "ultima_rilevazione": "2026-05-29T09:05:28",
-      "scansioni": 29,
+      "ultima_rilevazione": "2026-05-29T10:05:27",
+      "scansioni": 30,
       "storico_ritardi": [
         {
           "ts": "00:48",
@@ -78764,6 +78812,10 @@
         },
         {
           "ts": "09:05",
+          "rit": 0
+        },
+        {
+          "ts": "10:05",
           "rit": 0
         }
       ],
