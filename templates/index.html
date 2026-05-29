@@ -23,6 +23,52 @@
 
         <!-- Vista Home: Elenco delle Direttrici -->
         <div id="home-view">
+            <!-- Sezione Disagio Complessivo Trenord (Indice IVOL) -->
+            <div class="overall-container" style="margin-bottom: 35px; padding: 25px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-color); border-radius: 16px;">
+                <h2 style="margin-top: 0; margin-bottom: 20px; font-size: 1.4rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                    <span>📊</span> Disagio Complessivo Trenord (Indice IVOL)
+                </h2>
+                <div class="kpi-container" style="margin-bottom: 20px;">
+                    <div class="kpi-card" id="overall-kpi-card-today">
+                        <div class="kpi-label">Disagio Rete Oggi</div>
+                        <div class="kpi-value" id="overall-kpi-disagio-oggi">--%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);" id="overall-kpi-details-oggi">-- / -- treni critici</div>
+                    </div>
+                    <div class="kpi-card" id="overall-kpi-card-month">
+                        <div class="kpi-label">Disagio Rete Mese (IVOL)</div>
+                        <div class="kpi-value" id="overall-kpi-disagio-mese">--%</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);" id="overall-kpi-details-mese">-- / -- treni critici</div>
+                    </div>
+                </div>
+
+                <!-- Grafico Andamento Mensile Complessivo (collapsabile) -->
+                <div style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div onclick="toggleOverallHistory()" style="padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none;">
+                        <h3 style="margin: 0; font-size: 1rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                            <span>🗓️</span> Storico Affidabilit&agrave; Mensile Rete (IVOL)
+                        </h3>
+                        <span id="overall-history-toggle-icon" style="color: var(--text-muted); font-size: 1.2rem; transition: transform 0.3s;">&#9660;</span>
+                    </div>
+                    <div id="overall-history-body" style="display: none; padding: 0 20px 20px 20px;">
+                        <div style="position: relative; height: 180px; width: 100%; margin-bottom: 20px; margin-top: 10px;" id="overall-chart-wrapper">
+                            <canvas id="overallTrendChart"></canvas>
+                        </div>
+                        <table style="width:100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 10px 10px; text-align: left; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Mese</th>
+                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Giorni Mon.</th>
+                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Treni Tot.</th>
+                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Critici</th>
+                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Disagio %</th>
+                                </tr>
+                            </thead>
+                            <tbody id="overall-history-table-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             <h2 style="margin-top: 0; margin-bottom: 25px; font-weight: 600;">Seleziona una direttrice per visualizzare lo stato di servizio in tempo reale:</h2>
             <div class="search-container" style="margin-bottom: 25px; max-width: 500px;">
                 <input type="text" id="searchDirettriciInput" class="search-input" placeholder="Cerca direttrice, stazione o linea (es. Como, S11, Novara)...">

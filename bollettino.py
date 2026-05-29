@@ -217,6 +217,67 @@ def export_html(data):
     static_monthly = {}
     static_daily_trend = {}
 
+    # Calcolo statistiche complessive per "Tutto Trenord" (Indice IVOL)
+    totale_treni_tot = 0
+    totale_anomali_tot = 0
+    trend_tot = []
+    
+    for day_data in monthly_data:
+        treni = day_data.get("treni", {})
+        day_totale = len(treni)
+        day_anomali = sum(1 for t in treni.values() if t.get("critico", False))
+        
+        totale_treni_tot += day_totale
+        totale_anomali_tot += day_anomali
+        
+        day_disagio = (day_anomali / day_totale * 100) if day_totale > 0 else 0
+        trend_tot.append({
+            "data": day_data.get("data", ""),
+            "disagio": round(day_disagio, 1),
+            "treni_totali": day_totale,
+            "treni_anomali": day_anomali
+        })
+        
+    disagio_mese_tot = (totale_anomali_tot / totale_treni_tot * 100) if totale_treni_tot > 0 else 0
+    static_monthly["Tutto Trenord"] = {
+        "disagio": round(disagio_mese_tot, 1),
+        "treni_totali": totale_treni_tot,
+        "treni_anomali": totale_anomali_tot,
+        "giorni": len(monthly_data),
+        "trend": trend_tot
+    }
+
+    # Calcola storico mensile aggregato complessivo (mese per mese)
+    mesi_tot = {}
+    for day_data in all_data:
+        data_str = day_data.get("data", "")
+        if not data_str or len(data_str) < 7:
+            continue
+        mese_key = data_str[:7]
+        treni = day_data.get("treni", {})
+        day_tot = len(treni)
+        day_an = sum(1 for t in treni.values() if t.get("critico", False))
+        
+        if mese_key not in mesi_tot:
+            mesi_tot[mese_key] = {"treni_totali": 0, "treni_anomali": 0, "giorni": 0}
+        mesi_tot[mese_key]["treni_totali"] += day_tot
+        mesi_tot[mese_key]["treni_anomali"] += day_an
+        mesi_tot[mese_key]["giorni"] += 1
+        
+    aggregates_tot = []
+    for mese_key, stats in sorted(mesi_tot.items(), reverse=True):
+        tot = stats["treni_totali"]
+        an = stats["treni_anomali"]
+        disagio = round((an / tot * 100) if tot > 0 else 0, 1)
+        aggregates_tot.append({
+            "data": mese_key,
+            "treni_totali": tot,
+            "treni_anomali": an,
+            "giorni": stats["giorni"],
+            "disagio": disagio
+        })
+    static_daily_trend["Tutto Trenord"] = aggregates_tot
+
     for d_name in direttrici:
         totale_treni = 0
         totale_anomali = 0

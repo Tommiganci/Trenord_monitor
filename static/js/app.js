@@ -1,5 +1,6 @@
 let myChart = null;
 let trendChart = null;
+let overallTrendChart = null;
 
 let allTrainsData = []; // Store per i filtri
 let currentFilter = 'all';
@@ -36,10 +37,14 @@ function renderStatus(stato, critico) {
 function updateDashboard() {
     if (IS_STATIC) {
         renderDashboardData(STATIC_DATA);
+        updateOverallStats();
     } else {
         fetch('/api/data')
             .then(res => res.json())
-            .then(data => renderDashboardData(data))
+            .then(data => {
+                renderDashboardData(data);
+                updateOverallStats();
+            })
             .catch(err => console.error("Errore fetch dati:", err));
     }
 }
@@ -163,6 +168,24 @@ function renderDashboardData(data) {
     });
 
     allTrainsData = treni;
+
+    // Calcolo statistiche complessive oggi
+    const totaliOggi = treni.length;
+    const criticiOggi = treni.filter(t => t.critico && t.stato !== "INATTIVO").length;
+    const disagioOggi = totaliOggi > 0 ? (criticiOggi / totaliOggi * 100) : 0;
+
+    const oggiDisagioEl = document.getElementById('overall-kpi-disagio-oggi');
+    if (oggiDisagioEl) {
+        oggiDisagioEl.innerText = `${disagioOggi.toFixed(1)}%`;
+        oggiDisagioEl.className = 'kpi-value';
+        if (disagioOggi > 20) oggiDisagioEl.classList.add('disagio-high');
+        else if (disagioOggi > 5) oggiDisagioEl.classList.add('disagio-med');
+        else oggiDisagioEl.classList.add('disagio-low');
+    }
+    const oggiDetailsEl = document.getElementById('overall-kpi-details-oggi');
+    if (oggiDetailsEl) {
+        oggiDetailsEl.innerText = `${criticiOggi} / ${totaliOggi} treni critici`;
+    }
 
     const direttriciMap = {};
     allTrainsData.forEach(t => {
@@ -468,6 +491,123 @@ window.onclick = function (event) {
     let modal = document.getElementById('chartModal');
     if (event.target == modal) {
         closeModal();
+    }
+}
+
+function toggleOverallHistory() {
+    const body = document.getElementById('overall-history-body');
+    const icon = document.getElementById('overall-history-toggle-icon');
+    if (body.style.display === 'none') {
+        body.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        body.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+
+function updateOverallStats() {
+    if (IS_STATIC) {
+        const mdata = STATIC_MONTHLY["Tutto Trenord"] || { disagio: 0, trend: [] };
+        const history = STATIC_DAILY_TREND["Tutto Trenord"] || [];
+        renderOverallMonthlyData(mdata, history);
+    } else {
+        fetch('/api/monthly_stats')
+            .then(res => res.json())
+            .then(mdata => {
+                renderOverallMonthlyData(mdata, mdata.trend);
+            })
+            .catch(e => console.error("Errore fetch overall monthly:", e));
+    }
+}
+
+function renderOverallMonthlyData(mdata, history) {
+    if (!mdata) return;
+    
+    // Aggiorna KPI Mese
+    let mEl = document.getElementById('overall-kpi-disagio-mese');
+    if (mEl) {
+        mEl.innerText = `${mdata.disagio}%`;
+        mEl.className = 'kpi-value';
+        if (mdata.disagio > 20) mEl.classList.add('disagio-high');
+        else if (mdata.disagio > 5) mEl.classList.add('disagio-med');
+        else mEl.classList.add('disagio-low');
+    }
+    
+    const meseDetailsEl = document.getElementById('overall-kpi-details-mese');
+    if (meseDetailsEl) {
+        meseDetailsEl.innerText = `${mdata.treni_anomali} / ${mdata.treni_totali} treni critici`;
+    }
+
+    // Renderizza Grafico
+    if (mdata.trend && mdata.trend.length > 0) {
+        const ctx = document.getElementById('overallTrendChart').getContext('2d');
+        if (overallTrendChart) overallTrendChart.destroy();
+
+        overallTrendChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: mdata.trend.map(t => t.data.substring(5)), // Solo MM-DD
+                datasets: [{
+                    label: 'Disagio Complessivo %',
+                    data: mdata.trend.map(t => t.disagio),
+                    borderColor: '#10b981',
+                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3,
+                    pointBackgroundColor: mdata.trend.map(t => t.disagio > 20 ? '#ef4444' : (t.disagio > 5 ? '#f59e0b' : '#10b981'))
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#2e3440' }, ticks: { color: '#8b92a5', callback: v => v + '%' } },
+                    x: { grid: { display: false }, ticks: { color: '#8b92a5' } }
+                }
+            }
+        });
+    }
+
+    // Renderizza Tabella Storico
+    if (history && history.length > 0) {
+        const tbody = document.getElementById('overall-history-table-body');
+        if (!tbody) return;
+        
+        const MESI_IT = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno',
+                         'Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+
+        function formatMese(key) {
+            const parts = key.split('-');
+            if (parts.length < 2) return key;
+            const m = parseInt(parts[1], 10) - 1;
+            return `${MESI_IT[m] || parts[1]} ${parts[0]}`;
+        }
+
+        tbody.innerHTML = history.map((d, idx) => {
+            const disagio = d.disagio !== undefined ? d.disagio : 0;
+            const colorStyle = disagio > 20 ? 'color: var(--danger); font-weight: 600;'
+                             : disagio > 5  ? 'color: var(--warning); font-weight: 600;'
+                             :                'color: var(--success);';
+            const rowBg = idx % 2 === 0 ? '' : 'background-color: rgba(255,255,255,0.015);';
+            const treni = d.treni_totali !== undefined ? d.treni_totali : '-';
+            const critici = d.treni_anomali !== undefined ? d.treni_anomali : '-';
+            const giorni = d.giorni !== undefined ? d.giorni : '-';
+            return `<tr style="${rowBg}">
+                <td style="padding: 10px 10px; border-bottom: 1px solid var(--border-color); font-weight: 600;">${formatMese(d.data)}</td>
+                <td style="padding: 10px 10px; text-align: right; border-bottom: 1px solid var(--border-color); color: var(--text-muted);">${giorni}</td>
+                <td style="padding: 10px 10px; text-align: right; border-bottom: 1px solid var(--border-color);">${treni}</td>
+                <td style="padding: 10px 10px; text-align: right; border-bottom: 1px solid var(--border-color);">${critici}</td>
+                <td style="padding: 10px 10px; text-align: right; border-bottom: 1px solid var(--border-color); ${colorStyle}">${disagio.toFixed(1)}%</td>
+            </tr>`;
+        }).join('');
+
+        const rows = tbody.querySelectorAll('tr');
+        if (rows.length > 0) {
+            rows[rows.length - 1].querySelectorAll('td').forEach(td => td.style.borderBottom = 'none');
+        }
     }
 }
 
