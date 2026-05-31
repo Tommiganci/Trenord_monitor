@@ -338,7 +338,7 @@ def main():
         loaded_dbs[date_str] = db_data
         return db_data
             
-    num_threads = int(os.environ.get("MONITOR_THREADS", "5"))
+    num_threads = int(os.environ.get("MONITOR_THREADS", "6"))
     logging.info(f"Avvio scansione parallela di {len(treni_da_monitorare)} treni con {num_threads} thread...")
     
     results = []
