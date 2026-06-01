@@ -70,7 +70,7 @@ Lo script esegue la scansione istantanea dei treni definiti nelle direttrici. Di
 python monitor.py
 ```
 > [!NOTE]
-> Puoi controllare il numero di thread paralleli impostando la variabile d'ambiente `MONITOR_THREADS` (il valore predefinito è 5). Ad esempio su Windows PowerShell: `$env:MONITOR_THREADS="10"`.
+> Puoi controllare il numero di thread paralleli impostando la variabile d'ambiente `MONITOR_THREADS` (il valore predefinito è 6). Ad esempio su Windows PowerShell: `$env:MONITOR_THREADS="10"`. Fate attenzione ai possibili ban di Viaggiatreno
 
 ### 2. Visualizzare o Esportare i Report (`bollettino.py`)
 Questo script permette di visualizzare i dati registrati direttamente da terminale o esportarli in HTML.
