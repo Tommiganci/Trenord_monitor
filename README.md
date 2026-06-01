@@ -107,32 +107,6 @@ Questo sposterà i file JSON dei mesi passati dentro `data/archive/YYYY-MM/`.
 
 ---
 
-## ⚙️ Come configurare nuove Direttrici/Treni
-
-L'applicazione legge la lista dei treni da tracciare dai file di testo posizionati nella cartella [direttrici/](direttrici). Puoi aggiungere o modificare questi file per tracciare le linee che ti interessano.
-
-Ogni file deve rispettare la seguente sintassi:
-- `# NOME:` specifica il nome completo della direttrice ferroviaria.
-- `# CAPOLINEA:` specifica l'elenco delle stazioni di capolinea (in maiuscolo, separate da virgole o spazi). Serve all'algoritmo per rilevare se un treno termina la corsa prima del previsto (stato `LIMITATO`).
-- `# SERVIZIO:` definisce la sigla o il nome del servizio specifico (es. `S11`, `RE80`). Tutti i numeri scritti sotto questa riga apparterranno a questo servizio. Puoi inserire più righe `# SERVIZIO:` nello stesso file per suddividere i treni.
-- **Numeri dei treni**: Scrivi i numeri dei treni da monitorare separandoli con virgole, spazi o andando a capo.
-
-**Esempio di file direttrice (`direttrici/linea_lago.txt`):**
-```text
-# NOME: Direttrice Milano - Como - Chiasso
-# CAPOLINEA: MILANO PORTA GARIBALDI, COMO S. GIOVANNI, CHIASSO, MILANO CENTRALE
-
-# SERVIZIO: S11
-25012, 25014, 25016, 25018, 25020
-25015, 25017, 25019, 25021, 25023
-
-# SERVIZIO: RE80
-25510, 25512, 25514
-25511, 25513, 25515
-```
-
----
-
 ## 📊 Calcolo del Grado di Disagio
 Il **Grado di Disagio** è l'indicatore principale utilizzato dalla dashboard per riassumere lo stato della linea:
 $$\text{Grado di Disagio (\%)} = \frac{\text{Numero di Treni Critici}}{\text{Numero Totale di Treni Monitorati}} \times 100$$
@@ -142,3 +116,10 @@ Un treno viene contrassegnato come **Critico** (`critico = True`) quando si veri
 2. Lo stato del treno è `PARZ. SOPPRESSO` (cancellazione di alcune fermate intermedie).
 3. Lo stato del treno è `LIMITATO` (il treno non parte o non arriva nelle stazioni capolinea prestabilite).
 4. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
+
+Attualmente le direttrici monitorate in modo ottimale sono: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 27, 28, 32, 33, 37, 39, 40
+Le ulteriori direttrici aggiunge consiglio di non prenderle troppo in considerazione in quanto potrebbero mancare dei giorni, verificate sempre il conteggio dei giorni sotto a Storico affidabilità mensile.
+Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata. Se qualcuno volesse darmi una mano mi contatti pure
+
+Se riscontrate problemi soprattutto sulla popolazione dei treni non esistate a contattarmi (vedete in basso al sito https://tommiganci.github.io/Trenord_monitor/)
+
