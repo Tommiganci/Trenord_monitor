@@ -113,13 +113,13 @@ $$\text{Grado di Disagio (\%)} = \frac{\text{Numero di Treni Critici}}{\text{Num
 
 Un treno viene contrassegnato come **Critico** (`critico = True`) quando si verifica una delle seguenti condizioni:
 1. Lo stato del treno è `SOPPRESSO` (cancellazione totale della corsa).
-2. Lo stato del treno è `PARZ. SOPPRESSO` (cancellazione di alcune fermate intermedie).
-3. Lo stato del treno è `LIMITATO` (il treno non parte o non arriva nelle stazioni capolinea prestabilite).
-4. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
+2. Lo stato del treno è `LIMITATO` (il treno non parte o non arriva nelle stazioni capolinea prestabilite).
+3. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
 
 Attualmente le direttrici monitorate in modo ottimale sono: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 27, 28, 32, 33, 37, 39, 40
 Le ulteriori direttrici aggiunge consiglio di non prenderle troppo in considerazione in quanto potrebbero mancare dei giorni, verificate sempre il conteggio dei giorni sotto a Storico affidabilità mensile.
-Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata. Se qualcuno volesse darmi una mano mi contatti pure
+Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata. Se qualcuno volesse darmi una mano mi contatti pure.
+Lo stato di progresso è consultabile nel foglio excel nella cartella `direttrici`
 
-Se riscontrate problemi soprattutto sulla popolazione dei treni non esistate a contattarmi (vedete in basso al sito https://tommiganci.github.io/Trenord_monitor/)
+**Se riscontrate problemi soprattutto sulla popolazione dei treni non esistate a contattarmi** (vedete in basso al sito https://tommiganci.github.io/Trenord_monitor/)
 
