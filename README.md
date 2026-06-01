@@ -122,8 +122,9 @@ Attualmente le direttrici monitorate in modo ottimale sono: 1, 2, 3, 4, 5, 6, 7,
 
 Le ulteriori direttrici aggiunge consiglio di non prenderle troppo in considerazione in quanto potrebbero mancare dei giorni, verificate sempre il conteggio dei giorni sotto a Storico affidabilità mensile.
 
-Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata. Se qualcuno volesse darmi una mano mi contatti pure.
-
+Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata.
+Nella direttrice 22 c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
+**Se qualcuno volesse darmi una mano mi contatti pure.**
 Lo stato di progresso è consultabile nel foglio excel nella cartella `direttrici`
 
 **Se riscontrate problemi soprattutto sulla popolazione dei treni non esistate a contattarmi** (vedete in basso al sito https://tommiganci.github.io/Trenord_monitor/)
