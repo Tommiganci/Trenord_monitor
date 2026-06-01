@@ -1,4 +1,4 @@
-<img width="878" height="25" alt="image" src="https://github.com/user-attachments/assets/3d94f067-e097-4948-b8a6-8817b4098068" /># 🚆 Trenord Live Monitor
+# 🚆 Trenord Live Monitor
 
 Un sistema in Python per monitorare in tempo reale lo stato di servizio, i ritardi e l'affidabilità delle direttrici ferroviarie Trenord. 
 
