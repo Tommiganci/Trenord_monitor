@@ -414,9 +414,9 @@ function renderTable() {
                 <td>${renderStatus(t.stato, t.critico)}</td>
                 <td>${t.ritardo_attuale}'</td>
                 <td style="${ritCapClass}">${t.ritardo_capolinea}'</td>
-                <td class="hide-mobile">${t.ritardo_picco}'</td>
-                <td class="hide-mobile">${t.orario_programmato}</td>
-                <td class="hide-mobile"><div class="note-text">${noteHtml || '-'}</div></td>
+                <td>${t.ritardo_picco}'</td>
+                <td>${t.orario_programmato}</td>
+                <td><div class="note-text">${noteHtml || '-'}</div></td>
             </tr>
         `;
     });

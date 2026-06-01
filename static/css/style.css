@@ -241,6 +241,10 @@ tr:hover {
         font-size: 0.85rem;
     }
 
+    .table-container table {
+        min-width: 750px;
+    }
+
     .hide-mobile {
         display: none;
     }
@@ -397,4 +401,20 @@ tr:hover {
 
 .footer-link:hover {
     color: var(--text-main);
+}
+
+/* --- Scrollbar Custom --- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
 }

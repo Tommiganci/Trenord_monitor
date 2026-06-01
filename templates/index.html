@@ -53,18 +53,20 @@
                         <div style="position: relative; height: 180px; width: 100%; margin-bottom: 20px; margin-top: 10px;" id="overall-chart-wrapper">
                             <canvas id="overallTrendChart"></canvas>
                         </div>
-                        <table style="width:100%; border-collapse: collapse; font-size: 0.9rem;">
-                            <thead>
-                                <tr>
-                                    <th style="padding: 10px 10px; text-align: left; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Mese</th>
-                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Giorni Mon.</th>
-                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Treni Tot.</th>
-                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Critici</th>
-                                    <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Disagio %</th>
-                                </tr>
-                            </thead>
-                            <tbody id="overall-history-table-body"></tbody>
-                        </table>
+                        <div style="overflow-x: auto;">
+                            <table style="width:100%; min-width: 550px; border-collapse: collapse; font-size: 0.9rem;">
+                                <thead>
+                                    <tr>
+                                        <th style="padding: 10px 10px; text-align: left; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Mese</th>
+                                        <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Giorni Mon.</th>
+                                        <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Treni Tot.</th>
+                                        <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Critici</th>
+                                        <th style="padding: 10px 10px; text-align: right; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: none;">Disagio %</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="overall-history-table-body"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,8 +123,8 @@
                     <h3 style="margin: 0; font-size: 1rem; color: var(--text-muted);">&#128197; Storico Affidabilit&agrave; Mensile</h3>
                     <span id="daily-history-toggle-icon" style="color: var(--text-muted); font-size: 1.2rem; transition: transform 0.3s;">&#9660;</span>
                 </div>
-                <div id="daily-history-body" style="display: none; overflow: hidden;">
-                    <table style="width:100%; border-collapse: collapse; font-size: 0.9rem;">
+                <div id="daily-history-body" style="display: none; overflow-x: auto; padding: 0 10px 10px 10px;">
+                    <table style="width:100%; min-width: 550px; border-collapse: collapse; font-size: 0.9rem;">
                         <thead>
                             <tr>
                                 <th style="padding: 10px 20px; text-align: left; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border-color); background: rgba(255,255,255,0.02);">Mese</th>
@@ -154,9 +156,9 @@
                             <th>Stato</th>
                             <th>Rit. Att.</th>
                             <th>Rit. Capolinea</th>
-                            <th class="hide-mobile">Rit. Picco</th>
-                            <th class="hide-mobile">Orario Prog.</th>
-                            <th class="hide-mobile">Note</th>
+                            <th>Rit. Picco</th>
+                            <th>Orario Prog.</th>
+                            <th>Note</th>
                         </tr>
                     </thead>
                     <tbody id="table-body">
