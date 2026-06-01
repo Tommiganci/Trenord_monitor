@@ -115,6 +115,7 @@ h1 {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-bottom: 30px;
 }
 

@@ -38,7 +38,8 @@ def load_treno_direttrice_mapping():
 def get_latest_data():
     if not os.path.exists(DATA_DIR):
         return None
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
+            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
     if not files:
         return None
     latest_file = sorted(files)[-1]
@@ -48,7 +49,8 @@ def get_latest_data():
 def get_monthly_data():
     if not os.path.exists(DATA_DIR):
         return []
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
+            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
     current_month = datetime.now().strftime("%Y-%m")
     monthly_data = []
     for f in sorted(files):
@@ -56,6 +58,20 @@ def get_monthly_data():
             with open(f, "r", encoding="utf-8") as file:
                 monthly_data.append(json.load(file))
     return monthly_data
+
+def get_all_data():
+    if not os.path.exists(DATA_DIR):
+        return []
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
+            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
+    all_data = []
+    for f in sorted(files):
+        try:
+            with open(f, "r", encoding="utf-8") as file:
+                all_data.append(json.load(file))
+        except Exception:
+            continue
+    return all_data
 
 @app.route("/")
 def index():
@@ -67,6 +83,57 @@ def api_data():
     if data:
         return jsonify(data)
     return jsonify({"error": "Nessun dato disponibile"}), 404
+
+@app.route("/api/historical_stats")
+def api_historical_stats():
+    direttrice_filter = request.args.get("direttrice")
+    all_data = get_all_data()
+    if not all_data:
+        return jsonify([])
+        
+    mapping = load_treno_direttrice_mapping()
+    
+    mesi = {}
+    for day_data in all_data:
+        data_str = day_data.get("data", "")
+        if not data_str or len(data_str) < 7:
+            continue
+        mese_key = data_str[:7]  # YYYY-MM
+        treni = day_data.get("treni", {})
+        
+        if direttrice_filter:
+            treni_filtered = {
+                k: v for k, v in treni.items()
+                if v.get("direttrice") == direttrice_filter or mapping.get(k) == direttrice_filter
+            }
+        else:
+            treni_filtered = treni
+            
+        day_tot = len(treni_filtered)
+        day_an = sum(1 for t in treni_filtered.values() if t.get("critico", False))
+        
+        if day_tot == 0:
+            continue
+            
+        if mese_key not in mesi:
+            mesi[mese_key] = {"treni_totali": 0, "treni_anomali": 0, "giorni": 0}
+        mesi[mese_key]["treni_totali"] += day_tot
+        mesi[mese_key]["treni_anomali"] += day_an
+        mesi[mese_key]["giorni"] += 1
+        
+    result = []
+    for mese_key, stats in sorted(mesi.items(), reverse=True):
+        tot = stats["treni_totali"]
+        an = stats["treni_anomali"]
+        disagio = round((an / tot * 100) if tot > 0 else 0, 1)
+        result.append({
+            "data": mese_key,
+            "treni_totali": tot,
+            "treni_anomali": an,
+            "giorni": stats["giorni"],
+            "disagio": disagio
+        })
+    return jsonify(result)
 
 @app.route("/api/monthly_stats")
 def api_monthly_stats():

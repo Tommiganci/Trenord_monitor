@@ -16,7 +16,8 @@ def load_latest_data():
     if not os.path.exists(DATA_DIR):
         return None
     
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
+            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
     if not files:
         return None
     
@@ -91,7 +92,8 @@ def get_monthly_data():
     """Legge i file del mese corrente."""
     if not os.path.exists(DATA_DIR):
         return []
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
+            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
     current_month = datetime.now().strftime("%Y-%m")
     monthly_data = []
     for f in sorted(files):
@@ -104,14 +106,15 @@ def get_all_data():
     """Legge tutti i file storici disponibili."""
     if not os.path.exists(DATA_DIR):
         return []
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
+            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
     all_data = []
     for f in sorted(files):
         try:
             with open(f, "r", encoding="utf-8") as file:
                 all_data.append(json.load(file))
         except Exception as e:
-            logging.warning(f"Errore lettura {f}: {e}")
+            print(f"Errore lettura {f}: {e}")
     return all_data
 
 def compute_monthly_aggregates(all_data):
@@ -347,9 +350,9 @@ def export_html(data):
             })
         static_daily_trend[d_name] = aggregates
 
-    # Calcola storico treni (tutti i mesi disponibili)
+    # Calcola storico treni (solo il mese corrente)
     train_history = {}
-    for day_data in all_data:
+    for day_data in monthly_data:
         date_str = day_data.get("data", "")
         for num_str, t in day_data.get("treni", {}).items():
             if num_str not in train_history:

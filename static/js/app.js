@@ -346,7 +346,15 @@ function updateDetailView(dirName) {
             .then(res => res.json())
             .then(mdata => {
                 renderMonthlyData(mdata);
-                renderDailyHistory(mdata.trend);
+                fetch(`/api/historical_stats?direttrice=${encodeURIComponent(dirName)}`)
+                    .then(res => res.json())
+                    .then(history => {
+                        renderDailyHistory(history);
+                    })
+                    .catch(err => {
+                        console.error("Errore fetch historical stats:", err);
+                        renderDailyHistory([]);
+                    });
             })
             .catch(e => console.error("Errore fetch monthly:", e));
     }
@@ -515,7 +523,15 @@ function updateOverallStats() {
         fetch('/api/monthly_stats')
             .then(res => res.json())
             .then(mdata => {
-                renderOverallMonthlyData(mdata, mdata.trend);
+                fetch('/api/historical_stats')
+                    .then(res => res.json())
+                    .then(history => {
+                        renderOverallMonthlyData(mdata, history);
+                    })
+                    .catch(err => {
+                        console.error("Errore fetch overall historical stats:", err);
+                        renderOverallMonthlyData(mdata, []);
+                    });
             })
             .catch(e => console.error("Errore fetch overall monthly:", e));
     }
