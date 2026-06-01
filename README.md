@@ -124,7 +124,7 @@ Le ulteriori direttrici aggiunge consiglio di non prenderle troppo in consideraz
 
 Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata.
 
-Nella direttrice 22 c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
+Nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Milano Passante - Milano Bovisa) c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
 
 **Se qualcuno volesse darmi una mano mi contatti pure.**
 
