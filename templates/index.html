@@ -185,7 +185,33 @@
         </div>
     </div>
 
-   
+    <!-- Modal per Disclaimer -->
+    <div id="disclaimerModal" class="modal">
+        <div class="modal-content disclaimer-modal-content">
+            <span class="close-btn" onclick="closeDisclaimerModal()">&times;</span>
+            <h2 class="modal-title">⚠️ Disclaimer & Limitazioni</h2>
+            <div class="modal-subtitle">Informazioni sul monitoraggio delle direttrici</div>
+            <div class="disclaimer-scroll-content">
+                <p><strong>Stato del Monitoraggio delle Direttrici:</strong></p>
+                <ul>
+                    <li><strong>Direttrici monitorate in modo ottimale:</strong> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 27, 28, 32, 33, 36, 37, 39, 40.</li>
+                    <li><strong>Altre direttrici:</strong> Si consiglia di non prenderle troppo in considerazione in quanto potrebbero mancare dei dati per alcuni giorni. Verificare sempre il conteggio dei giorni sotto a <em>Storico affidabilità mensile</em>.</li>
+                    <li><strong>Direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza):</strong> Non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata.</li>
+                    <li><strong>Direttrice 20 (Mantova - Cremona - Codogno - Milano):</strong> È presente solo la linea RE11, in quanto le linee R39 e R40 non hanno orari chiari (difficoltà nell'associare i numeri dei treni alle linee).</li>
+                    <li><strong>Direttrice 22 (Alessandria - Pavia - Milano):</strong> È presente solo la linea S13, in quanto le linee RE13 e R33 non sono chiare negli orari.</li>
+                    <li><strong>Direttrice 25 (Mortara - Alessandria / Milano):</strong> È presente solo la linea R31, in quanto la linea R32 non è chiara negli orari ed è probabilmente di competenza Trenitalia.</li>
+                </ul>
+                
+                <hr class="disclaimer-hr">
+                
+                <p><strong>Collaborazione e Segnalazioni:</strong></p>
+                <ul>
+                    <li>🤝 <strong>Se qualcuno volesse darmi una mano</strong> a decifrare gli orari mancanti, mi contatti pure! Lo stato di progresso è consultabile nel foglio Excel nella cartella <code>direttrici</code>.</li>
+                    <li>🐛 <strong>Se riscontrate problemi</strong>, specialmente sul popolamento dei treni, non esitate a contattarmi tramite i canali indicati in fondo al sito.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Configurazione per export statico (GitHub Pages)
@@ -203,6 +229,8 @@
             <span>Scrivimi in privato:</span>
             <a href="mailto:tommiganci@gmail.com" onclick="handleEmailClick(this, 'tommiganci@gmail.com')" class="footer-link">✉️ tommiganci@gmail.com</a>
             <a href="https://www.instagram.com/trenord_memes/" target="_blank" class="footer-link">📸 Instagram</a>
+            <span>•</span>
+            <a href="#" onclick="openDisclaimerModal(event)" class="footer-link">⚠️ Disclaimer</a>
         </div>
     </footer>
 </body>

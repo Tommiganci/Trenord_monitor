@@ -210,6 +210,57 @@ tr:hover {
     position: relative;
 }
 
+.disclaimer-modal-content {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.disclaimer-scroll-content {
+    overflow-y: auto;
+    margin-top: 15px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.disclaimer-scroll-content p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.disclaimer-scroll-content ul {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.disclaimer-scroll-content li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-main);
+}
+
+.disclaimer-scroll-content li strong {
+    color: var(--warning);
+}
+
+.disclaimer-scroll-content code {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+.disclaimer-hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 15px 0 20px 0;
+}
+
 .close-btn {
     position: absolute;
     top: 15px;

@@ -495,10 +495,25 @@ function closeModal() {
     document.getElementById('chartModal').style.display = "none";
 }
 
+function openDisclaimerModal(event) {
+    if (event) {
+        event.preventDefault();
+    }
+    document.getElementById('disclaimerModal').style.display = "flex";
+}
+
+function closeDisclaimerModal() {
+    document.getElementById('disclaimerModal').style.display = "none";
+}
+
 window.onclick = function (event) {
-    let modal = document.getElementById('chartModal');
-    if (event.target == modal) {
+    let chartModal = document.getElementById('chartModal');
+    let disclaimerModal = document.getElementById('disclaimerModal');
+    if (event.target == chartModal) {
         closeModal();
+    }
+    if (event.target == disclaimerModal) {
+        closeDisclaimerModal();
     }
 }
 
