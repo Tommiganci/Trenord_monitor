@@ -126,7 +126,10 @@ Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora co
 
 Nella direttrice 20 (Mantova - Cremona - Codogno - Milano / Codogno – Cremona / Cremona - Mantova) c'è solo la linea RE11 in quando le linee R39 e R40 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
 
-Stessa cosa nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Milano Passante - Milano Bovisa) c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari 
+Stessa cosa nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Milano Passante - Milano Bovisa) c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari
+
+Stessa cosa nella direttrice 25 (Mortara - Alessandria / Mortara - Milano) c'è solo la linea R31 in quando la linea R32 non è chiara negli orari e probabilmente è di competenza Trenitalia
+
 
 **Se qualcuno volesse darmi una mano mi contatti pure.**
 
