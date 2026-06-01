@@ -1,4 +1,4 @@
-# 🚆 Trenord Live Monitor
+<img width="878" height="25" alt="image" src="https://github.com/user-attachments/assets/3d94f067-e097-4948-b8a6-8817b4098068" /># 🚆 Trenord Live Monitor
 
 Un sistema in Python per monitorare in tempo reale lo stato di servizio, i ritardi e l'affidabilità delle direttrici ferroviarie Trenord. 
 
@@ -124,7 +124,9 @@ Le ulteriori direttrici aggiunge consiglio di non prenderle troppo in consideraz
 
 Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata.
 
-Nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Milano Passante - Milano Bovisa) c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
+Nella direttrice 20 (Mantova - Cremona - Codogno - Milano / Codogno – Cremona / Cremona - Mantova) c'è solo la linea RE11 in quando le linee R39 e R40 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
+
+Stessa cosa nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Milano Passante - Milano Bovisa) c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari 
 
 **Se qualcuno volesse darmi una mano mi contatti pure.**
 
