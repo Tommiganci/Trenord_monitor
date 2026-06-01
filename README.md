@@ -118,10 +118,6 @@ Un treno viene contrassegnato come **Critico** (`critico = True`) quando si veri
 4. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
 
 ## Disclaimer 
-Attualmente le direttrici monitorate in modo ottimale sono: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 27, 28, 32, 33, 36, 37, 39, 40.
-
-Le ulteriori direttrici aggiunge consiglio di non prenderle troppo in considerazione in quanto potrebbero mancare dei giorni, verificate sempre il conteggio dei giorni sotto a Storico affidabilità mensile.
-
 Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata.
 
 Nella direttrice 20 (Mantova - Cremona - Codogno - Milano / Codogno – Cremona / Cremona - Mantova) c'è solo la linea RE11 in quando le linee R39 e R40 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
@@ -130,6 +126,7 @@ Stessa cosa nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera 
 
 Stessa cosa nella direttrice 25 (Mortara - Alessandria / Mortara - Milano) c'è solo la linea R31 in quando la linea R32 non è chiara negli orari e probabilmente è di competenza Trenitalia
 
+Stessa cosa nella direttrice 34 (Brescia - Iseo – Edolo / Brescia - Iseo - Breno / Rovato - Bornato - Iseo / Brescia - Iseo) c'è solo la linea S34 in quando le linee RE3, R3 e R9 non sono chiare negli orari
 
 **Se qualcuno volesse darmi una mano mi contatti pure.**
 
