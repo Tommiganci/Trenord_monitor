@@ -111,10 +111,11 @@ Questo sposterà i file JSON dei mesi passati dentro `data/archive/YYYY-MM/`.
 Il **Grado di Disagio** è l'indicatore principale utilizzato dalla dashboard per riassumere lo stato della linea:
 $$\text{Grado di Disagio (\%)} = \frac{\text{Numero di Treni Critici}}{\text{Numero Totale di Treni Monitorati}} \times 100$$
 
-Un treno viene contrassegnato come **Critico** (`critico = True`) quando si verifica una delle seguenti condizioni:
+Un treno viene contrassegnato come **Critico** (`critico = True`) quando si verifica:
 1. Lo stato del treno è `SOPPRESSO` (cancellazione totale della corsa).
-2. Lo stato del treno è `LIMITATO` (il treno non parte o non arriva nelle stazioni capolinea prestabilite).
-3. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
+2. Lo stato del treno è `PARZ. SOPPRESSO` (cancellazione di alcune fermate intermedie).
+3. Lo stato del treno è `LIMITATO` (il treno non parte o non arriva nelle stazioni capolinea prestabilite).
+4. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
 
 Attualmente le direttrici monitorate in modo ottimale sono: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 27, 28, 32, 33, 37, 39, 40.
 
@@ -125,4 +126,16 @@ Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora co
 Lo stato di progresso è consultabile nel foglio excel nella cartella `direttrici`
 
 **Se riscontrate problemi soprattutto sulla popolazione dei treni non esistate a contattarmi** (vedete in basso al sito https://tommiganci.github.io/Trenord_monitor/)
+
+---
+
+## ⚖️ Note Legali e Diritti d'Autore
+
+Questo progetto è stato sviluppato a scopo didattico e per uso personale. 
+
+* **Proprietà del Codice e Licenza:** Tutto il codice sorgente, l'architettura e la logica applicativa definiti in questo repository sono di proprietà intellettuale esclusiva dell'autore (**Tommaso Ganci** / **Tommiganci**). È severamente vietato riutilizzare, ridistribuire, modificare o incorporare questo codice per scopi commerciali, di lucro o per qualsiasi altra finalità non concordata senza il preventivo consenso scritto dell'autore.
+* **Uso Consentito:** È liberamente consentita la consultazione pubblica dello stato delle linee e del servizio ferroviario tramite il sito web pubblico del progetto, così come il suo uso personale, privato e didattico.
+* **Proprietà dei Dati:** Tutti i dati relativi a treni, orari, stazioni, ritardi e stato del servizio sono di proprietà intellettuale ed esclusiva dei rispettivi gestori ed erogatori del servizio ferroviario (in particolare **Trenord S.r.l.**, **RFI - Rete Ferroviaria Italiana S.p.A.** e il servizio **Viaggiatreno**).
+* **Nessuna Affiliazione Ufficiale:** Questo sistema non è in alcun modo affiliato, associato, autorizzato, sponsorizzato o supportato ufficialmente da Trenord S.r.l., RFI, Ferrovie dello Stato Italiane o da una qualsiasi delle loro sussidiarie e affiliate. 
+* **Responsabilità:** L'utilizzo delle API pubbliche e dei dati di monitoraggio avviene in conformità con le modalità di consultazione personale destinate agli utenti passeggeri. L'autore non si assume alcuna responsabilità per un eventuale uso improprio dello strumento o per decisioni di viaggio basate sulle informazioni qui mostrate.
 
