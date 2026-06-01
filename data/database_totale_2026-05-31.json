@@ -1,6 +1,6 @@
 {
   "data": "2026-05-31",
-  "ultima_scansione": "2026-06-01T17:05:27.715630+02:00",
+  "ultima_scansione": "2026-06-01T17:29:23.451411+02:00",
   "treni": {
     "24685": {
       "stato": "RITARDO",
@@ -12,12 +12,12 @@
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:18",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 2
         }
       ],
@@ -35,12 +35,12 @@
       "destinazione": "NOVARA",
       "orario_programmato": "22:53",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -2
         }
       ],
@@ -58,12 +58,12 @@
       "destinazione": "NOVARA",
       "orario_programmato": "23:23",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 2
         }
       ],
@@ -81,41 +81,18 @@
       "destinazione": "TREVIGLIO",
       "orario_programmato": "23:04",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -1
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
       "linea": "S5",
       "numero": 24583
-    },
-    "24586": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 9,
-      "ritardo_picco": 9,
-      "ritardo_capolinea": 9,
-      "origine": "TREVIGLIO",
-      "destinazione": "MILANO CERTOSA",
-      "orario_programmato": "23:40",
-      "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "17:05",
-          "rit": 9
-        }
-      ],
-      "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
-      "linea": "S5",
-      "numero": 24586
     },
     "24584": {
       "stato": "REGOLARE",
@@ -127,18 +104,41 @@
       "destinazione": "RHO",
       "orario_programmato": "23:10",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -1
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
       "linea": "S5",
       "numero": 24584
+    },
+    "24586": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 9,
+      "ritardo_picco": 9,
+      "ritardo_capolinea": 9,
+      "origine": "TREVIGLIO",
+      "destinazione": "MILANO CERTOSA",
+      "orario_programmato": "23:40",
+      "note": "",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "17:29",
+          "rit": 9
+        }
+      ],
+      "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
+      "linea": "S5",
+      "numero": 24586
     },
     "25192": {
       "stato": "RITARDO",
@@ -150,12 +150,12 @@
       "destinazione": "CHIASSO",
       "orario_programmato": "23:09",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 3
         }
       ],
@@ -173,12 +173,12 @@
       "destinazione": "LECCO",
       "orario_programmato": "23:22",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -1
         }
       ],
@@ -196,12 +196,12 @@
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:06",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 0
         }
       ],
@@ -219,12 +219,12 @@
       "destinazione": "VERONA PORTA NUOVA",
       "orario_programmato": "22:25",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -5
         }
       ],
@@ -242,12 +242,12 @@
       "destinazione": "BRESCIA",
       "orario_programmato": "23:25",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 3
         }
       ],
@@ -265,12 +265,12 @@
       "destinazione": "REGGIO DI CALABRIA CENTRALE",
       "orario_programmato": "15:20",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -1
         }
       ],
@@ -288,12 +288,12 @@
       "destinazione": "LECCE",
       "orario_programmato": "21:50",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 3
         }
       ],
@@ -311,12 +311,12 @@
       "destinazione": "LECCE",
       "orario_programmato": "20:50",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -4
         }
       ],
@@ -334,12 +334,12 @@
       "destinazione": "LECCE",
       "orario_programmato": "21:15",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -4
         }
       ],
@@ -357,12 +357,12 @@
       "destinazione": "TRIESTE CENTRALE",
       "orario_programmato": "22:35",
       "note": "Percorso deviato con fermate straordinarie",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 10
         }
       ],
@@ -380,12 +380,12 @@
       "destinazione": "SALERNO",
       "orario_programmato": "19:15",
       "note": "Percorso deviato con fermate straordinarie",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 2,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 0
         }
       ],
@@ -403,12 +403,12 @@
       "destinazione": "TORINO PORTA NUOVA",
       "orario_programmato": "20:25",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 42
         }
       ],
@@ -426,41 +426,18 @@
       "destinazione": "TRIESTE CENTRALE",
       "orario_programmato": "22:35",
       "note": "Percorso deviato con fermate straordinarie",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 10
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
       "linea": "S4",
       "numero": 774
-    },
-    "792": {
-      "stato": "REGOLARE",
-      "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
-      "origine": "SEVESO",
-      "destinazione": "MILANO CADORNA",
-      "orario_programmato": "23:32",
-      "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "17:05",
-          "rit": 0
-        }
-      ],
-      "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
-      "linea": "S4",
-      "numero": 792
     },
     "788": {
       "stato": "LIMITATO",
@@ -472,18 +449,41 @@
       "destinazione": "ROMA TERMINI",
       "orario_programmato": "22:15",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": 0
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
       "linea": "S4",
       "numero": 788
+    },
+    "792": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEVESO",
+      "destinazione": "MILANO CADORNA",
+      "orario_programmato": "23:32",
+      "note": "",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "17:29",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
+      "linea": "S4",
+      "numero": 792
     },
     "10889": {
       "stato": "REGOLARE",
@@ -495,18 +495,64 @@
       "destinazione": "PIACENZA",
       "orario_programmato": "23:10",
       "note": "",
-      "prima_rilevazione": "2026-06-01T17:05:27",
-      "ultima_rilevazione": "2026-06-01T17:05:27",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "17:05",
+          "ts": "17:29",
           "rit": -2
         }
       ],
       "direttrice": "Direttrice 21 (Piacenza - Lodi - Milano)",
       "linea": "R38",
       "numero": 10889
+    },
+    "897": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CADORNA",
+      "destinazione": "SARONNO",
+      "orario_programmato": "23:32",
+      "note": "",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "17:29",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 36 (Saronno - Passante - Lodi / Saronno - Bovisa - Cadorna / Melegnano-Passante-Bovisa)",
+      "linea": "S3",
+      "numero": 897
+    },
+    "892": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SARONNO",
+      "destinazione": "MILANO CADORNA",
+      "orario_programmato": "23:53",
+      "note": "",
+      "prima_rilevazione": "2026-06-01T17:29:23",
+      "ultima_rilevazione": "2026-06-01T17:29:23",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "17:29",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 36 (Saronno - Passante - Lodi / Saronno - Bovisa - Cadorna / Melegnano-Passante-Bovisa)",
+      "linea": "S3",
+      "numero": 892
     }
   }
 }
