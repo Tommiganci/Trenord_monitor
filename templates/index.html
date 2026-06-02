@@ -237,24 +237,7 @@
             <span>•</span>
             <a href="#" onclick="openDisclaimerModal(event)" class="footer-link">⚠️ Disclaimer</a>
         </div>
-        <div id="stats-counter" style="margin-top: 15px; font-size: 0.85rem; color: var(--text-muted);">
-            <!-- Il contatore visite verrà inserito qui da GoatCounter -->
-        </div>
     </footer>
-
-    <script>
-        // Attende che lo script GoatCounter sia caricato
-        var checkGoatCounter = setInterval(function() {
-            if (window.goatcounter && window.goatcounter.visit_count) {
-                clearInterval(checkGoatCounter);
-                window.goatcounter.visit_count({
-                    append: '#stats-counter',
-                    no_branding: true,
-                    type: 'html'
-                });
-            }
-        }, 100);
-    </script>
 </body>
 
 </html>
