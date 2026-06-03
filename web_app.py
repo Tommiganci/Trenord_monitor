@@ -77,6 +77,14 @@ def get_all_data():
 def index():
     return render_template("index.html")
 
+@app.route("/manifest.json")
+def serve_manifest():
+    return app.send_static_file("manifest.json")
+
+@app.route("/sw.js")
+def serve_sw():
+    return app.send_static_file("js/sw.js")
+
 @app.route("/api/data")
 def api_data():
     data = get_latest_data()

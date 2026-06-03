@@ -394,6 +394,21 @@ def export_html(data):
     with open(html_path, "w", encoding="utf-8") as f:
         f.write(html)
     
+    # Copia file PWA per l'esportazione statica
+    import shutil
+    try:
+        shutil.copy(os.path.join("static", "manifest.json"), os.path.join(DOCS_DIR, "manifest.json"))
+        shutil.copy(os.path.join("static", "js", "sw.js"), os.path.join(DOCS_DIR, "sw.js"))
+        
+        docs_icons_dir = os.path.join(DOCS_DIR, "static", "icons")
+        if not os.path.exists(docs_icons_dir):
+            os.makedirs(docs_icons_dir)
+        shutil.copy(os.path.join("static", "icons", "icon-192.png"), os.path.join(docs_icons_dir, "icon-192.png"))
+        shutil.copy(os.path.join("static", "icons", "icon-512.png"), os.path.join(docs_icons_dir, "icon-512.png"))
+        print("Asset PWA copiati con successo in docs/")
+    except Exception as e:
+        print(f"Avviso: Errore durante la copia degli asset PWA in docs: {e}")
+        
     print(f"Esportazione HTML statica interattiva completata: {html_path}")
 
 def main():

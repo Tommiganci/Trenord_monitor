@@ -509,11 +509,15 @@ function closeDisclaimerModal() {
 window.onclick = function (event) {
     let chartModal = document.getElementById('chartModal');
     let disclaimerModal = document.getElementById('disclaimerModal');
+    let iosInstallModal = document.getElementById('iosInstallModal');
     if (event.target == chartModal) {
         closeModal();
     }
     if (event.target == disclaimerModal) {
         closeDisclaimerModal();
+    }
+    if (event.target == iosInstallModal) {
+        closeIosModal();
     }
 }
 
@@ -684,4 +688,73 @@ function fallbackCopy(text, callback) {
     } catch (err) {
         console.error("Fallback copy failed: ", err);
     }
+}
+
+// --- PWA Service Worker & Install Logic ---
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Registra sw.js a livello di radice (sw.js si trova in /sw.js)
+        navigator.serviceWorker.register('sw.js')
+            .then(reg => console.log('Service Worker registrato con successo. Scope:', reg.scope))
+            .catch(err => console.error('Errore registrazione Service Worker:', err));
+    });
+}
+
+function updateOnlineStatus() {
+    const banner = document.getElementById('offline-banner');
+    if (!banner) return;
+    if (navigator.onLine) {
+        banner.classList.add('hidden');
+    } else {
+        banner.classList.remove('hidden');
+    }
+}
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus(); // Esegui all'avvio
+
+let deferredPrompt;
+const installBtn = document.getElementById('install-pwa-btn');
+
+if (installBtn) {
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Previene la comparsa automatica del banner nativo del browser
+        e.preventDefault();
+        deferredPrompt = e;
+        // Mostra il pulsante di installazione personalizzato nell'header
+        installBtn.classList.remove('hidden');
+    });
+
+    installBtn.addEventListener('click', () => {
+        // Rileva se l'utente è su iOS (Safari)
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        
+        if (isIos) {
+            openIosModal();
+        } else if (deferredPrompt) {
+            // Mostra il prompt nativo per Android/Chrome
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('Installazione PWA accettata');
+                }
+                installBtn.classList.add('hidden');
+                deferredPrompt = null;
+            });
+        } else {
+            // Se non c'è prompt nativo ma si clicca su desktop/altro
+            alert("Il tuo browser non supporta l'installazione rapida o l'app è già installata!");
+        }
+    });
+}
+
+function openIosModal() {
+    const modal = document.getElementById('iosInstallModal');
+    if (modal) modal.style.display = 'flex';
+}
+
+function closeIosModal() {
+    const modal = document.getElementById('iosInstallModal');
+    if (modal) modal.style.display = 'none';
 }

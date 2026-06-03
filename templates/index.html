@@ -17,12 +17,25 @@
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- PWA Meta Tags & Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="static/icons/icon-192.png">
 </head>
 
 <body>
 
+    <div id="offline-banner" class="offline-banner hidden">
+        ⚠️ Sei offline. I dati visualizzati potrebbero non essere aggiornati.
+    </div>
+
     <header>
-        <h1>Trenord Live Monitor</h1>
+        <div class="header-container" style="display: flex; justify-content: center; align-items: center; gap: 15px; position: relative; max-width: 600px; margin: 0 auto; padding: 0 20px;">
+            <h1 style="margin: 0;">Trenord Live Monitor</h1>
+            <button id="install-pwa-btn" class="install-btn hidden">📥 Installa App</button>
+        </div>
         <div class="subtitle" id="last-update">Caricamento dati...</div>
     </header>
 
@@ -216,6 +229,21 @@
                     <li>🐛 <strong>Se riscontrate problemi o discrepanze</strong> sul popolamento o tracciamento dei treni in tempo reale, non esitate a segnalarlo tramite i canali indicati in fondo al sito!</li>
                 </ul>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal per Istruzioni iOS -->
+    <div id="iosInstallModal" class="modal">
+        <div class="modal-content" style="max-width: 450px; text-align: left;">
+            <span class="close-btn" onclick="closeIosModal()">&times;</span>
+            <h2 class="modal-title">📲 Installa su iPhone / iPad</h2>
+            <div class="modal-subtitle">Segui questi semplici passaggi per aggiungere l'app alla schermata Home:</div>
+            <ol style="padding-left: 20px; line-height: 1.6; margin-bottom: 20px;">
+                <li style="margin-bottom: 12px;">Premi il pulsante di <strong>condivisione</strong> nell'interfaccia di Safari (l'icona del quadrato con la freccia in alto <span style="font-size:1.2rem;">⎋</span>).</li>
+                <li style="margin-bottom: 12px;">Scorri il menu verso il basso e seleziona la voce <strong>Aggiungi alla schermata Home</strong>.</li>
+                <li style="margin-bottom: 12px;">Premi <strong>Aggiungi</strong> in alto a destra per completare l'installazione.</li>
+            </ol>
+            <button onclick="closeIosModal()" class="back-btn" style="margin-bottom:0; width:100%; justify-content:center;">Ho capito</button>
         </div>
     </div>
 
