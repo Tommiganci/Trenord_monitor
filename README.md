@@ -117,22 +117,23 @@ Un treno viene contrassegnato come **Critico** (`critico = True`) quando si veri
 3. Lo stato del treno è `LIMITATO` (il treno non parte o non arriva nelle stazioni capolinea prestabilite).
 4. Il ritardo registrato all'arrivo al capolinea è **superiore a 15 minuti** (`ritardo_capolinea > 15`).
 
-## Disclaimer 
-Le direttrici 26 (Novara - Mortara) e 29 (Voghera - Piacenza) non sono ancora comprese in quanto la decifrazione delle tabelle orarie è complicata.
+## 📊 Stato del Monitoraggio
 
-Nella direttrice 20 (Mantova - Cremona - Codogno - Milano / Codogno – Cremona / Cremona - Mantova) c'è solo la linea RE11 in quando le linee R39 e R40 non sono chiare negli orari (personalmente non capisco quali sono i numeri dei treni appartenenti alle linee)
+Tutte le **38 direttrici ferroviarie** di Trenord (ad esclusione della 13 che è gestita esclusivamente tramite bus sostitutivi e della 38 che non è definita nell'orario ufficiale) sono completamente coperte e monitorate. 
 
-Stessa cosa nella direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Milano Passante - Milano Bovisa) c'è solo la linea S13 in quando le linee RE13 e R33 non sono chiare negli orari
+I dati di popolamento delle corse sono estratti e generati automaticamente a partire dal feed orario ufficiale **GTFS statico** di Trenord. Questo ha permesso di completare tutte le relazioni precedentemente escluse o parziali (come le direttrici 26 e 29, e le linee R39, R40, RE13, R32 e la tratta di Brescia-Iseo).
 
-Stessa cosa nella direttrice 25 (Mortara - Alessandria / Mortara - Milano) c'è solo la linea R31 in quando la linea R32 non è chiara negli orari e probabilmente è di competenza Trenitalia
+**Note di Mappatura Specifica:**
+- **R32 (Mortara - Alessandria)**: incorporata nella direttrice 25 associando le corse R25 (Novara-Mortara-Alessandria).
+- **S34 (Brescia - Iseo)**: mappata sulle corse identificate come S31 nel GTFS.
+- **R33 (Pavia - Voghera)**: in questa versione dell'orario non è presente come servizio autonomo nel GTFS, ma la tratta Pavia-Voghera è pienamente monitorata tramite i treni della linea **RE13**.
 
-Stessa cosa nella direttrice 34 (Brescia - Iseo – Edolo / Brescia - Iseo - Breno / Rovato - Bornato - Iseo / Brescia - Iseo) c'è solo la linea S34 in quando le linee RE3, R3 e R9 non sono chiare negli orari
+## 🤝 Collaborazione e Segnalazioni
 
-**Se qualcuno volesse darmi una mano mi contatti pure.**
+Lo stato di progresso generale è consultabile nel foglio Excel nella cartella `direttrici/`.
 
-Lo stato di progresso è consultabile nel foglio excel nella cartella `direttrici`
+**Se riscontrate problemi o discrepanze sui treni monitorati**, non esitate a contattarmi (vedete i contatti in fondo al sito https://tommiganci.github.io/Trenord_monitor/).
 
-**Se riscontrate problemi soprattutto sulla popolazione dei treni non esistate a contattarmi** (vedete in basso al sito https://tommiganci.github.io/Trenord_monitor/)
 
 ---
 
