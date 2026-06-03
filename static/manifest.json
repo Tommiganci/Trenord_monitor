@@ -2,19 +2,19 @@
   "name": "Trenord Live Monitor",
   "short_name": "T-Monitor",
   "description": "Monitoraggio in tempo reale del servizio ferroviario Trenord",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#0f1115",
   "theme_color": "#1a1d24",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/static/icons/icon-192.png",
+      "src": "static/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/static/icons/icon-512.png",
+      "src": "static/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
