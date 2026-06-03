@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tmonitor-cache-v1';
+const CACHE_NAME = 'tmonitor-cache-v2';
 
 // Risorse da caricare in cache immediatamente all'installazione
 const ASSETS_TO_CACHE = [
