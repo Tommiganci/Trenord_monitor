@@ -718,6 +718,14 @@ let deferredPrompt;
 const installBtn = document.getElementById('install-pwa-btn');
 
 if (installBtn) {
+    // Rileva se l'utente è su iOS (Safari) e se non è già in modalità standalone (installato)
+    const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+
+    if (isIos && !isStandalone) {
+        installBtn.classList.remove('hidden');
+    }
+
     window.addEventListener('beforeinstallprompt', (e) => {
         // Previene la comparsa automatica del banner nativo del browser
         e.preventDefault();
