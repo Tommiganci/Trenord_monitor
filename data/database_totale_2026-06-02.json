@@ -1,6 +1,6 @@
 {
   "data": "2026-06-02",
-  "ultima_scansione": "2026-06-03T10:05:31.442352+02:00",
+  "ultima_scansione": "2026-06-03T11:01:53.186032+02:00",
   "treni": {
     "24617": {
       "stato": "REGOLARE",
@@ -3623,8 +3623,8 @@
       "orario_programmato": "23:18",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -3724,6 +3724,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 10
+        },
+        {
+          "ts": "11:01",
           "rit": 10
         }
       ],
@@ -35995,8 +35999,8 @@
       "orario_programmato": "22:12",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -36096,6 +36100,10 @@
         },
         {
           "ts": "10:05",
+          "rit": -2
+        },
+        {
+          "ts": "11:01",
           "rit": -2
         }
       ],
@@ -39154,8 +39162,8 @@
       "orario_programmato": "22:10",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -39256,6 +39264,10 @@
         {
           "ts": "10:05",
           "rit": -1
+        },
+        {
+          "ts": "11:01",
+          "rit": -1
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
@@ -39273,8 +39285,8 @@
       "orario_programmato": "22:40",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -39374,6 +39386,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 2
+        },
+        {
+          "ts": "11:01",
           "rit": 2
         }
       ],
@@ -39487,8 +39503,8 @@
       "orario_programmato": "23:10",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -39588,6 +39604,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -39701,8 +39721,8 @@
       "orario_programmato": "23:40",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -39802,6 +39822,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 10
+        },
+        {
+          "ts": "11:01",
           "rit": 10
         }
       ],
@@ -52550,8 +52574,8 @@
       "orario_programmato": "23:09",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -52651,6 +52675,10 @@
         },
         {
           "ts": "10:05",
+          "rit": -3
+        },
+        {
+          "ts": "11:01",
           "rit": -3
         }
       ],
@@ -79556,8 +79584,8 @@
       "orario_programmato": "23:56",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -79658,10 +79686,14 @@
         {
           "ts": "10:05",
           "rit": 0
+        },
+        {
+          "ts": "11:01",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 35 (Gallarate - Malpensa - Milano Centrale / Malpensa - Milano Cadorna)",
-      "linea": "RE51",
+      "linea": "RE54",
       "numero": 4397
     },
     "2929": {
@@ -86466,8 +86498,8 @@
       "orario_programmato": "23:26",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -86567,6 +86599,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -95349,8 +95385,8 @@
       "orario_programmato": "23:22",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -95450,6 +95486,10 @@
         },
         {
           "ts": "10:05",
+          "rit": -1
+        },
+        {
+          "ts": "11:01",
           "rit": -1
         }
       ],
@@ -99197,8 +99237,8 @@
       "orario_programmato": "22:25",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -99298,6 +99338,10 @@
         },
         {
           "ts": "10:05",
+          "rit": -5
+        },
+        {
+          "ts": "11:01",
           "rit": -5
         }
       ],
@@ -99411,8 +99455,8 @@
       "orario_programmato": "23:25",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -99512,6 +99556,10 @@
         },
         {
           "ts": "10:05",
+          "rit": -1
+        },
+        {
+          "ts": "11:01",
           "rit": -1
         }
       ],
@@ -109158,16 +109206,16 @@
     "797": {
       "stato": "LIMITATO",
       "critico": true,
-      "ritardo_attuale": -3,
+      "ritardo_attuale": 0,
       "ritardo_picco": 4,
-      "ritardo_capolinea": -3,
-      "origine": "TORINO PORTA NUOVA",
-      "destinazione": "SALERNO",
-      "orario_programmato": "20:30",
+      "ritardo_capolinea": 0,
+      "origine": "MILANO CADORNA",
+      "destinazione": "SEVESO",
+      "orario_programmato": "23:53",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 50,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 51,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -109267,6 +109315,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -113822,8 +113874,8 @@
       "orario_programmato": "23:09",
       "note": "Treno cancellato",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -113923,6 +113975,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -114131,8 +114187,8 @@
       "orario_programmato": "23:39",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -114232,6 +114288,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 1
+        },
+        {
+          "ts": "11:01",
           "rit": 1
         }
       ],
@@ -132110,8 +132170,8 @@
       "orario_programmato": "23:26",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -132211,6 +132271,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 1
+        },
+        {
+          "ts": "11:01",
           "rit": 1
         }
       ],
@@ -136409,8 +136473,8 @@
       "orario_programmato": "23:10",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -136510,6 +136574,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -148023,8 +148091,8 @@
       "orario_programmato": "23:32",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -148124,6 +148192,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -151372,8 +151444,8 @@
       "orario_programmato": "23:53",
       "note": "",
       "prima_rilevazione": "2026-06-02T09:48:34",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 25,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 26,
       "storico_ritardi": [
         {
           "ts": "09:48",
@@ -151473,6 +151545,10 @@
         },
         {
           "ts": "10:05",
+          "rit": 0
+        },
+        {
+          "ts": "11:01",
           "rit": 0
         }
       ],
@@ -155196,8 +155272,8 @@
       "orario_programmato": "23:24",
       "note": "",
       "prima_rilevazione": "2026-06-02T23:05:33",
-      "ultima_rilevazione": "2026-06-03T10:05:31",
-      "scansioni": 8,
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 9,
       "storico_ritardi": [
         {
           "ts": "23:05",
@@ -155230,11 +155306,61 @@
         {
           "ts": "10:05",
           "rit": 0
+        },
+        {
+          "ts": "11:01",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 35 (Gallarate - Malpensa - Milano Centrale / Malpensa - Milano Cadorna)",
       "linea": "RE51",
       "numero": 80392
+    },
+    "2348": {
+      "stato": "LIMITATO",
+      "critico": true,
+      "ritardo_attuale": 2,
+      "ritardo_picco": 2,
+      "ritardo_capolinea": 2,
+      "origine": "TORTONA",
+      "destinazione": "MILANO GRECO PIRELLI",
+      "orario_programmato": "23:03",
+      "note": "",
+      "prima_rilevazione": "2026-06-03T11:01:53",
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "11:01",
+          "rit": 2
+        }
+      ],
+      "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
+      "linea": "RE13",
+      "numero": 2348
+    },
+    "24383": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "MILANO BOVISA POLITECNICO",
+      "destinazione": "PAVIA",
+      "orario_programmato": "23:25",
+      "note": "",
+      "prima_rilevazione": "2026-06-03T11:01:53",
+      "ultima_rilevazione": "2026-06-03T11:01:53",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "11:01",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
+      "linea": "S13",
+      "numero": 24383
     }
   }
 }
