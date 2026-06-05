@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tmonitor-cache-v2';
+const CACHE_NAME = 'tmonitor-cache-v3';
 
 // Risorse da caricare in cache immediatamente all'installazione
 const ASSETS_TO_CACHE = [
@@ -40,12 +40,21 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
 
-  // Strategia per le chiamate API in tempo reale (Network-First)
-  if (requestUrl.pathname.includes('/api/') || requestUrl.pathname.endsWith('.json')) {
+  // Rileva se la richiesta è per una pagina HTML (navigazione o richiesta di index.html)
+  const isHtml = event.request.mode === 'navigate' || 
+                 (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html')) ||
+                 requestUrl.pathname.endsWith('/') || 
+                 requestUrl.pathname.endsWith('index.html');
+
+  const isApi = requestUrl.pathname.includes('/api/') || requestUrl.pathname.endsWith('.json');
+
+  // Per le pagine HTML e le API in tempo reale usiamo la strategia Network-First.
+  // In questo modo, se c'è connessione, carichiamo sempre i dati più freschi dal server.
+  // Se l'utente è offline, mostriamo l'ultima versione salvata in cache.
+  if (isHtml || isApi) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          // Se la risposta è valida, salviamola in cache
           if (response.status === 200) {
             const responseClone = response.clone();
             caches.open(CACHE_NAME).then((cache) => {
@@ -55,13 +64,13 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // Se offline, restituisci l'ultimo stato noto salvato in cache
-          console.log('[Service Worker] Rete non disponibile per API, uso fallback cache per:', requestUrl.pathname);
+          console.log('[Service Worker] Rete non disponibile, uso fallback cache per:', requestUrl.pathname);
           return caches.match(event.request);
         })
     );
   } else {
-    // Strategia per asset statici e librerie esterne (Stale-While-Revalidate)
+    // Per gli asset statici (JS inlined, CSS, icone, font esterni) usiamo Stale-While-Revalidate.
+    // Carica istantaneamente dalla cache e aggiorna in background.
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
         const fetchPromise = fetch(event.request).then((networkResponse) => {
@@ -76,7 +85,6 @@ self.addEventListener('fetch', (event) => {
           // Ignora gli errori di rete per Stale-While-Revalidate
         });
 
-        // Restituisci la risposta in cache (se disponibile) o aspetta la rete
         return cachedResponse || fetchPromise;
       })
     );

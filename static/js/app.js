@@ -766,3 +766,16 @@ function closeIosModal() {
     const modal = document.getElementById('iosInstallModal');
     if (modal) modal.style.display = 'none';
 }
+
+// Ricarica automaticamente la pagina se l'applicazione viene riaperta dopo essere stata in background
+const PAGE_LOAD_TIME = Date.now();
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        const now = Date.now();
+        // Se la pagina è stata caricata da più di 2 minuti (120000 ms), ricarica
+        if (now - PAGE_LOAD_TIME > 120000) {
+            console.log('PWA riaperta in foreground, ricarico per scaricare i dati aggiornati.');
+            window.location.reload();
+        }
+    }
+});
