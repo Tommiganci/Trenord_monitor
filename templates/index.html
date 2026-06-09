@@ -43,6 +43,16 @@
 
         <!-- Vista Home: Elenco delle Direttrici -->
         <div id="home-view">
+            <!-- Sezione Treni Preferiti -->
+            <div id="fav-trains-section" class="hidden" style="margin-bottom: 35px; padding: 25px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-color); border-radius: 16px;">
+                <h2 style="margin-top: 0; margin-bottom: 20px; font-size: 1.4rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                    <span>🌟</span> I miei Treni Preferiti
+                </h2>
+                <div id="fav-trains-grid" class="fav-trains-grid">
+                    <!-- Verrà popolato dinamicamente -->
+                </div>
+            </div>
+
             <!-- Sezione Disagio Complessivo Trenord (Indice IVOL) -->
             <div class="overall-container" style="margin-bottom: 35px; padding: 25px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-color); border-radius: 16px;">
                 <h2 style="margin-top: 0; margin-bottom: 20px; font-size: 1.4rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
@@ -195,7 +205,10 @@
     <div id="chartModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 class="modal-title" id="modal-treno-title">Dettaglio Treno</h2>
+            <h2 class="modal-title" style="display: flex; align-items: center; gap: 10px; margin-top: 0; margin-bottom: 5px;">
+                <button id="modal-fav-btn" class="fav-star-icon inactive" style="background: none; border: none; font-size: 1.6rem; cursor: pointer; padding: 0;">★</button>
+                <span id="modal-treno-title">Dettaglio Treno</span>
+            </h2>
             <div class="modal-subtitle" id="modal-treno-subtitle">Storico Ritardo</div>
             <p id="modal-desc"
                 style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; border-left: 3px solid var(--accent); padding-left: 10px;">

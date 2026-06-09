@@ -212,12 +212,131 @@ function renderDashboardData(data) {
     }
 }
 
+// --- PWA Preferiti (Favorites) Logic ---
+
+function getFavDirettrici() {
+    return JSON.parse(localStorage.getItem('fav_direttrici') || '[]');
+}
+
+function getFavTreni() {
+    return JSON.parse(localStorage.getItem('fav_treni') || '[]');
+}
+
+function toggleFavDirettrice(event, dirNameEscaped) {
+    if (event) event.stopPropagation();
+    const dirName = decodeURIComponent(dirNameEscaped);
+    let favs = getFavDirettrici();
+    const idx = favs.indexOf(dirName);
+    if (idx > -1) {
+        favs.splice(idx, 1);
+    } else {
+        favs.push(dirName);
+    }
+    localStorage.setItem('fav_direttrici', JSON.stringify(favs));
+    renderHomePage(lastDirettriceMap);
+}
+
+function toggleFavTrain(event, numero) {
+    if (event) event.stopPropagation();
+    let favs = getFavTreni();
+    const idx = favs.indexOf(numero);
+    if (idx > -1) {
+        favs.splice(idx, 1);
+    } else {
+        favs.push(numero);
+    }
+    localStorage.setItem('fav_treni', JSON.stringify(favs));
+    
+    if (selectedDirettrice) {
+        renderTable();
+    } else {
+        renderHomePage(lastDirettriceMap);
+    }
+    
+    updateModalFavButton(numero);
+}
+
+function updateModalFavButton(numero) {
+    const btn = document.getElementById('modal-fav-btn');
+    if (!btn) return;
+    const favs = getFavTreni();
+    const isFav = favs.includes(numero);
+    if (isFav) {
+        btn.classList.remove('inactive');
+    } else {
+        btn.classList.add('inactive');
+    }
+    btn.onclick = (event) => toggleFavTrain(event, numero);
+}
+
+function renderFavTrainsSection() {
+    const favs = getFavTreni();
+    const section = document.getElementById('fav-trains-section');
+    const grid = document.getElementById('fav-trains-grid');
+    if (!section || !grid) return;
+
+    if (favs.length === 0) {
+        section.classList.add('hidden');
+        return;
+    }
+
+    section.classList.remove('hidden');
+    let html = '';
+
+    favs.forEach(num => {
+        const t = allTrainsData.find(x => x.numero === num);
+        if (t) {
+            const statusBadge = renderStatus(t.stato, t.critico);
+            const trenoData = encodeURIComponent(JSON.stringify({
+                linea: t.linea,
+                numero: t.numero,
+                origine: t.origine,
+                destinazione: t.destinazione
+            }));
+
+            html += `
+                <div class="fav-train-card" onclick="openModal('${trenoData}', ${t.numero})">
+                    <div class="fav-train-header">
+                        <span class="fav-train-name">${t.linea} ${t.numero}</span>
+                        <button class="fav-star-icon" onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();">★</button>
+                    </div>
+                    <div class="fav-train-route" title="${t.origine} ➔ ${t.destinazione}">
+                        ${t.origine} ➔ ${t.destinazione}
+                    </div>
+                    <div class="fav-train-status-row">
+                        <span>Partenza: <strong>${t.orario_programmato || '--:--'}</strong></span>
+                        <span>${statusBadge}</span>
+                    </div>
+                </div>
+            `;
+        } else {
+            html += `
+                <div class="fav-train-card" style="opacity: 0.6;" onclick="openModal(null, ${num})">
+                    <div class="fav-train-header">
+                        <span class="fav-train-name">Treno ${num}</span>
+                        <button class="fav-star-icon" onclick="toggleFavTrain(event, ${num}); event.stopPropagation();">★</button>
+                    </div>
+                    <div class="fav-train-route">Stato attuale non disponibile</div>
+                    <div class="fav-train-status-row">
+                        <span>Non attivo oggi</span>
+                        <span class="status-badge" style="background-color:rgba(139, 146, 165, 0.15); color:var(--text-muted)">NON ATTIVO</span>
+                    </div>
+                </div>
+            `;
+        }
+    });
+
+    grid.innerHTML = html;
+}
+
 function renderHomePage(direttriciMap) {
     lastDirettriceMap = direttriciMap;
+    renderFavTrainsSection();
     const grid = document.getElementById('direttrici-grid');
     let html = '';
     
     const dirs = Object.values(direttriciMap);
+    const favDirettrici = getFavDirettrici();
     
     // Filtro direttrici in base alla ricerca
     const filteredDirs = dirs.filter(dir => {
@@ -247,8 +366,13 @@ function renderHomePage(direttriciMap) {
         return;
     }
     
-    // Ordinamento numerico (es. Direttrice 1, 3, 7, 12, 33)
+    // Ordinamento (preferiti prima, poi numerico)
     filteredDirs.sort((a, b) => {
+        const isFavA = favDirettrici.includes(a.nome);
+        const isFavB = favDirettrici.includes(b.nome);
+        if (isFavA && !isFavB) return -1;
+        if (!isFavA && isFavB) return 1;
+
         const numA = parseInt(a.nome.match(/Direttrice\s+(\d+)/)?.[1], 10);
         const numB = parseInt(b.nome.match(/Direttrice\s+(\d+)/)?.[1], 10);
         if (!isNaN(numA) && !isNaN(numB)) {
@@ -267,12 +391,20 @@ function renderHomePage(direttriciMap) {
         
         const servizi = [...new Set(dir.treni.map(t => t.linea))].filter(Boolean).sort();
         const serviziStr = servizi.join(' / ');
+        const isFav = favDirettrici.includes(dir.nome);
         
         html += `
             <div class="direttrice-card" onclick="selectDirettrice('${encodeURIComponent(dir.nome)}')">
                 <div class="direttrice-header">
                     <div>
-                        <h3 class="direttrice-name">${dir.nome}</h3>
+                        <h3 class="direttrice-name">
+                            <button class="fav-star-icon ${isFav ? '' : 'inactive'}" 
+                                    onclick="toggleFavDirettrice(event, '${encodeURIComponent(dir.nome)}'); event.stopPropagation();" 
+                                    style="margin-right: 6px; font-size: 1.1rem;">
+                                ★
+                            </button>
+                            ${dir.nome}
+                        </h3>
                         <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; display: inline-block;">${serviziStr}</span>
                     </div>
                     <div class="direttrice-status-indicator ${indicatorClass}"></div>
@@ -415,10 +547,19 @@ function renderTable() {
         }));
 
         let trClass = (t.critico && t.stato !== "INATTIVO") ? 'class="row-critico"' : '';
+        const favTreni = getFavTreni();
+        const isFav = favTreni.includes(t.numero);
 
         tbodyHTML += `
             <tr ${trClass} onclick="openModal('${trenoData}', ${t.numero})">
-                <td><strong>${t.linea} ${t.numero}</strong></td>
+                <td>
+                    <button class="fav-star-icon ${isFav ? '' : 'inactive'}" 
+                            onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();" 
+                            style="margin-right: 8px;">
+                        ★
+                    </button>
+                    <strong>${t.linea} ${t.numero}</strong>
+                </td>
                 <td>${renderStatus(t.stato, t.critico)}</td>
                 <td>${t.ritardo_attuale}'</td>
                 <td style="${ritCapClass}">${t.ritardo_capolinea}'</td>
@@ -437,17 +578,28 @@ function renderTable() {
 }
 
 function openModal(trenoDataStr, numero) {
-    const t = JSON.parse(decodeURIComponent(trenoDataStr));
+    let t = { linea: '', numero: numero, origine: 'Storico', destinazione: 'Treno' };
+    if (trenoDataStr) {
+        t = JSON.parse(decodeURIComponent(trenoDataStr));
+    } else {
+        t.linea = "";
+        t.numero = numero;
+        t.origine = "Monitoraggio Storico";
+        t.destinazione = "";
+    }
+    
     document.getElementById('chartModal').style.display = "flex";
-    document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`;
-    document.getElementById('modal-treno-subtitle').innerText = `${t.origine} ➔ ${t.destinazione}`;
+    document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`.trim();
+    document.getElementById('modal-treno-subtitle').innerText = t.destinazione ? `${t.origine} ➔ ${t.destinazione}` : t.origine;
+
+    updateModalFavButton(numero);
 
     if (IS_STATIC) {
         renderChart(STATIC_HISTORY[numero] || []);
     } else {
         fetch(`/api/train_history/${numero}`)
             .then(res => res.json())
-            .then(data => renderChart(data.history))
+            .then(data => renderChart(data.history || []))
             .catch(err => console.error("Errore chart:", err));
     }
 }

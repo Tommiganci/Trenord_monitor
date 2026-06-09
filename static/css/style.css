@@ -519,3 +519,87 @@ tr:hover {
         gap: 8px !important;
     }
 }
+
+/* --- Preferiti (Favorites) --- */
+.fav-trains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.fav-train-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.fav-train-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px -3px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent);
+}
+
+.fav-train-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.fav-train-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.fav-train-route {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.fav-train-status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    font-size: 0.85rem;
+}
+
+.fav-star-icon {
+    cursor: pointer;
+    color: #f59e0b;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fav-star-icon:hover {
+    transform: scale(1.2);
+}
+
+.fav-star-icon.inactive {
+    color: var(--text-muted);
+    opacity: 0.4;
+}
+
+.fav-star-icon.inactive:hover {
+    color: #f59e0b;
+    opacity: 0.8;
+}
