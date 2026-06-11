@@ -102,12 +102,126 @@
             </div>
 
             <h2 style="margin-top: 0; margin-bottom: 25px; font-weight: 600;">Seleziona una direttrice per visualizzare lo stato di servizio in tempo reale:</h2>
-            <div class="search-container" style="margin-bottom: 25px; max-width: 500px;">
+            <div class="search-container" style="margin-bottom: 25px; max-width: 500px; position: relative;">
+                <span class="search-icon">🔍</span>
                 <input type="text" id="searchDirettriciInput" class="search-input" placeholder="Cerca direttrice, stazione o linea (es. Como, S11, Novara)...">
+                <button id="clearSearchDirettriciBtn" class="clear-btn hidden">&times;</button>
             </div>
             <div id="direttrici-grid" class="direttrici-grid">
-                <div style="text-align: center; color: var(--text-muted); width: 100%; grid-column: 1/-1; padding: 40px;">
-                    Caricamento direttrici...
+                <!-- Skeleton Cards per il caricamento iniziale -->
+                <div class="direttrice-card skeleton-card">
+                    <div class="direttrice-header">
+                        <div style="width: 70%;">
+                            <div class="skeleton-text skeleton-title"></div>
+                            <div class="skeleton-text skeleton-subtitle" style="width: 50%;"></div>
+                        </div>
+                        <div class="skeleton-circle"></div>
+                    </div>
+                    <div class="direttrice-stats">
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="direttrice-card skeleton-card">
+                    <div class="direttrice-header">
+                        <div style="width: 70%;">
+                            <div class="skeleton-text skeleton-title"></div>
+                            <div class="skeleton-text skeleton-subtitle" style="width: 60%;"></div>
+                        </div>
+                        <div class="skeleton-circle"></div>
+                    </div>
+                    <div class="direttrice-stats">
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="direttrice-card skeleton-card">
+                    <div class="direttrice-header">
+                        <div style="width: 70%;">
+                            <div class="skeleton-text skeleton-title"></div>
+                            <div class="skeleton-text skeleton-subtitle" style="width: 40%;"></div>
+                        </div>
+                        <div class="skeleton-circle"></div>
+                    </div>
+                    <div class="direttrice-stats">
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="direttrice-card skeleton-card">
+                    <div class="direttrice-header">
+                        <div style="width: 70%;">
+                            <div class="skeleton-text skeleton-title"></div>
+                            <div class="skeleton-text skeleton-subtitle" style="width: 55%;"></div>
+                        </div>
+                        <div class="skeleton-circle"></div>
+                    </div>
+                    <div class="direttrice-stats">
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="direttrice-card skeleton-card">
+                    <div class="direttrice-header">
+                        <div style="width: 70%;">
+                            <div class="skeleton-text skeleton-title"></div>
+                            <div class="skeleton-text skeleton-subtitle" style="width: 45%;"></div>
+                        </div>
+                        <div class="skeleton-circle"></div>
+                    </div>
+                    <div class="direttrice-stats">
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="direttrice-card skeleton-card">
+                    <div class="direttrice-header">
+                        <div style="width: 70%;">
+                            <div class="skeleton-text skeleton-title"></div>
+                            <div class="skeleton-text skeleton-subtitle" style="width: 50%;"></div>
+                        </div>
+                        <div class="skeleton-circle"></div>
+                    </div>
+                    <div class="direttrice-stats">
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="skeleton-text skeleton-stat-val"></div>
+                            <div class="skeleton-text skeleton-stat-lbl"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

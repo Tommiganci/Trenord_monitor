@@ -15,10 +15,28 @@ document.getElementById('searchInput').addEventListener('input', (e) => {
     renderTable();
 });
 
-document.getElementById('searchDirettriciInput').addEventListener('input', (e) => {
-    currentDirettriciSearch = e.target.value.toLowerCase();
-    renderHomePage(lastDirettriceMap);
-});
+const searchDirettriciInput = document.getElementById('searchDirettriciInput');
+const clearSearchDirettriciBtn = document.getElementById('clearSearchDirettriciBtn');
+
+if (searchDirettriciInput && clearSearchDirettriciBtn) {
+    searchDirettriciInput.addEventListener('input', (e) => {
+        currentDirettriciSearch = e.target.value.toLowerCase();
+        if (currentDirettriciSearch.length > 0) {
+            clearSearchDirettriciBtn.classList.remove('hidden');
+        } else {
+            clearSearchDirettriciBtn.classList.add('hidden');
+        }
+        renderHomePage(lastDirettriceMap);
+    });
+
+    clearSearchDirettriciBtn.addEventListener('click', () => {
+        searchDirettriciInput.value = '';
+        currentDirettriciSearch = '';
+        clearSearchDirettriciBtn.classList.add('hidden');
+        searchDirettriciInput.focus();
+        renderHomePage(lastDirettriceMap);
+    });
+}
 
 function renderStatus(stato, critico) {
     if (stato === "INATTIVO") {
@@ -64,6 +82,10 @@ function renderMonthlyData(mdata) {
         const ctx = document.getElementById('trendChart').getContext('2d');
         if (trendChart) trendChart.destroy();
 
+        const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+        gradient.addColorStop(0, 'rgba(59, 130, 246, 0.35)');
+        gradient.addColorStop(1, 'rgba(59, 130, 246, 0.0)');
+
         trendChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -72,17 +94,35 @@ function renderMonthlyData(mdata) {
                     label: 'Disagio %',
                     data: mdata.trend.map(t => t.disagio),
                     borderColor: '#3b82f6',
-                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    backgroundColor: gradient,
                     borderWidth: 2,
                     fill: true,
-                    tension: 0.3,
-                    pointBackgroundColor: mdata.trend.map(t => t.disagio > 20 ? '#ef4444' : (t.disagio > 5 ? '#f59e0b' : '#10b981'))
+                    tension: 0.35,
+                    pointBackgroundColor: mdata.trend.map(t => t.disagio > 20 ? '#ef4444' : (t.disagio > 5 ? '#f59e0b' : '#10b981')),
+                    pointRadius: 4,
+                    pointHoverRadius: 6
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1d24',
+                        titleColor: '#f0f0f0',
+                        bodyColor: '#8b92a5',
+                        borderColor: '#2e3440',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return ` Disagio: ${context.raw.toFixed(1)}%`;
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: { beginAtZero: true, grid: { color: '#2e3440' }, ticks: { color: '#8b92a5', callback: v => v + '%' } },
                     x: { grid: { display: false }, ticks: { color: '#8b92a5' } }
@@ -610,7 +650,21 @@ function renderChart(historyArray) {
 
     const labels = historyArray.map(h => h.data);
     const delays = historyArray.map(h => h.ritardo_capolinea);
-    const colors = historyArray.map(h => h.critico ? '#ef4444' : '#3b82f6');
+    
+    // Generazione dei gradienti dinamici per le singole barre
+    const bgGradients = historyArray.map(h => {
+        const grad = ctx.createLinearGradient(0, 0, 0, 200);
+        if (h.critico) {
+            grad.addColorStop(0, 'rgba(239, 68, 68, 0.95)'); // Rosso neon sopra
+            grad.addColorStop(1, 'rgba(239, 68, 68, 0.15)'); // Rosso trasparente sotto
+        } else {
+            grad.addColorStop(0, 'rgba(59, 130, 246, 0.95)'); // Blu neon sopra
+            grad.addColorStop(1, 'rgba(59, 130, 246, 0.15)'); // Blu trasparente sotto
+        }
+        return grad;
+    });
+
+    const borderColors = historyArray.map(h => h.critico ? '#ef4444' : '#3b82f6');
 
     myChart = new Chart(ctx, {
         type: 'bar',
@@ -619,20 +673,37 @@ function renderChart(historyArray) {
             datasets: [{
                 label: 'Ritardo al capolinea',
                 data: delays,
-                backgroundColor: colors,
-                borderRadius: 4
+                backgroundColor: bgGradients,
+                borderColor: borderColors,
+                borderWidth: 1.5,
+                borderRadius: 6, // Arrotondamento superiore
+                borderSkipped: false
             }]
         },
         options: {
             responsive: true,
             plugins: {
-                legend: { display: false }
+                legend: { display: false },
+                tooltip: {
+                    backgroundColor: '#1a1d24',
+                    titleColor: '#f0f0f0',
+                    bodyColor: '#8b92a5',
+                    borderColor: '#2e3440',
+                    borderWidth: 1,
+                    padding: 12,
+                    displayColors: false,
+                    callbacks: {
+                        label: function(context) {
+                            return ` Ritardo: ${context.raw} min`;
+                        }
+                    }
+                }
             },
             scales: {
                 y: {
                     beginAtZero: true,
                     grid: { color: '#2e3440' },
-                    ticks: { color: '#8b92a5' }
+                    ticks: { color: '#8b92a5', callback: v => v + ' min' }
                 },
                 x: {
                     grid: { color: '#2e3440' },
@@ -731,6 +802,10 @@ function renderOverallMonthlyData(mdata, history) {
         const ctx = document.getElementById('overallTrendChart').getContext('2d');
         if (overallTrendChart) overallTrendChart.destroy();
 
+        const gradient = ctx.createLinearGradient(0, 0, 0, 180);
+        gradient.addColorStop(0, 'rgba(16, 185, 129, 0.35)');
+        gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
+
         overallTrendChart = new Chart(ctx, {
             type: 'line',
             data: {
@@ -739,17 +814,35 @@ function renderOverallMonthlyData(mdata, history) {
                     label: 'Disagio Complessivo %',
                     data: mdata.trend.map(t => t.disagio),
                     borderColor: '#10b981',
-                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                    backgroundColor: gradient,
                     borderWidth: 2,
                     fill: true,
-                    tension: 0.3,
-                    pointBackgroundColor: mdata.trend.map(t => t.disagio > 20 ? '#ef4444' : (t.disagio > 5 ? '#f59e0b' : '#10b981'))
+                    tension: 0.35,
+                    pointBackgroundColor: mdata.trend.map(t => t.disagio > 20 ? '#ef4444' : (t.disagio > 5 ? '#f59e0b' : '#10b981')),
+                    pointRadius: 4,
+                    pointHoverRadius: 6
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
+                plugins: { 
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1d24',
+                        titleColor: '#f0f0f0',
+                        bodyColor: '#8b92a5',
+                        borderColor: '#2e3440',
+                        borderWidth: 1,
+                        padding: 10,
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                return ` Disagio: ${context.raw.toFixed(1)}%`;
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: { beginAtZero: true, grid: { color: '#2e3440' }, ticks: { color: '#8b92a5', callback: v => v + '%' } },
                     x: { grid: { display: false }, ticks: { color: '#8b92a5' } }
@@ -931,3 +1024,34 @@ document.addEventListener('visibilitychange', () => {
         }
     }
 });
+
+function showSkeleton() {
+    const grid = document.getElementById('direttrici-grid');
+    if (!grid) return;
+    let skeletonHtml = '';
+    const widths = [50, 60, 40, 55, 45, 50];
+    for (let i = 0; i < 6; i++) {
+        skeletonHtml += `
+            <div class="direttrice-card skeleton-card">
+                <div class="direttrice-header">
+                    <div style="width: 70%;">
+                        <div class="skeleton-text skeleton-title"></div>
+                        <div class="skeleton-text skeleton-subtitle" style="width: ${widths[i]}%;"></div>
+                    </div>
+                    <div class="skeleton-circle"></div>
+                </div>
+                <div class="direttrice-stats">
+                    <div class="stat-item">
+                        <div class="skeleton-text skeleton-stat-val"></div>
+                        <div class="skeleton-text skeleton-stat-lbl"></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="skeleton-text skeleton-stat-val"></div>
+                        <div class="skeleton-text skeleton-stat-lbl"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    grid.innerHTML = skeletonHtml;
+}
