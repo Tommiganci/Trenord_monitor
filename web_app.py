@@ -263,5 +263,102 @@ def api_train_history(numero):
             })
     return jsonify({"numero": numero, "history": history})
 
+
+def calculate_reliability(train_num, all_data):
+    """
+    Calcola le statistiche di affidabilità di un treno negli ultimi 30 giorni.
+    """
+    train_history = []
+    for day_data in all_data:
+        treno = day_data.get("treni", {}).get(str(train_num))
+        if treno:
+            train_history.append(treno)
+            
+    if not train_history:
+        return {
+            "puntualita": 100.0,
+            "ritardo_medio": 0.0,
+            "soppressioni": 0.0,
+            "corse_totali": 0
+        }
+        
+    totale_corse = len(train_history)
+    puntuali = 0
+    soppressi = 0
+    ritardi = []
+    
+    for t in train_history:
+        stato = t.get("stato", "REGOLARE")
+        rit = t.get("ritardo_capolinea", 0)
+        
+        if stato in ["SOPPRESSO", "LIMITATO", "PARZ. SOPPRESSO"]:
+            soppressi += 1
+        else:
+            if rit <= 5:
+                puntuali += 1
+            ritardi.append(max(0, rit))
+            
+    tasso_puntualita = round((puntuali / totale_corse) * 100, 1)
+    tasso_soppressioni = round((soppressi / totale_corse) * 100, 1)
+    ritardo_medio = round(sum(ritardi) / len(ritardi) if ritardi else 0.0, 1)
+    
+    return {
+        "puntualita": tasso_puntualita,
+        "ritardo_medio": ritardo_medio,
+        "soppressioni": tasso_soppressioni,
+        "corse_totali": totale_corse
+    }
+
+
+@app.route("/api/route_search")
+def api_route_search():
+    start_station = request.args.get("da", "").strip()
+    end_station = request.args.get("a", "").strip()
+    
+    if not start_station or not end_station:
+        return jsonify({"error": "Stazioni di partenza e arrivo obbligatorie"}), 400
+        
+    orari_path = os.path.join(DATA_DIR, "orari_tratte.json")
+    if not os.path.exists(orari_path):
+        return jsonify({"error": "Orari non disponibili"}), 404
+        
+    try:
+        with open(orari_path, "r", encoding="utf-8") as f:
+            timetable = json.load(f)
+    except Exception as e:
+        return jsonify({"error": f"Errore caricamento orari: {str(e)}"}), 500
+        
+    start_trains = timetable.get(start_station, {})
+    end_trains = timetable.get(end_station, {})
+    
+    matching_trains = []
+    common_nums = set(start_trains.keys()) & set(end_trains.keys())
+    
+    all_data = get_all_data() # Carica lo storico
+    
+    for num_str in common_nums:
+        st_info = start_trains[num_str]
+        end_info = end_trains[num_str]
+        
+        if st_info["seq"] < end_info["seq"]:
+            stats = calculate_reliability(num_str, all_data)
+            matching_trains.append({
+                "numero": int(num_str),
+                "linea": st_info["line"],
+                "partenza": st_info["dep"],
+                "arrivo": end_info["dep"],
+                "affidabilita": stats
+            })
+            
+    matching_trains.sort(key=lambda x: x["partenza"])
+    return jsonify(matching_trains)
+
+
+from flask import send_from_directory
+@app.route("/data/<path:filename>")
+def serve_data_files(filename):
+    return send_from_directory(DATA_DIR, filename)
+
+
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)

@@ -37,6 +37,11 @@
             <button id="install-pwa-btn" class="install-btn hidden">📥 Installa App</button>
         </div>
         <div class="subtitle" id="last-update">Caricamento dati...</div>
+        <!-- Barra di Navigazione Schede -->
+        <div class="nav-tabs" style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; margin-left: 20px; margin-right: 20px;">
+            <button id="tab-monitor" class="nav-tab active" onclick="switchTab('monitor')">📊 Monitor Direttrici</button>
+            <button id="tab-search" class="nav-tab" onclick="switchTab('search')">🔍 Cerca Percorso</button>
+        </div>
     </header>
 
     <div class="container">
@@ -311,6 +316,48 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+
+        <!-- Vista Ricerca: Ricerca tratte e affidabilità -->
+        <div id="route-search-view" class="hidden">
+            <h2 style="margin-top: 0; margin-bottom: 25px; font-weight: 700; font-size: 1.6rem;">Trova Treni e Affidabilità Storica</h2>
+            
+            <div class="search-form-card" style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); padding: 25px; margin-bottom: 30px; position: relative;">
+                <div class="form-grid">
+                    
+                    <!-- Campo Partenza -->
+                    <div style="position: relative;">
+                        <label for="station-start" style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px;">Stazione di Partenza</label>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;">🟢</span>
+                            <input type="text" id="station-start" class="search-input" placeholder="Cerca stazione di partenza..." autocomplete="off" style="padding-left: 42px;">
+                            <button id="clear-start-btn" class="clear-btn hidden">&times;</button>
+                        </div>
+                        <div id="autocomplete-start" class="autocomplete-list hidden"></div>
+                    </div>
+                    
+                    <!-- Campo Arrivo -->
+                    <div style="position: relative;">
+                        <label for="station-end" style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px;">Stazione di Arrivo</label>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;">🔴</span>
+                            <input type="text" id="station-end" class="search-input" placeholder="Cerca stazione di arrivo..." autocomplete="off" style="padding-left: 42px;">
+                            <button id="clear-end-btn" class="clear-btn hidden">&times;</button>
+                        </div>
+                        <div id="autocomplete-end" class="autocomplete-list hidden"></div>
+                    </div>
+                    
+                </div>
+                
+                <button id="searchRouteBtn" class="install-btn" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); margin-top: 20px; border: none; font-family: inherit;">
+                    🔍 Cerca Soluzioni e Affidabilità
+                </button>
+            </div>
+            
+            <!-- Contenitore Risultati -->
+            <div id="search-results-container">
+                <!-- Verrà popolato dinamicamente -->
             </div>
         </div>
     </div>

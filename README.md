@@ -11,9 +11,12 @@ Il progetto scarica i dati dall'API pubblica di Viaggiatreno in modo parallelo (
 - **Scansione Parallela Multithread**: Monitora decine di treni contemporaneamente in pochissimi secondi grazie a `ThreadPoolExecutor`.
 - **Rilevamento Anomalie Avanzato**: Calcola lo stato del treno (`REGOLARE`, `RITARDO`, `SOPPRESSO`, `PARZ. SOPPRESSO`, `LIMITATO`, `INATTIVO`) incrociando i provvedimenti ufficiali e l'elenco delle stazioni effettivamente raggiunte.
 - **Grado di Disagio**: Calcola in tempo reale la percentuale di treni anomali/critici (treno con ritardo al capolinea > 15 minuti o soppressione/limitazione).
-- **Dashboard Web Interattiva**: Un'applicazione Flask con grafici mensili dell'andamento dei disagi e storici individuali per ogni singolo treno (tramite Chart.js).
-- **Esportazione Statica**: Possibilità di esportare una dashboard HTML interattiva e autonoma (senza server Flask attivo), ideale per l'hosting gratuito su **GitHub Pages**.
-- **Archiviazione Automatica**: Uno script dedicato organizza e archivia i vecchi database JSON dei mesi passati per mantenere pulita la cartella dei dati attivi.
+- **Dashboard Web Interattiva (PWA)**: Un'applicazione web responsive compatibile con l'installazione PWA, dotata di grafici neon dinamici, filtri rapidi di linea, skeleton loading, navigazione fluida tramite History API e pulsante rapido per tornare in alto.
+- **Ricerca Tratte e Affidabilità**: Motore di ricerca per trovare i treni diretti tra stazioni di partenza e arrivo, completo di orari ufficiali e metriche storiche di affidabilità degli ultimi 30 giorni calcolate al volo (Puntualità %, Ritardo Medio, Soppressioni %).
+- **Database Storico Compresso (`registro_storico.json`)**: Migrazione da molteplici file JSON giornalieri a un singolo archivio storico compattato con mappatura dei treni, riducendo lo spazio occupato su disco del 90% e velocizzando il caricamento dello storico.
+- **Esportazione Statica (anche Client-Side)**: Possibilità di esportare una dashboard HTML interattiva e autonoma (senza server Flask attivo) ospitabile su **GitHub Pages**, che esegue le ricerche e il calcolo delle statistiche interamente client-side tramite il caricamento lazily-loaded di un indice orario compresso (`orari_tratte_compresso.json` di solo 1.2 MB).
+- **Archiviazione e Consolidamento Automati**: Lo script `archive.py` organizza e consolida i vecchi database JSON nel registro storico principale eliminando i singoli archivi quotidiani per mantenere pulita la cartella dei dati attivi.
+
 
 ---
 
@@ -21,14 +24,19 @@ Il progetto scarica i dati dall'API pubblica di Viaggiatreno in modo parallelo (
 
 Il codice è organizzato nei seguenti file principali:
 
-*   📄 [monitor.py](monitor.py): Il motore di scansione. Legge le direttrici, effettua le chiamate API parallele, calcola gli stati e unisce i nuovi dati con quelli pregressi nel database giornaliero JSON.
-*   📄 [bollettino.py](bollettino.py): Tool a riga di comando per visualizzare i report giornalieri e mensili. Gestisce anche l'esportazione in HTML statico.
-*   📄 [web_app.py](web_app.py): Server web locale Flask che espone API REST per i dati in tempo reale e per i grafici storici.
-*   📄 [archive.py](archive.py): Script di manutenzione per archiviare i file JSON dei mesi precedenti in sottocartelle dedicate.
+*   📄 [monitor.py](monitor.py): Il motore di scansione. Legge le direttrici, effettua le chiamate API parallele, calcola gli stati e scrive i nuovi dati nel database giornaliero corrente.
+*   📄 [bollettino.py](bollettino.py): Tool a riga di comando per visualizzare i report giornalieri e mensili. Gestisce anche l'esportazione in HTML statico (copiando gli indici orari per la ricerca tratte offline in `docs/data/`).
+*   📄 [web_app.py](web_app.py): Server web locale Flask che espone API REST per i dati in tempo reale, per i grafici storici e per il motore di ricerca tratte.
+*   📄 [archive.py](archive.py): Script di manutenzione per consolidare i database giornalieri JSON nel registro storico compatto `registro_storico.json` ed eliminare i file temporanei giornalieri.
 *   📁 [direttrici/](direttrici): Directory contenente i file di testo (`.txt`) che definiscono le direttrici e i numeri dei treni da monitorare.
 *   📁 [templates/](templates): Contiene `index.html`, il template HTML/JavaScript della dashboard.
-*   📁 [data/](data): Cartella in cui vengono memorizzati i database giornalieri JSON (es. `database_totale_2026-05-26.json`).
-*   📁 [docs/](docs): Cartella di destinazione per l'esportazione statica (es. per GitHub Pages).
+*   📁 [data/](data): Cartella in cui vengono memorizzati i dati del monitoraggio e gli indici di ricerca:
+    *   📄 `registro_storico.json`: Archivio centralizzato e compattato dello storico delle corse (risparmia il 90% di spazio su disco).
+    *   📄 `stazioni.json`: Elenco delle stazioni ferroviarie indicizzate per l'autocompletamento.
+    *   📄 `orari_tratte_compresso.json`: Tabella oraria compressa (formattata ad array) usata per la ricerca tratte client-side.
+    *   📄 `database_totale_YYYY-MM-DD.json`: Dati temporanei della giornata corrente, consolidati alla scansione successiva o a fine giornata.
+*   📁 [docs/](docs): Cartella di destinazione per l'esportazione statica autoportante (es. per GitHub Pages).
+
 
 ---
 
@@ -98,12 +106,40 @@ python web_app.py
 Una volta avviato, apri il browser all'indirizzo: **`http://localhost:5000`**
 
 ### 4. Manutenzione del Database (`archive.py`)
-Per evitare che la cartella `data/` si riempia di troppi file rallentando le letture, esegui periodicamente lo script di archiviazione (ad esempio a inizio mese):
+Per evitare che la cartella `data/` si riempia di file duplicati e rallenti le letture dello storico, esegui periodicamente lo script di consolidamento (es. ad ogni nuova scansione o a fine giornata):
 
 ```bash
 python archive.py
 ```
-Questo sposterà i file JSON dei mesi passati dentro `data/archive/YYYY-MM/`.
+Questo consoliderà i dati dei giorni passati nel database compresso `data/registro_storico.json` ed eliminerà i file giornalieri temporanei ormai processati. Lo script mantiene uno storico mobile massimo degli ultimi 12 mesi per preservare le prestazioni.
+
+---
+
+## 🔍 Ricerca Tratte con Indice di Affidabilità
+
+Il sistema include una funzionalità di **Ricerca Orari Intelligente** (da stazione A a stazione B) con il calcolo in tempo reale dell'**Indice di Affidabilità** basato sulle corse effettivamente registrate negli ultimi 30 giorni.
+
+### Funzionamento:
+- **Autocompletamento Glassmorphic**: L'interfaccia offre una barra di ricerca stazioni con autocompletamento intelligente, navigazione da tastiera e supporto per la cancellazione rapida. I codici delle stazioni critiche (come Pavia, Cremona, Brescia, Voghera) sono stati mappati e corretti per garantire il tracciamento dei treni.
+- **Calcolo Storico Affidabilità**: Per ogni corsa diretta trovata, il motore calcola al volo:
+  - **Puntualità (%)**: Percentuale di corse arrivate al capolinea con ritardo $\le 5$ minuti.
+  - **Ritardo Medio**: Calcolo dei minuti di ritardo accumulati escludendo le soppressioni.
+  - **Soppressioni (%)**: Percentuale di corse soppresse, limitate o parzialmente soppresse.
+- **Funzionamento Server-Side e Client-Side**:
+  - **In locale (Flask)**: Il server calcola le statistiche al volo sul database storico `registro_storico.json`.
+  - **Ospitato staticamente (GitHub Pages)**: Per supportare la ricerca senza un backend attivo, lo script di esportazione genera un indice orario compresso (`orari_tratte_compresso.json` di solo 1.2 MB, strutturato in array di dati anziché dizionari per risparmiare fino al 70% di banda mobile). La dashboard scarica l'indice tramite lazy-loading al primo accesso alla scheda ed esegue il matching e i calcoli statistici interamente nel browser.
+
+---
+
+## 📱 Miglioramenti UI/UX e PWA
+
+La PWA è stata ottimizzata con moderne tecniche di progettazione dell'interfaccia utente (UI) ed esperienza utente (UX):
+- **Stile Dark-Mode e Glassmorphism**: Pulsanti filtro per le linee ridisegnati con badge moderni, menu a discesa trasparenti con sfocatura dello sfondo, e colori semaforici coerenti per gli indici di affidabilità (Verde $\ge 85\%$, Giallo $\ge 70\%$, Rosso $< 70\%$).
+- **Grafici Avanzati**: Sostituzione dei grafici standard di Chart.js con grafici personalizzati a gradiente neon sfumato per visualizzare i trend storici dei disagi.
+- **Skeleton Screens (Shimmer effect)**: Sostituzione dei semplici caricamenti vuoti con placeholder shimmer per una sensazione di reattività immediata del sistema durante il caricamento dei dati asincroni.
+- **Navigazione con History API**: Integrazione dell'History API per mappare i cambi di visualizzazione (es. apertura dettagli direttrice o tab "Ricerca Tratte" con `?tab=search`). In questo modo, l'utente può usare il tasto *Indietro* del browser o dello smartphone per ritornare all'elenco generale delle direttrici anziché uscire dal sito.
+- **Pulsante Back-to-Top**: Pulsante flottante che appare automaticamente quando si scorre la pagina per facilitare la risalita rapida dell'utente.
+- **Icona SVG per il Ritorno**: Sostituita la freccia unicode per tornare indietro (spesso non visualizzata correttamente su alcuni browser mobili) con un'icona SVG incorporata, garantendo la compatibilità visiva universale.
 
 ---
 

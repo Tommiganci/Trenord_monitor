@@ -461,7 +461,15 @@ def export_html(data):
             os.makedirs(docs_icons_dir)
         shutil.copy(os.path.join("static", "icons", "icon-192.png"), os.path.join(docs_icons_dir, "icon-192.png"))
         shutil.copy(os.path.join("static", "icons", "icon-512.png"), os.path.join(docs_icons_dir, "icon-512.png"))
-        print("Asset PWA copiati con successo in docs/")
+        
+        # Copia i dati degli orari per la ricerca tratte statica
+        docs_data_dir = os.path.join(DOCS_DIR, "data")
+        if not os.path.exists(docs_data_dir):
+            os.makedirs(docs_data_dir)
+        shutil.copy(os.path.join("data", "stazioni.json"), os.path.join(docs_data_dir, "stazioni.json"))
+        shutil.copy(os.path.join("data", "orari_tratte_compresso.json"), os.path.join(docs_data_dir, "orari_tratte_compresso.json"))
+        
+        print("Asset PWA e indici orari copiati con successo in docs/")
     except Exception as e:
         print(f"Avviso: Errore durante la copia degli asset PWA in docs: {e}")
         

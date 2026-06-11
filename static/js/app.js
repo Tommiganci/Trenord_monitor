@@ -1069,24 +1069,381 @@ function showSkeleton() {
     grid.innerHTML = skeletonHtml;
 }
 
+// --- Gestione Navigazione a Schede (Tabs) ---
+let currentTab = 'monitor';
+
+function switchTab(tabName, pushState = true) {
+    currentTab = tabName;
+    const tabMon = document.getElementById('tab-monitor');
+    const tabSrc = document.getElementById('tab-search');
+    
+    const routeView = document.getElementById('route-search-view');
+    const homeView = document.getElementById('home-view');
+    const detailView = document.getElementById('detail-view');
+    
+    if (!tabMon || !tabSrc) return;
+
+    if (tabName === 'search') {
+        tabMon.classList.remove('active');
+        tabSrc.classList.add('active');
+        
+        routeView.classList.remove('hidden');
+        homeView.classList.add('hidden');
+        detailView.classList.add('hidden');
+        
+        initStationAutocomplete();
+        
+        if (pushState) {
+            history.pushState({ view: 'search' }, '', '?tab=search');
+        }
+    } else {
+        tabMon.classList.add('active');
+        tabSrc.classList.remove('active');
+        
+        routeView.classList.add('hidden');
+        if (selectedDirettrice) {
+            detailView.classList.remove('hidden');
+            if (pushState) {
+                history.pushState({ view: 'detail', direttrice: selectedDirettrice }, '', `?dir=${encodeURIComponent(selectedDirettrice)}`);
+            }
+        } else {
+            homeView.classList.remove('hidden');
+            if (pushState) {
+                history.pushState({ view: 'home' }, '', window.location.pathname);
+            }
+        }
+    }
+}
+
+// --- Autocompletamento Stazioni Custom ---
+let stationsList = [];
+let isStationsLoaded = false;
+
+function initStationAutocomplete() {
+    if (isStationsLoaded) return;
+    
+    const path = IS_STATIC ? 'data/stazioni.json' : '/data/stazioni.json';
+    fetch(path)
+        .then(res => res.json())
+        .then(data => {
+            stationsList = data;
+            isStationsLoaded = true;
+            setupAutocompleteInput('station-start', 'autocomplete-start', 'clear-start-btn');
+            setupAutocompleteInput('station-end', 'autocomplete-end', 'clear-end-btn');
+        })
+        .catch(err => console.error("Errore caricamento stazioni:", err));
+}
+
+function setupAutocompleteInput(inputId, autocompleteId, clearBtnId) {
+    const input = document.getElementById(inputId);
+    const listContainer = document.getElementById(autocompleteId);
+    const clearBtn = document.getElementById(clearBtnId);
+    
+    if (!input || !listContainer || !clearBtn) return;
+    
+    let currentFocus = -1;
+    
+    input.addEventListener('input', () => {
+        const val = input.value.trim().toLowerCase();
+        closeAllLists();
+        
+        if (!val) {
+            clearBtn.classList.add('hidden');
+            return;
+        }
+        clearBtn.classList.remove('hidden');
+        
+        const matches = stationsList.filter(s => s.toLowerCase().includes(val)).slice(0, 8);
+        if (matches.length === 0) {
+            listContainer.classList.add('hidden');
+            return;
+        }
+        
+        listContainer.classList.remove('hidden');
+        currentFocus = -1;
+        
+        matches.forEach((station, idx) => {
+            const item = document.createElement('div');
+            item.className = 'autocomplete-item';
+            
+            const matchIdx = station.toLowerCase().indexOf(val);
+            const boldText = station.substring(0, matchIdx) + 
+                             '<strong>' + station.substring(matchIdx, matchIdx + val.length) + '</strong>' + 
+                             station.substring(matchIdx + val.length);
+            
+            item.innerHTML = boldText;
+            item.addEventListener('click', () => {
+                input.value = station;
+                closeAllLists();
+            });
+            listContainer.appendChild(item);
+        });
+    });
+    
+    input.addEventListener('keydown', (e) => {
+        const items = listContainer.getElementsByClassName('autocomplete-item');
+        if (e.keyCode === 40) { // Arrow Down
+            currentFocus++;
+            addActive(items);
+        } else if (e.keyCode === 38) { // Arrow Up
+            currentFocus--;
+            addActive(items);
+        } else if (e.keyCode === 13) { // Enter
+            e.preventDefault();
+            if (currentFocus > -1 && items[currentFocus]) {
+                items[currentFocus].click();
+            } else if (items.length > 0) {
+                items[0].click();
+            }
+        } else if (e.keyCode === 27) { // Escape
+            closeAllLists();
+        }
+    });
+    
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        clearBtn.classList.add('hidden');
+        closeAllLists();
+        input.focus();
+    });
+    
+    function addActive(items) {
+        if (!items) return;
+        removeActive(items);
+        if (currentFocus >= items.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = items.length - 1;
+        items[currentFocus].classList.add('selected');
+        items[currentFocus].scrollIntoView({ block: 'nearest' });
+    }
+    
+    function removeActive(items) {
+        for (let i = 0; i < items.length; i++) {
+            items[i].classList.remove('selected');
+        }
+    }
+    
+    function closeAllLists() {
+        listContainer.innerHTML = '';
+        listContainer.classList.add('hidden');
+    }
+    
+    document.addEventListener('click', (e) => {
+        if (e.target !== input && e.target !== listContainer) {
+            closeAllLists();
+        }
+    });
+}
+
+// --- Ricerca Soluzioni di Viaggio ed Affidabilità ---
+let cachedTimetable = null;
+
+function performRouteSearch() {
+    const start = document.getElementById('station-start').value.trim();
+    const end = document.getElementById('station-end').value.trim();
+    const container = document.getElementById('search-results-container');
+    
+    if (!start || !end) {
+        alert("Inserisci sia la stazione di partenza che quella di arrivo!");
+        return;
+    }
+    
+    container.innerHTML = `
+        <div style="text-align: center; color: var(--text-muted); padding: 40px;">
+            <div class="skeleton-text skeleton-title" style="width: 50%; margin: 0 auto 15px auto;"></div>
+            Analisi orari e storico ritardi in corso...
+        </div>
+    `;
+    
+    if (IS_STATIC) {
+        loadTimetableAndSearchClient(start, end, container);
+    } else {
+        fetch(`/api/route_search?da=${encodeURIComponent(start)}&a=${encodeURIComponent(end)}`)
+            .then(res => res.json())
+            .then(data => renderSearchResults(data, container))
+            .catch(err => {
+                console.error("Errore ricerca tratte:", err);
+                container.innerHTML = `<div style="text-align:center; color:var(--danger); padding:20px;">Errore durante la ricerca. Riprova più tardi.</div>`;
+            });
+    }
+}
+
+function loadTimetableAndSearchClient(start, end, container) {
+    if (cachedTimetable) {
+        searchClientSide(start, end, container);
+        return;
+    }
+    
+    fetch('data/orari_tratte_compresso.json')
+        .then(res => res.json())
+        .then(data => {
+            cachedTimetable = data;
+            searchClientSide(start, end, container);
+        })
+        .catch(err => {
+            console.error("Errore download orari:", err);
+            container.innerHTML = `<div style="text-align:center; color:var(--danger); padding:20px;">Impossibile caricare gli orari statici offline.</div>`;
+        });
+}
+
+function searchClientSide(start, end, container) {
+    const startTrains = cachedTimetable[start] || {};
+    const endTrains = cachedTimetable[end] || {};
+    
+    const commonNums = Object.keys(startTrains).filter(num => num in endTrains);
+    const results = [];
+    
+    commonNums.forEach(numStr => {
+        const stInfo = startTrains[numStr]; // [seq, dep, line]
+        const endInfo = endTrains[numStr];
+        
+        if (stInfo[0] < endInfo[0]) {
+            const stats = calculateReliabilityClient(numStr);
+            results.push({
+                numero: parseInt(numStr, 10),
+                linea: stInfo[2],
+                partenza: stInfo[1],
+                arrivo: endInfo[1],
+                affidabilita: stats
+            });
+        }
+    });
+    
+    results.sort((a, b) => a.partenza.localeCompare(b.partenza));
+    renderSearchResults(results, container);
+}
+
+function calculateReliabilityClient(trainNum) {
+    const history = STATIC_HISTORY[trainNum] || [];
+    if (history.length === 0) {
+        return { puntualita: 100.0, ritardo_medio: 0.0, soppressioni: 0.0, corse_totali: 0 };
+    }
+    
+    const total = history.length;
+    let punctual = 0;
+    let cancelled = 0;
+    const delays = [];
+    
+    history.forEach(t => {
+        if (["SOPPRESSO", "LIMITATO", "PARZ. SOPPRESSO"].includes(t.stato)) {
+            cancelled++;
+        } else {
+            if (t.ritardo_capolinea <= 5) {
+                punctual++;
+            }
+            delays.push(Math.max(0, t.ritardo_capolinea));
+        }
+    });
+    
+    const sumDelays = delays.reduce((a, b) => a + b, 0);
+    const avgDelay = delays.length > 0 ? (sumDelays / delays.length) : 0.0;
+    
+    return {
+        puntualita: parseFloat(((punctual / total) * 100).toFixed(1)),
+        ritardo_medio: parseFloat(avgDelay.toFixed(1)),
+        soppressioni: parseFloat(((cancelled / total) * 100).toFixed(1)),
+        corse_totali: total
+    };
+}
+
+function renderSearchResults(trains, container) {
+    if (!trains || trains.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; color: var(--text-muted); padding: 40px; background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                Nessuna soluzione ferroviaria diretta trovata per questa combinazione di stazioni.
+            </div>
+        `;
+        return;
+    }
+    
+    let html = `<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${trains.length} Soluzioni Trovate:</h3>`;
+    
+    trains.forEach(t => {
+        const stats = t.affidabilita;
+        
+        const puntColor = stats.puntualita > 80 ? 'var(--success)' : (stats.puntualita > 50 ? 'var(--warning)' : 'var(--danger)');
+        const sopColor = stats.soppressioni < 2 ? 'var(--success)' : (stats.soppressioni < 10 ? 'var(--warning)' : 'var(--danger)');
+        const ritColor = stats.ritardo_medio < 3 ? 'var(--success)' : (stats.ritardo_medio < 10 ? 'var(--warning)' : 'var(--danger)');
+        
+        const trenoData = encodeURIComponent(JSON.stringify({
+            linea: t.linea,
+            numero: t.numero,
+            origine: "",
+            destinazione: ""
+        }));
+        
+        html += `
+            <div class="search-result-card" onclick="openModal('${trenoData}', ${t.numero})">
+                <div class="route-header">
+                    <div>
+                        <span class="route-train-num">${t.linea} ${t.numero}</span>
+                        <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Campione: ${stats.corse_totali} gg)</span>
+                    </div>
+                    <div class="route-times">
+                        <span>${t.partenza}</span>
+                        <span class="route-time-arrow">➔</span>
+                        <span>${t.arrivo}</span>
+                    </div>
+                </div>
+                
+                <div class="reliability-grid">
+                    <div class="reliability-item">
+                        <div class="reliability-val" style="color: ${puntColor};">${stats.puntualita}%</div>
+                        <div class="reliability-lbl">Puntualità (≤5')</div>
+                    </div>
+                    <div class="reliability-item">
+                        <div class="reliability-val" style="color: ${ritColor};">${stats.ritardo_medio}'</div>
+                        <div class="reliability-lbl">Ritardo Medio</div>
+                    </div>
+                    <div class="reliability-item">
+                        <div class="reliability-val" style="color: ${sopColor};">${stats.soppressioni}%</div>
+                        <div class="reliability-lbl">Soppressioni</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    container.innerHTML = html;
+}
+
 // --- Gestione Navigazione con Tasto Indietro (History API) ---
 window.addEventListener('popstate', (event) => {
     const state = event.state;
-    if (state && state.view === 'detail') {
-        selectDirettrice(state.direttrice, false);
+    if (state) {
+        if (state.view === 'search') {
+            switchTab('search', false);
+        } else if (state.view === 'detail') {
+            switchTab('monitor', false);
+            selectDirettrice(state.direttrice, false);
+        } else {
+            switchTab('monitor', false);
+            showHome(false);
+        }
     } else {
+        switchTab('monitor', false);
         showHome(false);
     }
 });
 
-// Gestione caricamento iniziale con URL parametrizzato (?dir=...)
+// Gestione caricamento iniziale con URL parametrizzato (?dir= o ?tab=search)
 window.addEventListener('DOMContentLoaded', () => {
+    const btnSearch = document.getElementById('searchRouteBtn');
+    if (btnSearch) {
+        btnSearch.addEventListener('click', performRouteSearch);
+    }
+
     const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get('tab');
     const dirParam = params.get('dir');
-    if (dirParam) {
-        // Imposta lo stato iniziale del browser per consentire di tornare indietro alla home
+    
+    if (tabParam === 'search') {
+        history.replaceState({ view: 'home' }, '', window.location.pathname);
+        history.pushState({ view: 'search' }, '', window.location.search);
+        switchTab('search', false);
+    } else if (dirParam) {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
         history.pushState({ view: 'detail', direttrice: dirParam }, '', window.location.search);
+        switchTab('monitor', false);
         selectDirettrice(dirParam, false);
     } else {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
