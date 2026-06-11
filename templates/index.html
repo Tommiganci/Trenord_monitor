@@ -347,7 +347,21 @@
                         </div>
                         <div id="autocomplete-end" class="autocomplete-list hidden"></div>
                     </div>
+
+                    <!-- Orario di Partenza -->
+                    <div style="position: relative;">
+                        <label for="departure-time" style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px;">A partire dalle ore</label>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;">🕒</span>
+                            <input type="time" id="departure-time" class="search-input" value="00:00" style="padding-left: 42px;">
+                        </div>
+                    </div>
                     
+                </div>
+
+                <div style="margin-top: 15px; display: flex; align-items: center; gap: 8px;">
+                    <input type="checkbox" id="allow-transfers" style="width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer;">
+                    <label for="allow-transfers" style="font-size: 0.9rem; color: var(--text-main); cursor: pointer; user-select: none;">Mostra anche soluzioni con 1 cambio</label>
                 </div>
                 
                 <button id="searchRouteBtn" class="install-btn" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); margin-top: 20px; border: none; font-family: inherit;">

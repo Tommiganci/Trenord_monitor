@@ -121,13 +121,15 @@ Il sistema include una funzionalità di **Ricerca Orari Intelligente** (da stazi
 
 ### Funzionamento:
 - **Autocompletamento Glassmorphic**: L'interfaccia offre una barra di ricerca stazioni con autocompletamento intelligente, navigazione da tastiera e supporto per la cancellazione rapida. I codici delle stazioni critiche (come Pavia, Cremona, Brescia, Voghera) sono stati mappati e corretti per garantire il tracciamento dei treni.
-- **Calcolo Storico Affidabilità**: Per ogni corsa diretta trovata, il motore calcola al volo:
+- **Filtro Orario di Partenza ("A partire dalle ore")**: Consente di indicare un orario di partenza desiderato nel modulo di ricerca per escludere le corse precedenti e visualizzare solo le soluzioni pertinenti.
+- **Ricerca con 1 Cambio (Connessioni/Coincidenze)**: È possibile estendere la ricerca oltre le corse dirette abilitando l'opzione dei cambi. Il sistema calcola l'intersezione delle stazioni raggiungibili per trovare coincidenze ottimali con tempi di attesa sicuri (da 5 a 90 minuti). Ciascun segmento del viaggio (treno 1 e treno 2) mostra le proprie informazioni orarie e statistiche di affidabilità individuali, ed è cliccabile per visualizzare i grafici storici.
+- **Calcolo Storico Affidabilità**: Per ogni corsa/segmento trovato, il motore calcola al volo:
   - **Puntualità (%)**: Percentuale di corse arrivate al capolinea con ritardo $\le 5$ minuti.
   - **Ritardo Medio**: Calcolo dei minuti di ritardo accumulati escludendo le soppressioni.
   - **Soppressioni (%)**: Percentuale di corse soppresse, limitate o parzialmente soppresse.
 - **Funzionamento Server-Side e Client-Side**:
   - **In locale (Flask)**: Il server calcola le statistiche al volo sul database storico `registro_storico.json`.
-  - **Ospitato staticamente (GitHub Pages)**: Per supportare la ricerca senza un backend attivo, lo script di esportazione genera un indice orario compresso (`orari_tratte_compresso.json` di solo 1.2 MB, strutturato in array di dati anziché dizionari per risparmiare fino al 70% di banda mobile). La dashboard scarica l'indice tramite lazy-loading al primo accesso alla scheda ed esegue il matching e i calcoli statistici interamente nel browser.
+  - **Ospitato staticamente (GitHub Pages)**: Per supportare la ricerca senza un backend attivo, lo script di esportazione genera un indice orario compresso (`orari_tratte_compresso.json` di solo 1.2 MB, strutturato in array di dati anziché dizionari per risparmiare fino al 70% di banda mobile). La dashboard scarica l'indice tramite lazy-loading al primo accesso alla scheda ed esegue il matching e i calcoli di coincidenza/statistiche interamente nel browser.
 
 ---
 

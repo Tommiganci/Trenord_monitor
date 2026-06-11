@@ -930,3 +930,12 @@ tr:hover {
         gap: 8px;
     }
 }
+
+.segment-row {
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.segment-row:hover {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+    border-color: rgba(59, 130, 246, 0.4) !important;
+}

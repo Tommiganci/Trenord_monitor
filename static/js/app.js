@@ -1237,9 +1237,20 @@ function setupAutocompleteInput(inputId, autocompleteId, clearBtnId) {
 // --- Ricerca Soluzioni di Viaggio ed Affidabilità ---
 let cachedTimetable = null;
 
+function timeToMinutes(tStr) {
+    try {
+        const parts = tStr.split(':');
+        return parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+    } catch(e) {
+        return 0;
+    }
+}
+
 function performRouteSearch() {
     const start = document.getElementById('station-start').value.trim();
     const end = document.getElementById('station-end').value.trim();
+    const depTime = document.getElementById('departure-time')?.value || "00:00";
+    const allowTransfers = document.getElementById('allow-transfers')?.checked || false;
     const container = document.getElementById('search-results-container');
     
     if (!start || !end) {
@@ -1257,7 +1268,7 @@ function performRouteSearch() {
     if (IS_STATIC) {
         loadTimetableAndSearchClient(start, end, container);
     } else {
-        fetch(`/api/route_search?da=${encodeURIComponent(start)}&a=${encodeURIComponent(end)}`)
+        fetch(`/api/route_search?da=${encodeURIComponent(start)}&a=${encodeURIComponent(end)}&ora=${encodeURIComponent(depTime)}&cambi=${allowTransfers}`)
             .then(res => res.json())
             .then(data => renderSearchResults(data, container))
             .catch(err => {
@@ -1286,27 +1297,100 @@ function loadTimetableAndSearchClient(start, end, container) {
 }
 
 function searchClientSide(start, end, container) {
+    const depTimeMin = document.getElementById('departure-time')?.value || "00:00";
+    const allowTransfers = document.getElementById('allow-transfers')?.checked || false;
+    
     const startTrains = cachedTimetable[start] || {};
     const endTrains = cachedTimetable[end] || {};
     
-    const commonNums = Object.keys(startTrains).filter(num => num in endTrains);
     const results = [];
     
+    // 1. Trova treni diretti
+    const commonNums = Object.keys(startTrains).filter(num => num in endTrains);
     commonNums.forEach(numStr => {
         const stInfo = startTrains[numStr]; // [seq, dep, line]
         const endInfo = endTrains[numStr];
         
         if (stInfo[0] < endInfo[0]) {
-            const stats = calculateReliabilityClient(numStr);
-            results.push({
-                numero: parseInt(numStr, 10),
-                linea: stInfo[2],
-                partenza: stInfo[1],
-                arrivo: endInfo[1],
-                affidabilita: stats
-            });
+            if (stInfo[1] >= depTimeMin) {
+                const stats = calculateReliabilityClient(numStr);
+                results.push({
+                    tipo: "diretto",
+                    numero: parseInt(numStr, 10),
+                    linea: stInfo[2],
+                    partenza: stInfo[1],
+                    arrivo: endInfo[1],
+                    affidabilita: stats
+                });
+            }
         }
     });
+    
+    // 2. Trova soluzioni con 1 cambio se richiesto
+    if (allowTransfers) {
+        Object.keys(cachedTimetable).forEach(stName => {
+            if (stName === start || stName === end) return;
+            
+            const stTrains = cachedTimetable[stName];
+            
+            const t1Candidates = Object.keys(startTrains).filter(num => num in stTrains);
+            if (t1Candidates.length === 0) return;
+            
+            const t2Candidates = Object.keys(stTrains).filter(num => num in endTrains);
+            if (t2Candidates.length === 0) return;
+            
+            t1Candidates.forEach(t1Num => {
+                const t1Start = startTrains[t1Num];
+                const t1Mid = stTrains[t1Num];
+                
+                if (t1Start[0] >= t1Mid[0] || t1Start[1] < depTimeMin) return;
+                
+                const t1Dep = t1Start[1];
+                const t1Arr = t1Mid[1];
+                const t1ArrM = timeToMinutes(t1Arr);
+                
+                t2Candidates.forEach(t2Num => {
+                    if (t1Num === t2Num) return;
+                    
+                    const t2Mid = stTrains[t2Num];
+                    const t2End = endTrains[t2Num];
+                    
+                    if (t2Mid[0] >= t2End[0]) return;
+                    
+                    const t2Dep = t2Mid[1];
+                    const t2Arr = t2End[1];
+                    const t2DepM = timeToMinutes(t2Dep);
+                    
+                    const layover = t2DepM - t1ArrM;
+                    if (layover >= 5 && layover <= 90) {
+                        const stats1 = calculateReliabilityClient(t1Num);
+                        const stats2 = calculateReliabilityClient(t2Num);
+                        results.push({
+                            tipo: "cambio",
+                            cambio_stazione: stName,
+                            partenza: t1Dep,
+                            arrivo: t2Arr,
+                            treno1: {
+                                numero: parseInt(t1Num, 10),
+                                linea: t1Start[2],
+                                partenza: t1Dep,
+                                arrivo: t1Arr,
+                                affidabilita: stats1
+                            },
+                            treno2: {
+                                numero: parseInt(t2Num, 10),
+                                linea: t2Mid[2],
+                                partenza: t2Dep,
+                                arrivo: t2Arr,
+                                affidabilita: stats2
+                            },
+                            attesa: layover
+                        });
+                    }
+                });
+            });
+        });
+    }
     
     results.sort((a, b) => a.partenza.localeCompare(b.partenza));
     renderSearchResults(results, container);
@@ -1346,10 +1430,13 @@ function calculateReliabilityClient(trainNum) {
 }
 
 function renderSearchResults(trains, container) {
+    const start = document.getElementById('station-start').value.trim();
+    const end = document.getElementById('station-end').value.trim();
+
     if (!trains || trains.length === 0) {
         container.innerHTML = `
             <div style="text-align: center; color: var(--text-muted); padding: 40px; background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
-                Nessuna soluzione ferroviaria diretta trovata per questa combinazione di stazioni.
+                Nessuna soluzione ferroviaria trovata per questa combinazione di stazioni.
             </div>
         `;
         return;
@@ -1358,49 +1445,131 @@ function renderSearchResults(trains, container) {
     let html = `<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${trains.length} Soluzioni Trovate:</h3>`;
     
     trains.forEach(t => {
-        const stats = t.affidabilita;
-        
-        const puntColor = stats.puntualita > 80 ? 'var(--success)' : (stats.puntualita > 50 ? 'var(--warning)' : 'var(--danger)');
-        const sopColor = stats.soppressioni < 2 ? 'var(--success)' : (stats.soppressioni < 10 ? 'var(--warning)' : 'var(--danger)');
-        const ritColor = stats.ritardo_medio < 3 ? 'var(--success)' : (stats.ritardo_medio < 10 ? 'var(--warning)' : 'var(--danger)');
-        
-        const trenoData = encodeURIComponent(JSON.stringify({
-            linea: t.linea,
-            numero: t.numero,
-            origine: "",
-            destinazione: ""
-        }));
-        
-        html += `
-            <div class="search-result-card" onclick="openModal('${trenoData}', ${t.numero})">
-                <div class="route-header">
-                    <div>
-                        <span class="route-train-num">${t.linea} ${t.numero}</span>
-                        <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Campione: ${stats.corse_totali} gg)</span>
+        if (t.tipo === "diretto") {
+            const stats = t.affidabilita;
+            const puntColor = stats.puntualita > 80 ? 'var(--success)' : (stats.puntualita > 50 ? 'var(--warning)' : 'var(--danger)');
+            const sopColor = stats.soppressioni < 2 ? 'var(--success)' : (stats.soppressioni < 10 ? 'var(--warning)' : 'var(--danger)');
+            const ritColor = stats.ritardo_medio < 3 ? 'var(--success)' : (stats.ritardo_medio < 10 ? 'var(--warning)' : 'var(--danger)');
+            
+            const trenoData = encodeURIComponent(JSON.stringify({
+                linea: t.linea,
+                numero: t.numero,
+                origine: `${start} (${t.partenza})`,
+                destinazione: `${end} (${t.arrivo})`
+            }));
+            
+            html += `
+                <div class="search-result-card" onclick="openModal('${trenoData}', ${t.numero})">
+                    <div class="route-header">
+                        <div>
+                            <span class="route-train-num">${t.linea} ${t.numero}</span>
+                            <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Campione: ${stats.corse_totali} gg)</span>
+                        </div>
+                        <div class="route-times">
+                            <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 4px;">Partenza:</span>
+                            <span style="font-weight: 700; color: var(--accent);">${t.partenza}</span>
+                            <span class="route-time-arrow" style="margin: 0 8px;">➔</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 4px;">Arrivo:</span>
+                            <span style="font-weight: 700; color: var(--text-main);">${t.arrivo}</span>
+                        </div>
                     </div>
-                    <div class="route-times">
-                        <span>${t.partenza}</span>
-                        <span class="route-time-arrow">➔</span>
-                        <span>${t.arrivo}</span>
+                    
+                    <div class="reliability-grid">
+                        <div class="reliability-item">
+                            <div class="reliability-val" style="color: ${puntColor};">${stats.puntualita}%</div>
+                            <div class="reliability-lbl">Puntualità (≤5')</div>
+                        </div>
+                        <div class="reliability-item">
+                            <div class="reliability-val" style="color: ${ritColor};">${stats.ritardo_medio}'</div>
+                            <div class="reliability-lbl">Ritardo Medio</div>
+                        </div>
+                        <div class="reliability-item">
+                            <div class="reliability-val" style="color: ${sopColor};">${stats.soppressioni}%</div>
+                            <div class="reliability-lbl">Soppressioni</div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="reliability-grid">
-                    <div class="reliability-item">
-                        <div class="reliability-val" style="color: ${puntColor};">${stats.puntualita}%</div>
-                        <div class="reliability-lbl">Puntualità (≤5')</div>
+            `;
+        } else if (t.tipo === "cambio") {
+            const t1 = t.treno1;
+            const t2 = t.treno2;
+            
+            const t1PuntColor = t1.affidabilita.puntualita > 80 ? 'var(--success)' : (t1.affidabilita.puntualita > 50 ? 'var(--warning)' : 'var(--danger)');
+            const t2PuntColor = t2.affidabilita.puntualita > 80 ? 'var(--success)' : (t2.affidabilita.puntualita > 50 ? 'var(--warning)' : 'var(--danger)');
+            
+            const trenoData1 = encodeURIComponent(JSON.stringify({
+                linea: t1.linea,
+                numero: t1.numero,
+                origine: `${start} (${t1.partenza})`,
+                destinazione: `${t.cambio_stazione} (${t1.arrivo})`
+            }));
+            
+            const trenoData2 = encodeURIComponent(JSON.stringify({
+                linea: t2.linea,
+                numero: t2.numero,
+                origine: `${t.cambio_stazione} (${t2.partenza})`,
+                destinazione: `${end} (${t2.arrivo})`
+            }));
+            
+            html += `
+                <div class="search-result-card" style="cursor: default; gap: 12px;">
+                    <div class="route-header" style="border-bottom: 1px dashed rgba(255, 255, 255, 0.08); padding-bottom: 10px;">
+                        <div style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                            <span>🔄 Via ${t.cambio_stazione}</span>
+                            <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 12px;">1 Cambio</span>
+                        </div>
+                        <div class="route-times">
+                            <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 4px;">Partenza:</span>
+                            <span style="font-weight: 700; color: var(--accent);">${t.partenza}</span>
+                            <span class="route-time-arrow" style="margin: 0 8px;">➔</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 4px;">Arrivo:</span>
+                            <span style="font-weight: 700; color: var(--text-main);">${t.arrivo}</span>
+                        </div>
                     </div>
-                    <div class="reliability-item">
-                        <div class="reliability-val" style="color: ${ritColor};">${stats.ritardo_medio}'</div>
-                        <div class="reliability-lbl">Ritardo Medio</div>
-                    </div>
-                    <div class="reliability-item">
-                        <div class="reliability-val" style="color: ${sopColor};">${stats.soppressioni}%</div>
-                        <div class="reliability-lbl">Soppressioni</div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <!-- Segmento 1 -->
+                        <div class="segment-row" onclick="openModal('${trenoData1}', ${t1.numero})" style="cursor: pointer; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease;">
+                            <div>
+                                <span class="route-train-num" style="color: var(--accent); font-size: 0.95rem;">🚂 ${t1.linea} ${t1.numero}</span>
+                                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 3px;">
+                                    ${start} (${t1.partenza}) ➔ ${t.cambio_stazione} (${t1.arrivo})
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 15px; align-items: center;">
+                                <div style="text-align: right;">
+                                    <div style="font-size: 0.9rem; font-weight: 700; color: ${t1PuntColor};">${t1.affidabilita.puntualita}%</div>
+                                    <div style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase;">Puntualità</div>
+                                </div>
+                                <div style="color: var(--text-muted); font-size: 0.9rem;">➔</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Attesa Cambio -->
+                        <div style="display: flex; align-items: center; gap: 8px; padding-left: 20px; font-size: 0.82rem; color: var(--text-muted); border-left: 2px dashed rgba(255, 255, 255, 0.1); margin-left: 15px;">
+                            <span>⏳ Attesa di <strong>${t.attesa} min</strong> a ${t.cambio_stazione}</span>
+                        </div>
+                        
+                        <!-- Segmento 2 -->
+                        <div class="segment-row" onclick="openModal('${trenoData2}', ${t2.numero})" style="cursor: pointer; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease;">
+                            <div>
+                                <span class="route-train-num" style="color: var(--accent); font-size: 0.95rem;">🚂 ${t2.linea} ${t2.numero}</span>
+                                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 3px;">
+                                    ${t.cambio_stazione} (${t2.partenza}) ➔ ${end} (${t2.arrivo})
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 15px; align-items: center;">
+                                <div style="text-align: right;">
+                                    <div style="font-size: 0.9rem; font-weight: 700; color: ${t2PuntColor};">${t2.affidabilita.puntualita}%</div>
+                                    <div style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase;">Puntualità</div>
+                                </div>
+                                <div style="color: var(--text-muted); font-size: 0.9rem;">➔</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
+        }
     });
     
     container.innerHTML = html;

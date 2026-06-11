@@ -310,10 +310,22 @@ def calculate_reliability(train_num, all_data):
     }
 
 
+def time_to_minutes(t_str):
+    try:
+        parts = t_str.split(":")
+        h = int(parts[0])
+        m = int(parts[1])
+        return h * 60 + m
+    except Exception:
+        return 0
+
+
 @app.route("/api/route_search")
 def api_route_search():
     start_station = request.args.get("da", "").strip()
     end_station = request.args.get("a", "").strip()
+    ora_min = request.args.get("ora", "00:00").strip()
+    allow_transfers = request.args.get("cambi", "false").strip().lower() == "true"
     
     if not start_station or not end_station:
         return jsonify({"error": "Stazioni di partenza e arrivo obbligatorie"}), 400
@@ -332,24 +344,91 @@ def api_route_search():
     end_trains = timetable.get(end_station, {})
     
     matching_trains = []
-    common_nums = set(start_trains.keys()) & set(end_trains.keys())
-    
     all_data = get_all_data() # Carica lo storico
     
+    # 1. Trova treni diretti
+    common_nums = set(start_trains.keys()) & set(end_trains.keys())
     for num_str in common_nums:
         st_info = start_trains[num_str]
         end_info = end_trains[num_str]
         
         if st_info["seq"] < end_info["seq"]:
-            stats = calculate_reliability(num_str, all_data)
-            matching_trains.append({
-                "numero": int(num_str),
-                "linea": st_info["line"],
-                "partenza": st_info["dep"],
-                "arrivo": end_info["dep"],
-                "affidabilita": stats
-            })
-            
+            if st_info["dep"] >= ora_min:
+                stats = calculate_reliability(num_str, all_data)
+                matching_trains.append({
+                    "tipo": "diretto",
+                    "numero": int(num_str),
+                    "linea": st_info["line"],
+                    "partenza": st_info["dep"],
+                    "arrivo": end_info["dep"],
+                    "affidabilita": stats
+                })
+                
+    # 2. Trova soluzioni con 1 cambio se richiesto
+    if allow_transfers:
+        for st_name, st_trains in timetable.items():
+            if st_name == start_station or st_name == end_station:
+                continue
+                
+            t1_candidates = set(start_trains.keys()) & set(st_trains.keys())
+            if not t1_candidates:
+                continue
+                
+            t2_candidates = set(st_trains.keys()) & set(end_trains.keys())
+            if not t2_candidates:
+                continue
+                
+            for t1_num in t1_candidates:
+                t1_start = start_trains[t1_num]
+                t1_mid = st_trains[t1_num]
+                
+                if t1_start["seq"] >= t1_mid["seq"] or t1_start["dep"] < ora_min:
+                    continue
+                    
+                t1_dep = t1_start["dep"]
+                t1_arr = t1_mid["dep"]
+                t1_arr_m = time_to_minutes(t1_arr)
+                
+                for t2_num in t2_candidates:
+                    if t1_num == t2_num:
+                        continue
+                        
+                    t2_mid = st_trains[t2_num]
+                    t2_end = end_trains[t2_num]
+                    
+                    if t2_mid["seq"] >= t2_end["seq"]:
+                        continue
+                        
+                    t2_dep = t2_mid["dep"]
+                    t2_arr = t2_end["dep"]
+                    t2_dep_m = time_to_minutes(t2_dep)
+                    
+                    layover = t2_dep_m - t1_arr_m
+                    if 5 <= layover <= 90:
+                        stats1 = calculate_reliability(t1_num, all_data)
+                        stats2 = calculate_reliability(t2_num, all_data)
+                        matching_trains.append({
+                            "tipo": "cambio",
+                            "cambio_stazione": st_name,
+                            "partenza": t1_dep,
+                            "arrivo": t2_arr,
+                            "treno1": {
+                                "numero": int(t1_num),
+                                "linea": t1_start["line"],
+                                "partenza": t1_dep,
+                                "arrivo": t1_arr,
+                                "affidabilita": stats1
+                            },
+                            "treno2": {
+                                "numero": int(t2_num),
+                                "linea": t2_mid["line"],
+                                "partenza": t2_dep,
+                                "arrivo": t2_arr,
+                                "affidabilita": stats2
+                            },
+                            "attesa": layover
+                        })
+                        
     matching_trains.sort(key=lambda x: x["partenza"])
     return jsonify(matching_trains)
 
