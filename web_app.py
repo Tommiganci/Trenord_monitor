@@ -35,11 +35,87 @@ def load_treno_direttrice_mapping():
     return mapping
 
 
+REGISTRO_PATH = os.path.join(DATA_DIR, "registro_storico.json")
+
+def load_reconstructed_history(filter_month=None):
+    """
+    Carica lo storico completo ricostruendo i dizionari dei giorni passati 
+    dal registro storico, combinandoli con il file giornaliero corrente in data/.
+    """
+    all_data = []
+    
+    # 1. Carica dal registro storico
+    mappatura = {}
+    registro = {}
+    if os.path.exists(REGISTRO_PATH):
+        try:
+            with open(REGISTRO_PATH, "r", encoding="utf-8") as f:
+                db = json.load(f)
+                mappatura = db.get("mappatura_treni", {})
+                registro = db.get("registro", {})
+        except Exception:
+            pass
+
+    for date_str, trains_data in sorted(registro.items()):
+        if filter_month and not date_str.startswith(filter_month):
+            continue
+            
+        day_dict = {
+            "data": date_str,
+            "treni": {}
+        }
+        for num_str, t in trains_data.items():
+            t_info = mappatura.get(num_str, {})
+            day_dict["treni"][num_str] = {
+                "critico": t.get("c", False),
+                "ritardo_capolinea": t.get("r", 0),
+                "stato": t.get("s", "REGOLARE"),
+                "direttrice": t_info.get("direttrice", ""),
+                "linea": t_info.get("linea", ""),
+                "numero": int(num_str)
+            }
+        all_data.append(day_dict)
+        
+    # 2. Carica i file giornalieri correnti presenti in data/ (es. oggi)
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
+    for file_path in sorted(files):
+        filename = os.path.basename(file_path)
+        date_str = filename.replace("database_totale_", "").replace(".json", "")
+        
+        # Evita duplicati se il giorno è già consolidato nello storico
+        if date_str in registro:
+            continue
+            
+        if filter_month and not date_str.startswith(filter_month):
+            continue
+            
+        try:
+            with open(file_path, "r", encoding="utf-8") as f:
+                day_db = json.load(f)
+                
+            cleaned_db = {
+                "data": date_str,
+                "treni": {}
+            }
+            for num_str, t in day_db.get("treni", {}).items():
+                cleaned_db["treni"][num_str] = {
+                    "critico": t.get("critico", False),
+                    "ritardo_capolinea": t.get("ritardo_capolinea", 0),
+                    "stato": t.get("stato", "REGOLARE"),
+                    "direttrice": t.get("direttrice", ""),
+                    "linea": t.get("linea", ""),
+                    "numero": int(num_str)
+                }
+            all_data.append(cleaned_db)
+        except Exception:
+            continue
+            
+    return sorted(all_data, key=lambda x: x["data"])
+
 def get_latest_data():
     if not os.path.exists(DATA_DIR):
         return None
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
-            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
+    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json"))
     if not files:
         return None
     latest_file = sorted(files)[-1]
@@ -47,31 +123,11 @@ def get_latest_data():
         return json.load(f)
 
 def get_monthly_data():
-    if not os.path.exists(DATA_DIR):
-        return []
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
-            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
     current_month = datetime.now().strftime("%Y-%m")
-    monthly_data = []
-    for f in sorted(files):
-        if current_month in f:
-            with open(f, "r", encoding="utf-8") as file:
-                monthly_data.append(json.load(file))
-    return monthly_data
+    return load_reconstructed_history(filter_month=current_month)
 
 def get_all_data():
-    if not os.path.exists(DATA_DIR):
-        return []
-    files = glob.glob(os.path.join(DATA_DIR, "database_totale_*.json")) + \
-            glob.glob(os.path.join(DATA_DIR, "archive", "*", "database_totale_*.json"))
-    all_data = []
-    for f in sorted(files):
-        try:
-            with open(f, "r", encoding="utf-8") as file:
-                all_data.append(json.load(file))
-        except Exception:
-            continue
-    return all_data
+    return load_reconstructed_history()
 
 @app.route("/")
 def index():
