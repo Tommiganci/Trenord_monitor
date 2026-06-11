@@ -1617,6 +1617,9 @@ function renderSearchResults(trains, container) {
 }
 
 // --- Gestione Ricerca Stazione ---
+let lastStationResults = [];
+let lastSearchedStation = "";
+
 function performStationSearch() {
     const station = document.getElementById('station-search-input').value.trim();
     const container = document.getElementById('station-results-container');
@@ -1770,10 +1773,66 @@ function renderStationResults(results, container, station) {
         return;
     }
     
-    const favs = getFavTreni();
+    lastStationResults = results;
+    lastSearchedStation = station;
+    
+    // Calcola orario di default (ora attuale meno 30 minuti)
+    const now = new Date();
+    const thirtyMinAgo = new Date(now.getTime() - 30 * 60 * 1000);
+    const startDefault = String(thirtyMinAgo.getHours()).padStart(2, '0') + ':' + String(thirtyMinAgo.getMinutes()).padStart(2, '0');
     
     let html = `<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
     
+    // Aggiunge la barra dei filtri avanzati
+    html += `
+        <div class="station-filters-bar" style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; background-color: var(--card-bg); padding: 15px; border-radius: 12px; border: 1px solid var(--border-color); align-items: center;">
+            
+            <!-- Filtro di testo -->
+            <div style="flex: 2; min-width: 250px; position: relative;">
+                <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.85rem;">🔍</span>
+                <input type="text" id="station-text-filter" placeholder="Cerca treno, linea o destinazione..." 
+                       style="width: 100%; padding: 8px 12px 8px 32px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--body-bg); color: var(--text-main); font-family: inherit; font-size: 0.9rem;"
+                       oninput="applyStationFilters()">
+            </div>
+            
+            <!-- Filtro orario da -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Dalle:</span>
+                <input type="time" id="station-time-start" value="${startDefault}"
+                       style="padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--body-bg); color: var(--text-main); font-family: inherit; font-size: 0.9rem;"
+                       onchange="applyStationFilters()">
+            </div>
+            
+            <!-- Filtro orario a -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Alle:</span>
+                <input type="time" id="station-time-end" 
+                       style="padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--body-bg); color: var(--text-main); font-family: inherit; font-size: 0.9rem;"
+                       onchange="applyStationFilters()">
+            </div>
+            
+            <!-- Filtro stato -->
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Stato:</span>
+                <select id="station-status-filter" 
+                        style="padding: 6px 10px; border-radius: 6px; border: 1px solid var(--border-color); background-color: var(--body-bg); color: var(--text-main); font-family: inherit; font-size: 0.9rem;"
+                        onchange="applyStationFilters()">
+                    <option value="all">Tutti i treni</option>
+                    <option value="active">Solo attivi oggi</option>
+                    <option value="delay">Solo ritardi/anomalie</option>
+                    <option value="inactive">Solo inattivi oggi</option>
+                </select>
+            </div>
+            
+            <!-- Bottone reset filtri -->
+            <button onclick="resetStationFilters()" 
+                    style="padding: 8px 15px; border-radius: 6px; border: 1px solid var(--border-color); background-color: rgba(255,255,255,0.05); color: var(--text-main); font-family: inherit; font-size: 0.9rem; cursor: pointer; transition: background-color 0.2s;">
+                Reset
+            </button>
+        </div>
+    `;
+    
+    // Contenitore tabella
     html += `
         <div class="table-container">
             <table>
@@ -1789,10 +1848,67 @@ function renderStationResults(results, container, station) {
                         <th>Note</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="station-table-body">
+                    <!-- Righe filtrate dinamicamente -->
+                </tbody>
+            </table>
+        </div>
     `;
     
-    results.forEach(t => {
+    container.innerHTML = html;
+    
+    // Applica subito i filtri per mostrare la finestra temporale iniziale di default
+    applyStationFilters();
+}
+
+function applyStationFilters() {
+    const textVal = (document.getElementById('station-text-filter')?.value || "").trim().toLowerCase();
+    const timeStart = document.getElementById('station-time-start')?.value || "";
+    const timeEnd = document.getElementById('station-time-end')?.value || "";
+    const statusVal = document.getElementById('station-status-filter')?.value || "all";
+    const tbody = document.getElementById('station-table-body');
+    
+    if (!tbody || !lastStationResults) return;
+    
+    const favs = getFavTreni();
+    let filtered = lastStationResults;
+    
+    // 1. Filtro Testuale (treno, linea, origine, destinazione)
+    if (textVal) {
+        filtered = filtered.filter(t => {
+            const numStr = String(t.numero);
+            const lineStr = (t.linea || "").toLowerCase();
+            const origStr = (t.origine || "").toLowerCase();
+            const destStr = (t.destinazione || "").toLowerCase();
+            return numStr.includes(textVal) || lineStr.includes(textVal) || origStr.includes(textVal) || destStr.includes(textVal);
+        });
+    }
+    
+    // 2. Filtro Orario (Transito dalle... alle...)
+    if (timeStart) {
+        filtered = filtered.filter(t => t.orario_passaggio >= timeStart);
+    }
+    if (timeEnd) {
+        filtered = filtered.filter(t => t.orario_passaggio <= timeEnd);
+    }
+    
+    // 3. Filtro Stato
+    if (statusVal === "active") {
+        filtered = filtered.filter(t => t.attivo);
+    } else if (statusVal === "inactive") {
+        filtered = filtered.filter(t => !t.attivo);
+    } else if (statusVal === "delay") {
+        filtered = filtered.filter(t => t.attivo && (t.stato === "RITARDO" || t.stato === "SOPPRESSO" || t.stato === "LIMITATO" || t.stato === "PARZ. SOPPRESSO" || t.ritardo_attuale > 0 || t.critico));
+    }
+    
+    // Render delle righe filtrate
+    if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:var(--text-muted); padding:30px;">Nessun treno corrispondente ai filtri impostati.</td></tr>`;
+        return;
+    }
+    
+    let html = "";
+    filtered.forEach(t => {
         const isFav = favs.includes(t.numero);
         const statusBadge = renderStatus(t.stato, t.critico);
         
@@ -1847,13 +1963,21 @@ function renderStationResults(results, container, station) {
         `;
     });
     
-    html += `
-                </tbody>
-            </table>
-        </div>
-    `;
+    tbody.innerHTML = html;
+}
+
+function resetStationFilters() {
+    const textInput = document.getElementById('station-text-filter');
+    const startInput = document.getElementById('station-time-start');
+    const endInput = document.getElementById('station-time-end');
+    const statusSelect = document.getElementById('station-status-filter');
     
-    container.innerHTML = html;
+    if (textInput) textInput.value = "";
+    if (startInput) startInput.value = "";
+    if (endInput) endInput.value = "";
+    if (statusSelect) statusSelect.value = "all";
+    
+    applyStationFilters();
 }
 
 // --- Gestione Navigazione con Tasto Indietro (History API) ---
