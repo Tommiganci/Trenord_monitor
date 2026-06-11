@@ -121,7 +121,9 @@ Il sistema include una funzionalità di **Ricerca Orari Intelligente** (da stazi
 
 ### Funzionamento:
 - **Autocompletamento Glassmorphic**: L'interfaccia offre una barra di ricerca stazioni con autocompletamento intelligente, navigazione da tastiera e supporto per la cancellazione rapida. I codici delle stazioni critiche (come Pavia, Cremona, Brescia, Voghera) sono stati mappati e corretti per garantire il tracciamento dei treni.
-- **Filtro Orario di Partenza ("A partire dalle ore")**: Consente di indicare un orario di partenza desiderato nel modulo di ricerca per escludere le corse precedenti e visualizzare solo le soluzioni pertinenti.
+- **Filtro Orario Flessibile**: Consente di filtrare le soluzioni in due modalità:
+  - *Partenza dopo le*: Mostra solo le soluzioni che partono dalla stazione di origine dopo l'orario indicato (ordinate per orario di partenza crescente).
+  - *Arrivo entro le*: Mostra solo le soluzioni che arrivano alla stazione di destinazione prima dell'orario indicato (ordinate per orario di arrivo crescente).
 - **Ricerca con 1 Cambio (Connessioni/Coincidenze)**: È possibile estendere la ricerca oltre le corse dirette abilitando l'opzione dei cambi. Il sistema calcola l'intersezione delle stazioni raggiungibili per trovare coincidenze ottimali con tempi di attesa sicuri (da 5 a 90 minuti). Ciascun segmento del viaggio (treno 1 e treno 2) mostra le proprie informazioni orarie e statistiche di affidabilità individuali, ed è cliccabile per visualizzare i grafici storici.
 - **Calcolo Storico Affidabilità**: Per ogni corsa/segmento trovato, il motore calcola al volo:
   - **Puntualità (%)**: Percentuale di corse arrivate al capolinea con ritardo $\le 5$ minuti.

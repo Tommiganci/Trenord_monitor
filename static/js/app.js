@@ -1249,7 +1249,8 @@ function timeToMinutes(tStr) {
 function performRouteSearch() {
     const start = document.getElementById('station-start').value.trim();
     const end = document.getElementById('station-end').value.trim();
-    const depTime = document.getElementById('departure-time')?.value || "00:00";
+    const depTime = document.getElementById('search-time')?.value || "00:00";
+    const timeType = document.getElementById('search-time-type')?.value || "dep";
     const allowTransfers = document.getElementById('allow-transfers')?.checked || false;
     const container = document.getElementById('search-results-container');
     
@@ -1268,7 +1269,7 @@ function performRouteSearch() {
     if (IS_STATIC) {
         loadTimetableAndSearchClient(start, end, container);
     } else {
-        fetch(`/api/route_search?da=${encodeURIComponent(start)}&a=${encodeURIComponent(end)}&ora=${encodeURIComponent(depTime)}&cambi=${allowTransfers}`)
+        fetch(`/api/route_search?da=${encodeURIComponent(start)}&a=${encodeURIComponent(end)}&ora=${encodeURIComponent(depTime)}&tipo_ora=${timeType}&cambi=${allowTransfers}`)
             .then(res => res.json())
             .then(data => renderSearchResults(data, container))
             .catch(err => {
@@ -1297,7 +1298,8 @@ function loadTimetableAndSearchClient(start, end, container) {
 }
 
 function searchClientSide(start, end, container) {
-    const depTimeMin = document.getElementById('departure-time')?.value || "00:00";
+    const timeLimit = document.getElementById('search-time')?.value || "00:00";
+    const timeType = document.getElementById('search-time-type')?.value || "dep";
     const allowTransfers = document.getElementById('allow-transfers')?.checked || false;
     
     const startTrains = cachedTimetable[start] || {};
@@ -1312,7 +1314,14 @@ function searchClientSide(start, end, container) {
         const endInfo = endTrains[numStr];
         
         if (stInfo[0] < endInfo[0]) {
-            if (stInfo[1] >= depTimeMin) {
+            let isValid = false;
+            if (timeType === "dep") {
+                isValid = (stInfo[1] >= timeLimit);
+            } else { // 'arr'
+                isValid = (endInfo[1] <= timeLimit);
+            }
+            
+            if (isValid) {
                 const stats = calculateReliabilityClient(numStr);
                 results.push({
                     tipo: "diretto",
@@ -1343,11 +1352,13 @@ function searchClientSide(start, end, container) {
                 const t1Start = startTrains[t1Num];
                 const t1Mid = stTrains[t1Num];
                 
-                if (t1Start[0] >= t1Mid[0] || t1Start[1] < depTimeMin) return;
+                if (t1Start[0] >= t1Mid[0]) return;
                 
                 const t1Dep = t1Start[1];
                 const t1Arr = t1Mid[1];
                 const t1ArrM = timeToMinutes(t1Arr);
+                
+                if (timeType === "dep" && t1Dep < timeLimit) return;
                 
                 t2Candidates.forEach(t2Num => {
                     if (t1Num === t2Num) return;
@@ -1360,6 +1371,8 @@ function searchClientSide(start, end, container) {
                     const t2Dep = t2Mid[1];
                     const t2Arr = t2End[1];
                     const t2DepM = timeToMinutes(t2Dep);
+                    
+                    if (timeType === "arr" && t2Arr > timeLimit) return;
                     
                     const layover = t2DepM - t1ArrM;
                     if (layover >= 5 && layover <= 90) {
@@ -1392,7 +1405,11 @@ function searchClientSide(start, end, container) {
         });
     }
     
-    results.sort((a, b) => a.partenza.localeCompare(b.partenza));
+    if (timeType === "arr") {
+        results.sort((a, b) => a.arrivo.localeCompare(b.arrivo));
+    } else {
+        results.sort((a, b) => a.partenza.localeCompare(b.partenza));
+    }
     renderSearchResults(results, container);
 }
 
@@ -1599,6 +1616,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const btnSearch = document.getElementById('searchRouteBtn');
     if (btnSearch) {
         btnSearch.addEventListener('click', performRouteSearch);
+    }
+
+    const timeTypeSelect = document.getElementById('search-time-type');
+    if (timeTypeSelect) {
+        timeTypeSelect.addEventListener('change', (e) => {
+            const timeInput = document.getElementById('search-time');
+            if (timeInput) {
+                if (e.target.value === 'arr' && timeInput.value === '00:00') {
+                    timeInput.value = '23:59';
+                } else if (e.target.value === 'dep' && timeInput.value === '23:59') {
+                    timeInput.value = '00:00';
+                }
+            }
+        });
     }
 
     const params = new URLSearchParams(window.location.search);

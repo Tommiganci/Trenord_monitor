@@ -348,12 +348,15 @@
                         <div id="autocomplete-end" class="autocomplete-list hidden"></div>
                     </div>
 
-                    <!-- Orario di Partenza -->
+                    <!-- Filtro Orario -->
                     <div style="position: relative;">
-                        <label for="departure-time" style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px;">A partire dalle ore</label>
-                        <div style="position: relative;">
-                            <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;">🕒</span>
-                            <input type="time" id="departure-time" class="search-input" value="00:00" style="padding-left: 42px;">
+                        <label for="search-time" style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px;">Filtro Orario</label>
+                        <div style="display: flex; gap: 8px;">
+                            <select id="search-time-type" style="padding: 12px; width: 60%; flex: 1.2; background-color: var(--card-bg); color: var(--text-main); border-radius: 8px; border: 1px solid var(--border-color); outline: none; font-family: inherit; font-size: 0.95rem; cursor: pointer; transition: border-color 0.2s;">
+                                <option value="dep">Partenza dopo le</option>
+                                <option value="arr">Arrivo entro le</option>
+                            </select>
+                            <input type="time" id="search-time" class="search-input" value="00:00" style="padding: 12px; width: 40%; flex: 0.8; text-align: center;">
                         </div>
                     </div>
                     

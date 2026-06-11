@@ -324,7 +324,8 @@ def time_to_minutes(t_str):
 def api_route_search():
     start_station = request.args.get("da", "").strip()
     end_station = request.args.get("a", "").strip()
-    ora_min = request.args.get("ora", "00:00").strip()
+    ora_limit = request.args.get("ora", "00:00").strip()
+    time_type = request.args.get("tipo_ora", "dep").strip().lower() # 'dep' o 'arr'
     allow_transfers = request.args.get("cambi", "false").strip().lower() == "true"
     
     if not start_station or not end_station:
@@ -353,7 +354,13 @@ def api_route_search():
         end_info = end_trains[num_str]
         
         if st_info["seq"] < end_info["seq"]:
-            if st_info["dep"] >= ora_min:
+            is_valid = False
+            if time_type == "dep":
+                is_valid = (st_info["dep"] >= ora_limit)
+            else: # 'arr'
+                is_valid = (end_info["dep"] <= ora_limit)
+                
+            if is_valid:
                 stats = calculate_reliability(num_str, all_data)
                 matching_trains.append({
                     "tipo": "diretto",
@@ -382,12 +389,16 @@ def api_route_search():
                 t1_start = start_trains[t1_num]
                 t1_mid = st_trains[t1_num]
                 
-                if t1_start["seq"] >= t1_mid["seq"] or t1_start["dep"] < ora_min:
+                if t1_start["seq"] >= t1_mid["seq"]:
                     continue
                     
                 t1_dep = t1_start["dep"]
                 t1_arr = t1_mid["dep"]
                 t1_arr_m = time_to_minutes(t1_arr)
+                
+                # Se filtriamo per partenza minima, verifichiamo la partenza di t1
+                if time_type == "dep" and t1_dep < ora_limit:
+                    continue
                 
                 for t2_num in t2_candidates:
                     if t1_num == t2_num:
@@ -403,6 +414,10 @@ def api_route_search():
                     t2_arr = t2_end["dep"]
                     t2_dep_m = time_to_minutes(t2_dep)
                     
+                    # Se filtriamo per arrivo massimo, verifichiamo l'arrivo a destinazione t2
+                    if time_type == "arr" and t2_arr > ora_limit:
+                        continue
+                        
                     layover = t2_dep_m - t1_arr_m
                     if 5 <= layover <= 90:
                         stats1 = calculate_reliability(t1_num, all_data)
@@ -429,7 +444,10 @@ def api_route_search():
                             "attesa": layover
                         })
                         
-    matching_trains.sort(key=lambda x: x["partenza"])
+    if time_type == "arr":
+        matching_trains.sort(key=lambda x: x["arrivo"])
+    else:
+        matching_trains.sort(key=lambda x: x["partenza"])
     return jsonify(matching_trains)
 
 
