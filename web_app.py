@@ -451,6 +451,97 @@ def api_route_search():
     return jsonify(matching_trains)
 
 
+def get_train_endpoints(train_num_str, timetable):
+    min_seq = 9999
+    max_seq = -1
+    orig_name = None
+    orig_dep = None
+    dest_name = None
+    dest_dep = None
+    
+    for st_name, st_trains in timetable.items():
+        if train_num_str in st_trains:
+            st_info = st_trains[train_num_str]
+            seq = st_info.get("seq", 0) if isinstance(st_info, dict) else st_info[0]
+            dep = st_info.get("dep", "") if isinstance(st_info, dict) else st_info[1]
+            
+            if seq < min_seq:
+                min_seq = seq
+                orig_name = st_name
+                orig_dep = dep
+            if seq > max_seq:
+                max_seq = seq
+                dest_name = st_name
+                dest_dep = dep
+                
+    orig = f"{orig_name} ({orig_dep})" if orig_name else "N/D"
+    dest = f"{dest_name} ({dest_dep})" if dest_name else "N/D"
+    return orig, dest
+
+
+@app.route("/api/station_search")
+def api_station_search():
+    station = request.args.get("stazione", "").strip()
+    if not station:
+        return jsonify({"error": "Stazione obbligatoria"}), 400
+        
+    orari_path = os.path.join(DATA_DIR, "orari_tratte.json")
+    if not os.path.exists(orari_path):
+        return jsonify({"error": "Orari non disponibili"}), 404
+        
+    try:
+        with open(orari_path, "r", encoding="utf-8") as f:
+            timetable = json.load(f)
+    except Exception as e:
+        return jsonify({"error": f"Errore caricamento orari: {str(e)}"}), 500
+        
+    station_trains = timetable.get(station, {})
+    if not station_trains:
+        return jsonify([])
+        
+    latest_data = get_latest_data()
+    live_trains = latest_data.get("treni", {}) if latest_data else {}
+    
+    results = []
+    for num_str, st_info in station_trains.items():
+        scheduled_dep = st_info.get("dep", "") if isinstance(st_info, dict) else st_info[1]
+        line = st_info.get("line", "") if isinstance(st_info, dict) else st_info[2]
+        
+        live_t = live_trains.get(num_str)
+        if live_t:
+            results.append({
+                "attivo": True,
+                "numero": int(num_str),
+                "linea": live_t.get("linea", line),
+                "origine": live_t.get("origine", "N/D"),
+                "destinazione": live_t.get("destinazione", "N/D"),
+                "orario_passaggio": scheduled_dep,
+                "orario_programmato": live_t.get("orario_programmato", ""),
+                "stato": live_t.get("stato", "REGOLARE"),
+                "critico": live_t.get("critico", False),
+                "ritardo_attuale": live_t.get("ritardo_attuale", 0),
+                "note": live_t.get("note", "")
+            })
+        else:
+            orig, dest = get_train_endpoints(num_str, timetable)
+            results.append({
+                "attivo": False,
+                "numero": int(num_str),
+                "linea": line,
+                "origine": orig,
+                "destinazione": dest,
+                "orario_passaggio": scheduled_dep,
+                "orario_programmato": scheduled_dep,
+                "stato": "INATTIVO",
+                "critico": False,
+                "ritardo_attuale": 0,
+                "note": ""
+            })
+            
+    results.sort(key=lambda x: x["orario_passaggio"])
+    return jsonify(results)
+
+
 from flask import send_from_directory
 @app.route("/data/<path:filename>")
 def serve_data_files(filename):

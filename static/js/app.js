@@ -290,12 +290,23 @@ function toggleFavTrain(event, numero) {
     
     if (selectedDirettrice) {
         renderTable();
-    } else {
+    } else if (lastDirettriceMap) {
         renderHomePage(lastDirettriceMap);
     }
     
     updateModalFavButton(numero);
+    
+    // Aggiorna tutte le icone stella per questo treno nella pagina
+    document.querySelectorAll(`.fav-star-icon-train-${numero}`).forEach(btn => {
+        const isFav = favs.includes(numero);
+        if (isFav) {
+            btn.classList.remove('inactive');
+        } else {
+            btn.classList.add('inactive');
+        }
+    });
 }
+
 
 function updateModalFavButton(numero) {
     const btn = document.getElementById('modal-fav-btn');
@@ -1076,31 +1087,40 @@ function switchTab(tabName, pushState = true) {
     currentTab = tabName;
     const tabMon = document.getElementById('tab-monitor');
     const tabSrc = document.getElementById('tab-search');
+    const tabStn = document.getElementById('tab-station');
     
     const routeView = document.getElementById('route-search-view');
     const homeView = document.getElementById('home-view');
     const detailView = document.getElementById('detail-view');
+    const stationView = document.getElementById('station-search-view');
     
-    if (!tabMon || !tabSrc) return;
+    if (!tabMon || !tabSrc || !tabStn) return;
+
+    tabMon.classList.remove('active');
+    tabSrc.classList.remove('active');
+    tabStn.classList.remove('active');
+    
+    routeView.classList.add('hidden');
+    homeView.classList.add('hidden');
+    detailView.classList.add('hidden');
+    if (stationView) stationView.classList.add('hidden');
 
     if (tabName === 'search') {
-        tabMon.classList.remove('active');
         tabSrc.classList.add('active');
-        
         routeView.classList.remove('hidden');
-        homeView.classList.add('hidden');
-        detailView.classList.add('hidden');
-        
         initStationAutocomplete();
-        
         if (pushState) {
             history.pushState({ view: 'search' }, '', '?tab=search');
         }
+    } else if (tabName === 'station') {
+        tabStn.classList.add('active');
+        if (stationView) stationView.classList.remove('hidden');
+        initStationAutocomplete();
+        if (pushState) {
+            history.pushState({ view: 'station' }, '', '?tab=station');
+        }
     } else {
         tabMon.classList.add('active');
-        tabSrc.classList.remove('active');
-        
-        routeView.classList.add('hidden');
         if (selectedDirettrice) {
             detailView.classList.remove('hidden');
             if (pushState) {
@@ -1130,6 +1150,7 @@ function initStationAutocomplete() {
             isStationsLoaded = true;
             setupAutocompleteInput('station-start', 'autocomplete-start', 'clear-start-btn');
             setupAutocompleteInput('station-end', 'autocomplete-end', 'clear-end-btn');
+            setupAutocompleteInput('station-search-input', 'autocomplete-station-search', 'clear-station-search-btn');
         })
         .catch(err => console.error("Errore caricamento stazioni:", err));
 }
@@ -1175,6 +1196,9 @@ function setupAutocompleteInput(inputId, autocompleteId, clearBtnId) {
             item.addEventListener('click', () => {
                 input.value = station;
                 closeAllLists();
+                if (inputId === 'station-search-input') {
+                    performStationSearch();
+                }
             });
             listContainer.appendChild(item);
         });
@@ -1592,12 +1616,202 @@ function renderSearchResults(trains, container) {
     container.innerHTML = html;
 }
 
+// --- Gestione Ricerca Stazione ---
+function performStationSearch() {
+    const station = document.getElementById('station-search-input').value.trim();
+    const container = document.getElementById('station-results-container');
+    
+    if (!station) {
+        alert("Seleziona una stazione!");
+        return;
+    }
+    
+    container.innerHTML = `
+        <div style="text-align: center; color: var(--text-muted); padding: 40px;">
+            <div class="skeleton-text skeleton-title" style="width: 50%; margin: 0 auto 15px auto;"></div>
+            Recupero passaggi e stato live per la stazione in corso...
+        </div>
+    `;
+    
+    if (IS_STATIC) {
+        loadTimetableAndSearchStationClient(station, container);
+    } else {
+        fetch(`/api/station_search?stazione=${encodeURIComponent(station)}`)
+            .then(res => res.json())
+            .then(data => renderStationResults(data, container, station))
+            .catch(err => {
+                console.error("Errore ricerca stazione:", err);
+                container.innerHTML = `<div style="text-align:center; color:var(--danger); padding:20px;">Errore durante il recupero dei dati. Riprova più tardi.</div>`;
+            });
+    }
+}
+
+function loadTimetableAndSearchStationClient(station, container) {
+    if (cachedTimetable) {
+        searchStationClientSide(station, container);
+        return;
+    }
+    
+    fetch('data/orari_tratte_compresso.json')
+        .then(res => res.json())
+        .then(data => {
+            cachedTimetable = data;
+            searchStationClientSide(station, container);
+        })
+        .catch(err => {
+            console.error("Errore download orari:", err);
+            container.innerHTML = `<div style="text-align:center; color:var(--danger); padding:20px;">Impossibile caricare gli orari statici offline.</div>`;
+        });
+}
+
+function getTrainEndpointsJS(trainNumStr) {
+    if (!cachedTimetable) return { origine: "N/D", destinazione: "N/D" };
+    
+    let minSeq = 9999;
+    let maxSeq = -1;
+    let origName = null;
+    let origDep = null;
+    let destName = null;
+    let destDep = null;
+    
+    for (const stName in cachedTimetable) {
+        const stTrains = cachedTimetable[stName];
+        if (stTrains && trainNumStr in stTrains) {
+            const stInfo = stTrains[trainNumStr];
+            const seq = (typeof stInfo.seq !== 'undefined') ? stInfo.seq : stInfo[0];
+            const dep = stInfo.dep || stInfo[1];
+            
+            if (seq < minSeq) {
+                minSeq = seq;
+                origName = stName;
+                origDep = dep;
+            }
+            if (seq > maxSeq) {
+                maxSeq = seq;
+                destName = stName;
+                destDep = dep;
+            }
+        }
+    }
+    
+    const origine = origName ? `${origName} (${origDep})` : "N/D";
+    const destinazione = destName ? `${destName} (${destDep})` : "N/D";
+    return { origine, destinazione };
+}
+
+function searchStationClientSide(station, container) {
+    const stationTrains = cachedTimetable[station];
+    if (!stationTrains || Object.keys(stationTrains).length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; color: var(--text-muted); padding: 40px; background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                Nessun treno programmato in transito per questa stazione.
+            </div>
+        `;
+        return;
+    }
+    
+    const results = [];
+    
+    for (const numStr in stationTrains) {
+        const stInfo = stationTrains[numStr];
+        const scheduledDep = stInfo.dep || stInfo[1];
+        const line = stInfo.line || stInfo[2];
+        const trainNum = parseInt(numStr, 10);
+        
+        // Cerca se attivo oggi
+        const liveT = allTrainsData.find(x => x.numero === trainNum);
+        if (liveT) {
+            results.push({
+                attivo: true,
+                numero: trainNum,
+                linea: liveT.linea || line,
+                origine: liveT.origine || "N/D",
+                destinazione: liveT.destinazione || "N/D",
+                orario_passaggio: scheduledDep,
+                orario_programmato: liveT.orario_programmato || "",
+                stato: liveT.stato || "REGOLARE",
+                critico: liveT.critico || false,
+                ritardo_attuale: liveT.ritardo_attuale || 0,
+                note: liveT.note || ""
+            });
+        } else {
+            const endpoints = getTrainEndpointsJS(numStr);
+            results.push({
+                attivo: false,
+                numero: trainNum,
+                linea: line,
+                origine: endpoints.origine,
+                destinazione: endpoints.destinazione,
+                orario_passaggio: scheduledDep,
+                orario_programmato: scheduledDep,
+                stato: "INATTIVO",
+                critico: false,
+                ritardo_attuale: 0,
+                note: ""
+            });
+        }
+    }
+    
+    results.sort((a, b) => a.orario_passaggio.localeCompare(b.orario_passaggio));
+    renderStationResults(results, container, station);
+}
+
+function renderStationResults(results, container, station) {
+    if (!results || results.length === 0) {
+        container.innerHTML = `
+            <div style="text-align: center; color: var(--text-muted); padding: 40px; background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+                Nessun treno trovato in transito per questa stazione.
+            </div>
+        `;
+        return;
+    }
+    
+    const favs = getFavTreni();
+    
+    let html = `<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
+    html += `<div class="fav-trains-grid">`;
+    
+    results.forEach(t => {
+        const isFav = favs.includes(t.numero);
+        const statusBadge = renderStatus(t.stato, t.critico);
+        
+        const trenoData = encodeURIComponent(JSON.stringify({
+            linea: t.linea,
+            numero: t.numero,
+            origine: t.origine,
+            destinazione: t.destinazione
+        }));
+        
+        html += `
+            <div class="fav-train-card" style="${!t.attivo ? 'opacity: 0.6;' : ''}" onclick="openModal('${trenoData}', ${t.numero})">
+                <div class="fav-train-header">
+                    <span class="fav-train-name">${t.linea} ${t.numero}</span>
+                    <button class="fav-star-icon fav-star-icon-train-${t.numero} ${isFav ? '' : 'inactive'}" onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();">★</button>
+                </div>
+                <div class="fav-train-route" title="${t.origine} ➔ ${t.destinazione}">
+                    ${t.origine} ➔ ${t.destinazione}
+                </div>
+                <div class="fav-train-status-row">
+                    <span>Orario: <strong>${t.orario_passaggio || '--:--'}</strong>${(t.attivo && t.ritardo_attuale > 0) ? ` <span style="color:var(--danger); font-weight:700;">+${t.ritardo_attuale}'</span>` : ''}</span>
+                    <span>${statusBadge}</span>
+                </div>
+                ${t.note ? `<div style="font-size: 0.78rem; color: var(--warning); margin-top: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left;" title="${t.note}">⚠️ ${t.note}</div>` : ''}
+            </div>
+        `;
+    });
+    
+    html += `</div>`;
+    container.innerHTML = html;
+}
+
 // --- Gestione Navigazione con Tasto Indietro (History API) ---
 window.addEventListener('popstate', (event) => {
     const state = event.state;
     if (state) {
         if (state.view === 'search') {
             switchTab('search', false);
+        } else if (state.view === 'station') {
+            switchTab('station', false);
         } else if (state.view === 'detail') {
             switchTab('monitor', false);
             selectDirettrice(state.direttrice, false);
@@ -1616,6 +1830,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const btnSearch = document.getElementById('searchRouteBtn');
     if (btnSearch) {
         btnSearch.addEventListener('click', performRouteSearch);
+    }
+
+    const btnStationSearch = document.getElementById('searchStationBtn');
+    if (btnStationSearch) {
+        btnStationSearch.addEventListener('click', performStationSearch);
+    }
+
+    const inputStationSearch = document.getElementById('station-search-input');
+    if (inputStationSearch) {
+        inputStationSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performStationSearch();
+            }
+        });
     }
 
     const timeTypeSelect = document.getElementById('search-time-type');
@@ -1640,6 +1868,10 @@ window.addEventListener('DOMContentLoaded', () => {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
         history.pushState({ view: 'search' }, '', window.location.search);
         switchTab('search', false);
+    } else if (tabParam === 'station') {
+        history.replaceState({ view: 'home' }, '', window.location.pathname);
+        history.pushState({ view: 'station' }, '', window.location.search);
+        switchTab('station', false);
     } else if (dirParam) {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
         history.pushState({ view: 'detail', direttrice: dirParam }, '', window.location.search);

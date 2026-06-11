@@ -135,6 +135,21 @@ Il sistema include una funzionalità di **Ricerca Orari Intelligente** (da stazi
 
 ---
 
+## 🚉 Monitora Stazione con Stato Live e Fallback
+
+Il sistema permette di monitorare in tempo reale una specifica stazione ferroviaria (ad esempio, Milano Bovisa Politecnico, Monza, Saronno, ecc.) visualizzando l'elenco completo di tutti i treni in transito programmati per la giornata corrente.
+
+### Caratteristiche principali:
+- **Tab Dedicata**: È presente una nuova sezione nell'header chiamata `🚉 Cerca Stazione` accessibile tramite la rotta `?tab=station`.
+- **Autocompletamento Istantaneo**: La barra di inserimento stazioni offre l'autocompletamento glassmorphic. Cliccando su una stazione suggerita o premendo Invio, la ricerca parte immediatamente.
+- **Stato Live in Tempo Reale**: Per ogni treno in transito attivo nella giornata odierna, la scheda mostra i dati live aggiornati (ritardo attuale, stato del treno come `REGOLARE`, `RITARDO`, `SOPPRESSO`, note di servizio e limitazioni).
+- **Fallback Orario Programmato**: Se un treno programmato non è attivo oggi (ad esempio, corse festive o non in servizio), viene visualizzato con opacità ridotta e contrassegnato con lo stato `NON ATTIVO`. Le stazioni di partenza e arrivo (capolinea) vengono ricostruite dinamicamente lato client/server analizzando la sequenza minima e massima delle fermate nell'indice orario.
+- **Interattività Integrata**:
+  - **Preferiti Sincronizzati**: È possibile aggiungere o rimuovere il treno dai preferiti direttamente tramite la stella posizionata sulla card. Il cambio di stato si riflette istantaneamente su tutte le schermate del sito e sulla modale dello storico.
+  - **Storico e Grafici**: Cliccando su qualsiasi card (sia attiva che inattiva), si apre la modale di analisi storica degli ultimi 30 giorni con i grafici delle prestazioni per quel treno.
+
+---
+
 ## 📱 Miglioramenti UI/UX e PWA
 
 La PWA è stata ottimizzata con moderne tecniche di progettazione dell'interfaccia utente (UI) ed esperienza utente (UX):
