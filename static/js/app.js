@@ -1732,6 +1732,8 @@ function searchStationClientSide(station, container) {
                 stato: liveT.stato || "REGOLARE",
                 critico: liveT.critico || false,
                 ritardo_attuale: liveT.ritardo_attuale || 0,
+                ritardo_capolinea: liveT.ritardo_capolinea || 0,
+                ritardo_picco: liveT.ritardo_picco || 0,
                 note: liveT.note || ""
             });
         } else {
@@ -1747,6 +1749,8 @@ function searchStationClientSide(station, container) {
                 stato: "INATTIVO",
                 critico: false,
                 ritardo_attuale: 0,
+                ritardo_capolinea: 0,
+                ritardo_picco: 0,
                 note: ""
             });
         }
@@ -1769,11 +1773,33 @@ function renderStationResults(results, container, station) {
     const favs = getFavTreni();
     
     let html = `<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
-    html += `<div class="fav-trains-grid">`;
+    
+    html += `
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Treno</th>
+                        <th>Stato</th>
+                        <th>Rit. Att.</th>
+                        <th>Rit. Capolinea</th>
+                        <th>Rit. Picco</th>
+                        <th>Transito</th>
+                        <th>Percorso</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+    `;
     
     results.forEach(t => {
         const isFav = favs.includes(t.numero);
         const statusBadge = renderStatus(t.stato, t.critico);
+        
+        let noteHtml = t.note || '-';
+        if (["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato)) {
+            noteHtml = `<span class="note-soppresso">${t.stato}</span> ${t.note ? `<span style="font-size:0.85em; color:var(--text-muted)">${t.note}</span>` : ''}`;
+        }
         
         const trenoData = encodeURIComponent(JSON.stringify({
             linea: t.linea,
@@ -1782,25 +1808,51 @@ function renderStationResults(results, container, station) {
             destinazione: t.destinazione
         }));
         
+        let trClass = '';
+        if (t.attivo) {
+            trClass = (t.critico && t.stato !== "INATTIVO") ? 'class="row-critico"' : '';
+        } else {
+            trClass = 'style="opacity: 0.6;"';
+        }
+        
+        let ritCapClass = '';
+        if (t.attivo) {
+            if (t.ritardo_capolinea > 15) {
+                ritCapClass = 'color: var(--danger); font-weight: bold;';
+            } else if (t.ritardo_capolinea > 5) {
+                ritCapClass = 'color: var(--warning); font-weight: bold;';
+            } else if (t.ritardo_capolinea > 0) {
+                ritCapClass = 'color: var(--success);';
+            }
+        }
+        
         html += `
-            <div class="fav-train-card" style="${!t.attivo ? 'opacity: 0.6;' : ''}" onclick="openModal('${trenoData}', ${t.numero})">
-                <div class="fav-train-header">
-                    <span class="fav-train-name">${t.linea} ${t.numero}</span>
-                    <button class="fav-star-icon fav-star-icon-train-${t.numero} ${isFav ? '' : 'inactive'}" onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();">★</button>
-                </div>
-                <div class="fav-train-route" title="${t.origine} ➔ ${t.destinazione}">
-                    ${t.origine} ➔ ${t.destinazione}
-                </div>
-                <div class="fav-train-status-row">
-                    <span>Orario: <strong>${t.orario_passaggio || '--:--'}</strong>${(t.attivo && t.ritardo_attuale > 0) ? ` <span style="color:var(--danger); font-weight:700;">+${t.ritardo_attuale}'</span>` : ''}</span>
-                    <span>${statusBadge}</span>
-                </div>
-                ${t.note ? `<div style="font-size: 0.78rem; color: var(--warning); margin-top: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left;" title="${t.note}">⚠️ ${t.note}</div>` : ''}
-            </div>
+            <tr ${trClass} onclick="openModal('${trenoData}', ${t.numero})">
+                <td>
+                    <button class="fav-star-icon fav-star-icon-train-${t.numero} ${isFav ? '' : 'inactive'}" 
+                            onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();" 
+                            style="margin-right: 8px;">
+                        ★
+                    </button>
+                    <strong>${t.linea} ${t.numero}</strong>
+                </td>
+                <td>${statusBadge}</td>
+                <td>${t.attivo ? `${t.ritardo_attuale}'` : '-'}</td>
+                <td style="${ritCapClass}">${t.attivo ? `${t.ritardo_capolinea}'` : '-'}</td>
+                <td>${t.attivo ? `${t.ritardo_picco}'` : '-'}</td>
+                <td><strong>${t.orario_passaggio}</strong></td>
+                <td><div style="font-size: 0.88rem; color: var(--text-muted);">${t.origine} ➔ ${t.destinazione}</div></td>
+                <td><div class="note-text">${noteHtml}</div></td>
+            </tr>
         `;
     });
     
-    html += `</div>`;
+    html += `
+                </tbody>
+            </table>
+        </div>
+    `;
+    
     container.innerHTML = html;
 }
 

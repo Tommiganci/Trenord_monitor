@@ -142,11 +142,11 @@ Il sistema permette di monitorare in tempo reale una specifica stazione ferrovia
 ### Caratteristiche principali:
 - **Tab Dedicata**: È presente una nuova sezione nell'header chiamata `🚉 Cerca Stazione` accessibile tramite la rotta `?tab=station`.
 - **Autocompletamento Istantaneo**: La barra di inserimento stazioni offre l'autocompletamento glassmorphic. Cliccando su una stazione suggerita o premendo Invio, la ricerca parte immediatamente.
-- **Stato Live in Tempo Reale**: Per ogni treno in transito attivo nella giornata odierna, la scheda mostra i dati live aggiornati (ritardo attuale, stato del treno come `REGOLARE`, `RITARDO`, `SOPPRESSO`, note di servizio e limitazioni).
-- **Fallback Orario Programmato**: Se un treno programmato non è attivo oggi (ad esempio, corse festive o non in servizio), viene visualizzato con opacità ridotta e contrassegnato con lo stato `NON ATTIVO`. Le stazioni di partenza e arrivo (capolinea) vengono ricostruite dinamicamente lato client/server analizzando la sequenza minima e massima delle fermate nell'indice orario.
+- **Formato Tabellare e Stato Live**: I treni in transito sono visualizzati in un elenco tabellare analogo a quello dei dettagli delle direttrici, mostrando colonne chiare: Treno (con icona stella), Stato (badge colorato), Ritardo Attuale, Ritardo Capolinea, Ritardo Picco, Orario di Transito programmato, Percorso (Origine ➔ Destinazione) e Note di servizio.
+- **Fallback Orario Programmato**: Se un treno programmato non è attivo oggi (ad esempio, corse festive o non in servizio), la riga viene visualizzata in semitrasparenza (`opacity: 0.6`) con stato `INATTIVO`. Il percorso (Capolinea di Origine ➔ Capolinea di Destinazione) viene ricostruito dinamicamente in memoria scansionando l'indice orario delle sequenze delle fermate.
 - **Interattività Integrata**:
-  - **Preferiti Sincronizzati**: È possibile aggiungere o rimuovere il treno dai preferiti direttamente tramite la stella posizionata sulla card. Il cambio di stato si riflette istantaneamente su tutte le schermate del sito e sulla modale dello storico.
-  - **Storico e Grafici**: Cliccando su qualsiasi card (sia attiva che inattiva), si apre la modale di analisi storica degli ultimi 30 giorni con i grafici delle prestazioni per quel treno.
+  - **Preferiti Sincronizzati**: È possibile aggiungere o rimuovere il treno dai preferiti direttamente tramite la stella posizionata a sinistra del nome del treno. Il cambio di stato si riflette istantaneamente in tutta l'applicazione (home preferiti, tabella direttrici e modale storica).
+  - **Storico e Grafici**: Cliccando su qualsiasi riga della tabella (attiva o inattiva), si apre la modale di analisi storica degli ultimi 30 giorni con i grafici di puntualità e soppressione.
 
 ---
 

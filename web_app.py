@@ -520,6 +520,8 @@ def api_station_search():
                 "stato": live_t.get("stato", "REGOLARE"),
                 "critico": live_t.get("critico", False),
                 "ritardo_attuale": live_t.get("ritardo_attuale", 0),
+                "ritardo_capolinea": live_t.get("ritardo_capolinea", 0),
+                "ritardo_picco": live_t.get("ritardo_picco", 0),
                 "note": live_t.get("note", "")
             })
         else:
@@ -535,6 +537,8 @@ def api_station_search():
                 "stato": "INATTIVO",
                 "critico": False,
                 "ritardo_attuale": 0,
+                "ritardo_capolinea": 0,
+                "ritardo_picco": 0,
                 "note": ""
             })
             
