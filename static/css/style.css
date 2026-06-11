@@ -750,3 +750,36 @@ tr:hover {
     color: #f59e0b;
     opacity: 0.8;
 }
+
+/* --- Pulsante Torna in Alto --- */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    z-index: 99;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+    opacity: 1;
+    outline: none;
+}
+
+.back-to-top:hover {
+    background-color: #2563eb;
+    transform: scale(1.1);
+}
+
+.back-to-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px);
+}

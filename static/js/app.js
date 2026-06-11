@@ -249,6 +249,7 @@ function renderDashboardData(data) {
 
     if (selectedDirettrice) {
         updateDetailView(selectedDirettrice);
+        renderTable();
     }
 }
 
@@ -470,7 +471,7 @@ function renderHomePage(direttriciMap) {
     grid.innerHTML = html;
 }
 
-function selectDirettrice(dirNameEscaped) {
+function selectDirettrice(dirNameEscaped, pushState = true) {
     const dirName = decodeURIComponent(dirNameEscaped);
     selectedDirettrice = dirName;
     currentFilter = 'all'; 
@@ -482,12 +483,24 @@ function selectDirettrice(dirNameEscaped) {
     
     updateDetailView(dirName);
     renderTable();
+    
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (pushState) {
+        history.pushState({ view: 'detail', direttrice: dirName }, '', `?dir=${encodeURIComponent(dirName)}`);
+    }
 }
 
-function showHome() {
+function showHome(pushState = true) {
     selectedDirettrice = null;
     document.getElementById('detail-view').classList.add('hidden');
     document.getElementById('home-view').classList.remove('hidden');
+    
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (pushState) {
+        history.pushState({ view: 'home' }, '', window.location.pathname);
+    }
 }
 
 function updateDetailView(dirName) {
@@ -1054,4 +1067,46 @@ function showSkeleton() {
         `;
     }
     grid.innerHTML = skeletonHtml;
+}
+
+// --- Gestione Navigazione con Tasto Indietro (History API) ---
+window.addEventListener('popstate', (event) => {
+    const state = event.state;
+    if (state && state.view === 'detail') {
+        selectDirettrice(state.direttrice, false);
+    } else {
+        showHome(false);
+    }
+});
+
+// Gestione caricamento iniziale con URL parametrizzato (?dir=...)
+window.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const dirParam = params.get('dir');
+    if (dirParam) {
+        // Imposta lo stato iniziale del browser per consentire di tornare indietro alla home
+        history.replaceState({ view: 'home' }, '', window.location.pathname);
+        history.pushState({ view: 'detail', direttrice: dirParam }, '', window.location.search);
+        selectDirettrice(dirParam, false);
+    } else {
+        history.replaceState({ view: 'home' }, '', window.location.pathname);
+    }
+});
+
+// --- Gestione Pulsante Torna in Alto ---
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTopBtn');
+    if (!btn) return;
+    if (window.scrollY > 300) {
+        btn.classList.remove('hidden');
+    } else {
+        btn.classList.add('hidden');
+    }
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
