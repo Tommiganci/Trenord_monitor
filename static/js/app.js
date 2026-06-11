@@ -538,7 +538,7 @@ function updateDetailView(dirName) {
     servizi.forEach(serv => {
         buttonsHtml += `<button class="filter-btn ${currentFilter === serv ? 'active' : ''}" data-filter="${serv}">${serv}</button>`;
     });
-    buttonsHtml += `<button class="filter-btn ${currentFilter === 'critici' ? 'active' : ''}" data-filter="critici" style="border-color: var(--danger); color: var(--danger);">Solo Critici</button>`;
+    buttonsHtml += `<button class="filter-btn filter-btn-danger ${currentFilter === 'critici' ? 'active' : ''}" data-filter="critici">Solo Critici</button>`;
     
     filterButtonsContainer.innerHTML = buttonsHtml;
     

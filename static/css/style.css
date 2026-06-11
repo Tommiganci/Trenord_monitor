@@ -532,6 +532,53 @@ tr:hover {
     }
 }
 
+/* --- Pulsanti di Filtro Linee (Pills) --- */
+.filter-btn {
+    background-color: var(--card-bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    outline: none;
+    user-select: none;
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-muted);
+    color: var(--text-main);
+}
+
+.filter-btn.active {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.filter-btn.filter-btn-danger {
+    border-color: rgba(239, 68, 68, 0.4);
+    color: var(--danger);
+}
+
+.filter-btn.filter-btn-danger:hover:not(.active) {
+    background-color: rgba(239, 68, 68, 0.08);
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.filter-btn.filter-btn-danger.active {
+    background-color: var(--danger);
+    border-color: var(--danger);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
 .footer-contacts {
     margin-top: 10px;
     display: flex;
