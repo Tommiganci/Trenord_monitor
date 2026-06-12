@@ -9,7 +9,7 @@ Il progetto scarica i dati dall'API pubblica di Viaggiatreno in modo parallelo (
 ## 🌟 Funzionalità principali
 
 - **Scansione Parallela Multithread**: Monitora decine di treni contemporaneamente in pochissimi secondi grazie a `ThreadPoolExecutor`.
-- **Rilevamento Anomalie Avanzato**: Calcola lo stato del treno (`REGOLARE`, `RITARDO`, `SOPPRESSO`, `PARZ. SOPPRESSO`, `LIMITATO`, `INATTIVO`) incrociando i provvedimenti ufficiali e l'elenco delle stazioni effettivamente raggiunte.
+- **Rilevamento Anomalie Avanzato**: Calcola lo stato del treno (`REGOLARE`, `RITARDO`, `SOPPRESSO`, `PARZ. SOPPRESSO`, `LIMITATO`, `INATTIVO`) incrociando i provvedimenti ufficiali e l'elenco delle stazioni effettivamente raggiunte. Include una gestione intelligente dei **lavori programmati** (rilevati dinamicamente confrontando la destinazione programmata da RFI e escludendo parole chiave come `LAVORI` o `POTENZIAMENTO`) per evitare falsi positivi su treni rimodulati in anticipo.
 - **Grado di Disagio**: Calcola in tempo reale la percentuale di treni anomali/critici (treno con ritardo al capolinea > 15 minuti o soppressione/limitazione).
 - **Dashboard Web Interattiva (PWA)**: Un'applicazione web responsive compatibile con l'installazione PWA, dotata di grafici neon dinamici, filtri rapidi di linea, skeleton loading, navigazione fluida tramite History API e pulsante rapido per tornare in alto.
 - **Ricerca Tratte e Affidabilità**: Motore di ricerca per trovare i treni diretti tra stazioni di partenza e arrivo, completo di orari ufficiali e metriche storiche di affidabilità degli ultimi 30 giorni calcolate al volo (Puntualità %, Ritardo Medio, Soppressioni %).
@@ -28,6 +28,8 @@ Il codice è organizzato nei seguenti file principali:
 *   📄 [bollettino.py](bollettino.py): Tool a riga di comando per visualizzare i report giornalieri e mensili. Gestisce anche l'esportazione in HTML statico (copiando gli indici orari per la ricerca tratte offline in `docs/data/`).
 *   📄 [web_app.py](web_app.py): Server web locale Flask che espone API REST per i dati in tempo reale, per i grafici storici e per il motore di ricerca tratte.
 *   📄 [archive.py](archive.py): Script di manutenzione per consolidare i database giornalieri JSON nel registro storico compatto `registro_storico.json` ed eliminare i file temporanei giornalieri.
+*   📄 [update_direttrici_from_gtfs.py](update_direttrici_from_gtfs.py): Sincronizza i file delle direttrici con i treni reali presenti nel GTFS, escludendo corse sospese ed aggiungendo le nuove relazioni.
+*   📄 [build_timetable_index.py](build_timetable_index.py): Elabora il feed GTFS statico per generare i file compressi degli orari e delle stazioni necessari per il motore di ricerca tratte e stazioni.
 *   📁 [direttrici/](direttrici): Directory contenente i file di testo (`.txt`) che definiscono le direttrici e i numeri dei treni da monitorare.
 *   📁 [templates/](templates): Contiene `index.html`, il template HTML/JavaScript della dashboard.
 *   📁 [data/](data): Cartella in cui vengono memorizzati i dati del monitoraggio e gli indici di ricerca:
@@ -183,6 +185,24 @@ I dati di popolamento delle corse sono estratti e generati automaticamente a par
 - **R32 (Mortara - Alessandria)**: incorporata nella direttrice 25 associando le corse R25 (Novara-Mortara-Alessandria).
 - **S34 (Brescia - Iseo)**: mappata sulle corse identificate come S31 nel GTFS.
 - **R33 (Pavia - Voghera)**: in questa versione dell'orario non è presente come servizio autonomo nel GTFS, ma la tratta Pavia-Voghera è pienamente monitorata tramite i treni della linea **RE13**.
+
+## 🔄 Sincronizzazione GTFS e Cambio Orario
+
+Al cambio di orario stagionale (es. orario estivo o invernale), per allineare il monitor all'orario in vigore:
+
+1. **Scarica il nuovo GTFS:** Scarica il file `trenord_gtfs.zip` aggiornato (ad esempio da *Open Data Regione Lombardia*) e sostituiscilo nella cartella del progetto.
+2. **Aggiorna i treni delle direttrici:** Esegui lo script per ricalcolare i treni attivi in base al nuovo calendario (rimuovendo le corse non più attive come quelle scolastiche ed inserendo quelle nuove):
+   ```bash
+   python update_direttrici_from_gtfs.py
+   ```
+3. **Rigenera l'indice orario delle ricerche:** Esegui lo script per ricostruire la tabella degli orari compressi e l'elenco delle stazioni per la ricerca tratte e la vista stazione:
+   ```bash
+   python build_timetable_index.py
+   ```
+4. **Esporta la dashboard statica:** Rigenera la build HTML statica per GitHub Pages:
+   ```bash
+   python bollettino.py --export-html
+   ```
 
 ## 🤝 Collaborazione e Segnalazioni
 
