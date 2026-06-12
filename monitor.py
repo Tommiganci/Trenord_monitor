@@ -156,6 +156,7 @@ def calcola_stato(api_data, linea, capolinea_attesi):
             stato_calcolato = "INATTIVO"
     else:
         sub_desc = api_data.get("subTitle", "").upper()
+        is_lavori = any(x in sub_desc for x in ["LAVORI", "POTENZIAMENTO", "PROGRAMMAT"])
         
         # Rileva fermate soppresse (actualFermataType == 3 o "3")
         has_suppressed_stops = any(f.get("actualFermataType") in [3, "3"] for f in fermate)
@@ -163,8 +164,8 @@ def calcola_stato(api_data, linea, capolinea_attesi):
         last_stop_suppressed = len(fermate) > 0 and fermate[-1].get("actualFermataType") in [3, "3"]
         
         # Parole chiave testuali nei dettagli/note
-        is_limitato_text = any(x in sub_desc for x in ["LIMITATO", "TERMINA"])
-        is_soppresso_text = any(x in sub_desc for x in ["SOPPRESS", "CANCELLAT"])
+        is_limitato_text = any(x in sub_desc for x in ["LIMITATO", "TERMINA"]) and not is_lavori
+        is_soppresso_text = any(x in sub_desc for x in ["SOPPRESS", "CANCELLAT"]) and not is_lavori
         
         if first_stop_suppressed or last_stop_suppressed or is_limitato_text:
             stato_calcolato = "LIMITATO"
@@ -172,8 +173,12 @@ def calcola_stato(api_data, linea, capolinea_attesi):
             stato_calcolato = "PARZ. SOPPRESSO"
         elif capolinea_attesi and fermate:
              ult_fermata_prog = fermate[-1].get("stazione", "").upper()
-             if all(cap not in ult_fermata_prog for cap in capolinea_attesi):
+             dest_rfi = destinazione.strip().upper()
+             if ult_fermata_prog != dest_rfi:
                  stato_calcolato = "LIMITATO"
+             elif all(cap not in ult_fermata_prog for cap in capolinea_attesi):
+                 # Destinazione raggiunta coincide con RFI ma non è tra i capolinea attesi (lavori programmati)
+                 pass
                      
     if stato_calcolato == "REGOLARE" and ritardo_attuale > 0:
         stato_calcolato = "RITARDO"

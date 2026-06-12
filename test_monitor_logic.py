@@ -178,5 +178,36 @@ class TestMonitorLogic(unittest.TestCase):
         merged = monitor.merge_dati(old_data, new_scan, now_dt)
         self.assertEqual(merged["stato"], "SOPPRESSO")
 
+    def test_calcola_stato_lavori_programmati(self):
+        api_data = {
+            "provvedimento": 0,
+            "ritardo": 0,
+            "nonPartito": False,
+            "origine": "MILANO",
+            "destinazione": "CUCCIAGO",
+            "subTitle": "Treno limitato per lavori di potenziamento",
+            "fermate": [
+                {"stazione": "MILANO", "effettiva": 12345},
+                {"stazione": "CUCCIAGO", "effettiva": 123456}
+            ]
+        }
+        res = monitor.calcola_stato(api_data, "S11", ["CHIASSO", "COMO"])
+        self.assertEqual(res["stato"], "REGOLARE")
+
+    def test_calcola_stato_limitato_in_corso_opera(self):
+        api_data = {
+            "provvedimento": 0,
+            "ritardo": 0,
+            "nonPartito": False,
+            "origine": "MILANO",
+            "destinazione": "LECCO",
+            "fermate": [
+                {"stazione": "MILANO", "effettiva": 12345},
+                {"stazione": "TRIUGGIO-PONTE ALBIATE", "effettiva": 123456}
+            ]
+        }
+        res = monitor.calcola_stato(api_data, "S7", ["LECCO", "GARIBALDI"])
+        self.assertEqual(res["stato"], "LIMITATO")
+
 if __name__ == "__main__":
     unittest.main()
