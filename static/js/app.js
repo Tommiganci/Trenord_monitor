@@ -2006,7 +2006,7 @@ function formatTime(ms) {
 const CORS_PROXIES = [
     url => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
     url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-    url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
+    url => `https://cors-anywhere.herokuapp.com/${url}`
 ];
 
 function fetchWithTimeout(url, options = {}, timeout = 4000) {
@@ -2084,16 +2084,33 @@ function queryViaggiatrenoWithProxies(trainNum, resultsContainer) {
         .catch(err => {
             console.error("Errore ricerca live statica con proxy:", err);
             resultsContainer.innerHTML = `
-                <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
-                    <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
-                    <div style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 10px;">
-                        ${err.message || 'Errore di connessione o timeout.'}
+                <div class="live-train-info-box" style="border: 1px solid rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; border-radius: 12px; margin-top: 20px; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <div style="text-align: center; font-size: 2rem; margin-bottom: 15px;">⚠️</div>
+                    <div class="live-train-info-title" style="color: var(--danger); font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; text-align: center;">
+                        Impossibile recuperare i dati in tempo reale
                     </div>
-                    <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; border-top: 1px dashed rgba(239, 68, 68, 0.2); padding-top: 10px; margin-top: 10px;">
-                        Nota: Nella versione statica ospitata su GitHub Pages, la connessione diretta a Viaggiatreno non è consentita. 
-                        Le richieste utilizzano proxy CORS pubblici gratuiti che possono risultare lenti, instabili o andare in timeout.
-                        Per prestazioni ottimali garantite, clona il progetto ed esegui il server Flask locale con <code>python web_app.py</code>.
+                    <div style="font-size: 0.92rem; color: var(--text-main); margin-bottom: 20px; line-height: 1.5; text-align: center;">
+                        La connessione diretta alle API di Viaggiatreno è bloccata dal browser per motivi di sicurezza (CORS). I proxy pubblici gratuiti utilizzati come alternativa sono andati in timeout o sono offline.
+                    </div>
+                    
+                    <div style="border-top: 1px dashed rgba(239, 68, 68, 0.2); padding-top: 15px; margin-top: 15px;">
+                        <h4 style="margin: 0 0 8px 0; font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Opzione 1 (Consigliata): Sblocca il Proxy Demo</h4>
+                        <p style="margin: 0 0 12px 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+                            Puoi attivare l'accesso temporaneo per oggi cliccando sul pulsante sotto e selezionando <strong>"Request temporary access to the demo server"</strong> nella pagina che si apre. Poi torna qui e riprova la ricerca.
+                        </p>
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <a href="https://cors-anywhere.herokuapp.com/corsdemo" target="_blank" style="display: inline-block; background-color: var(--accent); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: all 0.2s ease; border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);">
+                                🔓 Attiva temporaneamente CORS Anywhere
+                            </a>
+                        </div>
+                        
+                        <h4 style="margin: 0 0 8px 0; font-size: 0.95rem; color: var(--text-main); font-weight: 600;">Opzione 2: Esegui in Locale (Prestazioni Ottimali)</h4>
+                        <p style="margin: 0 0 10px 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;">
+                            Clona il progetto ed esegui il server locale per evitare qualsiasi blocco CORS e avere caricamenti istantanei:
+                        </p>
+                        <div style="background-color: var(--bg-main); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.85rem; color: var(--text-main); overflow-x: auto; margin-bottom: 5px;">
+                            python web_app.py
+                        </div>
                     </div>
                 </div>
             `;
