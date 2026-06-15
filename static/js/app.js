@@ -1088,22 +1088,26 @@ function switchTab(tabName, pushState = true) {
     const tabMon = document.getElementById('tab-monitor');
     const tabSrc = document.getElementById('tab-search');
     const tabStn = document.getElementById('tab-station');
+    const tabLive = document.getElementById('tab-live-train');
     
     const routeView = document.getElementById('route-search-view');
     const homeView = document.getElementById('home-view');
     const detailView = document.getElementById('detail-view');
     const stationView = document.getElementById('station-search-view');
+    const liveView = document.getElementById('live-train-view');
     
     if (!tabMon || !tabSrc || !tabStn) return;
 
     tabMon.classList.remove('active');
     tabSrc.classList.remove('active');
     tabStn.classList.remove('active');
+    if (tabLive) tabLive.classList.remove('active');
     
     routeView.classList.add('hidden');
     homeView.classList.add('hidden');
     detailView.classList.add('hidden');
     if (stationView) stationView.classList.add('hidden');
+    if (liveView) liveView.classList.add('hidden');
 
     if (tabName === 'search') {
         tabSrc.classList.add('active');
@@ -1118,6 +1122,15 @@ function switchTab(tabName, pushState = true) {
         initStationAutocomplete();
         if (pushState) {
             history.pushState({ view: 'station' }, '', '?tab=station');
+        }
+    } else if (tabName === 'live-train') {
+        if (tabLive) tabLive.classList.add('active');
+        if (liveView) liveView.classList.remove('hidden');
+        const trainInput = document.getElementById('live-train-search-input');
+        const trainNum = trainInput ? trainInput.value.trim() : '';
+        if (pushState) {
+            const url = trainNum ? `?tab=live-train&treno=${encodeURIComponent(trainNum)}` : '?tab=live-train';
+            history.pushState({ view: 'live-train', treno: trainNum }, '', url);
         }
     } else {
         tabMon.classList.add('active');
@@ -1980,6 +1993,246 @@ function resetStationFilters() {
     applyStationFilters();
 }
 
+// --- Gestione Ricerca Treno Live ---
+
+function formatTime(ms) {
+    if (!ms) return '--:--';
+    const date = new Date(ms);
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${hours}:${minutes}`;
+}
+
+function performLiveTrainSearch(trainNum, updateHistory = true) {
+    if (!trainNum) return;
+    
+    const resultsContainer = document.getElementById('live-train-results-container');
+    if (!resultsContainer) return;
+    
+    resultsContainer.classList.remove('hidden');
+    resultsContainer.innerHTML = `
+        <div style="text-align: center; padding: 40px 0;">
+            <div class="skeleton-circle" style="width: 40px; height: 40px; margin: 0 auto 15px;"></div>
+            <div class="skeleton-text" style="width: 150px; margin: 0 auto; height: 1.2rem;"></div>
+            <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.95rem;">Interrogazione in tempo reale delle API di Viaggiatreno...</p>
+        </div>
+    `;
+    
+    if (updateHistory) {
+        history.pushState({ view: 'live-train', treno: trainNum }, '', `?tab=live-train&treno=${encodeURIComponent(trainNum)}`);
+    }
+    
+    const url = `/api/train_live/${encodeURIComponent(trainNum)}`;
+    fetch(url)
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(errData => {
+                    throw new Error(errData.error || `Treno non trovato o API non raggiungibile.`);
+                }).catch(() => {
+                    throw new Error(`Treno non trovato (Errore ${res.status}).`);
+                });
+            }
+            return res.json();
+        })
+        .then(data => {
+            renderLiveTrainResults(data);
+        })
+        .catch(err => {
+            console.error("Errore ricerca live:", err);
+            resultsContainer.innerHTML = `
+                <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
+                    <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
+                    <div style="font-size: 0.9rem; color: var(--text-main);">${err.message || 'Verifica il numero del treno o riprova più tardi.'}</div>
+                </div>
+            `;
+        });
+}
+
+function renderLiveTrainResults(data) {
+    const resultsContainer = document.getElementById('live-train-results-container');
+    if (!resultsContainer) return;
+    
+    const favs = getFavTreni();
+    const isFav = favs.includes(parseInt(data.numeroTreno));
+    
+    let delayText = '';
+    let delayBadgeClass = 'status-badge';
+    if (data.ritardo > 0) {
+        delayText = `+${data.ritardo} min`;
+        delayBadgeClass += ' status-crit';
+    } else if (data.ritardo < 0) {
+        delayText = `${data.ritardo} min`;
+        delayBadgeClass += ' status-ok';
+    } else if (data.ritardo === 0) {
+        delayText = 'in orario';
+        delayBadgeClass += ' status-ok';
+    } else {
+        delayText = 'ritardo non disp.';
+        delayBadgeClass += ' status-warn';
+    }
+
+    let statusText = 'IN VIAGGIO';
+    let statusBadgeClass = 'status-badge status-ok';
+    if (data.provvedimento === 1) {
+        statusText = 'SOPPRESSO';
+        statusBadgeClass = 'status-badge status-crit';
+    } else if (data.provvedimento === 2) {
+        statusText = 'PARZ. SOPPRESSO';
+        statusBadgeClass = 'status-badge status-crit';
+    } else if (data.nonPartito) {
+        statusText = 'NON PARTITO';
+        statusBadgeClass = 'status-badge status-warn';
+    } else if (data.arrivato) {
+        statusText = 'ARRIVATO';
+        statusBadgeClass = 'status-badge status-ok';
+    }
+
+    // Ultimo rilevamento
+    let lastDetectionHtml = '';
+    if (data.stazioneUltimoRilevamento) {
+        const timeStr = data.oraUltimoRilevamento ? ` alle <strong>${formatTime(data.oraUltimoRilevamento)}</strong>` : '';
+        lastDetectionHtml = `
+            <div class="live-train-info-box" style="margin-bottom: 20px;">
+                <div class="live-train-info-title">Ultimo Rilevamento</div>
+                <div style="font-size: 0.95rem; color: var(--text-main);">Stazione: <strong>${data.stazioneUltimoRilevamento}</strong>${timeStr}</div>
+            </div>
+        `;
+    }
+
+    // Note di viaggio
+    let notesHtml = '';
+    if (data.subTitle && data.subTitle.trim()) {
+        notesHtml = `
+            <div class="live-train-info-box" style="margin-bottom: 20px; border-color: rgba(245, 158, 11, 0.3); background-color: rgba(245, 158, 11, 0.05);">
+                <div class="live-train-info-title" style="color: var(--warning);">Note di Viaggio</div>
+                <div style="font-size: 0.9rem; color: var(--text-main);">${data.subTitle}</div>
+            </div>
+        `;
+    }
+
+    // Timeline delle fermate
+    const fermate = data.fermate || [];
+    let stopsHtml = '';
+    if (fermate.length === 0) {
+        stopsHtml = '<p style="color: var(--text-muted); text-align: center; padding: 20px;">Nessuna fermata disponibile.</p>';
+    } else {
+        stopsHtml = `
+            <div class="timeline-stepper">
+                ${fermate.map(f => {
+                    let nodeClass = 'upcoming';
+                    let isCompleted = false;
+                    let isCancelled = f.actualFermataType === 3 || f.actualFermataType === "3";
+                    let isActive = false;
+                    
+                    if (isCancelled) {
+                        nodeClass = 'cancelled';
+                    } else if (f.effettiva !== null && f.effettiva !== undefined) {
+                        isCompleted = true;
+                        if (!data.arrivato && data.stazioneUltimoRilevamento && f.stazione.toUpperCase().trim() === data.stazioneUltimoRilevamento.toUpperCase().trim()) {
+                            nodeClass = 'active';
+                            isActive = true;
+                        } else {
+                            nodeClass = 'completed';
+                        }
+                    } else {
+                        nodeClass = 'upcoming';
+                    }
+                    
+                    const scheduledTimeStr = formatTime(f.programmata);
+                    let timeInfoHtml = '';
+                    
+                    if (isCancelled) {
+                        timeInfoHtml = `<div class="timeline-times"><span class="timeline-delay-badge status-crit">SOPPRESSA</span></div>`;
+                    } else if (isCompleted || isActive) {
+                        const actualTimeStr = formatTime(f.effettiva);
+                        let delayClass = 'timeline-actual-time';
+                        let delayBadge = '';
+                        
+                        if (f.ritardo > 0) {
+                            delayClass += ' delayed';
+                            delayBadge = `<span class="timeline-delay-badge status-crit">+${f.ritardo} min</span>`;
+                        } else if (f.ritardo < 0) {
+                            delayBadge = `<span class="timeline-delay-badge status-ok">${f.ritardo} min</span>`;
+                        } else {
+                            delayBadge = `<span class="timeline-delay-badge status-ok">in orario</span>`;
+                        }
+                        
+                        timeInfoHtml = `
+                            <div class="timeline-times">
+                                <span>Prog. ${scheduledTimeStr}</span>
+                                <span>•</span>
+                                <span class="${delayClass}">Eff. ${actualTimeStr}</span>
+                                ${delayBadge}
+                            </div>
+                        `;
+                    } else {
+                        let delayBadge = '';
+                        if (f.ritardo > 0) {
+                            delayBadge = `<span class="timeline-delay-badge status-warn">+${f.ritardo} min</span>`;
+                        } else if (f.ritardo < 0) {
+                            delayBadge = `<span class="timeline-delay-badge status-ok">${f.ritardo} min</span>`;
+                        }
+                        
+                        timeInfoHtml = `
+                            <div class="timeline-times">
+                                <span>Prog. ${scheduledTimeStr}</span>
+                                ${delayBadge}
+                            </div>
+                        `;
+                    }
+                    
+                    const nameClass = isCancelled ? 'timeline-station-name cancelled-text' : 'timeline-station-name';
+                    
+                    return `
+                        <div class="timeline-step">
+                            <div class="timeline-node ${nodeClass}"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-station-info">
+                                    <span class="${nameClass}">${f.stazione}</span>
+                                    ${timeInfoHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        `;
+    }
+
+    resultsContainer.innerHTML = `
+        <div class="live-train-header">
+            <div class="live-train-title-area">
+                <div class="live-train-number">
+                    <span>🚊 ${data.categoria} ${data.numeroTreno}</span>
+                    <button class="fav-star-icon fav-star-icon-train-${data.numeroTreno} ${isFav ? '' : 'inactive'}" 
+                            onclick="toggleFavTrain(event, ${parseInt(data.numeroTreno)})"
+                            style="background:none; border:none; font-size:1.6rem; cursor:pointer; vertical-align: middle;">
+                        ★
+                    </button>
+                </div>
+                <div class="live-train-route">
+                    <strong>${data.origine}</strong> ➔ <strong>${data.destinazione}</strong>
+                </div>
+            </div>
+            <div class="live-train-status-area">
+                <span class="${statusBadgeClass}">${statusText}</span>
+                <span class="${delayBadgeClass}">${delayText}</span>
+            </div>
+        </div>
+        
+        ${notesHtml}
+        ${lastDetectionHtml}
+        ${stopsHtml}
+        
+        <div class="live-train-history-btn">
+            <button class="filter-btn active" onclick="openModal(null, ${parseInt(data.numeroTreno)})">
+                🗓️ Visualizza Storico Affidabilità Mensile
+            </button>
+        </div>
+    `;
+}
+
 // --- Gestione Navigazione con Tasto Indietro (History API) ---
 window.addEventListener('popstate', (event) => {
     const state = event.state;
@@ -1988,6 +2241,23 @@ window.addEventListener('popstate', (event) => {
             switchTab('search', false);
         } else if (state.view === 'station') {
             switchTab('station', false);
+        } else if (state.view === 'live-train') {
+            switchTab('live-train', false);
+            if (state.treno) {
+                const trainInput = document.getElementById('live-train-search-input');
+                if (trainInput) trainInput.value = state.treno;
+                performLiveTrainSearch(state.treno, false);
+            } else {
+                const trainInput = document.getElementById('live-train-search-input');
+                if (trainInput) trainInput.value = '';
+                const clearBtn = document.getElementById('clear-live-train-search-btn');
+                if (clearBtn) clearBtn.classList.add('hidden');
+                const resultsContainer = document.getElementById('live-train-results-container');
+                if (resultsContainer) {
+                    resultsContainer.classList.add('hidden');
+                    resultsContainer.innerHTML = '';
+                }
+            }
         } else if (state.view === 'detail') {
             switchTab('monitor', false);
             selectDirettrice(state.direttrice, false);
@@ -2036,9 +2306,58 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Ascoltatori per la ricerca Treno Live
+    const btnLiveTrainSearch = document.getElementById('searchLiveTrainBtn');
+    if (btnLiveTrainSearch) {
+        btnLiveTrainSearch.addEventListener('click', () => {
+            const trainInput = document.getElementById('live-train-search-input');
+            if (trainInput) {
+                const trainNum = trainInput.value.trim();
+                if (trainNum) {
+                    performLiveTrainSearch(trainNum);
+                }
+            }
+        });
+    }
+
+    const inputLiveTrainSearch = document.getElementById('live-train-search-input');
+    if (inputLiveTrainSearch) {
+        inputLiveTrainSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const trainNum = inputLiveTrainSearch.value.trim();
+                if (trainNum) {
+                    performLiveTrainSearch(trainNum);
+                }
+            }
+        });
+        
+        const clearLiveTrainSearchBtn = document.getElementById('clear-live-train-search-btn');
+        inputLiveTrainSearch.addEventListener('input', () => {
+            if (inputLiveTrainSearch.value.trim()) {
+                clearLiveTrainSearchBtn.classList.remove('hidden');
+            } else {
+                clearLiveTrainSearchBtn.classList.add('hidden');
+            }
+        });
+        
+        if (clearLiveTrainSearchBtn) {
+            clearLiveTrainSearchBtn.addEventListener('click', () => {
+                inputLiveTrainSearch.value = '';
+                clearLiveTrainSearchBtn.classList.add('hidden');
+                const resultsContainer = document.getElementById('live-train-results-container');
+                if (resultsContainer) {
+                    resultsContainer.classList.add('hidden');
+                    resultsContainer.innerHTML = '';
+                }
+                history.pushState({ view: 'live-train', treno: '' }, '', '?tab=live-train');
+            });
+        }
+    }
+
     const params = new URLSearchParams(window.location.search);
     const tabParam = params.get('tab');
     const dirParam = params.get('dir');
+    const trenoParam = params.get('treno');
     
     if (tabParam === 'search') {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
@@ -2048,6 +2367,19 @@ window.addEventListener('DOMContentLoaded', () => {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
         history.pushState({ view: 'station' }, '', window.location.search);
         switchTab('station', false);
+    } else if (tabParam === 'live-train' || trenoParam) {
+        history.replaceState({ view: 'home' }, '', window.location.pathname);
+        history.pushState({ view: 'live-train', treno: trenoParam || '' }, '', window.location.search);
+        switchTab('live-train', false);
+        if (trenoParam) {
+            const trainInput = document.getElementById('live-train-search-input');
+            if (trainInput) {
+                trainInput.value = trenoParam;
+                const clearBtn = document.getElementById('clear-live-train-search-btn');
+                if (clearBtn) clearBtn.classList.remove('hidden');
+            }
+            performLiveTrainSearch(trenoParam, false);
+        }
     } else if (dirParam) {
         history.replaceState({ view: 'home' }, '', window.location.pathname);
         history.pushState({ view: 'detail', direttrice: dirParam }, '', window.location.search);

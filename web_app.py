@@ -3,6 +3,7 @@ import glob
 import json
 from datetime import datetime
 from flask import Flask, jsonify, render_template, request
+import requests
 
 app = Flask(__name__)
 DATA_DIR = "data"
@@ -550,6 +551,67 @@ from flask import send_from_directory
 @app.route("/data/<path:filename>")
 def serve_data_files(filename):
     return send_from_directory(DATA_DIR, filename)
+BASE_URL = "http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno"
+HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+
+@app.route("/api/train_live/<numero>")
+def api_train_live(numero):
+    if not numero.isdigit():
+        return jsonify({"error": "Numero treno non valido"}), 400
+        
+    try:
+        # Step 1: Autocomplete per trovare il codice stazione e il timestamp
+        autocomplete_url = f"{BASE_URL}/cercaNumeroTrenoTrenoAutocomplete/{numero}"
+        r_auto = requests.get(autocomplete_url, headers=HEADERS, timeout=10)
+        
+        if r_auto.status_code != 200 or not r_auto.text.strip():
+            return jsonify({"error": f"Treno {numero} non trovato"}), 404
+            
+        lines = r_auto.text.strip().split("\n")
+        target_line = None
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+            if "|" in line:
+                parts = line.split("|")
+                subparts = parts[1].split("-")
+                if len(subparts) >= 3 and subparts[0] == numero:
+                    target_line = line
+                    break
+        
+        if not target_line:
+            for line in lines:
+                line = line.strip()
+                if line and "|" in line:
+                    target_line = line
+                    break
+                    
+        if not target_line:
+            return jsonify({"error": f"Treno {numero} non trovato"}), 404
+            
+        parts = target_line.split("|")
+        subparts = parts[1].split("-")
+        codice_stazione = subparts[1]
+        timestamp = subparts[2]
+        
+        # Step 2: Dettaglio andamento treno
+        detail_url = f"{BASE_URL}/andamentoTreno/{codice_stazione}/{numero}/{timestamp}"
+        r_detail = requests.get(detail_url, headers=HEADERS, timeout=10)
+        
+        if r_detail.status_code != 200:
+            return jsonify({"error": "Errore nel recupero dei dettagli del treno"}), 502
+            
+        if not r_detail.text.strip():
+            return jsonify({"error": "Nessun dato disponibile in tempo reale (treno non attivo o non ancora partito)"}), 404
+            
+        return jsonify(r_detail.json())
+        
+    except requests.exceptions.Timeout:
+        return jsonify({"error": "Timeout della connessione con le API di Viaggiatreno"}), 504
+    except Exception as e:
+        return jsonify({"error": f"Errore interno: {str(e)}"}), 500
+
 
 
 if __name__ == "__main__":

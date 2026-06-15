@@ -153,6 +153,25 @@ Il sistema permette di monitorare in tempo reale una specifica stazione ferrovia
 
 ---
 
+## 🚊 Cerca Treno Live (Tempo Reale)
+
+Il sistema integra una sezione di ricerca treni in tempo reale che bypassa i database locali e contatta direttamente le API pubbliche di Viaggiatreno. Consente di tracciare in tempo reale l'andamento di qualsiasi convoglio attivo sulla rete nazionale.
+
+### Caratteristiche principali:
+- **Tab Dedicata**: Una scheda `🚊 Treno Live` nell'header accessibile direttamente tramite `?tab=live-train`.
+- **Query Parametrizzata (Deep Linking)**: Navigando all'indirizzo `?tab=live-train&treno=XXXX` (dove `XXXX` è il numero del treno) l'applicazione avvia automaticamente la ricerca, consentendo di condividere o salvare nei preferiti il link di tracciamento live del treno.
+- **Timeline Verticale (Stepper) Interattiva**: Popola uno stepper grafico che visualizza l'intera tratta ferroviaria e contrassegna ogni singola fermata con colori semaforici coerenti:
+  - **Verde**: Fermate già completate con successo, indicando l'orario di transito effettivo e l'eventuale ritardo/anticipo accumulato.
+  - **Blu Pulsante**: La stazione in cui si trova attualmente il treno, evidenziata con una micro-animazione di pulsazione.
+  - **Grigio/Bianco**: Fermate future previste con l'orario programmato teorico e l'eventuale stima del ritardo programmato.
+  - **Rosso e Strikethrough**: Fermate soppresse/cancellate, chiaramente sbarrate e contrassegnate come soppresse.
+- **Dettagli Dashboard Live**: Un pannello informativo di testa che mostra la categoria del treno, il percorso programmato (Origine ➔ Destinazione), lo stato di marcia (`IN VIAGGIO`, `ARRIVATO`, `NON PARTITO`, `SOPPRESSO`) e l'ultimo rilevamento registrato con stazione e orario.
+- **Integrazione Storico & Preferiti**:
+  - Un pulsante integrato per aggiungere/rimuovere il treno dai preferiti con sincronizzazione in tempo reale su tutta l'applicazione.
+  - Un collegamento rapido per aprire la modale interattiva di Chart.js e analizzare l'andamento dell'affidabilità mensile di quel treno specifico.
+
+---
+
 ## 📱 Miglioramenti UI/UX e PWA
 
 La PWA è stata ottimizzata con moderne tecniche di progettazione dell'interfaccia utente (UI) ed esperienza utente (UX):

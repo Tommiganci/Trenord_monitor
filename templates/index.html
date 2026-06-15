@@ -42,6 +42,7 @@
             <button id="tab-monitor" class="nav-tab active" onclick="switchTab('monitor')">📊 Monitor Direttrici</button>
             <button id="tab-search" class="nav-tab" onclick="switchTab('search')">🔍 Cerca Percorso</button>
             <button id="tab-station" class="nav-tab" onclick="switchTab('station')">🚉 Cerca Stazione</button>
+            <button id="tab-live-train" class="nav-tab" onclick="switchTab('live-train')">🚊 Treno Live</button>
         </div>
     </header>
 
@@ -401,6 +402,31 @@
             
             <!-- Contenitore Risultati -->
             <div id="station-results-container">
+                <!-- Verrà popolato dinamicamente -->
+            </div>
+        </div>
+
+        <!-- Vista Cerca Treno Live: Ricerca tempo reale per numero treno -->
+        <div id="live-train-view" class="hidden">
+            <h2 style="margin-top: 0; margin-bottom: 25px; font-weight: 700; font-size: 1.6rem;">Cerca Treno Live</h2>
+            
+            <div class="search-form-card" style="background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); padding: 25px; margin-bottom: 30px; position: relative;">
+                <div style="position: relative;">
+                    <label for="live-train-search-input" style="display: block; font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px;">Numero Treno</label>
+                    <div style="position: relative;">
+                        <span style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 0.8rem;">🚊</span>
+                        <input type="text" id="live-train-search-input" class="search-input" placeholder="Inserisci il numero del treno (es. 24715)..." autocomplete="off" style="padding-left: 42px;">
+                        <button id="clear-live-train-search-btn" class="clear-btn hidden">&times;</button>
+                    </div>
+                </div>
+                
+                <button id="searchLiveTrainBtn" class="install-btn" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); margin-top: 20px; border: none; font-family: inherit;">
+                    🔍 Cerca Stato in Tempo Reale
+                </button>
+            </div>
+            
+            <!-- Contenitore Risultati Live -->
+            <div id="live-train-results-container" class="hidden">
                 <!-- Verrà popolato dinamicamente -->
             </div>
         </div>

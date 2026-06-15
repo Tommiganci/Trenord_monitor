@@ -1,5 +1,6 @@
 :root {
     --bg-color: #0f1115;
+    --bg-main: #0f1115;
     --card-bg: #1a1d24;
     --text-main: #f0f0f0;
     --text-muted: #8b92a5;
@@ -939,3 +940,205 @@ tr:hover {
     background-color: rgba(59, 130, 246, 0.08) !important;
     border-color: rgba(59, 130, 246, 0.4) !important;
 }
+
+/* Live Train Timeline & Stepper Styles */
+.live-train-header {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.live-train-title-area {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.live-train-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.live-train-route {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.live-train-status-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.timeline-stepper {
+    position: relative;
+    padding-left: 35px;
+    margin: 20px 10px;
+}
+
+/* Vertical line */
+.timeline-stepper::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--success) 0%, rgba(59, 130, 246, 0.5) 50%, var(--border-color) 100%);
+}
+
+.timeline-step {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+/* Bullet/Node */
+.timeline-node {
+    position: absolute;
+    left: -31px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+    border: 3px solid var(--border-color);
+    z-index: 2;
+    transition: all 0.25s ease;
+}
+
+/* Active stop (currently at this station) */
+.timeline-node.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+    animation: nodePulse 2s infinite;
+}
+
+@keyframes nodePulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0px rgba(59, 130, 246, 0);
+    }
+}
+
+/* Completed stop */
+.timeline-node.completed {
+    border-color: var(--success);
+    background-color: var(--success);
+}
+
+/* Cancelled stop */
+.timeline-node.cancelled {
+    border-color: var(--danger);
+    background-color: var(--danger);
+}
+
+/* Upcoming stop */
+.timeline-node.upcoming {
+    border-color: var(--text-muted);
+    background-color: var(--bg-main);
+}
+
+.timeline-content {
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.15s ease;
+}
+
+.timeline-content:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.timeline-station-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.timeline-station-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.timeline-station-name.cancelled-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.timeline-times {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 8px;
+}
+
+.timeline-actual-time {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.timeline-actual-time.delayed {
+    color: var(--danger);
+}
+
+.timeline-delay-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.live-train-info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(59, 130, 246, 0.04);
+    border: 1px dashed rgba(59, 130, 246, 0.2);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.live-train-info-title {
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.live-train-history-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
