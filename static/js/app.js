@@ -2003,6 +2003,103 @@ function formatTime(ms) {
     return `${hours}:${minutes}`;
 }
 
+const CORS_PROXIES = [
+    url => `https://corsproxy.io/?url=${encodeURIComponent(url)}`,
+    url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`
+];
+
+function fetchWithTimeout(url, options = {}, timeout = 4000) {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    return fetch(url, { ...options, signal: controller.signal })
+        .then(res => {
+            clearTimeout(id);
+            return res;
+        })
+        .catch(err => {
+            clearTimeout(id);
+            throw err;
+        });
+}
+
+function fetchWithProxy(targetUrl, proxyIndex = 0) {
+    if (proxyIndex >= CORS_PROXIES.length) {
+        return Promise.reject(new Error("Tutti i proxy CORS hanno fallito o sono andati in timeout."));
+    }
+    const proxyUrl = CORS_PROXIES[proxyIndex](targetUrl);
+    return fetchWithTimeout(proxyUrl, {}, 4000)
+        .then(res => {
+            if (!res.ok) throw new Error(`Status ${res.status}`);
+            return res;
+        })
+        .catch(err => {
+            console.warn(`Proxy CORS (${proxyIndex}) fallito per ${targetUrl}, provo il successivo...`, err);
+            return fetchWithProxy(targetUrl, proxyIndex + 1);
+        });
+}
+
+function queryViaggiatrenoWithProxies(trainNum, resultsContainer) {
+    const baseViaggiatreno = "https://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno";
+    const autocompleteUrl = `${baseViaggiatreno}/cercaNumeroTrenoTrenoAutocomplete/${encodeURIComponent(trainNum)}`;
+    
+    fetchWithProxy(autocompleteUrl)
+        .then(res => res.text())
+        .then(text => {
+            if (!text || !text.trim()) {
+                throw new Error(`Treno ${trainNum} non trovato.`);
+            }
+            const lines = text.trim().split("\n");
+            let targetLine = null;
+            for (let line of lines) {
+                line = line.trim();
+                if (!line) continue;
+                if (line.includes("|")) {
+                    const parts = line.split("|");
+                    const subparts = parts[1].split("-");
+                    if (subparts.length >= 3 && subparts[0] === trainNum) {
+                        targetLine = line;
+                        break;
+                    }
+                }
+            }
+            if (!targetLine && lines.length > 0 && lines[0].includes("|")) {
+                targetLine = lines[0].trim();
+            }
+            if (!targetLine) {
+                throw new Error(`Treno ${trainNum} non trovato.`);
+            }
+            
+            const parts = targetLine.split("|");
+            const subparts = parts[1].split("-");
+            const codiceStazione = subparts[1];
+            const timestamp = subparts[2];
+            
+            const detailUrl = `${baseViaggiatreno}/andamentoTreno/${codiceStazione}/${encodeURIComponent(trainNum)}/${timestamp}`;
+            return fetchWithProxy(detailUrl).then(res => res.json());
+        })
+        .then(data => {
+            renderLiveTrainResults(data);
+        })
+        .catch(err => {
+            console.error("Errore ricerca live statica con proxy:", err);
+            resultsContainer.innerHTML = `
+                <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
+                    <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
+                    <div style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 10px;">
+                        ${err.message || 'Errore di connessione o timeout.'}
+                    </div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; border-top: 1px dashed rgba(239, 68, 68, 0.2); padding-top: 10px; margin-top: 10px;">
+                        Nota: Nella versione statica ospitata su GitHub Pages, la connessione diretta a Viaggiatreno non è consentita. 
+                        Le richieste utilizzano proxy CORS pubblici gratuiti che possono risultare lenti, instabili o andare in timeout.
+                        Per prestazioni ottimali garantite, clona il progetto ed esegui il server Flask locale con <code>python web_app.py</code>.
+                    </div>
+                </div>
+            `;
+        });
+}
+
 function performLiveTrainSearch(trainNum, updateHistory = true) {
     if (!trainNum) return;
     
@@ -2023,108 +2120,50 @@ function performLiveTrainSearch(trainNum, updateHistory = true) {
     }
 
     if (IS_STATIC) {
-        // Modalità Statica: proviamo prima a contattare il backend Flask locale a http://127.0.0.1:5000 (CORS abilitato)
-        const localUrl = `http://127.0.0.1:5000/api/train_live/${encodeURIComponent(trainNum)}`;
+        // Evitiamo di fare chiamate HTTP su localhost se siamo caricati tramite HTTPS (evita mixed content)
+        const canUseLocalBackend = window.location.protocol !== 'https:';
         
-        fetch(localUrl)
-            .then(res => {
-                if (!res.ok) {
-                    return res.text().then(text => {
-                        try {
-                            const errData = JSON.parse(text);
-                            throw new Error(errData.error);
-                        } catch (e) {
-                            throw new Error(`Errore locale ${res.status}`);
-                        }
-                    });
-                }
-                return res.json();
-            })
-            .then(data => {
-                renderLiveTrainResults(data);
-            })
-            .catch(localErr => {
-                // Se il backend locale non risponde o dà errore generico, proviamo a mostrare l'errore specifico (se il treno non esiste)
-                // altrimenti ripieghiamo sul CORS proxy pubblico
-                if (localErr.message && !localErr.message.includes("Failed to fetch") && !localErr.message.includes("Errore locale")) {
-                    resultsContainer.innerHTML = `
-                        <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
-                            <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
-                            <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
-                            <div style="font-size: 0.9rem; color: var(--text-main);">${localErr.message}</div>
-                        </div>
-                    `;
-                    return;
-                }
-
-                // Ripiego su CORS proxy pubblico
-                const baseViaggiatreno = "https://corsproxy.io/?http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno";
-                const autocompleteUrl = `${baseViaggiatreno}/cercaNumeroTrenoTrenoAutocomplete/${encodeURIComponent(trainNum)}`;
-                
-                fetch(autocompleteUrl)
-                    .then(res => {
-                        if (!res.ok) throw new Error(`Servizio non disponibile o restrizione CORS (Errore ${res.status}).`);
-                        return res.text();
-                    })
-                    .then(text => {
-                        if (!text || !text.trim()) {
-                            throw new Error(`Treno ${trainNum} non trovato.`);
-                        }
-                        const lines = text.trim().split("\n");
-                        let targetLine = null;
-                        for (let line of lines) {
-                            line = line.trim();
-                            if (!line) continue;
-                            if (line.includes("|")) {
-                                const parts = line.split("|");
-                                const subparts = parts[1].split("-");
-                                if (subparts.length >= 3 && subparts[0] === trainNum) {
-                                    targetLine = line;
-                                    break;
-                                }
+        if (canUseLocalBackend) {
+            // Proviamo prima a contattare il backend Flask locale a http://127.0.0.1:5000 (CORS abilitato)
+            const localUrl = `http://127.0.0.1:5000/api/train_live/${encodeURIComponent(trainNum)}`;
+            
+            fetch(localUrl)
+                .then(res => {
+                    if (!res.ok) {
+                        return res.text().then(text => {
+                            try {
+                                const errData = JSON.parse(text);
+                                throw new Error(errData.error);
+                            } catch (e) {
+                                throw new Error(`Errore locale ${res.status}`);
                             }
-                        }
-                        if (!targetLine && lines.length > 0 && lines[0].includes("|")) {
-                            targetLine = lines[0].trim();
-                        }
-                        if (!targetLine) {
-                            throw new Error(`Treno ${trainNum} non trovato.`);
-                        }
-                        
-                        const parts = targetLine.split("|");
-                        const subparts = parts[1].split("-");
-                        const codiceStazione = subparts[1];
-                        const timestamp = subparts[2];
-                        
-                        const detailUrl = `${baseViaggiatreno}/andamentoTreno/${codiceStazione}/${encodeURIComponent(trainNum)}/${timestamp}`;
-                        return fetch(detailUrl);
-                    })
-                    .then(res => {
-                        if (!res.ok) throw new Error(`Errore nel recupero dei dettagli del treno (Errore ${res.status}).`);
-                        return res.json();
-                    })
-                    .then(data => {
-                        renderLiveTrainResults(data);
-                    })
-                    .catch(err => {
-                        console.error("Errore ricerca live statica:", err);
+                        });
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    renderLiveTrainResults(data);
+                })
+                .catch(localErr => {
+                    if (localErr.message && !localErr.message.includes("Failed to fetch") && !localErr.message.includes("Errore locale")) {
                         resultsContainer.innerHTML = `
                             <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
                                 <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
                                 <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
-                                <div style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 10px;">
-                                    ${err.message || 'Verifica il numero del treno o riprova più tardi.'}
-                                </div>
-                                <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; border-top: 1px dashed rgba(239, 68, 68, 0.2); padding-top: 10px; margin-top: 10px;">
-                                    Nota: Nella versione statica/offline, le chiamate dirette alle API esterne di Viaggiatreno dipendono da un proxy CORS e potrebbero fallire o essere estremamente lente a causa del traffico sul proxy. 
-                                    Per avere la ricerca istantanea e stabile, avvia il server Flask locale con <code>python web_app.py</code> e apri la pagina <strong><code>http://localhost:5000</code></strong>.
-                                </div>
+                                <div style="font-size: 0.9rem; color: var(--text-main);">${localErr.message}</div>
                             </div>
                         `;
-                    });
-            });
+                        return;
+                    }
+                    // Fallback sui proxy CORS
+                    queryViaggiatrenoWithProxies(trainNum, resultsContainer);
+                });
+        } else {
+            // Su HTTPS (GitHub Pages): passiamo direttamente ai proxy CORS
+            queryViaggiatrenoWithProxies(trainNum, resultsContainer);
+        }
     } else {
-        // Modalità Flask Backend
+        // Modalità Flask Backend (stesso host)
         const url = `/api/train_live/${encodeURIComponent(trainNum)}`;
         fetch(url)
             .then(res => {
