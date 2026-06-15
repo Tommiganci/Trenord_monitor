@@ -2021,32 +2021,104 @@ function performLiveTrainSearch(trainNum, updateHistory = true) {
     if (updateHistory) {
         history.pushState({ view: 'live-train', treno: trainNum }, '', `?tab=live-train&treno=${encodeURIComponent(trainNum)}`);
     }
-    
-    const url = `/api/train_live/${encodeURIComponent(trainNum)}`;
-    fetch(url)
-        .then(res => {
-            if (!res.ok) {
-                return res.json().then(errData => {
-                    throw new Error(errData.error || `Treno non trovato o API non raggiungibile.`);
-                }).catch(() => {
-                    throw new Error(`Treno non trovato (Errore ${res.status}).`);
-                });
-            }
-            return res.json();
-        })
-        .then(data => {
-            renderLiveTrainResults(data);
-        })
-        .catch(err => {
-            console.error("Errore ricerca live:", err);
-            resultsContainer.innerHTML = `
-                <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
-                    <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
-                    <div style="font-size: 0.9rem; color: var(--text-main);">${err.message || 'Verifica il numero del treno o riprova più tardi.'}</div>
-                </div>
-            `;
-        });
+
+    if (IS_STATIC) {
+        // Modalità Statica: proviamo a usare un CORS proxy pubblico per interrogare direttamente Viaggiatreno
+        const baseViaggiatreno = "https://corsproxy.io/?http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno";
+        const autocompleteUrl = `${baseViaggiatreno}/cercaNumeroTrenoTrenoAutocomplete/${encodeURIComponent(trainNum)}`;
+        
+        fetch(autocompleteUrl)
+            .then(res => {
+                if (!res.ok) throw new Error(`Servizio non disponibile o restrizione CORS (Errore ${res.status}).`);
+                return res.text();
+            })
+            .then(text => {
+                if (!text || !text.trim()) {
+                    throw new Error(`Treno ${trainNum} non trovato.`);
+                }
+                const lines = text.trim().split("\n");
+                let targetLine = null;
+                for (let line of lines) {
+                    line = line.trim();
+                    if (!line) continue;
+                    if (line.includes("|")) {
+                        const parts = line.split("|");
+                        const subparts = parts[1].split("-");
+                        if (subparts.length >= 3 && subparts[0] === trainNum) {
+                            targetLine = line;
+                            break;
+                        }
+                    }
+                }
+                if (!targetLine && lines.length > 0 && lines[0].includes("|")) {
+                    targetLine = lines[0].trim();
+                }
+                if (!targetLine) {
+                    throw new Error(`Treno ${trainNum} non trovato.`);
+                }
+                
+                const parts = targetLine.split("|");
+                const subparts = parts[1].split("-");
+                const codiceStazione = subparts[1];
+                const timestamp = subparts[2];
+                
+                const detailUrl = `${baseViaggiatreno}/andamentoTreno/${codiceStazione}/${encodeURIComponent(trainNum)}/${timestamp}`;
+                return fetch(detailUrl);
+            })
+            .then(res => {
+                if (!res.ok) throw new Error(`Errore nel recupero dei dettagli del treno (Errore ${res.status}).`);
+                return res.json();
+            })
+            .then(data => {
+                renderLiveTrainResults(data);
+            })
+            .catch(err => {
+                console.error("Errore ricerca live statica:", err);
+                resultsContainer.innerHTML = `
+                    <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
+                        <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
+                        <div style="font-size: 0.9rem; color: var(--text-main); margin-bottom: 10px;">
+                            ${err.message || 'Verifica il numero del treno o riprova più tardi.'}
+                        </div>
+                        <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.4; border-top: 1px dashed rgba(239, 68, 68, 0.2); padding-top: 10px; margin-top: 10px;">
+                            Nota: Nella versione statica/offline, le chiamate dirette alle API esterne di Viaggiatreno dipendono da un proxy CORS e potrebbero fallire a causa delle restrizioni di sicurezza del browser. 
+                            Per il funzionamento completo garantito, avvia il server Flask locale con <code>python web_app.py</code>.
+                        </div>
+                    </div>
+                `;
+            });
+    } else {
+        // Modalità Flask Backend
+        const url = `/api/train_live/${encodeURIComponent(trainNum)}`;
+        fetch(url)
+            .then(res => {
+                if (!res.ok) {
+                    return res.text().then(text => {
+                        try {
+                            const errData = JSON.parse(text);
+                            throw new Error(errData.error || `Errore del server (Codice ${res.status}).`);
+                        } catch (e) {
+                            throw new Error(e.message || `Treno non trovato o non attivo (Errore ${res.status}).`);
+                        }
+                    });
+                }
+                return res.json();
+            })
+            .then(data => {
+                renderLiveTrainResults(data);
+            })
+            .catch(err => {
+                console.error("Errore ricerca live:", err);
+                resultsContainer.innerHTML = `
+                    <div class="live-train-info-box" style="border-style: solid; border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05); color: var(--danger); padding: 25px; text-align: center; margin-top: 20px;">
+                        <div style="font-size: 2rem; margin-bottom: 10px;">⚠️</div>
+                        <div class="live-train-info-title" style="color: var(--danger); font-size: 0.95rem; margin-bottom: 5px;">Impossibile recuperare i dati</div>
+                        <div style="font-size: 0.9rem; color: var(--text-main);">${err.message || 'Verifica il numero del treno o riprova più tardi.'}</div>
+                    </div>
+                `;
+            });
+    }
 }
 
 function renderLiveTrainResults(data) {
