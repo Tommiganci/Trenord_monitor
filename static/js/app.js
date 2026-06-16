@@ -2117,6 +2117,32 @@ function queryViaggiatrenoWithProxies(trainNum, resultsContainer) {
         });
 }
 
+function queryWithVercelAndFallback(trainNum, resultsContainer) {
+    const vercelUrl = `https://trenord-monitor.vercel.app/api/train_live/${encodeURIComponent(trainNum)}`;
+    
+    fetch(vercelUrl)
+        .then(res => {
+            if (!res.ok) {
+                return res.text().then(text => {
+                    try {
+                        const errData = JSON.parse(text);
+                        throw new Error(errData.error || `Status ${res.status}`);
+                    } catch (e) {
+                        throw new Error(`Status ${res.status}`);
+                    }
+                });
+            }
+            return res.json();
+        })
+        .then(data => {
+            renderLiveTrainResults(data);
+        })
+        .catch(err => {
+            console.warn("API Vercel fallita, ripiego sui proxy CORS...", err);
+            queryViaggiatrenoWithProxies(trainNum, resultsContainer);
+        });
+}
+
 function performLiveTrainSearch(trainNum, updateHistory = true) {
     if (!trainNum) return;
     
@@ -2172,12 +2198,12 @@ function performLiveTrainSearch(trainNum, updateHistory = true) {
                         `;
                         return;
                     }
-                    // Fallback sui proxy CORS
-                    queryViaggiatrenoWithProxies(trainNum, resultsContainer);
+                    // Fallback su Vercel e poi proxy CORS
+                    queryWithVercelAndFallback(trainNum, resultsContainer);
                 });
         } else {
-            // Su HTTPS (GitHub Pages): passiamo direttamente ai proxy CORS
-            queryViaggiatrenoWithProxies(trainNum, resultsContainer);
+            // Su HTTPS (GitHub Pages): passiamo prima alla nostra API su Vercel
+            queryWithVercelAndFallback(trainNum, resultsContainer);
         }
     } else {
         // Modalità Flask Backend (stesso host)
