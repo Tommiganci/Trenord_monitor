@@ -1,0 +1,6 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/api/train_live/(.*)", "destination": "/api/train_live.js?numero=$1" }
+  ]
+}
