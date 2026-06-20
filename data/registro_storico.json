@@ -87083,7 +87083,7 @@
         "s": "RITARDO"
       },
       "24584": {
-        "r": 39,
+        "r": 41,
         "c": true,
         "s": "RITARDO"
       },
@@ -87102,18 +87102,8 @@
         "c": false,
         "s": "RITARDO"
       },
-      "2387": {
-        "r": 49,
-        "c": true,
-        "s": "RITARDO"
-      },
       "24383": {
         "r": 0,
-        "c": false,
-        "s": "REGOLARE"
-      },
-      "24384": {
-        "r": -3,
         "c": false,
         "s": "REGOLARE"
       },
@@ -87121,6 +87111,11 @@
         "r": 2,
         "c": false,
         "s": "RITARDO"
+      },
+      "24384": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
       },
       "25088": {
         "r": 5,
