@@ -222,20 +222,7 @@ Al cambio di orario stagionale (es. orario estivo o invernale), per allineare il
    ```bash
    python bollettino.py --export-html
    ```
-
-## 🌍 Integrazione Proxy CORS su Vercel (GitHub Pages Live Search)
-
-Quando il sito viene ospitato in modalità statica su **GitHub Pages** (`https://tommiganci.github.io/Trenord_monitor/`), il browser applica le restrizioni di sicurezza **CORS** bloccando le richieste dirette verso l'API di Viaggiatreno. Inoltre, Viaggiatreno blocca a livello di firewall gli indirizzi IP dei principali server cloud (AWS, Heroku, Cloudflare Workers), rendendo inutilizzabili o instabili i classici proxy CORS gratuiti pubblici (come AllOrigins).
-
-Per ovviare a questo problema mantenendo l'app su GitHub Pages senza modifiche al dominio pubblico, il progetto integra una configurazione ibrida:
-- **Frontend**: Ospitato staticamente su **GitHub Pages**.
-- **Backend Proxy**: Gestito da una **Serverless Function** su **Vercel** (`https://trenord-monitor.vercel.app/api/train_live/`). 
-
-### Architettura e Configurazione:
-1. **Serverless Function (`api/train_live.js`)**: Gestisce le chiamate a Viaggiatreno lato backend (risolvendo automaticamente il codice stazione, data/ora di partenza e marcia del treno) e restituisce i dati al frontend impostando correttamente le intestazioni CORS (`Access-Control-Allow-Origin: *`).
-2. **Configurazione Vercel (`vercel.json`)**: Specifica una configurazione esplicita (`version: 2`) che indica a Vercel di compilare solo la funzione Node.js e servire staticamente la cartella `docs/`. Questo **ignora automaticamente i file Python Flask del server locale** (`web_app.py`, ecc.) impedendo errori di deploy.
-3. **Catena di Fallback (`app.js`)**: Il frontend interroga per prima la Serverless Function su Vercel. Se questa dovesse fallire o andare in timeout, l'app effettua automaticamente un fallback sui proxy CORS tradizionali (come `corsproxy.io` o `cors-anywhere`) e, in caso di blocco totale, mostra un box d'errore interattivo nella UI con le istruzioni e i pulsanti per l'opt-in manuale temporaneo.
-
+   
 ## 🤝 Collaborazione e Segnalazioni
 
 Lo stato di progresso generale è consultabile nel foglio Excel nella cartella `direttrici/`.
