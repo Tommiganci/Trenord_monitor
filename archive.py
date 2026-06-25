@@ -58,7 +58,9 @@ def archive_old_data():
                         "s": t.get("stato", "REGOLARE")
                     }
 
-                registro_db["registro"][date_str] = day_summary
+                if date_str not in registro_db["registro"]:
+                    registro_db["registro"][date_str] = {}
+                registro_db["registro"][date_str].update(day_summary)
                 consolidated_count += 1
                 
                 # Rimuovi il file giornaliero consolidato
