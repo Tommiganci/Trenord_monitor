@@ -1,3 +1,15 @@
+/*
+ * Trenord Live Monitor
+ * Developed by Tommaso Ganci (@Tommiganci)
+ * GitHub: https://github.com/Tommiganci/Trenord_monitor
+ */
+console.log(
+    "%c Trenord Live Monitor %c Sviluppato da Tommaso Ganci (@Tommiganci) %c",
+    "background:#3b82f6 ; padding: 2px 4px; border-radius: 3px 0 0 3px;  color: #fff; font-weight: bold;",
+    "background:#1e293b ; padding: 2px 4px; border-radius: 0 3px 3px 0;  color: #94a3b8;",
+    "background:transparent"
+);
+
 let myChart = null;
 let trendChart = null;
 let overallTrendChart = null;

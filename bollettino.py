@@ -420,6 +420,14 @@ def export_html(data):
                 "stato": t.get("stato", "REGOLARE")
             })
 
+    # Iniezione del Watermark Licenza e Autore nel database esportato
+    data["_license_info"] = {
+        "author": "Tommaso Ganci (@Tommiganci)",
+        "project": "Trenord Live Monitor",
+        "repository": "https://github.com/Tommiganci/Trenord_monitor",
+        "notice": "Tutti i diritti riservati. Vietata la riproduzione o copia non autorizzata di questo codice e della logica applicativa."
+    }
+
     css_path = os.path.join("static", "css", "style.css")
     js_path = os.path.join("static", "js", "app.js")
     
