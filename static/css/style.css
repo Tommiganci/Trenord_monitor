@@ -38,11 +38,18 @@ header {
 footer {
     width: 100%;
     background-color: var(--card-bg);
-    padding: 20px 0;
+    padding: 15px 0;
     box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.3);
     text-align: center;
     border-top: 1px solid var(--border-color);
     margin-top: auto;
+}
+
+footer h5 {
+    margin: 0 0 5px 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
 h1 {
@@ -665,6 +672,17 @@ tr:hover {
     .header-container {
         flex-direction: column;
         gap: 8px !important;
+    }
+    footer {
+        padding: 15px 15px 80px 15px !important;
+    }
+    .footer-contacts {
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
+    }
+    .footer-contacts span {
+        display: none;
     }
 }
 

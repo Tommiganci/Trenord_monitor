@@ -34,7 +34,10 @@
 
     <header>
         <div class="header-container" style="display: flex; justify-content: center; align-items: center; gap: 15px; position: relative; max-width: 600px; margin: 0 auto; padding: 0 20px;">
-            <h1 style="margin: 0;">Trenord Live Monitor</h1>
+            <h1 style="margin: 0; display: flex; align-items: center; gap: 8px;">
+                Trenord Live Monitor
+                <span onclick="openDisclaimerModal(event)" style="font-size: 1.15rem; cursor: pointer; color: var(--text-muted); opacity: 0.6; transition: opacity 0.2s;" title="Disclaimer & Note Legali" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6">ℹ️</span>
+            </h1>
             <button id="install-pwa-btn" class="install-btn hidden">📥 Installa App</button>
         </div>
         <div class="subtitle" id="last-update">Caricamento dati...</div>
@@ -454,9 +457,12 @@
     <div id="disclaimerModal" class="modal">
         <div class="modal-content disclaimer-modal-content">
             <span class="close-btn" onclick="closeDisclaimerModal()">&times;</span>
-            <h2 class="modal-title">⚠️ Disclaimer & Limitazioni</h2>
-            <div class="modal-subtitle">Informazioni sul monitoraggio delle direttrici</div>
+            <h2 class="modal-title">⚠️ Disclaimer & Note Legali</h2>
+            <div class="modal-subtitle">Informazioni sul monitoraggio e diritti d'autore</div>
             <div class="disclaimer-scroll-content">
+                <p><strong>⚖️ Proprietà del Codice e Diritti d'Autore:</strong></p>
+                <p>Tutto il codice sorgente, l'architettura applicativa, la logica di calcolo del Grado di Disagio e il design di questa dashboard sono di <strong>proprietà intellettuale esclusiva di Tommaso Ganci</strong> (GitHub: <a href="https://github.com/Tommiganci" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">@Tommiganci</a>). È severamente vietato copiare, riprodurre, ridistribuire o incorporare questo codice (in parte o nella sua interezza) in altri progetti o siti web senza l'esplicito consenso scritto dell'autore.</p>
+                
                 <p><strong>Stato del Monitoraggio delle Direttrici:</strong></p>
                 <p>Tutte le 38 direttrici ferroviarie Trenord sono completamente coperte e monitorate. I dati di popolamento sono estratti ed aggiornati automaticamente dal feed orario ufficiale <strong>GTFS statico</strong> di Trenord, risolvendo le precedenti limitazioni orarie (inclusa l'attivazione completa delle direttrici 26, 29, R39, R40, RE13, R32 e del servizio di Brescia-Iseo).</p>
                 
@@ -469,6 +475,9 @@
                 
                 <hr class="disclaimer-hr">
                 
+                <p><strong>Proprietà dei Dati e Affiliazione:</strong></p>
+                <p>Tutti i dati relativi a treni, orari e ritardi appartengono ai rispettivi gestori ed erogatori del servizio ferroviario (Trenord S.r.l., RFI S.p.A. e Viaggiatreno). Questo sito è un progetto amatoriale per i passeggeri e non ha alcuna affiliazione ufficiale con le società citate.</p>
+
                 <p><strong>Collaborazione e Segnalazioni:</strong></p>
                 <ul>
                     <li>🐛 <strong>Se riscontrate problemi o discrepanze</strong> sul popolamento o tracciamento dei treni in tempo reale, non esitate a segnalarlo tramite i canali indicati in fondo al sito!</li>
