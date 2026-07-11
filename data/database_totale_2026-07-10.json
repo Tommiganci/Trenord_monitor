@@ -1,54 +1,8 @@
 {
   "data": "2026-07-10",
-  "ultima_scansione": "2026-07-11T00:13:12.870299+02:00",
+  "ultima_scansione": "2026-07-11T06:05:29.383716+02:00",
   "treni": {
     "24583": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 1,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
-      "origine": "VARESE",
-      "destinazione": "TREVIGLIO",
-      "orario_programmato": "22:12",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 1
-        }
-      ],
-      "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
-      "linea": "S5",
-      "numero": 24583
-    },
-    "24585": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 2,
-      "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
-      "origine": "VARESE",
-      "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "22:42",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 2
-        }
-      ],
-      "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
-      "linea": "S5",
-      "numero": 24585
-    },
-    "24581": {
       "stato": "REGOLARE",
       "critico": false,
       "ritardo_attuale": -1,
@@ -56,66 +10,89 @@
       "ritardo_capolinea": -1,
       "origine": "VARESE",
       "destinazione": "TREVIGLIO",
-      "orario_programmato": "21:42",
+      "orario_programmato": "22:12",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -1
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
       "linea": "S5",
-      "numero": 24581
+      "numero": 24583
+    },
+    "24582": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 4,
+      "ritardo_picco": 4,
+      "ritardo_capolinea": 4,
+      "origine": "TREVIGLIO",
+      "destinazione": "GALLARATE",
+      "orario_programmato": "22:40",
+      "note": "",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "06:05",
+          "rit": 4
+        }
+      ],
+      "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
+      "linea": "S5",
+      "numero": 24582
     },
     "24580": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 16,
-      "ritardo_picco": 14,
-      "ritardo_capolinea": 14,
+      "ritardo_attuale": 12,
+      "ritardo_picco": 12,
+      "ritardo_capolinea": 12,
       "origine": "TREVIGLIO",
       "destinazione": "VARESE",
       "orario_programmato": "22:10",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 16
+          "ts": "06:05",
+          "rit": 12
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
       "linea": "S5",
       "numero": 24580
     },
-    "24582": {
-      "stato": "RITARDO",
+    "24586": {
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 3,
-      "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
       "origine": "TREVIGLIO",
-      "destinazione": "GALLARATE",
-      "orario_programmato": "22:40",
+      "destinazione": "MILANO CERTOSA",
+      "orario_programmato": "23:40",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 3
+          "ts": "06:05",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
       "linea": "S5",
-      "numero": 24582
+      "numero": 24586
     },
     "24584": {
       "stato": "REGOLARE",
@@ -127,64 +104,18 @@
       "destinazione": "GALLARATE",
       "orario_programmato": "23:10",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": 0
         }
       ],
       "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
       "linea": "S5",
       "numero": 24584
-    },
-    "24586": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 1,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
-      "origine": "TREVIGLIO",
-      "destinazione": "MILANO CERTOSA",
-      "orario_programmato": "23:40",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 1
-        }
-      ],
-      "direttrice": "Direttrice 40 (Varese - Milano Passante - Treviglio)",
-      "linea": "S5",
-      "numero": 24586
-    },
-    "10690": {
-      "stato": "RITARDO",
-      "critico": true,
-      "ritardo_attuale": 225,
-      "ritardo_picco": 60,
-      "ritardo_capolinea": 60,
-      "origine": "PAVIA",
-      "destinazione": "VERCELLI",
-      "orario_programmato": "19:38",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 225
-        }
-      ],
-      "direttrice": "Direttrice 28 (Pavia - Mortara, Vercelli)",
-      "linea": "R36",
-      "numero": 10690
     },
     "24889": {
       "stato": "REGOLARE",
@@ -196,12 +127,12 @@
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:06",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": 0
         }
       ],
@@ -209,143 +140,51 @@
       "linea": "S8",
       "numero": 24889
     },
-    "24884": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 6,
-      "ritardo_picco": 6,
-      "ritardo_capolinea": 6,
-      "origine": "MILANO PORTA GARIBALDI",
-      "destinazione": "LECCO",
-      "orario_programmato": "22:52",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 6
-        }
-      ],
-      "direttrice": "Direttrice 39 (Lecco - Carnate - Milano P.ta Garibaldi)",
-      "linea": "S8",
-      "numero": 24884
-    },
     "24886": {
-      "stato": "REGOLARE",
-      "critico": false,
-      "ritardo_attuale": -2,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
-      "origine": "MILANO CENTRALE",
-      "destinazione": "LECCO",
-      "orario_programmato": "23:22",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": -2
-        }
-      ],
-      "direttrice": "Direttrice 39 (Lecco - Carnate - Milano P.ta Garibaldi)",
-      "linea": "S8",
-      "numero": 24886
-    },
-    "10246": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 1,
-      "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
-      "origine": "MILANO PORTA GARIBALDI",
-      "destinazione": "ARONA",
-      "orario_programmato": "22:40",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 1
-        }
-      ],
-      "direttrice": "Direttrice 3 (Domodossola - Milano / Domodossola - Arona - Gallarate - Milano / Laveno – Sesto Calende)",
-      "linea": "R23",
-      "numero": 10246
-    },
-    "25592": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 4,
-      "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
-      "origine": "MALPENSA AEROPORTO TERMINAL 2",
-      "destinazione": "STABIO",
-      "orario_programmato": "23:13",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 4
-        }
-      ],
-      "direttrice": "Direttrice 42 (Malpensa - Varese - Mendrisio - Como)",
-      "linea": "S50",
-      "numero": 25592
-    },
-    "2345": {
-      "stato": "RITARDO",
-      "critico": true,
-      "ritardo_attuale": 32,
-      "ritardo_picco": 32,
-      "ritardo_capolinea": 32,
-      "origine": "MILANO GRECO PIRELLI",
-      "destinazione": "VOGHERA",
-      "orario_programmato": "22:45",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 32
-        }
-      ],
-      "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
-      "linea": "RE13",
-      "numero": 2345
-    },
-    "2387": {
       "stato": "REGOLARE",
       "critico": false,
       "ritardo_attuale": -1,
       "ritardo_picco": -1,
       "ritardo_capolinea": -1,
       "origine": "MILANO CENTRALE",
-      "destinazione": "VOGHERA",
-      "orario_programmato": "23:05",
+      "destinazione": "LECCO",
+      "orario_programmato": "23:22",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -1
         }
       ],
-      "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
-      "linea": "RE13",
-      "numero": 2387
+      "direttrice": "Direttrice 39 (Lecco - Carnate - Milano P.ta Garibaldi)",
+      "linea": "S8",
+      "numero": 24886
+    },
+    "25592": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -1,
+      "ritardo_picco": -1,
+      "ritardo_capolinea": -1,
+      "origine": "MALPENSA AEROPORTO TERMINAL 2",
+      "destinazione": "STABIO",
+      "orario_programmato": "23:13",
+      "note": "",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "06:05",
+          "rit": -1
+        }
+      ],
+      "direttrice": "Direttrice 42 (Malpensa - Varese - Mendrisio - Como)",
+      "linea": "S50",
+      "numero": 25592
     },
     "2348": {
       "stato": "REGOLARE",
@@ -357,12 +196,12 @@
       "destinazione": "MILANO GRECO PIRELLI",
       "orario_programmato": "23:03",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -2
         }
       ],
@@ -370,46 +209,23 @@
       "linea": "RE13",
       "numero": 2348
     },
-    "24381": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 2,
-      "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
-      "origine": "MILANO BOVISA POLITECNICO",
-      "destinazione": "PAVIA",
-      "orario_programmato": "22:55",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 2
-        }
-      ],
-      "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
-      "linea": "S13",
-      "numero": 24381
-    },
     "24383": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
-      "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "MILANO BOVISA POLITECNICO",
       "destinazione": "PAVIA",
       "orario_programmato": "23:25",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 1
+          "ts": "06:05",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
@@ -426,12 +242,12 @@
       "destinazione": "MILANO BOVISA POLITECNICO",
       "orario_programmato": "23:09",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": 1
         }
       ],
@@ -440,96 +256,50 @@
       "numero": 24384
     },
     "24386": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 6,
-      "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
       "origine": "PAVIA",
       "destinazione": "MILANO BOVISA POLITECNICO",
       "orario_programmato": "23:39",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 6
+          "ts": "06:05",
+          "rit": -2
         }
       ],
       "direttrice": "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)",
       "linea": "S13",
       "numero": 24386
     },
-    "25087": {
-      "stato": "REGOLARE",
-      "critico": false,
-      "ritardo_attuale": -2,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
-      "origine": "COMO S.GIOVANNI",
-      "destinazione": "MILANO PORTA GARIBALDI",
-      "orario_programmato": "22:50",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": -2
-        }
-      ],
-      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
-      "linea": "S11",
-      "numero": 25087
-    },
     "25089": {
       "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": -1,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
+      "ritardo_attuale": -3,
+      "ritardo_picco": -3,
+      "ritardo_capolinea": -3,
       "origine": "COMO S.GIOVANNI",
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:20",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": -1
+          "ts": "06:05",
+          "rit": -3
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
       "linea": "S11",
       "numero": 25089
-    },
-    "25084": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 8,
-      "ritardo_picco": 8,
-      "ritardo_capolinea": 8,
-      "origine": "MILANO PORTA GARIBALDI",
-      "destinazione": "COMO S.GIOVANNI",
-      "orario_programmato": "22:39",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 8
-        }
-      ],
-      "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
-      "linea": "S11",
-      "numero": 25084
     },
     "25088": {
       "stato": "REGOLARE",
@@ -541,12 +311,12 @@
       "destinazione": "SEREGNO",
       "orario_programmato": "23:39",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -1
         }
       ],
@@ -557,20 +327,20 @@
     "25192": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 12,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
+      "ritardo_attuale": 7,
+      "ritardo_picco": 7,
+      "ritardo_capolinea": 7,
       "origine": "MILANO PORTA GARIBALDI",
       "destinazione": "CHIASSO",
       "orario_programmato": "23:09",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 12
+          "ts": "06:05",
+          "rit": 7
         }
       ],
       "direttrice": "Direttrice 6 (Milano - Como - Chiasso)",
@@ -578,22 +348,22 @@
       "numero": 25192
     },
     "797": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 2,
-      "ritardo_picco": -1,
-      "ritardo_capolinea": -1,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CADORNA",
       "destinazione": "PALAZZOLO MILANESE",
       "orario_programmato": "23:53",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 2
+          "ts": "06:05",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -601,22 +371,22 @@
       "numero": 797
     },
     "792": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 11,
-      "ritardo_picco": 9,
-      "ritardo_capolinea": 9,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "PALAZZOLO MILANESE",
       "destinazione": "MILANO CADORNA",
       "orario_programmato": "23:44",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 11
+          "ts": "06:05",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 37 (Mariano/Camnago - Milano)",
@@ -624,22 +394,22 @@
       "numero": 792
     },
     "2645": {
-      "stato": "RITARDO",
+      "stato": "REGOLARE",
       "critico": false,
-      "ritardo_attuale": 1,
-      "ritardo_picco": 2,
-      "ritardo_capolinea": 2,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
       "origine": "MILANO CENTRALE",
       "destinazione": "VERONA PORTA NUOVA",
       "orario_programmato": "22:25",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 1
+          "ts": "06:05",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)",
@@ -647,50 +417,27 @@
       "numero": 2645
     },
     "2647": {
-      "stato": "REGOLARE",
+      "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 0,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
+      "ritardo_attuale": 1,
+      "ritardo_picco": 1,
+      "ritardo_capolinea": 1,
       "origine": "MILANO CENTRALE",
       "destinazione": "BRESCIA",
       "orario_programmato": "23:25",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 0
+          "ts": "06:05",
+          "rit": 1
         }
       ],
       "direttrice": "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)",
       "linea": "RE6",
       "numero": 2647
-    },
-    "2648": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 11,
-      "ritardo_picco": 11,
-      "ritardo_capolinea": 11,
-      "origine": "VERONA PORTA NUOVA",
-      "destinazione": "MILANO CENTRALE",
-      "orario_programmato": "21:43",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 11
-        }
-      ],
-      "direttrice": "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)",
-      "linea": "RE6",
-      "numero": 2648
     },
     "2987": {
       "stato": "REGOLARE",
@@ -702,12 +449,12 @@
       "destinazione": "MILANO CENTRALE",
       "orario_programmato": "22:54",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -3
         }
       ],
@@ -725,41 +472,18 @@
       "destinazione": "MILANO CENTRALE",
       "orario_programmato": "22:54",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -3
         }
       ],
       "direttrice": "Direttrice 35 (Gallarate - Malpensa - Milano Centrale / Malpensa - Milano Cadorna)",
       "linea": "RE51",
       "numero": 80390
-    },
-    "24182": {
-      "stato": "REGOLARE",
-      "critico": false,
-      "ritardo_attuale": -2,
-      "ritardo_picco": -2,
-      "ritardo_capolinea": -2,
-      "origine": "LODI",
-      "destinazione": "MILANO BOVISA POLITECNICO",
-      "orario_programmato": "22:53",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": -2
-        }
-      ],
-      "direttrice": "Direttrice 36 (Saronno - Passante - Lodi / Saronno - Bovisa - Cadorna / Melegnano-Passante-Bovisa)",
-      "linea": "S1",
-      "numero": 24182
     },
     "897": {
       "stato": "REGOLARE",
@@ -771,12 +495,12 @@
       "destinazione": "SARONNO",
       "orario_programmato": "23:32",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": 0
         }
       ],
@@ -784,7 +508,7 @@
       "linea": "S3",
       "numero": 897
     },
-    "890": {
+    "892": {
       "stato": "REGOLARE",
       "critico": false,
       "ritardo_attuale": 0,
@@ -792,38 +516,15 @@
       "ritardo_capolinea": 0,
       "origine": "SARONNO",
       "destinazione": "MILANO CADORNA",
-      "orario_programmato": "23:23",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 0
-        }
-      ],
-      "direttrice": "Direttrice 36 (Saronno - Passante - Lodi / Saronno - Bovisa - Cadorna / Melegnano-Passante-Bovisa)",
-      "linea": "S3",
-      "numero": 890
-    },
-    "892": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 1,
-      "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
-      "origine": "SARONNO",
-      "destinazione": "MILANO CADORNA",
       "orario_programmato": "23:53",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 1
+          "ts": "06:05",
+          "rit": 0
         }
       ],
       "direttrice": "Direttrice 36 (Saronno - Passante - Lodi / Saronno - Bovisa - Cadorna / Melegnano-Passante-Bovisa)",
@@ -840,12 +541,12 @@
       "destinazione": "SONDRIO",
       "orario_programmato": "22:20",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": -4
         }
       ],
@@ -856,71 +557,25 @@
     "10889": {
       "stato": "RITARDO",
       "critico": false,
-      "ritardo_attuale": 2,
-      "ritardo_picco": 1,
-      "ritardo_capolinea": 1,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
       "origine": "MILANO GRECO PIRELLI",
       "destinazione": "PIACENZA",
       "orario_programmato": "23:10",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
-          "rit": 2
+          "ts": "06:05",
+          "rit": 3
         }
       ],
       "direttrice": "Direttrice 21 (Piacenza - Lodi - Milano)",
       "linea": "R38",
       "numero": 10889
-    },
-    "10886": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 67,
-      "ritardo_picco": 0,
-      "ritardo_capolinea": 0,
-      "origine": "PIACENZA",
-      "destinazione": "MILANO GRECO PIRELLI",
-      "orario_programmato": "22:07",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 67
-        }
-      ],
-      "direttrice": "Direttrice 21 (Piacenza - Lodi - Milano)",
-      "linea": "R38",
-      "numero": 10886
-    },
-    "24685": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 4,
-      "ritardo_picco": 4,
-      "ritardo_capolinea": 4,
-      "origine": "NOVARA",
-      "destinazione": "RHO",
-      "orario_programmato": "23:18",
-      "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "00:13",
-          "rit": 4
-        }
-      ],
-      "direttrice": "Direttrice 1 (Novara - Milano Passante - Treviglio)",
-      "linea": "S6",
-      "numero": 24685
     },
     "24682": {
       "stato": "REGOLARE",
@@ -932,12 +587,12 @@
       "destinazione": "NOVARA",
       "orario_programmato": "23:38",
       "note": "",
-      "prima_rilevazione": "2026-07-11T00:13:12",
-      "ultima_rilevazione": "2026-07-11T00:13:12",
+      "prima_rilevazione": "2026-07-11T06:05:29",
+      "ultima_rilevazione": "2026-07-11T06:05:29",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "00:13",
+          "ts": "06:05",
           "rit": 0
         }
       ],
