@@ -22,6 +22,48 @@ let selectedDirettrice = null;
 let lastDirettriceMap = {};
 let currentDirettriciSearch = '';
 
+function getLineBadgeHtml(lineName) {
+    if (!lineName) return '';
+    let s = lineName.trim();
+    let badgeColor = '#4b5563'; // Gray 600 default
+    let isS = s.startsWith('S') && !s.startsWith('S34') && !s.startsWith('ST');
+    let isRE = s.startsWith('RE') || s.startsWith('RV');
+    let isR = s.startsWith('R') && !s.startsWith('RE') && !s.startsWith('RV');
+    let isMXP = s === 'MXP' || s.includes('Malpensa');
+
+    if (isS) {
+        const sNum = s.substring(1);
+        const sColors = {
+            '1': '#ef4444', // Red
+            '2': '#f59e0b', // Yellow/Orange
+            '3': '#10b981', // Green
+            '4': '#06b6d4', // Cyan
+            '5': '#3b82f6', // Blue
+            '6': '#8b5cf6', // Purple
+            '7': '#84cc16', // Lime
+            '8': '#f97316', // Orange
+            '9': '#047857', // Forest green
+            '11': '#ec4899', // Pink
+            '12': '#a855f7', // Lavender
+            '13': '#db2777', // Magenta
+        };
+        badgeColor = sColors[sNum] || '#3b82f6';
+    } else if (isRE) {
+        badgeColor = '#0284c7'; // Sky Blue
+    } else if (isR) {
+        badgeColor = '#059669'; // Emerald Green
+    } else if (isMXP) {
+        badgeColor = '#b91c1c'; // Red
+    }
+
+    return `<span class="line-badge" style="background-color: ${badgeColor}; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; display: inline-block; text-align: center; min-width: 24px; vertical-align: middle; line-height: 1.2;">${s}</span>`;
+}
+
+function getLineBadgesListHtml(servizi) {
+    if (!servizi || servizi.length === 0) return '';
+    return servizi.map(s => getLineBadgeHtml(s)).join(' ');
+}
+
 document.getElementById('searchInput').addEventListener('input', (e) => {
     currentSearch = e.target.value.toLowerCase();
     renderTable();
@@ -361,7 +403,7 @@ function renderFavTrainsSection() {
             html += `
                 <div class="fav-train-card" onclick="openModal('${trenoData}', ${t.numero})">
                     <div class="fav-train-header">
-                        <span class="fav-train-name">${t.linea} ${t.numero}</span>
+                        <span class="fav-train-name" style="display: flex; align-items: center; gap: 6px;">${getLineBadgeHtml(t.linea)} ${t.numero}</span>
                         <button class="fav-star-icon" onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();">★</button>
                     </div>
                     <div class="fav-train-route" title="${t.origine} ➔ ${t.destinazione}">
@@ -469,7 +511,7 @@ function renderHomePage(direttriciMap) {
                             </button>
                             ${dir.nome}
                         </h3>
-                        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; display: inline-block;">${serviziStr}</span>
+                        <div style="margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px;">${getLineBadgesListHtml(servizi)}</div>
                     </div>
                     <div class="direttrice-status-indicator ${indicatorClass}"></div>
                 </div>
@@ -634,7 +676,7 @@ function renderTable() {
                             style="margin-right: 8px;">
                         ★
                     </button>
-                    <strong>${t.linea} ${t.numero}</strong>
+                    <strong>${getLineBadgeHtml(t.linea)} ${t.numero}</strong>
                 </td>
                 <td>${renderStatus(t.stato, t.critico)}</td>
                 <td>${t.ritardo_attuale}'</td>
@@ -1528,7 +1570,7 @@ function renderSearchResults(trains, container) {
                 <div class="search-result-card" onclick="openModal('${trenoData}', ${t.numero})">
                     <div class="route-header">
                         <div>
-                            <span class="route-train-num">${t.linea} ${t.numero}</span>
+                            <span class="route-train-num" style="display: flex; align-items: center; gap: 6px;">${getLineBadgeHtml(t.linea)} ${t.numero}</span>
                             <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Campione: ${stats.corse_totali} gg)</span>
                         </div>
                         <div class="route-times">
@@ -1975,7 +2017,7 @@ function applyStationFilters() {
                             style="margin-right: 8px;">
                         ★
                     </button>
-                    <strong>${t.linea} ${t.numero}</strong>
+                    <strong>${getLineBadgeHtml(t.linea)} ${t.numero}</strong>
                 </td>
                 <td>${statusBadge}</td>
                 <td>${t.attivo ? `${t.ritardo_attuale}'` : '-'}</td>
@@ -2405,7 +2447,7 @@ function renderLiveTrainResults(data) {
         <div class="live-train-header">
             <div class="live-train-title-area">
                 <div class="live-train-number">
-                    <span>🚊 ${data.categoria} ${data.numeroTreno}</span>
+                    <span style="display: inline-flex; align-items: center; gap: 6px;">🚊 ${getLineBadgeHtml(data.categoria)} ${data.numeroTreno}</span>
                     <button class="fav-star-icon fav-star-icon-train-${data.numeroTreno} ${isFav ? '' : 'inactive'}" 
                             onclick="toggleFavTrain(event, ${parseInt(data.numeroTreno)})"
                             style="background:none; border:none; font-size:1.6rem; cursor:pointer; vertical-align: middle;">
