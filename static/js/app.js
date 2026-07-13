@@ -2855,6 +2855,18 @@ function renderTrainMap() {
             scrollWheelZoom: true
         });
 
+        // Auto-invalidate size when container size changes dynamically (ResizeObserver)
+        if (window.ResizeObserver) {
+            const resizeObserver = new ResizeObserver(() => {
+                if (trainMap) {
+                    try {
+                        trainMap.invalidateSize();
+                    } catch (e) {}
+                }
+            });
+            resizeObserver.observe(mapDiv);
+        }
+
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
@@ -2892,6 +2904,13 @@ function renderTrainMap() {
                     fillOpacity: st.stato === 3 ? 0.4 : 0.8
                 }).addTo(trainMap);
                 
+                // Mostra il nome della stazione al passaggio del mouse (hover)
+                marker.bindTooltip(st.stazione, {
+                    direction: 'top',
+                    offset: [0, -5],
+                    sticky: true
+                });
+                
                 let popupContent = `<strong>${st.stazione}</strong>`;
                 if (st.stato === 3) {
                     popupContent += `<br><span style="color:#ef4444; font-weight:bold;">FERMATA SOPPRESSA</span>`;
@@ -2913,6 +2932,11 @@ function renderTrainMap() {
                         className: 'custom-train-icon'
                     });
                     activeMarker = L.marker(latLng, { icon: trainIcon }).addTo(trainMap);
+                    activeMarker.bindTooltip(`Treno ${currentModalTrainNum}`, {
+                        direction: 'top',
+                        offset: [0, -10],
+                        sticky: true
+                    });
                     activeMarker.bindPopup(`<strong>Treno ${currentModalTrainNum}</strong><br>${trainStatusLabel}`);
                 }
             }
