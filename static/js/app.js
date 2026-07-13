@@ -815,8 +815,8 @@ function renderChart(historyArray) {
 }
 
 function closeModal() {
-    document.getElementById('chartModal').style.display = "none";
     cleanupMap();
+    document.getElementById('chartModal').style.display = "none";
 }
 
 function openDisclaimerModal(event) {
@@ -2802,8 +2802,10 @@ function renderTrainMap() {
         let stops = [];
         let currentStation = null;
         let trainStatusLabel = "Non attivo";
+        let destination = "";
         
         if (liveData && liveData.fermate) {
+            destination = liveData.destinazione || "";
             stops = liveData.fermate.map(f => ({
                 stazione: f.stazione.toUpperCase().trim(),
                 programmata: formatTime(f.programmata),
@@ -2830,6 +2832,9 @@ function renderTrainMap() {
                 stato: 0
             }));
             trainStatusLabel = "Fuori servizio / Dati live non disponibili";
+            if (stops.length > 0) {
+                destination = stops[stops.length - 1].stazione;
+            }
         }
         
         if (stops.length === 0) {
@@ -2945,12 +2950,23 @@ function renderTrainMap() {
                         className: 'custom-train-icon'
                     });
                     activeMarker = L.marker(latLng, { icon: trainIcon }).addTo(trainMap);
-                    activeMarker.bindTooltip(`Treno ${currentModalTrainNum}`, {
+                    
+                    let trainTooltipText = `Treno ${currentModalTrainNum}`;
+                    if (destination) {
+                        trainTooltipText += ` per ${destination}`;
+                    }
+                    activeMarker.bindTooltip(trainTooltipText, {
                         direction: 'top',
                         offset: [0, -10],
                         sticky: true
                     });
-                    activeMarker.bindPopup(`<strong>Treno ${currentModalTrainNum}</strong><br>${trainStatusLabel}`);
+                    
+                    let trainPopupText = `<strong>Treno ${currentModalTrainNum}</strong>`;
+                    if (destination) {
+                        trainPopupText += `<br>Direzione: <strong>${destination}</strong>`;
+                    }
+                    trainPopupText += `<br>${trainStatusLabel}`;
+                    activeMarker.bindPopup(trainPopupText);
                 }
             }
         });
@@ -2993,10 +3009,13 @@ function cleanupMap() {
     }
     if (trainMap) {
         try {
-            trainMap.eachLayer(function(layer) {
+            // Raccoglie i layer in un array temporaneo prima di rimuoverli per evitare modifiche concorrenti durante eachLayer
+            const layers = [];
+            trainMap.eachLayer(layer => layers.push(layer));
+            layers.forEach(layer => {
                 try {
                     trainMap.removeLayer(layer);
-                } catch(err) {}
+                } catch (err) {}
             });
             trainMap.off();
             trainMap.remove();
