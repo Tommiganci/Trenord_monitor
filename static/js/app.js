@@ -2939,8 +2939,9 @@ function renderTrainMap() {
                 
                 if (isCurrent) {
                     const trainIcon = L.divIcon({
-                        html: '<div style="font-size: 24px; animation: pulse 2s infinite; text-shadow: 0 0 4px rgba(0,0,0,0.5); transform: translate(-3px, -5px);">🚆</div>',
-                        iconSize: [24, 24],
+                        html: '<div style="background-color: #ef4444; border: 2px solid #ffffff; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 0 12px rgba(239, 68, 68, 0.85); animation: pulse 1.8s infinite;">🚆</div>',
+                        iconSize: [36, 36],
+                        iconAnchor: [18, 18],
                         className: 'custom-train-icon'
                     });
                     activeMarker = L.marker(latLng, { icon: trainIcon }).addTo(trainMap);
