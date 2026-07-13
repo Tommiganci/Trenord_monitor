@@ -2873,29 +2873,36 @@ function renderTrainMap() {
                 let isCurrent = (index === trainIndex);
                 let markerColor = '#94a3b8';
                 
-                if (isCurrent) {
-                    markerColor = '#ef4444';
+                if (st.stato === 3) {
+                    markerColor = '#4b5563'; // Grigio scuro per fermata soppressa
+                } else if (isCurrent) {
+                    markerColor = '#ef4444'; // Rosso per posizione attuale
                 } else if (st.effettiva) {
-                    markerColor = '#10b981';
+                    markerColor = '#10b981'; // Verde per completato
                 } else {
-                    markerColor = '#3b82f6';
+                    markerColor = '#3b82f6'; // Blu per programmato
                 }
                 
                 const marker = L.circleMarker(latLng, {
                     radius: isCurrent ? 7 : 5,
                     fillColor: markerColor,
-                    color: '#ffffff',
-                    weight: 1.5,
+                    color: st.stato === 3 ? '#ef4444' : '#ffffff', // Bordo rosso se soppressa
+                    weight: st.stato === 3 ? 2 : 1.5,
                     opacity: 1,
-                    fillOpacity: 0.8
+                    fillOpacity: st.stato === 3 ? 0.4 : 0.8
                 }).addTo(trainMap);
                 
-                let popupContent = `<strong>${st.stazione}</strong><br>Prog. ${st.programmata}`;
-                if (st.effettiva) {
-                    popupContent += `<br>Effettiva: <span style="color:#10b981; font-weight:600;">${st.effettiva}</span>`;
-                }
-                if (st.ritardo > 0) {
-                    popupContent += ` <span style="color:#ef4444; font-weight:600;">(+${st.ritardo}')</span>`;
+                let popupContent = `<strong>${st.stazione}</strong>`;
+                if (st.stato === 3) {
+                    popupContent += `<br><span style="color:#ef4444; font-weight:bold;">FERMATA SOPPRESSA</span>`;
+                } else {
+                    popupContent += `<br>Prog. ${st.programmata}`;
+                    if (st.effettiva) {
+                        popupContent += `<br>Effettiva: <span style="color:#10b981; font-weight:600;">${st.effettiva}</span>`;
+                    }
+                    if (st.ritardo > 0) {
+                        popupContent += ` <span style="color:#ef4444; font-weight:600;">(+${st.ritardo}')</span>`;
+                    }
                 }
                 marker.bindPopup(popupContent);
                 
