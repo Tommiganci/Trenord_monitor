@@ -28,6 +28,7 @@ let trainMapMarkers = [];
 let trainMapPolyline = null;
 let stationCoordinates = null;
 let leafletLoaded = false;
+let mapResizeObserver = null;
 
 function getLineBadgeHtml(lineName) {
     if (!lineName) return '';
@@ -2868,14 +2869,14 @@ function renderTrainMap() {
 
         // Auto-invalidate size when container size changes dynamically (ResizeObserver)
         if (window.ResizeObserver) {
-            const resizeObserver = new ResizeObserver(() => {
+            mapResizeObserver = new ResizeObserver(() => {
                 if (trainMap) {
                     try {
                         trainMap.invalidateSize();
                     } catch (e) {}
                 }
             });
-            resizeObserver.observe(mapDiv);
+            mapResizeObserver.observe(mapDiv);
         }
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -2983,8 +2984,19 @@ function renderTrainMap() {
 }
 
 function cleanupMap() {
+    if (mapResizeObserver) {
+        try {
+            mapResizeObserver.disconnect();
+        } catch (e) {}
+        mapResizeObserver = null;
+    }
     if (trainMap) {
         try {
+            trainMap.eachLayer(function(layer) {
+                try {
+                    trainMap.removeLayer(layer);
+                } catch(err) {}
+            });
             trainMap.off();
             trainMap.remove();
         } catch (e) {
