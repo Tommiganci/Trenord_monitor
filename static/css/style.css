@@ -221,6 +221,8 @@ tr:hover {
     max-width: 800px;
     padding: 30px;
     position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .disclaimer-modal-content {

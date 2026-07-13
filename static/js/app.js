@@ -2692,6 +2692,17 @@ function toggleModalMap() {
                 }
             }, 100);
         }
+        
+        // Auto-scroll del modal content per mostrare interamente la mappa
+        setTimeout(() => {
+            const modalContent = document.querySelector('#chartModal .modal-content');
+            if (modalContent) {
+                modalContent.scrollTo({
+                    top: modalContent.scrollHeight,
+                    behavior: 'smooth'
+                });
+            }
+        }, 300);
     } else {
         container.classList.add('hidden');
         btn.innerText = "🗺️ Visualizza Mappa Percorso & Stato Live";
