@@ -1,0 +1,1 @@
+@cmd /k cd /d "C:\Users\Tommaso\.gemini\antigravity\scratch\monitor_treni"

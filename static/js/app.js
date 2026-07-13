@@ -22,6 +22,13 @@ let selectedDirettrice = null;
 let lastDirettriceMap = {};
 let currentDirettriciSearch = '';
 
+let currentModalTrainNum = null;
+let trainMap = null;
+let trainMapMarkers = [];
+let trainMapPolyline = null;
+let stationCoordinates = null;
+let leafletLoaded = false;
+
 function getLineBadgeHtml(lineName) {
     if (!lineName) return '';
     let s = lineName.trim();
@@ -704,6 +711,27 @@ function openModal(trenoDataStr, numero) {
         t.numero = numero;
         t.origine = "Monitoraggio Storico";
         t.destinazione = "";
+    }
+    
+    currentModalTrainNum = t.numero;
+
+    // Reset dello stato della mappa nel modal
+    const mapContainer = document.getElementById('modal-map-container');
+    if (mapContainer) {
+        mapContainer.classList.add('hidden');
+    }
+    const toggleBtn = document.getElementById('modal-map-toggle-btn');
+    if (toggleBtn) {
+        toggleBtn.innerText = "🗺️ Visualizza Mappa Percorso & Stato Live";
+        toggleBtn.classList.remove('active');
+    }
+    if (trainMap) {
+        try {
+            trainMap.remove();
+        } catch (e) {
+            console.warn("Errore distruzione mappa:", e);
+        }
+        trainMap = null;
     }
     
     document.getElementById('chartModal').style.display = "flex";
@@ -2648,5 +2676,254 @@ function scrollToTop() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
+    });
+}
+
+function toggleModalMap() {
+    const container = document.getElementById('modal-map-container');
+    const btn = document.getElementById('modal-map-toggle-btn');
+    if (!container || !btn) return;
+    
+    if (container.classList.contains('hidden')) {
+        container.classList.remove('hidden');
+        btn.innerText = "🗺️ Nascondi Mappa";
+        btn.classList.add('active');
+        
+        loadLeafletAndRenderMap();
+    } else {
+        container.classList.add('hidden');
+        btn.innerText = "🗺️ Visualizza Mappa Percorso & Stato Live";
+        btn.classList.remove('active');
+    }
+}
+
+function loadLeafletAndRenderMap() {
+    loadLeaflet(() => {
+        if (!stationCoordinates) {
+            fetch('data/stazioni_coordinate.json')
+                .then(res => res.json())
+                .then(coords => {
+                    stationCoordinates = coords;
+                    renderTrainMap();
+                })
+                .catch(err => {
+                    console.error("Errore caricamento coordinate:", err);
+                    const mapDiv = document.getElementById('train-map');
+                    if (mapDiv) {
+                        mapDiv.innerHTML = `
+                            <div style="padding: 40px; text-align: center; color: var(--danger); font-size: 0.9rem;">
+                                Impossibile caricare le coordinate delle stazioni.
+                            </div>
+                        `;
+                    }
+                });
+        } else {
+            renderTrainMap();
+        }
+    });
+}
+
+function loadLeaflet(callback) {
+    if (leafletLoaded) {
+        callback();
+        return;
+    }
+    
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+    
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = () => {
+        leafletLoaded = true;
+        callback();
+    };
+    document.head.appendChild(script);
+}
+
+function fetchLiveTrainForMap(trainNum, callback) {
+    const vercelUrl = `https://trenord-monitor.vercel.app/api/train_live/${trainNum}`;
+    fetch(vercelUrl)
+        .then(res => {
+            if (!res.ok) throw new Error("Errore API");
+            return res.json();
+        })
+        .then(data => callback(data))
+        .catch(err => {
+            console.warn("Chiamata Vercel fallita per mappa, provo fallback locale...", err);
+            const localUrl = `/api/train_live/${trainNum}`;
+            fetch(localUrl)
+                .then(res => res.json())
+                .then(data => callback(data))
+                .catch(localErr => {
+                    console.error("Tutti i tentativi falliti per la mappa:", localErr);
+                    callback(null);
+                });
+        });
+}
+
+function getStaticStopsForTrain(trainNum) {
+    if (!cachedTimetable) return [];
+    let stops = [];
+    for (const stName in cachedTimetable) {
+        const trainInfo = cachedTimetable[stName][trainNum];
+        if (trainInfo) {
+            const seq = typeof trainInfo.seq !== 'undefined' ? trainInfo.seq : trainInfo[0];
+            const dep = trainInfo.dep || trainInfo[1];
+            stops.push({
+                stazione: stName,
+                programmata: dep,
+                seq: seq
+            });
+        }
+    }
+    stops.sort((a, b) => a.seq - b.seq);
+    return stops;
+}
+
+function renderTrainMap() {
+    const mapDiv = document.getElementById('train-map');
+    if (!mapDiv || !currentModalTrainNum) return;
+    
+    mapDiv.innerHTML = '<div style="padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">Caricamento mappa e tracciamento in corso...</div>';
+
+    fetchLiveTrainForMap(currentModalTrainNum, (liveData) => {
+        let stops = [];
+        let currentStation = null;
+        let trainStatusLabel = "Non attivo";
+        
+        if (liveData && liveData.fermate) {
+            stops = liveData.fermate.map(f => ({
+                stazione: f.stazione.toUpperCase().trim(),
+                programmata: formatTime(f.programmata),
+                effettiva: f.effettiva ? formatTime(f.effettiva) : null,
+                ritardo: f.ritardo,
+                stato: f.actualFermataType
+            }));
+            
+            if (!liveData.arrivato && !liveData.nonPartito && liveData.stazioneUltimoRilevamento) {
+                currentStation = liveData.stazioneUltimoRilevamento.toUpperCase().trim();
+                trainStatusLabel = `In viaggio - Ritardo: ${liveData.ritardo} min`;
+            } else if (liveData.arrivato) {
+                trainStatusLabel = "Arrivato";
+            } else if (liveData.nonPartito) {
+                trainStatusLabel = "Non ancora partito";
+            }
+        } else {
+            const staticStops = getStaticStopsForTrain(currentModalTrainNum);
+            stops = staticStops.map(s => ({
+                stazione: s.stazione.toUpperCase().trim(),
+                programmata: s.programmata,
+                effettiva: null,
+                ritardo: 0,
+                stato: 0
+            }));
+            trainStatusLabel = "Fuori servizio / Dati live non disponibili";
+        }
+        
+        if (stops.length === 0) {
+            mapDiv.innerHTML = '<div style="padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">Nessuna fermata programmata trovata.</div>';
+            return;
+        }
+
+        mapDiv.innerHTML = '';
+
+        if (trainMap) {
+            try {
+                trainMap.remove();
+            } catch (e) {
+                console.warn("Errore distruzione mappa:", e);
+            }
+            trainMap = null;
+        }
+        
+        trainMap = L.map('train-map', {
+            zoomControl: true,
+            scrollWheelZoom: true
+        });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(trainMap);
+
+        let points = [];
+        let activeMarker = null;
+
+        stops.forEach((st) => {
+            const coords = stationCoordinates[st.stazione];
+            if (coords) {
+                const latLng = [coords[0], coords[1]];
+                points.push(latLng);
+                
+                let isCurrent = currentStation && st.stazione === currentStation;
+                let markerColor = '#94a3b8';
+                
+                if (isCurrent) {
+                    markerColor = '#ef4444';
+                } else if (st.effettiva) {
+                    markerColor = '#10b981';
+                } else {
+                    markerColor = '#3b82f6';
+                }
+                
+                const marker = L.circleMarker(latLng, {
+                    radius: isCurrent ? 7 : 5,
+                    fillColor: markerColor,
+                    color: '#ffffff',
+                    weight: 1.5,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                }).addTo(trainMap);
+                
+                let popupContent = `<strong>${st.stazione}</strong><br>Prog. ${st.programmata}`;
+                if (st.effettiva) {
+                    popupContent += `<br>Effettiva: <span style="color:#10b981; font-weight:600;">${st.effettiva}</span>`;
+                }
+                if (st.ritardo > 0) {
+                    popupContent += ` <span style="color:#ef4444; font-weight:600;">(+${st.ritardo}')</span>`;
+                }
+                marker.bindPopup(popupContent);
+                
+                if (isCurrent) {
+                    const trainIcon = L.divIcon({
+                        html: '<div style="font-size: 24px; animation: pulse 2s infinite; text-shadow: 0 0 4px rgba(0,0,0,0.5); transform: translate(-3px, -5px);">🚆</div>',
+                        iconSize: [24, 24],
+                        className: 'custom-train-icon'
+                    });
+                    activeMarker = L.marker(latLng, { icon: trainIcon }).addTo(trainMap);
+                    activeMarker.bindPopup(`<strong>Treno ${currentModalTrainNum}</strong><br>${trainStatusLabel}`);
+                }
+            }
+        });
+
+        if (points.length > 1) {
+            const polyline = L.polyline(points, {
+                color: '#3b82f6',
+                weight: 4,
+                opacity: 0.7,
+                smoothFactor: 1
+            }).addTo(trainMap);
+            
+            if (activeMarker) {
+                trainMap.setView(activeMarker.getLatLng(), 11);
+                setTimeout(() => {
+                    try {
+                        activeMarker.openPopup();
+                    } catch (e) {}
+                }, 500);
+            } else {
+                trainMap.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+            }
+        } else if (points.length === 1) {
+            trainMap.setView(points[0], 12);
+        }
+        
+        setTimeout(() => {
+            if (trainMap) trainMap.invalidateSize();
+        }, 300);
     });
 }

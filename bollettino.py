@@ -476,6 +476,7 @@ def export_html(data):
             os.makedirs(docs_data_dir)
         shutil.copy(os.path.join("data", "stazioni.json"), os.path.join(docs_data_dir, "stazioni.json"))
         shutil.copy(os.path.join("data", "orari_tratte_compresso.json"), os.path.join(docs_data_dir, "orari_tratte_compresso.json"))
+        shutil.copy(os.path.join("data", "stazioni_coordinate.json"), os.path.join(docs_data_dir, "stazioni_coordinate.json"))
         
         print("Asset PWA e indici orari copiati con successo in docs/")
     except Exception as e:

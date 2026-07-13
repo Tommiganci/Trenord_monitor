@@ -457,6 +457,14 @@ GitHub: https://github.com/Tommiganci/Trenord_monitor
                 Questo grafico mostra l'andamento del ritardo al capolinea (in minuti) registrato nei vari giorni del
                 mese. Ti permette di capire se il treno è cronicamente in ritardo (i giorni critici sono in rosso).</p>
             <canvas id="delayChart" width="400" height="200"></canvas>
+            <div id="modal-map-toggle-area" style="margin-top: 15px; text-align: center;">
+                <button id="modal-map-toggle-btn" class="filter-btn" onclick="toggleModalMap()" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; padding: 10px;">
+                    🗺️ Visualizza Mappa Percorso & Stato Live
+                </button>
+            </div>
+            <div id="modal-map-container" class="hidden" style="margin-top: 15px; width: 100%;">
+                <div id="train-map" style="height: 320px; width: 100%; border-radius: 12px; border: 1px solid var(--border-color); background-color: var(--card-bg); overflow: hidden; position: relative;"></div>
+            </div>
         </div>
     </div>
 
