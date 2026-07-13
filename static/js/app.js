@@ -2689,7 +2689,15 @@ function toggleModalMap() {
         btn.innerText = "🗺️ Nascondi Mappa";
         btn.classList.add('active');
         
-        loadLeafletAndRenderMap();
+        if (!trainMap) {
+            loadLeafletAndRenderMap();
+        } else {
+            setTimeout(() => {
+                if (trainMap) {
+                    trainMap.invalidateSize();
+                }
+            }, 100);
+        }
     } else {
         container.classList.add('hidden');
         btn.innerText = "🗺️ Visualizza Mappa Percorso & Stato Live";
@@ -2728,11 +2736,6 @@ function loadLeaflet(callback) {
         callback();
         return;
     }
-    
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-    document.head.appendChild(link);
     
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
@@ -2922,8 +2925,10 @@ function renderTrainMap() {
             trainMap.setView(points[0], 12);
         }
         
-        setTimeout(() => {
-            if (trainMap) trainMap.invalidateSize();
-        }, 300);
+        // Multipli timeout per forzare l'invalidazione della taglia durante la renderizzazione del modal
+        setTimeout(() => { if (trainMap) trainMap.invalidateSize(); }, 100);
+        setTimeout(() => { if (trainMap) trainMap.invalidateSize(); }, 300);
+        setTimeout(() => { if (trainMap) trainMap.invalidateSize(); }, 600);
     });
+}
 }
