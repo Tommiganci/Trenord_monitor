@@ -2931,4 +2931,3 @@ function renderTrainMap() {
         setTimeout(() => { if (trainMap) trainMap.invalidateSize(); }, 600);
     });
 }
-}
