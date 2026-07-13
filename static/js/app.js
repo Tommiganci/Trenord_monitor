@@ -725,14 +725,7 @@ function openModal(trenoDataStr, numero) {
         toggleBtn.innerText = "🗺️ Visualizza Mappa Percorso & Stato Live";
         toggleBtn.classList.remove('active');
     }
-    if (trainMap) {
-        try {
-            trainMap.remove();
-        } catch (e) {
-            console.warn("Errore distruzione mappa:", e);
-        }
-        trainMap = null;
-    }
+    cleanupMap();
     
     document.getElementById('chartModal').style.display = "flex";
     document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`.trim();
@@ -822,6 +815,7 @@ function renderChart(historyArray) {
 
 function closeModal() {
     document.getElementById('chartModal').style.display = "none";
+    cleanupMap();
 }
 
 function openDisclaimerModal(event) {
@@ -2831,6 +2825,20 @@ function renderTrainMap() {
             return;
         }
 
+        // Calcola la posizione attuale del treno sulla sequenza fermate
+        let trainIndex = -1;
+        if (currentStation) {
+            trainIndex = stops.findIndex(st => st.stazione === currentStation);
+        }
+        if (trainIndex === -1 && liveData && !liveData.nonPartito && !liveData.arrivato) {
+            // Fallback: ultima fermata con orario effettivo registrato
+            stops.forEach((st, idx) => {
+                if (st.effettiva) {
+                    trainIndex = idx;
+                }
+            });
+        }
+
         mapDiv.innerHTML = '';
 
         if (trainMap) {
@@ -2856,13 +2864,13 @@ function renderTrainMap() {
         let points = [];
         let activeMarker = null;
 
-        stops.forEach((st) => {
+        stops.forEach((st, index) => {
             const coords = stationCoordinates[st.stazione];
             if (coords) {
                 const latLng = [coords[0], coords[1]];
                 points.push(latLng);
                 
-                let isCurrent = currentStation && st.stazione === currentStation;
+                let isCurrent = (index === trainIndex);
                 let markerColor = '#94a3b8';
                 
                 if (isCurrent) {
@@ -2930,4 +2938,20 @@ function renderTrainMap() {
         setTimeout(() => { if (trainMap) trainMap.invalidateSize(); }, 300);
         setTimeout(() => { if (trainMap) trainMap.invalidateSize(); }, 600);
     });
+}
+
+function cleanupMap() {
+    if (trainMap) {
+        try {
+            trainMap.off();
+            trainMap.remove();
+        } catch (e) {
+            console.warn("Errore pulizia Leaflet:", e);
+        }
+        trainMap = null;
+    }
+    const mapDiv = document.getElementById('train-map');
+    if (mapDiv) {
+        mapDiv.innerHTML = '';
+    }
 }
