@@ -628,9 +628,9 @@ function updateDetailView(dirName) {
     
     filterButtonsContainer.innerHTML = buttonsHtml;
     
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+    document.querySelectorAll('#filter-buttons-container .filter-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('#filter-buttons-container .filter-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentFilter = e.target.dataset.filter;
             renderTable();
