@@ -830,20 +830,41 @@ function closeDisclaimerModal() {
     document.getElementById('disclaimerModal').style.display = "none";
 }
 
-window.onclick = function (event) {
-    let chartModal = document.getElementById('chartModal');
-    let disclaimerModal = document.getElementById('disclaimerModal');
-    let iosInstallModal = document.getElementById('iosInstallModal');
-    if (event.target == chartModal) {
-        closeModal();
+// Gestione dei click all'esterno dei modali per la chiusura
+document.addEventListener('DOMContentLoaded', () => {
+    const chartModal = document.getElementById('chartModal');
+    if (chartModal) {
+        chartModal.addEventListener('click', function(event) {
+            if (event.target === this) {
+                event.preventDefault();
+                event.stopPropagation();
+                closeModal();
+            }
+        });
     }
-    if (event.target == disclaimerModal) {
-        closeDisclaimerModal();
+    
+    const disclaimerModal = document.getElementById('disclaimerModal');
+    if (disclaimerModal) {
+        disclaimerModal.addEventListener('click', function(event) {
+            if (event.target === this) {
+                event.preventDefault();
+                event.stopPropagation();
+                closeDisclaimerModal();
+            }
+        });
     }
-    if (event.target == iosInstallModal) {
-        closeIosModal();
+    
+    const iosInstallModal = document.getElementById('iosInstallModal');
+    if (iosInstallModal) {
+        iosInstallModal.addEventListener('click', function(event) {
+            if (event.target === this) {
+                event.preventDefault();
+                event.stopPropagation();
+                closeIosModal();
+            }
+        });
     }
-}
+});
 
 function toggleOverallHistory() {
     const body = document.getElementById('overall-history-body');
