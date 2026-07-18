@@ -1,6 +1,6 @@
 {
   "data": "2026-07-17",
-  "ultima_scansione": "2026-07-18T10:05:29.546165+02:00",
+  "ultima_scansione": "2026-07-18T10:56:15.897726+02:00",
   "treni": {
     "10889": {
       "stato": "RITARDO",
@@ -12,12 +12,12 @@
       "destinazione": "PIACENZA",
       "orario_programmato": "23:10",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 2
         }
       ],
@@ -35,41 +35,18 @@
       "destinazione": "STABIO",
       "orario_programmato": "23:13",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
       "direttrice": "Direttrice 42 (Malpensa - Varese - Mendrisio - Como)",
       "linea": "S50",
       "numero": 25592
-    },
-    "2647": {
-      "stato": "RITARDO",
-      "critico": false,
-      "ritardo_attuale": 3,
-      "ritardo_picco": 3,
-      "ritardo_capolinea": 3,
-      "origine": "MILANO CENTRALE",
-      "destinazione": "BRESCIA",
-      "orario_programmato": "23:25",
-      "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
-      "scansioni": 1,
-      "storico_ritardi": [
-        {
-          "ts": "10:05",
-          "rit": 3
-        }
-      ],
-      "direttrice": "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)",
-      "linea": "RE6",
-      "numero": 2647
     },
     "2645": {
       "stato": "REGOLARE",
@@ -81,18 +58,41 @@
       "destinazione": "VERONA PORTA NUOVA",
       "orario_programmato": "22:25",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": -1
         }
       ],
       "direttrice": "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)",
       "linea": "RE6",
       "numero": 2645
+    },
+    "2647": {
+      "stato": "RITARDO",
+      "critico": false,
+      "ritardo_attuale": 3,
+      "ritardo_picco": 3,
+      "ritardo_capolinea": 3,
+      "origine": "MILANO CENTRALE",
+      "destinazione": "BRESCIA",
+      "orario_programmato": "23:25",
+      "note": "",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "10:56",
+          "rit": 3
+        }
+      ],
+      "direttrice": "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)",
+      "linea": "RE6",
+      "numero": 2647
     },
     "897": {
       "stato": "REGOLARE",
@@ -104,12 +104,12 @@
       "destinazione": "SARONNO",
       "orario_programmato": "23:32",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
@@ -127,12 +127,12 @@
       "destinazione": "MILANO CADORNA",
       "orario_programmato": "23:53",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
@@ -150,12 +150,12 @@
       "destinazione": "MILANO PORTA GARIBALDI",
       "orario_programmato": "23:20",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": -3
         }
       ],
@@ -173,12 +173,12 @@
       "destinazione": "SEREGNO",
       "orario_programmato": "23:39",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": -1
         }
       ],
@@ -196,12 +196,12 @@
       "destinazione": "CHIASSO",
       "orario_programmato": "23:09",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": -1
         }
       ],
@@ -219,12 +219,12 @@
       "destinazione": "MORTARA",
       "orario_programmato": "23:26",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": -1
         }
       ],
@@ -242,12 +242,12 @@
       "destinazione": "MILANO LAMBRATE",
       "orario_programmato": "23:03",
       "note": "Il treno oggi prosegue da MILANO ROGOREDO a MILANO LAMBRATE",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": -1
         }
       ],
@@ -265,12 +265,12 @@
       "destinazione": "PAVIA",
       "orario_programmato": "23:25",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 6
         }
       ],
@@ -288,12 +288,12 @@
       "destinazione": "MILANO BOVISA POLITECNICO",
       "orario_programmato": "23:09",
       "note": "Treno cancellato",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
@@ -311,12 +311,12 @@
       "destinazione": "MILANO BOVISA POLITECNICO",
       "orario_programmato": "23:39",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 28
         }
       ],
@@ -334,12 +334,12 @@
       "destinazione": "NOVARA",
       "orario_programmato": "23:38",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
@@ -357,12 +357,12 @@
       "destinazione": "TREVIGLIO",
       "orario_programmato": "22:12",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 5
         }
       ],
@@ -380,12 +380,12 @@
       "destinazione": "VARESE",
       "orario_programmato": "22:10",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 2
         }
       ],
@@ -403,12 +403,12 @@
       "destinazione": "GALLARATE",
       "orario_programmato": "22:40",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 3
         }
       ],
@@ -426,12 +426,12 @@
       "destinazione": "GALLARATE",
       "orario_programmato": "23:10",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 5
         }
       ],
@@ -449,12 +449,12 @@
       "destinazione": "MILANO CERTOSA",
       "orario_programmato": "23:40",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 6
         }
       ],
@@ -472,12 +472,12 @@
       "destinazione": "PALAZZOLO MILANESE",
       "orario_programmato": "23:53",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
@@ -495,12 +495,12 @@
       "destinazione": "MILANO CADORNA",
       "orario_programmato": "23:44",
       "note": "",
-      "prima_rilevazione": "2026-07-18T10:05:29",
-      "ultima_rilevazione": "2026-07-18T10:05:29",
+      "prima_rilevazione": "2026-07-18T10:56:15",
+      "ultima_rilevazione": "2026-07-18T10:56:15",
       "scansioni": 1,
       "storico_ritardi": [
         {
-          "ts": "10:05",
+          "ts": "10:56",
           "rit": 0
         }
       ],
