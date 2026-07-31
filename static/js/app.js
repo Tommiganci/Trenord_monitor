@@ -507,6 +507,47 @@ function renderHomePage(direttriciMap) {
         const serviziStr = servizi.join(' / ');
         const isFav = favDirettrici.includes(dir.nome);
         
+        // Raccoglie gli avvisi per questa direttrice
+        const avvisi = [];
+        dir.treni.forEach(t => {
+            let note = (t.note || '').trim();
+            if (t.stato === "SOPPRESSO") {
+                if (!note || note.toLowerCase() === "treno cancellato" || note.toLowerCase() === "soppresso") {
+                    note = "Treno interamente cancellato";
+                }
+            } else if (t.stato === "PARZ. SOPPRESSO") {
+                if (!note) {
+                    note = "Treno parzialmente cancellato";
+                }
+            } else if (t.stato === "LIMITATO") {
+                if (!note) {
+                    note = "Percorso limitato/variazione di tratta";
+                }
+            }
+            
+            if (note && note !== "INATTIVO" && note !== "REGOLARE") {
+                avvisi.push({ numero: t.numero, linea: t.linea, nota: note });
+            }
+        });
+
+        let avvisiHtml = '';
+        if (avvisi.length > 0) {
+            avvisiHtml = `
+                <div class="direttrice-warnings-box">
+                    <div class="warnings-summary">
+                        <span class="warning-alert-icon">⚠️</span>
+                        <span><strong>${avvisi.length}</strong> ${avvisi.length === 1 ? 'avviso critico' : 'avvisi critici'}</span>
+                    </div>
+                    <ul class="warnings-details-list">
+                        ${avvisi.slice(0, 2).map(a => `
+                            <li>Treno <strong>${a.numero}</strong>: ${a.nota}</li>
+                        `).join('')}
+                        ${avvisi.length > 2 ? `<li class="more-warnings-indicator">...e altri ${avvisi.length - 2} avvisi</li>` : ''}
+                    </ul>
+                </div>
+            `;
+        }
+
         html += `
             <div class="direttrice-card" onclick="selectDirettrice('${encodeURIComponent(dir.nome)}')">
                 <div class="direttrice-header">
@@ -537,6 +578,7 @@ function renderHomePage(direttriciMap) {
                         <span style="font-weight: 600; color: ${dir.critici > 0 ? 'var(--danger)' : 'var(--success)'};">${dir.critici}</span>
                     </div>
                 </div>
+                ${avvisiHtml}
             </div>
         `;
     });
@@ -579,6 +621,54 @@ function showHome(pushState = true) {
 function updateDetailView(dirName) {
     const dirTreni = allTrainsData.filter(t => t.direttrice === dirName);
     
+    // Aggiorna gli avvisi in tempo reale per la direttrice
+    const avvisi = [];
+    dirTreni.forEach(t => {
+        let note = (t.note || '').trim();
+        if (t.stato === "SOPPRESSO") {
+            if (!note || note.toLowerCase() === "treno cancellato" || note.toLowerCase() === "soppresso") {
+                note = "Treno interamente cancellato";
+            }
+        } else if (t.stato === "PARZ. SOPPRESSO") {
+            if (!note) {
+                note = "Treno parzialmente cancellato";
+            }
+        } else if (t.stato === "LIMITATO") {
+            if (!note) {
+                note = "Percorso limitato/variazione di tratta";
+            }
+        }
+        
+        if (note && note !== "INATTIVO" && note !== "REGOLARE") {
+            avvisi.push({ numero: t.numero, linea: t.linea, nota: note });
+        }
+    });
+
+    const alertsContainer = document.getElementById('direttrice-alerts-container');
+    if (alertsContainer) {
+        if (avvisi.length > 0) {
+            alertsContainer.classList.remove('hidden');
+            alertsContainer.innerHTML = `
+                <div class="direttrice-alerts-box">
+                    <div class="alerts-box-header">
+                        <span class="warning-alert-icon">⚠️</span>
+                        <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Stato Direttrice: ${avvisi.length} ${avvisi.length === 1 ? 'anomalia segnalata' : 'anomalie segnalate'}</h4>
+                    </div>
+                    <ul class="alerts-details-list">
+                        ${avvisi.map(a => `
+                            <li>
+                                Treno <strong>${a.numero}</strong> (${a.linea}): ${a.nota}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        } else {
+            alertsContainer.classList.add('hidden');
+            alertsContainer.innerHTML = '';
+        }
+    }
+
     let totali = dirTreni.length;
     let critici = 0;
     dirTreni.forEach(t => { if (t.critico) critici++; });
