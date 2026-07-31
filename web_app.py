@@ -496,6 +496,8 @@ def api_station_search():
         
     orari_path = os.path.join(DATA_DIR, "orari_tratte.json")
     if not os.path.exists(orari_path):
+        orari_path = os.path.join(DATA_DIR, "orari_tratte_compresso.json")
+    if not os.path.exists(orari_path):
         return jsonify({"error": "Orari non disponibili"}), 404
         
     try:
@@ -515,13 +517,19 @@ def api_station_search():
     for num_str, st_info in station_trains.items():
         scheduled_dep = st_info.get("dep", "") if isinstance(st_info, dict) else st_info[1]
         line = st_info.get("line", "") if isinstance(st_info, dict) else st_info[2]
+        dir_idx = st_info.get("dir") if isinstance(st_info, dict) else (st_info[0] if isinstance(st_info, (list, tuple)) else None)
         
         live_t = live_trains.get(num_str)
+        train_dir = live_t.get("direttrice", "") if live_t else ""
+        if not train_dir and dir_idx:
+            train_dir = f"Direttrice {dir_idx}"
+
         if live_t:
             results.append({
                 "attivo": True,
                 "numero": int(num_str),
                 "linea": live_t.get("linea", line),
+                "direttrice": train_dir,
                 "origine": live_t.get("origine", "N/D"),
                 "destinazione": live_t.get("destinazione", "N/D"),
                 "orario_passaggio": scheduled_dep,
@@ -539,6 +547,7 @@ def api_station_search():
                 "attivo": False,
                 "numero": int(num_str),
                 "linea": line,
+                "direttrice": train_dir,
                 "origine": orig,
                 "destinazione": dest,
                 "orario_passaggio": scheduled_dep,

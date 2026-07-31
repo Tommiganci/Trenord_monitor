@@ -2191,13 +2191,14 @@ function searchStationClientSide(station, container) {
     
     for (const numStr in stationTrains) {
         const stInfo = stationTrains[numStr];
+        const dirIdx = stInfo.dir || stInfo[0];
         const scheduledDep = stInfo.dep || stInfo[1];
         const line = stInfo.line || stInfo[2];
         const trainNum = parseInt(numStr, 10);
         
         // Cerca se attivo oggi o nei dati generali
         const liveT = allTrainsData.find(x => String(x.numero) === String(trainNum));
-        const trainDir = liveT?.direttrice || "";
+        const trainDir = liveT?.direttrice || (dirIdx ? `Direttrice ${dirIdx}` : "");
 
         if (liveT) {
             results.push({
