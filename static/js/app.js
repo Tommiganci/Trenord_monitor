@@ -75,6 +75,17 @@ function getDirettriceCode(name) {
             return DIRETTRICI_CODES[key];
         }
     }
+    // Fallback: cerca per numero di direttrice (es. "Direttrice 6")
+    const match = name.match(/Direttrice\s+(\d+)/i);
+    if (match) {
+        const num = match[1];
+        for (const key in DIRETTRICI_CODES) {
+            const keyMatch = key.match(/Direttrice\s+(\d+)/i);
+            if (keyMatch && keyMatch[1] === num) {
+                return DIRETTRICI_CODES[key];
+            }
+        }
+    }
     return null;
 }
 
@@ -178,6 +189,8 @@ async function fetchDirettriceNews() {
                 renderHomePage(lastDirettriceMap);
             } else if (selectedDirettrice) {
                 updateDetailView(selectedDirettrice);
+            } else if (lastSearchedStation && document.getElementById('station-results-container')) {
+                searchStationClientSide(lastSearchedStation, document.getElementById('station-results-container'));
             }
         }
     } catch (e) {
@@ -2182,13 +2195,17 @@ function searchStationClientSide(station, container) {
         const line = stInfo.line || stInfo[2];
         const trainNum = parseInt(numStr, 10);
         
-        // Cerca se attivo oggi
+        // Cerca se attivo oggi o nei dati generali
         const liveT = allTrainsData.find(x => x.numero === trainNum);
+        const staticT = liveT || allTrainsData.find(x => String(x.numero) === String(trainNum));
+        const trainDir = liveT?.direttrice || staticT?.direttrice || "";
+
         if (liveT) {
             results.push({
                 attivo: true,
                 numero: trainNum,
                 linea: liveT.linea || line,
+                direttrice: trainDir,
                 origine: liveT.origine || "N/D",
                 destinazione: liveT.destinazione || "N/D",
                 orario_passaggio: scheduledDep,
@@ -2206,6 +2223,7 @@ function searchStationClientSide(station, container) {
                 attivo: false,
                 numero: trainNum,
                 linea: line,
+                direttrice: trainDir,
                 origine: endpoints.origine,
                 destinazione: endpoints.destinazione,
                 orario_passaggio: scheduledDep,
@@ -2243,7 +2261,11 @@ function renderStationResults(results, container, station) {
     const startDefault = String(thirtyMinAgo.getHours()).padStart(2, '0') + ':' + String(thirtyMinAgo.getMinutes()).padStart(2, '0');
     
     // 1. Raccoglie gli avvisi ufficiali di linea (rossi) per tutte le direttrici afferenti a questa stazione
-    const stationDirs = [...new Set(results.map(t => t.direttrice))].filter(Boolean);
+    const stationDirs = [...new Set(
+        results.map(t => t.direttrice).concat(
+            allTrainsData.filter(x => x.fermate && Array.isArray(x.fermate) && x.fermate.includes(station)).map(x => x.direttrice)
+        )
+    )].filter(Boolean);
     const officialStationNews = [];
     stationDirs.forEach(dirName => {
         const code = getDirettriceCode(dirName);
