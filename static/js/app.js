@@ -2229,7 +2229,58 @@ function renderStationResults(results, container, station) {
     const thirtyMinAgo = new Date(now.getTime() - 30 * 60 * 1000);
     const startDefault = String(thirtyMinAgo.getHours()).padStart(2, '0') + ':' + String(thirtyMinAgo.getMinutes()).padStart(2, '0');
     
-    // Raccoglie le anomalie/note di tutti i treni in questa stazione
+    // 1. Raccoglie gli avvisi ufficiali di linea (rossi) per tutte le direttrici afferenti a questa stazione
+    const stationDirs = [...new Set(results.map(t => t.direttrice))].filter(Boolean);
+    const officialStationNews = [];
+    stationDirs.forEach(dirName => {
+        const code = getDirettriceCode(dirName);
+        const newsList = code ? (liveDirettriciNews[code] || []) : [];
+        newsList.forEach(newsItem => {
+            officialStationNews.push({
+                direttrice: dirName,
+                news: newsItem
+            });
+        });
+    });
+
+    let officialAlertsHtml = '';
+    if (officialStationNews.length > 0) {
+        const firstNewsStr = sanitizeNewsText(officialStationNews[0].news.description.split('\n')[0]);
+        officialAlertsHtml = `
+            <div class="direttrice-alerts-box" style="border-color: rgba(239, 68, 68, 0.25); background-color: rgba(239, 68, 68, 0.05); margin-bottom: 20px;">
+                <div class="alerts-box-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="toggleStationAlertsExpand(event)">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="warning-alert-icon">🚨</span>
+                        <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--danger);">
+                            AVVISI UFFICIALI DI LINEA (${officialStationNews.length})
+                        </h4>
+                    </div>
+                    <button id="btn-toggle-station-alerts" class="filter-btn" onclick="toggleStationAlertsExpand(event)" style="padding: 4px 10px; font-size: 0.8rem; background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: var(--danger); font-weight: 600;">
+                        Mostra Dettagli ▼
+                    </button>
+                </div>
+                
+                <div id="station-alerts-preview" style="font-size: 0.85rem; color: var(--text-main); margin-top: 8px; font-weight: 500;">
+                    <span style="color: var(--danger); font-weight: 600;">📌 ${officialStationNews[0].direttrice.split('(')[0].trim()}:</span> ${firstNewsStr.length > 95 ? firstNewsStr.substring(0, 92) + '...' : firstNewsStr}
+                </div>
+
+                <div id="station-alerts-details" class="hidden" style="margin-top: 15px; border-top: 1px solid rgba(239, 68, 68, 0.15); padding-top: 12px; white-space: pre-line; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
+                    ${officialStationNews.map((item, idx) => `
+                        <div style="${idx > 0 ? 'margin-top: 15px; border-top: 1px solid rgba(239, 68, 68, 0.15); padding-top: 15px;' : ''}">
+                            <div style="font-size: 0.76rem; color: var(--danger); margin-bottom: 4px; font-weight: 700;">📌 ${item.direttrice.toUpperCase()}</div>
+                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">PUBBLICATO IL: ${new Date(item.news.date).toLocaleString('it-IT')}</div>
+                            <div>${linkify(sanitizeNewsText(item.news.description))}</div>
+                        </div>
+                    `).join('')}
+                    <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 15px; border-top: 1px dotted rgba(239, 68, 68, 0.2); padding-top: 8px; font-style: italic; line-height: 1.4;">
+                        Nota: Gli avvisi di linea sopra riportati sono riprodotti a scopo informativo dai canali Trenord per le direttrici afferenti alla stazione di ${station}.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // 2. Raccoglie le anomalie/note dei singoli treni in questa stazione (gialli)
     const stationAnomalies = [];
     results.forEach(t => {
         const note = (t.note || '').trim();
@@ -2259,7 +2310,7 @@ function renderStationResults(results, container, station) {
         `;
     }
 
-    let html = `${stationAlertsHtml}<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
+    let html = `${officialAlertsHtml}${stationAlertsHtml}<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
     
     // Aggiunge la barra dei filtri avanzati
     html += `
@@ -2337,6 +2388,24 @@ function renderStationResults(results, container, station) {
     
     // Applica subito i filtri per mostrare la finestra temporale iniziale di default
     applyStationFilters();
+}
+
+function toggleStationAlertsExpand(event) {
+    if (event) event.stopPropagation();
+    const details = document.getElementById('station-alerts-details');
+    const preview = document.getElementById('station-alerts-preview');
+    const btn = document.getElementById('btn-toggle-station-alerts');
+    if (!details || !btn) return;
+    
+    if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        if (preview) preview.classList.add('hidden');
+        btn.innerHTML = 'Nascondi ▲';
+    } else {
+        details.classList.add('hidden');
+        if (preview) preview.classList.remove('hidden');
+        btn.innerHTML = 'Mostra Dettagli ▼';
+    }
 }
 
 function applyStationFilters() {
