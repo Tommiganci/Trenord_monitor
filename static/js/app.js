@@ -572,8 +572,8 @@ function renderFavTrainsSection() {
     section.classList.remove('hidden');
     let html = '';
 
-    favs.forEach(num => {
-        const t = allTrainsData.find(x => x.numero === num);
+    favTrainNumbers.forEach(num => {
+        const t = allTrainsData.find(x => String(x.numero) === String(num));
         if (t) {
             const statusBadge = renderStatus(t.stato, t.critico);
             const trenoData = encodeURIComponent(JSON.stringify({
@@ -2196,9 +2196,8 @@ function searchStationClientSide(station, container) {
         const trainNum = parseInt(numStr, 10);
         
         // Cerca se attivo oggi o nei dati generali
-        const liveT = allTrainsData.find(x => x.numero === trainNum);
-        const staticT = liveT || allTrainsData.find(x => String(x.numero) === String(trainNum));
-        const trainDir = liveT?.direttrice || staticT?.direttrice || "";
+        const liveT = allTrainsData.find(x => String(x.numero) === String(trainNum));
+        const trainDir = liveT?.direttrice || "";
 
         if (liveT) {
             results.push({
@@ -2261,11 +2260,7 @@ function renderStationResults(results, container, station) {
     const startDefault = String(thirtyMinAgo.getHours()).padStart(2, '0') + ':' + String(thirtyMinAgo.getMinutes()).padStart(2, '0');
     
     // 1. Raccoglie gli avvisi ufficiali di linea (rossi) per tutte le direttrici afferenti a questa stazione
-    const stationDirs = [...new Set(
-        results.map(t => t.direttrice).concat(
-            allTrainsData.filter(x => x.fermate && Array.isArray(x.fermate) && x.fermate.includes(station)).map(x => x.direttrice)
-        )
-    )].filter(Boolean);
+    const stationDirs = [...new Set(results.map(t => t.direttrice))].filter(Boolean);
     const officialStationNews = [];
     stationDirs.forEach(dirName => {
         const code = getDirettriceCode(dirName);
