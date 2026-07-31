@@ -572,7 +572,7 @@ function renderFavTrainsSection() {
     section.classList.remove('hidden');
     let html = '';
 
-    favTrainNumbers.forEach(num => {
+    favs.forEach(num => {
         const t = allTrainsData.find(x => String(x.numero) === String(num));
         if (t) {
             const statusBadge = renderStatus(t.stato, t.critico);
