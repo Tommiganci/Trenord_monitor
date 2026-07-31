@@ -1037,6 +1037,38 @@ function openModal(trenoDataStr, numero) {
     document.getElementById('modal-treno-title').innerText = `Treno ${t.linea} ${t.numero}`.trim();
     document.getElementById('modal-treno-subtitle').innerText = t.destinazione ? `${t.origine} ➔ ${t.destinazione}` : t.origine;
 
+    // Popola immediatamente il box delle note/avvisi del treno se presenti
+    const fullTrain = allTrainsData.find(x => String(x.numero) === String(numero)) || t;
+    const noteText = (fullTrain.note || '').trim();
+    const isDelayReason = (fullTrain.ritardo_capolinea > 0 || fullTrain.ritardo_attuale > 0);
+    const hasNote = (noteText && noteText !== "INATTIVO" && noteText !== "REGOLARE") || 
+                  ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(fullTrain.stato);
+                  
+    const noteBox = document.getElementById('modal-train-note-box');
+    if (noteBox) {
+        if (hasNote) {
+            let displayNote = noteText;
+            if (["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(fullTrain.stato) && (!displayNote || displayNote.toLowerCase() === 'treno cancellato')) {
+                displayNote = `Stato convoglio: ${fullTrain.stato}`;
+            }
+            
+            const titleText = isDelayReason ? "Motivo del Ritardo / Dettaglio" : "Note di Viaggio / Variazione";
+            const titleColor = isDelayReason ? "var(--danger)" : "var(--warning)";
+            const borderStyle = isDelayReason ? "border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05);" : "border-color: rgba(245, 158, 11, 0.3); background-color: rgba(245, 158, 11, 0.05);";
+
+            noteBox.innerHTML = `
+                <div class="live-train-info-box" style="margin-top: 15px; margin-bottom: 15px; ${borderStyle}">
+                    <div class="live-train-info-title" style="color: ${titleColor}; font-weight: 700; text-transform: uppercase;">⚠️ ${titleText}</div>
+                    <div style="font-size: 0.9rem; color: var(--text-main); font-weight: 500; line-height: 1.4;">${linkify(sanitizeNewsText(displayNote))}</div>
+                </div>
+            `;
+            noteBox.classList.remove('hidden');
+        } else {
+            noteBox.innerHTML = '';
+            noteBox.classList.add('hidden');
+        }
+    }
+
     updateModalFavButton(numero);
 
     if (IS_STATIC) {
@@ -2197,7 +2229,37 @@ function renderStationResults(results, container, station) {
     const thirtyMinAgo = new Date(now.getTime() - 30 * 60 * 1000);
     const startDefault = String(thirtyMinAgo.getHours()).padStart(2, '0') + ':' + String(thirtyMinAgo.getMinutes()).padStart(2, '0');
     
-    let html = `<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
+    // Raccoglie le anomalie/note di tutti i treni in questa stazione
+    const stationAnomalies = [];
+    results.forEach(t => {
+        const note = (t.note || '').trim();
+        if (note && note !== "INATTIVO" && note !== "REGOLARE") {
+            stationAnomalies.push({ numero: t.numero, linea: t.linea, nota: note, stato: t.stato });
+        } else if (["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato)) {
+            stationAnomalies.push({ numero: t.numero, linea: t.linea, nota: `Stato convoglio: ${t.stato}`, stato: t.stato });
+        }
+    });
+
+    let stationAlertsHtml = '';
+    if (stationAnomalies.length > 0) {
+        stationAlertsHtml = `
+            <div class="direttrice-alerts-box" style="margin-bottom: 20px; border-color: rgba(245, 158, 11, 0.3); background-color: rgba(245, 158, 11, 0.06);">
+                <div class="alerts-box-header" style="margin-bottom: 10px; padding-bottom: 6px;">
+                    <span class="warning-alert-icon">⚠️</span>
+                    <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Stazione di ${station}: ${stationAnomalies.length} ${stationAnomalies.length === 1 ? 'treno interessato da avviso/anomalia' : 'treni interessati da avvisi/anomalie'}</h4>
+                </div>
+                <ul class="alerts-details-list">
+                    ${stationAnomalies.map(a => `
+                        <li>
+                            Treno <strong>${a.linea ? a.linea + ' ' : ''}${a.numero}</strong>: ${linkify(sanitizeNewsText(a.nota))}
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }
+
+    let html = `${stationAlertsHtml}<h3 style="margin-top: 0; margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted);">${results.length} Treni in Transito a ${station}:</h3>`;
     
     // Aggiunge la barra dei filtri avanzati
     html += `
