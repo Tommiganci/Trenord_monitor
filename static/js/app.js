@@ -22,6 +22,88 @@ let selectedDirettrice = null;
 let lastDirettriceMap = {};
 let currentDirettriciSearch = '';
 
+let liveDirettriciNews = {};
+
+const DIRETTRICI_CODES = {
+  "Direttrice 1 (Novara - Milano Passante - Treviglio)": "D001",
+  "Direttrice 10 (Como - Molteno - Lecco)": "D009",
+  "Direttrice 11 (Bergamo - Brescia / Lecco - Bergamo)": "D010",
+  "Direttrice 12 (Bergamo - Carnate - Milano)": "D011",
+  "Direttrice 14 (Bergamo - Treviglio)": "D040",
+  "Direttrice 15 (Bergamo - Pioltello \u2013 Milano)": "D012",
+  "Direttrice 16 (Cremona - Treviglio)": "D013",
+  "Direttrice 17 (Verona - Brescia - Milano / Brescia - Treviglio - Milano)": "D014",
+  "Direttrice 18 (Brescia - Parma)": "D015",
+  "Direttrice 19 (Brescia - Cremona)": "D016",
+  "Direttrice 2 (Saronno - Seregno - Milano - Albairate / Albairate-Milano Rogoredo)": "D038",
+  "Direttrice 20 (Mantova - Cremona - Codogno - Milano / Codogno \u2013 Cremona / Cremona - Mantova)": "D017",
+  "Direttrice 21 (Piacenza - Lodi - Milano)": "D018",
+  "Direttrice 22 (Alessandria - Pavia - Milano / Pavia - Voghera / Pavia - Passante - Bovisa)": "D019",
+  "Direttrice 23 (Milano - Pavia - Stradella)": "D020",
+  "Direttrice 24 (Pavia - Codogno)": "D021",
+  "Direttrice 25 (Mortara - Alessandria / Mortara - Milano)": "D022",
+  "Direttrice 26 (Novara - Mortara - Alessandria)": "D022",
+  "Direttrice 27 (Pavia - Torreberetti - Alessandria)": "D024",
+  "Direttrice 28 (Pavia - Mortara, Vercelli)": "D025",
+  "Direttrice 29 (Voghera - Piacenza)": "D026",
+  "Direttrice 3 (Domodossola - Milano / Domodossola - Arona - Gallarate - Milano / Laveno \u2013 Sesto Calende)": "D002",
+  "Direttrice 30 (Laveno - Varese - Saronno - Milano / Varese - Saronno - Milano)": "D034",
+  "Direttrice 31 (Como - Saronno \u2013 Milano)": "D032",
+  "Direttrice 32 (Novara - Saronno \u2013 Milano)": "D033",
+  "Direttrice 33 (Asso - Milano)": "D035",
+  "Direttrice 34 (Brescia - Iseo \u2013 Edolo / Brescia - Iseo - Breno / Rovato - Bornato - Iseo / Brescia - Iseo)": "D028",
+  "Direttrice 35 (Gallarate - Malpensa - Milano Centrale / Malpensa - Milano Cadorna)": "D029",
+  "Direttrice 36 (Saronno - Passante - Lodi / Saronno - Bovisa - Cadorna / Melegnano-Passante-Bovisa)": "D031",
+  "Direttrice 37 (Mariano/Camnago - Milano)": "D036",
+  "Direttrice 39 (Lecco - Carnate - Milano P.ta Garibaldi)": "D041",
+  "Direttrice 4 (Porto Ceresio - Varese - Gallarate - Milano)": "D003",
+  "Direttrice 40 (Varese - Milano Passante - Treviglio)": "D027",
+  "Direttrice 42 (Malpensa - Varese - Mendrisio - Como)": "D042",
+  "Direttrice 5 (Luino - Gallarate \u2013 Milano / Cadenazzo - Luino - Gallarate)": "D004",
+  "Direttrice 6 (Milano - Como - Chiasso)": "D005",
+  "Direttrice 7 (Tirano - Sondrio - Lecco - Milano)": "D006",
+  "Direttrice 8 (Lecco-Molteno-Monza-Milano)": "D007",
+  "Direttrice 9 (Colico - Chiavenna)": "D008"
+};
+
+function getDirettriceCode(name) {
+    if (!name) return null;
+    const clean = name.replace(/\s+/g, ' ').replace(/[\u2013\u2014-]/g, '-').trim();
+    for (const key in DIRETTRICI_CODES) {
+        const cleanKey = key.replace(/\s+/g, ' ').replace(/[\u2013\u2014-]/g, '-').trim();
+        if (clean === cleanKey) {
+            return DIRETTRICI_CODES[key];
+        }
+    }
+    return null;
+}
+
+async function fetchDirettriceNews() {
+    try {
+        const res = await fetch('https://infolineemat-tracciamento-tren-3993ebacd280.herokuapp.com/api/direttrici');
+        if (res.ok) {
+            const data = await res.json();
+            const newsMap = {};
+            for (const cat of ['critiche', 'ritardi', 'info', 'regolari']) {
+                for (const item of (data[cat] || [])) {
+                    if (item.nome) {
+                        newsMap[item.nome] = item.news || [];
+                    }
+                }
+            }
+            liveDirettriciNews = newsMap;
+            // Se siamo nella home page, ri-renderizziamo per mostrare gli avvisi
+            if (!selectedDirettrice && lastDirettriceMap && Object.keys(lastDirettriceMap).length > 0) {
+                renderHomePage(lastDirettriceMap);
+            } else if (selectedDirettrice) {
+                updateDetailView(selectedDirettrice);
+            }
+        }
+    } catch (e) {
+        console.warn("Errore caricamento avvisi direttrici:", e);
+    }
+}
+
 let currentModalTrainNum = null;
 let trainMap = null;
 let trainMapMarkers = [];
@@ -113,8 +195,8 @@ function renderStatus(stato, critico) {
     }
     return `<span class="status-badge status-ok">REGOLARE</span>`;
 }
-
 function updateDashboard() {
+    fetchDirettriceNews();
     if (IS_STATIC) {
         renderDashboardData(STATIC_DATA);
         updateOverallStats();
@@ -128,7 +210,6 @@ function updateDashboard() {
             .catch(err => console.error("Errore fetch dati:", err));
     }
 }
-
 function renderMonthlyData(mdata) {
     if (!mdata) return;
     let mEl = document.getElementById('kpi-disagio-mese');
@@ -507,42 +588,61 @@ function renderHomePage(direttriciMap) {
         const serviziStr = servizi.join(' / ');
         const isFav = favDirettrici.includes(dir.nome);
         
-        // Raccoglie gli avvisi per questa direttrice
-        const avvisi = [];
+        // 1. Cerca avvisi ufficiali della direttrice dall'API di infolineemat
+        const code = getDirettriceCode(dir.nome);
+        const officialNews = code ? (liveDirettriciNews[code] || []) : [];
+        
+        // 2. Raccoglie anche le anomalie dei singoli treni (es. soppressioni in tempo reale)
+        const treniAnomalie = [];
         dir.treni.forEach(t => {
             let note = (t.note || '').trim();
             if (t.stato === "SOPPRESSO") {
                 if (!note || note.toLowerCase() === "treno cancellato" || note.toLowerCase() === "soppresso") {
-                    note = "Treno interamente cancellato";
+                    note = "Cancellato";
                 }
             } else if (t.stato === "PARZ. SOPPRESSO") {
                 if (!note) {
-                    note = "Treno parzialmente cancellato";
+                    note = "Parzialmente cancellato";
                 }
             } else if (t.stato === "LIMITATO") {
                 if (!note) {
-                    note = "Percorso limitato/variazione di tratta";
+                    note = "Percorso limitato";
                 }
             }
             
             if (note && note !== "INATTIVO" && note !== "REGOLARE") {
-                avvisi.push({ numero: t.numero, linea: t.linea, nota: note });
+                treniAnomalie.push({ numero: t.numero, linea: t.linea, nota: note });
             }
         });
 
         let avvisiHtml = '';
-        if (avvisi.length > 0) {
+        if (officialNews.length > 0) {
+            // Mostra il primo avviso ufficiale della linea
+            const firstNews = officialNews[0].description.split('\n')[0];
+            avvisiHtml = `
+                <div class="direttrice-warnings-box" style="border-color: rgba(239, 68, 68, 0.25); background-color: rgba(239, 68, 68, 0.05);">
+                    <div class="warnings-summary" style="color: var(--danger);">
+                        <span class="warning-alert-icon">🚨</span>
+                        <span><strong>AVVISO DI LINEA:</strong></span>
+                    </div>
+                    <div class="warning-text-preview" style="font-size: 0.76rem; color: var(--text-main); line-height: 1.35; font-weight: 500;">
+                        ${firstNews.length > 90 ? firstNews.substring(0, 87) + '...' : firstNews}
+                    </div>
+                </div>
+            `;
+        } else if (treniAnomalie.length > 0) {
+            // Se non ci sono notizie generali, mostra le anomalie dei singoli treni
             avvisiHtml = `
                 <div class="direttrice-warnings-box">
                     <div class="warnings-summary">
                         <span class="warning-alert-icon">⚠️</span>
-                        <span><strong>${avvisi.length}</strong> ${avvisi.length === 1 ? 'avviso critico' : 'avvisi critici'}</span>
+                        <span><strong>${treniAnomalie.length}</strong> ${treniAnomalie.length === 1 ? 'treno critico' : 'treni critici'}</span>
                     </div>
                     <ul class="warnings-details-list">
-                        ${avvisi.slice(0, 2).map(a => `
+                        ${treniAnomalie.slice(0, 2).map(a => `
                             <li>Treno <strong>${a.numero}</strong>: ${a.nota}</li>
                         `).join('')}
-                        ${avvisi.length > 2 ? `<li class="more-warnings-indicator">...e altri ${avvisi.length - 2} avvisi</li>` : ''}
+                        ${treniAnomalie.length > 2 ? `<li class="more-warnings-indicator">...e altri ${treniAnomalie.length - 2} treni</li>` : ''}
                     </ul>
                 </div>
             `;
@@ -621,48 +721,79 @@ function showHome(pushState = true) {
 function updateDetailView(dirName) {
     const dirTreni = allTrainsData.filter(t => t.direttrice === dirName);
     
-    // Aggiorna gli avvisi in tempo reale per la direttrice
-    const avvisi = [];
+    // Aggiorna gli avvisi in tempo reale per la direttrice (sia generali da API che anomalie singoli treni)
+    const code = getDirettriceCode(dirName);
+    const officialNews = code ? (liveDirettriciNews[code] || []) : [];
+
+    const treniAnomalie = [];
     dirTreni.forEach(t => {
         let note = (t.note || '').trim();
         if (t.stato === "SOPPRESSO") {
             if (!note || note.toLowerCase() === "treno cancellato" || note.toLowerCase() === "soppresso") {
-                note = "Treno interamente cancellato";
+                note = "Cancellato";
             }
         } else if (t.stato === "PARZ. SOPPRESSO") {
             if (!note) {
-                note = "Treno parzialmente cancellato";
+                note = "Parzialmente cancellato";
             }
         } else if (t.stato === "LIMITATO") {
             if (!note) {
-                note = "Percorso limitato/variazione di tratta";
+                note = "Percorso limitato";
             }
         }
         
         if (note && note !== "INATTIVO" && note !== "REGOLARE") {
-            avvisi.push({ numero: t.numero, linea: t.linea, nota: note });
+            treniAnomalie.push({ numero: t.numero, linea: t.linea, nota: note });
         }
     });
 
     const alertsContainer = document.getElementById('direttrice-alerts-container');
     if (alertsContainer) {
-        if (avvisi.length > 0) {
+        if (officialNews.length > 0 || treniAnomalie.length > 0) {
             alertsContainer.classList.remove('hidden');
-            alertsContainer.innerHTML = `
-                <div class="direttrice-alerts-box">
-                    <div class="alerts-box-header">
-                        <span class="warning-alert-icon">⚠️</span>
-                        <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Stato Direttrice: ${avvisi.length} ${avvisi.length === 1 ? 'anomalia segnalata' : 'anomalie segnalate'}</h4>
+            
+            let html = '';
+            
+            // 1. Renderizza gli avvisi di linea ufficiali (se presenti)
+            if (officialNews.length > 0) {
+                html += `
+                    <div class="direttrice-alerts-box" style="border-color: rgba(239, 68, 68, 0.25); background-color: rgba(239, 68, 68, 0.05); margin-bottom: 15px;">
+                        <div class="alerts-box-header" style="border-bottom-color: rgba(239, 68, 68, 0.15); margin-bottom: 12px; padding-bottom: 8px;">
+                            <span class="warning-alert-icon">🚨</span>
+                            <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--danger);">AVVISI DI CIRCOLAZIONE UFFICIALI</h4>
+                        </div>
+                        <div style="white-space: pre-line; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
+                            ${officialNews.map((n, idx) => `
+                                <div style="${idx > 0 ? 'margin-top: 15px; border-top: 1px solid rgba(239, 68, 68, 0.15); padding-top: 15px;' : ''}">
+                                    <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">PUBBLICATO IL: ${new Date(n.date).toLocaleString('it-IT')}</div>
+                                    <div>${n.description}</div>
+                                </div>
+                            `).join('')}
+                        </div>
                     </div>
-                    <ul class="alerts-details-list">
-                        ${avvisi.map(a => `
-                            <li>
-                                Treno <strong>${a.numero}</strong> (${a.linea}): ${a.nota}
-                            </li>
-                        `).join('')}
-                    </ul>
-                </div>
-            `;
+                `;
+            }
+            
+            // 2. Renderizza le anomalie dei singoli treni (se presenti)
+            if (treniAnomalie.length > 0) {
+                html += `
+                    <div class="direttrice-alerts-box" style="margin-bottom: 0;">
+                        <div class="alerts-box-header" style="margin-bottom: 12px; padding-bottom: 8px;">
+                            <span class="warning-alert-icon">⚠️</span>
+                            <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Treni con variazioni o cancellazioni</h4>
+                        </div>
+                        <ul class="alerts-details-list">
+                            ${treniAnomalie.map(a => `
+                                <li>
+                                    Treno <strong>${a.numero}</strong> (${a.linea}): ${a.nota}
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+            
+            alertsContainer.innerHTML = html;
         } else {
             alertsContainer.classList.add('hidden');
             alertsContainer.innerHTML = '';
@@ -2477,13 +2608,18 @@ function renderLiveTrainResults(data) {
         `;
     }
 
-    // Note di viaggio
+    // Note di viaggio / Motivo del ritardo
     let notesHtml = '';
     if (data.subTitle && data.subTitle.trim()) {
+        const isDelayReason = data.ritardo > 0;
+        const titleText = isDelayReason ? "Motivo del Ritardo / Dettaglio" : "Note di Viaggio / Variazione";
+        const titleColor = isDelayReason ? "var(--danger)" : "var(--warning)";
+        const borderStyle = isDelayReason ? "border-color: rgba(239, 68, 68, 0.3); background-color: rgba(239, 68, 68, 0.05);" : "border-color: rgba(245, 158, 11, 0.3); background-color: rgba(245, 158, 11, 0.05);";
+        
         notesHtml = `
-            <div class="live-train-info-box" style="margin-bottom: 20px; border-color: rgba(245, 158, 11, 0.3); background-color: rgba(245, 158, 11, 0.05);">
-                <div class="live-train-info-title" style="color: var(--warning);">Note di Viaggio</div>
-                <div style="font-size: 0.9rem; color: var(--text-main);">${data.subTitle}</div>
+            <div class="live-train-info-box" style="margin-bottom: 20px; ${borderStyle}">
+                <div class="live-train-info-title" style="color: ${titleColor}; font-weight: 700; text-transform: uppercase;">${titleText}</div>
+                <div style="font-size: 0.9rem; color: var(--text-main); font-weight: 500; line-height: 1.4;">${data.subTitle}</div>
             </div>
         `;
     }
