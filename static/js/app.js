@@ -860,19 +860,32 @@ function updateDetailView(dirName) {
             
             // 2. Renderizza le anomalie dei singoli treni (se presenti)
             if (treniAnomalie.length > 0) {
+                const firstAnoStr = sanitizeNewsText(treniAnomalie[0].nota);
                 html += `
                     <div class="direttrice-alerts-box" style="margin-bottom: 0;">
-                        <div class="alerts-box-header" style="margin-bottom: 12px; padding-bottom: 8px;">
-                            <span class="warning-alert-icon">⚠️</span>
-                            <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Treni con variazioni o cancellazioni</h4>
+                        <div class="alerts-box-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="toggleDirettriceTrainAlertsExpand(event)">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="warning-alert-icon">⚠️</span>
+                                <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Treni con variazioni o cancellazioni (${treniAnomalie.length})</h4>
+                            </div>
+                            <button id="btn-toggle-direttrice-train-alerts" class="filter-btn" onclick="toggleDirettriceTrainAlertsExpand(event)" style="padding: 4px 10px; font-size: 0.8rem; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: #f59e0b; font-weight: 600;">
+                                Mostra Dettagli ▼
+                            </button>
                         </div>
-                        <ul class="alerts-details-list">
-                            ${treniAnomalie.map(a => `
-                                <li>
-                                    Treno <strong>${a.numero}</strong> (${a.linea}): ${a.nota}
-                                </li>
-                            `).join('')}
-                        </ul>
+
+                        <div id="direttrice-train-alerts-preview" style="font-size: 0.85rem; color: var(--text-main); margin-top: 8px; font-weight: 500;">
+                            <span style="color: #f59e0b; font-weight: 600;">📌 Treno ${treniAnomalie[0].linea ? treniAnomalie[0].linea + ' ' : ''}${treniAnomalie[0].numero}:</span> ${firstAnoStr.length > 95 ? firstAnoStr.substring(0, 92) + '...' : firstAnoStr}
+                        </div>
+
+                        <div id="direttrice-train-alerts-details" class="hidden" style="margin-top: 12px; border-top: 1px solid rgba(245, 158, 11, 0.15); padding-top: 10px;">
+                            <ul class="alerts-details-list">
+                                ${treniAnomalie.map(a => `
+                                    <li>
+                                        Treno <strong>${a.numero}</strong> (${a.linea}): ${linkify(sanitizeNewsText(a.nota))}
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
                     </div>
                 `;
             }
@@ -2293,19 +2306,32 @@ function renderStationResults(results, container, station) {
 
     let stationAlertsHtml = '';
     if (stationAnomalies.length > 0) {
+        const firstStAnoStr = sanitizeNewsText(stationAnomalies[0].nota);
         stationAlertsHtml = `
             <div class="direttrice-alerts-box" style="margin-bottom: 20px; border-color: rgba(245, 158, 11, 0.3); background-color: rgba(245, 158, 11, 0.06);">
-                <div class="alerts-box-header" style="margin-bottom: 10px; padding-bottom: 6px;">
-                    <span class="warning-alert-icon">⚠️</span>
-                    <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Stazione di ${station}: ${stationAnomalies.length} ${stationAnomalies.length === 1 ? 'treno interessato da avviso/anomalia' : 'treni interessati da avvisi/anomalie'}</h4>
+                <div class="alerts-box-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="toggleStationTrainAlertsExpand(event)">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span class="warning-alert-icon">⚠️</span>
+                        <h4 style="margin: 0; font-size: 1.05rem; font-weight: 600; color: #f59e0b;">Stazione di ${station}: ${stationAnomalies.length} ${stationAnomalies.length === 1 ? 'treno interessato da avviso/anomalia' : 'treni interessati da avvisi/anomalie'}</h4>
+                    </div>
+                    <button id="btn-toggle-station-train-alerts" class="filter-btn" onclick="toggleStationTrainAlertsExpand(event)" style="padding: 4px 10px; font-size: 0.8rem; background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: #f59e0b; font-weight: 600;">
+                        Mostra Dettagli ▼
+                    </button>
                 </div>
-                <ul class="alerts-details-list">
-                    ${stationAnomalies.map(a => `
-                        <li>
-                            Treno <strong>${a.linea ? a.linea + ' ' : ''}${a.numero}</strong>: ${linkify(sanitizeNewsText(a.nota))}
-                        </li>
-                    `).join('')}
-                </ul>
+
+                <div id="station-train-alerts-preview" style="font-size: 0.85rem; color: var(--text-main); margin-top: 8px; font-weight: 500;">
+                    <span style="color: #f59e0b; font-weight: 600;">📌 Treno ${stationAnomalies[0].linea ? stationAnomalies[0].linea + ' ' : ''}${stationAnomalies[0].numero}:</span> ${firstStAnoStr.length > 95 ? firstStAnoStr.substring(0, 92) + '...' : firstStAnoStr}
+                </div>
+
+                <div id="station-train-alerts-details" class="hidden" style="margin-top: 12px; border-top: 1px solid rgba(245, 158, 11, 0.2); padding-top: 10px;">
+                    <ul class="alerts-details-list">
+                        ${stationAnomalies.map(a => `
+                            <li>
+                                Treno <strong>${a.linea ? a.linea + ' ' : ''}${a.numero}</strong>: ${linkify(sanitizeNewsText(a.nota))}
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
             </div>
         `;
     }
@@ -2395,6 +2421,42 @@ function toggleStationAlertsExpand(event) {
     const details = document.getElementById('station-alerts-details');
     const preview = document.getElementById('station-alerts-preview');
     const btn = document.getElementById('btn-toggle-station-alerts');
+    if (!details || !btn) return;
+    
+    if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        if (preview) preview.classList.add('hidden');
+        btn.innerHTML = 'Nascondi ▲';
+    } else {
+        details.classList.add('hidden');
+        if (preview) preview.classList.remove('hidden');
+        btn.innerHTML = 'Mostra Dettagli ▼';
+    }
+}
+
+function toggleStationTrainAlertsExpand(event) {
+    if (event) event.stopPropagation();
+    const details = document.getElementById('station-train-alerts-details');
+    const preview = document.getElementById('station-train-alerts-preview');
+    const btn = document.getElementById('btn-toggle-station-train-alerts');
+    if (!details || !btn) return;
+    
+    if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        if (preview) preview.classList.add('hidden');
+        btn.innerHTML = 'Nascondi ▲';
+    } else {
+        details.classList.add('hidden');
+        if (preview) preview.classList.remove('hidden');
+        btn.innerHTML = 'Mostra Dettagli ▼';
+    }
+}
+
+function toggleDirettriceTrainAlertsExpand(event) {
+    if (event) event.stopPropagation();
+    const details = document.getElementById('direttrice-train-alerts-details');
+    const preview = document.getElementById('direttrice-train-alerts-preview');
+    const btn = document.getElementById('btn-toggle-direttrice-train-alerts');
     if (!details || !btn) return;
     
     if (details.classList.contains('hidden')) {
