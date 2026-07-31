@@ -148,6 +148,17 @@ function linkify(text) {
     });
 }
 
+function getTrainWarningBadge(t) {
+    if (!t) return '';
+    const noteText = (t.note || '').trim();
+    const hasWarning = (noteText && noteText !== "INATTIVO" && noteText !== "REGOLARE") || 
+                       ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"].includes(t.stato);
+    if (!hasWarning) return '';
+    
+    const titleText = sanitizeNewsText(noteText || t.stato || "Avviso per questo treno");
+    return `<span class="train-alert-icon" title="${titleText.replace(/"/g, '&quot;')}" style="margin-left: 5px; color: #f59e0b; cursor: help; font-size: 0.95em;">⚠️</span>`;
+}
+
 async function fetchDirettriceNews() {
     try {
         const res = await fetch('https://infolineemat-tracciamento-tren-3993ebacd280.herokuapp.com/api/direttrici');
@@ -562,7 +573,7 @@ function renderFavTrainsSection() {
             html += `
                 <div class="fav-train-card" onclick="openModal('${trenoData}', ${t.numero})">
                     <div class="fav-train-header">
-                        <span class="fav-train-name" style="display: flex; align-items: center; gap: 6px;">${getLineBadgeHtml(t.linea)} ${t.numero}</span>
+                        <span class="fav-train-name" style="display: flex; align-items: center; gap: 6px;">${getLineBadgeHtml(t.linea)} ${t.numero}${getTrainWarningBadge(t)}</span>
                         <button class="fav-star-icon" onclick="toggleFavTrain(event, ${t.numero}); event.stopPropagation();">★</button>
                     </div>
                     <div class="fav-train-route" title="${t.origine} ➔ ${t.destinazione}">
@@ -978,7 +989,7 @@ function renderTable() {
                             style="margin-right: 8px;">
                         ★
                     </button>
-                    <strong>${getLineBadgeHtml(t.linea)} ${t.numero}</strong>
+                    <strong>${getLineBadgeHtml(t.linea)} ${t.numero}${getTrainWarningBadge(t)}</strong>
                 </td>
                 <td>${renderStatus(t.stato, t.critico)}</td>
                 <td>${t.ritardo_attuale}'</td>
@@ -1908,7 +1919,7 @@ function renderSearchResults(trains, container) {
                 <div class="search-result-card" onclick="openModal('${trenoData}', ${t.numero})">
                     <div class="route-header">
                         <div>
-                            <span class="route-train-num" style="display: flex; align-items: center; gap: 6px;">${getLineBadgeHtml(t.linea)} ${t.numero}</span>
+                            <span class="route-train-num" style="display: flex; align-items: center; gap: 6px;">${getLineBadgeHtml(t.linea)} ${t.numero}${getTrainWarningBadge(t)}</span>
                             <span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 8px;">(Campione: ${stats.corse_totali} gg)</span>
                         </div>
                         <div class="route-times">
@@ -2355,7 +2366,7 @@ function applyStationFilters() {
                             style="margin-right: 8px;">
                         ★
                     </button>
-                    <strong>${getLineBadgeHtml(t.linea)} ${t.numero}</strong>
+                    <strong>${getLineBadgeHtml(t.linea)} ${t.numero}${getTrainWarningBadge(t)}</strong>
                 </td>
                 <td>${statusBadge}</td>
                 <td>${t.attivo ? `${t.ritardo_attuale}'` : '-'}</td>
