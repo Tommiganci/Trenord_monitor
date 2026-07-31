@@ -78,6 +78,76 @@ function getDirettriceCode(name) {
     return null;
 }
 
+function sanitizeNewsText(text) {
+    if (!text) return '';
+    
+    // 1. Converti i caratteri CP1252 non standard
+    let clean = '';
+    for (let i = 0; i < text.length; i++) {
+        const code = text.charCodeAt(i);
+        if (code === 145 || code === 146 || code === 0x2019) {
+            clean += "'";
+        } else if (code === 147 || code === 148 || code === 0x201c || code === 0x201d) {
+            clean += '"';
+        } else if (code === 150 || code === 0x2013 || code === 0x2014) {
+            clean += '-';
+        } else if (code === 149 || code === 0x2022) {
+            clean += '•';
+        } else {
+            clean += text[i];
+        }
+    }
+    
+    // 2. Risolvi il carattere jolly \uFFFD basato sul contesto
+    let result = '';
+    for (let i = 0; i < clean.length; i++) {
+        const char = clean[i];
+        if (char === '\uFFFD') {
+            const prev = i > 0 ? clean[i-1] : '';
+            const next = i < clean.length - 1 ? clean[i+1] : '';
+            const prevWord = i >= 4 ? clean.substring(i-4, i).toLowerCase() : '';
+            const prevWord3 = i >= 3 ? clean.substring(i-3, i).toLowerCase() : '';
+            const prevWord2 = i >= 2 ? clean.substring(i-2, i).toLowerCase() : '';
+            
+            if (prev === ' ' && next === ' ') {
+                result += '-';
+            } else if (
+                prev.toLowerCase() === 'l' || 
+                prev.toLowerCase() === 'd' ||
+                prevWord.endsWith('dell') || 
+                prevWord.endsWith('sull') || 
+                prevWord.endsWith('nell') || 
+                prevWord.endsWith('dall') || 
+                prevWord.endsWith('all') ||
+                prevWord3.endsWith('quest') ||
+                prevWord2.endsWith('un') ||
+                prevWord.endsWith('anch')
+            ) {
+                result += "'";
+            } else {
+                result += '"';
+            }
+        } else {
+            result += char;
+        }
+    }
+    return result;
+}
+
+function linkify(text) {
+    if (!text) return '';
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        let cleanUrl = url;
+        let suffix = '';
+        if (url.endsWith('.') || url.endsWith(',') || url.endsWith(')')) {
+            cleanUrl = url.substring(0, url.length - 1);
+            suffix = url[url.length - 1];
+        }
+        return `<a href="${cleanUrl}" target="_blank" rel="noopener noreferrer" class="alert-link" style="color: #60a5fa; text-decoration: underline; word-break: break-all; font-weight: 600;">${cleanUrl}</a>${suffix}`;
+    });
+}
+
 async function fetchDirettriceNews() {
     try {
         const res = await fetch('https://infolineemat-tracciamento-tren-3993ebacd280.herokuapp.com/api/direttrici');
@@ -618,7 +688,7 @@ function renderHomePage(direttriciMap) {
         let avvisiHtml = '';
         if (officialNews.length > 0) {
             // Mostra il primo avviso ufficiale della linea
-            const firstNews = officialNews[0].description.split('\n')[0];
+            const firstNews = sanitizeNewsText(officialNews[0].description.split('\n')[0]);
             avvisiHtml = `
                 <div class="direttrice-warnings-box" style="border-color: rgba(239, 68, 68, 0.25); background-color: rgba(239, 68, 68, 0.05);">
                     <div class="warnings-summary" style="color: var(--danger);">
@@ -766,9 +836,12 @@ function updateDetailView(dirName) {
                             ${officialNews.map((n, idx) => `
                                 <div style="${idx > 0 ? 'margin-top: 15px; border-top: 1px solid rgba(239, 68, 68, 0.15); padding-top: 15px;' : ''}">
                                     <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">PUBBLICATO IL: ${new Date(n.date).toLocaleString('it-IT')}</div>
-                                    <div>${n.description}</div>
+                                    <div>${linkify(sanitizeNewsText(n.description))}</div>
                                 </div>
                             `).join('')}
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 15px; border-top: 1px dotted rgba(239, 68, 68, 0.2); padding-top: 8px; font-style: italic; line-height: 1.4;">
+                            Nota: Gli avvisi di linea sopra riportati sono riprodotti a scopo informativo dai canali di comunicazione ufficiali di Trenord. Questo sito non ha alcuna affiliazione, controllo o responsabilità riguardo all'accuratezza o tempestività delle informazioni di circolazione fornite.
                         </div>
                     </div>
                 `;
@@ -2619,7 +2692,7 @@ function renderLiveTrainResults(data) {
         notesHtml = `
             <div class="live-train-info-box" style="margin-bottom: 20px; ${borderStyle}">
                 <div class="live-train-info-title" style="color: ${titleColor}; font-weight: 700; text-transform: uppercase;">${titleText}</div>
-                <div style="font-size: 0.9rem; color: var(--text-main); font-weight: 500; line-height: 1.4;">${data.subTitle}</div>
+                <div style="font-size: 0.9rem; color: var(--text-main); font-weight: 500; line-height: 1.4;">${linkify(sanitizeNewsText(data.subTitle))}</div>
             </div>
         `;
     }
