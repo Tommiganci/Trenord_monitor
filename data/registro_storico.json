@@ -11491,6 +11491,18 @@
     "24761": {
       "direttrice": "Direttrice 8 (Lecco-Molteno-Monza-Milano)",
       "linea": "S7"
+    },
+    "32808": {
+      "direttrice": "Direttrice 2 (Saronno - Seregno - Milano - Albairate / Albairate-Milano Rogoredo)",
+      "linea": "S9"
+    },
+    "2983": {
+      "direttrice": "Direttrice 35 (Gallarate - Malpensa - Milano Centrale / Malpensa - Milano Cadorna)",
+      "linea": "RE51"
+    },
+    "2985": {
+      "direttrice": "Direttrice 35 (Gallarate - Malpensa - Milano Centrale / Malpensa - Milano Cadorna)",
+      "linea": "RE51"
     }
   },
   "registro": {
@@ -600954,6 +600966,9488 @@
         "r": 63,
         "c": true,
         "s": "LIMITATO"
+      }
+    },
+    "2026-08-01": {
+      "29": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "51": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "47": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "19": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "31": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "55": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "61": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "75": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "67": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4043": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4037": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "13": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "83": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1011": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1015": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1037": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1039": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4079": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10009": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10017": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10023": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10029": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10031": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10035": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10041": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10045": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10049": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10055": {
+        "r": 2,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10059": {
+        "r": -1,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "10065": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10073": {
+        "r": 11,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "10091": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10089": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11069": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11081": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "1048": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10010": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10022": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10028": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10032": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10036": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10040": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10044": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10052": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10046": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10056": {
+        "r": 23,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "10060": {
+        "r": -2,
+        "c": true,
+        "s": "REGOLARE"
+      },
+      "10066": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10072": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10078": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11012": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11030": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11044": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11078": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "14014": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10495": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10497": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10499": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10494": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10496": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10498": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "923": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "939": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "947": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "931": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "955": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "963": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1915": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "926": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "934": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "942": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "950": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "958": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "966": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "919": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "935": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "927": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "943": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "951": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "959": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "967": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1917": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1911": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1913": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "922": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "930": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "938": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "954": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "962": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "970": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "946": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1908": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1910": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1944": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20909": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20921": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20925": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20929": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20933": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20937": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20941": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20945": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20953": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20949": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20961": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20957": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20965": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20969": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "21913": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20920": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20924": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20928": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20932": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20936": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20940": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20944": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20948": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20952": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20956": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20960": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20964": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20968": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20972": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "20976": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "21908": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "21914": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "21966": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10101": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10103": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10105": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10115": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10117": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10119": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10121": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10123": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10125": {
+        "r": 2,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "10127": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "10129": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10131": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "10133": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10135": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10137": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10141": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10139": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10143": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10145": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10147": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10102": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10104": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10106": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10110": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10112": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10114": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10116": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10118": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10122": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10120": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10124": {
+        "r": 6,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "10126": {
+        "r": 43,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10128": {
+        "r": 31,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10130": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10134": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10132": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10136": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10138": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10140": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10142": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2684": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10854": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10858": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10856": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10860": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10866": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10868": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10870": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10872": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10874": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10876": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10878": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10880": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10884": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10886": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10896": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2613": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2615": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2619": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2617": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2621": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2623": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2625": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2627": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2631": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2629": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2633": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2635": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2637": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2639": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2641": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2643": {
+        "r": 1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2645": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2657": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2647": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2691": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2697": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2616": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2622": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2618": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2620": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2624": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2626": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2628": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2630": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2634": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2636": {
+        "r": 17,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2638": {
+        "r": 16,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2632": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2640": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2642": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2644": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2646": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2648": {
+        "r": 15,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2656": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2668": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2680": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2682": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10911": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10904": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10910": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10914": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10916": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10918": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10920": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10928": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10926": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10930": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10932": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10934": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10936": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10938": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10940": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24915": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24917": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24919": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24921": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24923": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24925": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24929": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24927": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24931": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24933": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24935": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24937": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24939": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24943": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24945": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24941": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24947": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24949": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24951": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24953": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24957": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24955": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24959": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24961": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24963": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24967": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24965": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24971": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24969": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24973": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24975": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24977": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24979": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24981": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24985": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "33325": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24914": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24918": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24916": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24982": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24984": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "32808": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "33168": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "83522": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24817": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24819": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24823": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24827": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24821": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24825": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24829": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24831": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24835": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24833": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24837": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24839": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24841": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24843": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24845": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24847": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24849": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24851": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24853": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24855": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24857": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24859": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24861": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24863": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24865": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24867": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24869": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24871": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24873": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24875": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24877": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24879": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24881": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24883": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24885": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24887": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24814": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24816": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24818": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24820": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24822": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24889": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24824": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24828": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24830": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24826": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24832": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24834": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24836": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24838": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24840": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24842": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24844": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24846": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24848": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24850": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24852": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24854": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24856": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24858": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24860": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24862": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24866": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24864": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24868": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24870": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24872": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24874": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24876": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24878": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24880": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24882": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24884": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25307": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25303": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24886": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "25313": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25329": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25325": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25331": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25333": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25335": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25341": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25343": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25302": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25308": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25314": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25318": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25322": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "25326": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25328": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25332": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25334": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25336": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25338": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25346": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25340": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25339": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25345": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25370": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25382": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24615": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24613": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24617": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24619": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24621": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24623": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24625": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24629": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24627": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24631": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24633": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24635": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24637": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24639": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24641": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24643": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24645": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24647": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24649": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24653": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24655": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24651": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24657": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24659": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24661": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24663": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24665": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24667": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24669": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24671": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24675": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24673": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24677": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24679": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24681": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24683": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24685": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24614": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24616": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24618": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24620": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24622": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24630": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24632": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24634": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24636": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24638": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24640": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24642": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24644": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24648": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24646": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24650": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24652": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24654": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24656": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24658": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24660": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24662": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24664": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24666": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24672": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24674": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24668": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24670": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24676": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24678": {
+        "r": 1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24680": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24684": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24682": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "10501": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10513": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10517": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10519": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10521": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10523": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10525": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10527": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10529": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10531": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10533": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10535": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10537": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10539": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10541": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10543": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10512": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10514": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10518": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10516": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10520": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10522": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10524": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10526": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10528": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10530": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10532": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10534": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10536": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10538": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10540": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10542": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25815": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25817": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25819": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25821": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25827": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25823": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25831": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25835": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25839": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25847": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25851": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25855": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25859": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25863": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25865": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25867": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25869": {
+        "r": 14,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25871": {
+        "r": 14,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25875": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25879": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25883": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25818": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25820": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25822": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25824": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25826": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25830": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25834": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25838": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25842": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25846": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25850": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25854": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25858": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25862": {
+        "r": 20,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "25866": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25870": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25872": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25874": {
+        "r": 21,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "25878": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25882": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25886": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10159": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10161": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10165": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10163": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10167": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10169": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10171": {
+        "r": 17,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10173": {
+        "r": 24,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10175": {
+        "r": 23,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10177": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10181": {
+        "r": 22,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10179": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10183": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10191": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10193": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10195": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10158": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10160": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10162": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10164": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10166": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10168": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10170": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10172": {
+        "r": 20,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10174": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10178": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10176": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10180": {
+        "r": 17,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10182": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10184": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10192": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10561": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10194": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10563": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10565": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10567": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10569": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10575": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10577": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10579": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10581": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10583": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10585": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10587": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10589": {
+        "r": -5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10591": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10560": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10562": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10564": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10568": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10566": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10576": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10580": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10578": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10582": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10586": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10584": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10588": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10590": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10592": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4125": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "117": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "123": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "131": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "129": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "135": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "141": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "145": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "149": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "159": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "155": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "165": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "169": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "173": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "179": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "187": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "183": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "191": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "1111": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1115": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1139": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1163": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1177": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "1181": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4113": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "110": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "114": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "122": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "126": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "132": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "136": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "140": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "144": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "146": {
+        "r": 2,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "150": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "154": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "160": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "168": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "166": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "170": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "176": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "178": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "180": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "184": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "188": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "1112": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1118": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1126": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1128": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1148": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1174": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1182": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10755": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10759": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10757": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10761": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10767": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10769": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10771": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10773": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10775": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10777": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10779": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10781": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10783": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10785": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10756": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10766": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10770": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10772": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10774": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10776": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10778": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10780": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10782": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10784": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2407": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2411": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2413": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2415": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2417": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2419": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2431": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2435": {
+        "r": 26,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2437": {
+        "r": 34,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2433": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2439": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2443": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2406": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2408": {
+        "r": 14,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2414": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2416": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2428": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2430": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2432": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2434": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2436": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2438": {
+        "r": 20,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2440": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2442": {
+        "r": 18,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10205": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10213": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10221": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10219": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10225": {
+        "r": 15,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10229": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10233": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10245": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10237": {
+        "r": 37,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "10241": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10200": {
+        "r": -12,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10214": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10218": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10226": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10230": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10220": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10234": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10238": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10242": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10244": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10246": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2153": {
+        "r": 21,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2157": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2159": {
+        "r": 18,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2161": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2165": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2167": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2175": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2169": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2173": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2177": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2179": {
+        "r": 1,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "2181": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2185": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2154": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2156": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2158": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2162": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2166": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2168": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2170": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2174": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2176": {
+        "r": 16,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2178": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2180": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2182": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2186": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10791": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10793": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10797": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10001": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10007": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10005": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10004": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10002": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10006": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "11265": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10008": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "11269": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11277": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11275": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11279": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11250": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "11252": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "11254": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "11256": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "11278": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10015": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10019": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10027": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10039": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10043": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10047": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10051": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10061": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10063": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10069": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10067": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10071": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10075": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10079": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10083": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10016": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10018": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10087": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "10020": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10026": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10030": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10034": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10038": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10042": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10050": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10054": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10058": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10062": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10070": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10074": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10082": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10086": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10090": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10663": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10665": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10667": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10669": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10675": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10677": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10679": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10681": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10683": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10685": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10687": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10689": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10691": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10693": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "10699": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10660": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10664": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10666": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10668": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10674": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10676": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10678": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10680": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10682": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10686": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10684": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10688": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10690": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10692": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10696": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10698": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "1211": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4213": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4217": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4223": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4231": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4229": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4235": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4241": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4249": {
+        "r": 0,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "4245": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4255": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4259": {
+        "r": 44,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "4265": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4273": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "4279": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4283": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1224": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4214": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4226": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4232": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4240": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4236": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4222": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4244": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4250": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4246": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4260": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4254": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4266": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4270": {
+        "r": 0,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "4276": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4280": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "25152": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "25162": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25160": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25164": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25166": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25168": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25170": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25174": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25172": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25178": {
+        "r": -3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25180": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25182": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25184": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25186": {
+        "r": -3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25196": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25552": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25554": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25556": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25560": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25562": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25564": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25566": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25568": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25570": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25572": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25574": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25580": {
+        "r": 0,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "25578": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25582": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25584": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25586": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25588": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25596": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25408": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25410": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25414": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25412": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25592": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "25416": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25418": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25420": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25424": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25422": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25426": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25428": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25430": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25432": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25434": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25454": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25456": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25458": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25460": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25462": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25464": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25466": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25468": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25470": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25472": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25474": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25478": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25476": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25480": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25482": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10811": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10809": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10815": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10813": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10817": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10819": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10821": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10825": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10823": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10827": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10829": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10831": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10833": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10837": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10835": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10839": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10841": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10843": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10812": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10814": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10816": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10818": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10820": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10822": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10824": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10826": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10828": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10830": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10832": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10834": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10836": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10838": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10842": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10840": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10844": {
+        "r": -7,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10957": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10959": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10967": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10977": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10969": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10981": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10452": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10456": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10458": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10466": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10468": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10476": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10480": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10954": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10970": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10972": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10974": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10978": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25017": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25019": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25021": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25023": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25025": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25027": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25029": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25031": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25033": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25035": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25037": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25039": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25041": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25043": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25045": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25047": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25049": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25051": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25053": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25055": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25057": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25059": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25061": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25063": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25065": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25067": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25071": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25069": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25073": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25075": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25079": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25077": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25081": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25085": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25087": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25091": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25089": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "25016": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25018": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25020": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25022": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25024": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25026": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25030": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25028": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25032": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25034": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25036": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25038": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25042": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25040": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25044": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25046": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25048": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25050": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25052": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25054": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25056": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25058": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25060": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25062": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25064": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25068": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25066": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25070": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25072": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25074": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25076": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25078": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25082": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25080": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25084": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25088": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "25503": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25192": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25502": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25506": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25510": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25508": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25512": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25514": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25516": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25518": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25520": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25522": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25526": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25524": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25528": {
+        "r": -1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25530": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25534": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "25532": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25538": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "25536": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24513": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24515": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24511": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24517": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24519": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24521": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24527": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24525": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24523": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24529": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24531": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24533": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24535": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24539": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24537": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24543": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24541": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24545": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24547": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24549": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24551": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24553": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24555": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24557": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24561": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24559": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24563": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24565": {
+        "r": 20,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "24567": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24569": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24573": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24571": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24575": {
+        "r": 22,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "24577": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24579": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24581": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24585": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24587": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24583": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24508": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24510": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24512": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24514": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24516": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24518": {
+        "r": 8,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "24520": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24522": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24524": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24526": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24528": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24530": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24532": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24534": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24536": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24538": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24540": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24542": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24544": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24546": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24548": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24550": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24552": {
+        "r": 16,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "24554": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24556": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24558": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24560": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24562": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24564": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24566": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24568": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24570": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24572": {
+        "r": 39,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "24574": {
+        "r": 14,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24576": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24578": {
+        "r": 0,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "2913": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2917": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24580": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24582": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24584": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24586": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2919": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2921": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2923": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2925": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2927": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2929": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2931": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2933": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2935": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2937": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2939": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2941": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2943": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2945": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2947": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2949": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2951": {
+        "r": 52,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "2953": {
+        "r": 40,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2955": {
+        "r": 17,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "2957": {
+        "r": 19,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2959": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2961": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2963": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2965": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2967": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2969": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2971": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2973": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2975": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2977": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2979": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2981": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2983": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2985": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2989": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2987": {
+        "r": -4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2914": {
+        "r": 4,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "2916": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2918": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2920": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2922": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2924": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2926": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2928": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2930": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2932": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2934": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2936": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2938": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2940": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2942": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2944": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2946": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2948": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2950": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2952": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2954": {
+        "r": 36,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2956": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2958": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2960": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2962": {
+        "r": 29,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2964": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2966": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2968": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2970": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2972": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2976": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2974": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2978": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "80392": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "303": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "305": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "307": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "309": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "80390": {
+        "r": -4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "311": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "313": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "315": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "319": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "321": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "325": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "327": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "329": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "331": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "333": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "335": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "337": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "339": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "343": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "345": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "347": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "349": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "351": {
+        "r": 0,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "355": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "353": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "357": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "361": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "365": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "367": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "375": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "371": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "377": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "379": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "383": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "385": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "389": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "387": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "393": {
+        "r": -8,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "391": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "395": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "4397": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "310": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "314": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "312": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "316": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "318": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "324": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "326": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "328": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "330": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "332": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "334": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "336": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "338": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "340": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "342": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "344": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "346": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "348": {
+        "r": 1,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "350": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "354": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "352": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "356": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "358": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "360": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "362": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "366": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "368": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "372": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "374": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "378": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "380": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "382": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "384": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "386": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "388": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "390": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "394": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "22619": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22623": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22627": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22631": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22635": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22639": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22643": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22647": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22651": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22655": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22659": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22663": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22667": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22671": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22675": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22618": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22683": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22622": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22630": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22626": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22634": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22638": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22646": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22642": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22654": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22650": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22658": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22662": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22670": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "22666": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22674": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "22678": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2213": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2211": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2215": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2217": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2219": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2221": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2227": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2225": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2223": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2229": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2231": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2233": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2235": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2239": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2237": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2241": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2243": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2245": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2247": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2212": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2216": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2214": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2220": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2218": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2222": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2224": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2226": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2230": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2228": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2232": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2234": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2236": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2238": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2240": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2244": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2242": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2246": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2248": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10417": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10415": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10427": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10421": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10429": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10431": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10433": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10435": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10437": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10439": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10441": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10443": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10414": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10418": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10416": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10426": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10430": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10428": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10432": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10436": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10434": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10438": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10440": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10613": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10615": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10617": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10619": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10621": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10623": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10625": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10627": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10629": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10633": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10631": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10635": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10637": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10639": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10641": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10643": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24715": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24717": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24719": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24763": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24767": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24734": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24752": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "621": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "625": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "635": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "631": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "637": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "643": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "651": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "657": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "647": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "663": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "669": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "677": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "685": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "681": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1611": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1613": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1615": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1617": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1665": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1641": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1645": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1659": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "1673": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11689": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "612": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "632": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "618": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "624": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "628": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "636": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "640": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "644": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "648": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "656": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "652": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "662": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "668": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "672": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "678": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "680": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1622": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "1646": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10610": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "11606": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "701": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "715": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "711": {
+        "r": 23,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "717": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "719": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "723": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "725": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "761": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "765": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "771": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "769": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "775": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "777": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "781": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "783": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "785": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "787": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "789": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "791": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "793": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "795": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "1709": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "797": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "4727": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4731": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4729": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4735": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4733": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4737": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4739": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4743": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4745": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4747": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4749": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "4751": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "4755": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4759": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "4757": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "712": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "716": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "720": {
+        "r": 0,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "724": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "728": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "726": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "730": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "762": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "770": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "768": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "772": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "774": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "778": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "780": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "784": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "782": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4732": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4734": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4736": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4740": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4738": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4742": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4746": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4744": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4748": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4750": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4752": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4754": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "4756": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "4758": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "4760": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2301": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2359": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2369": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2381": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2377": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2385": {
+        "r": 15,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "3001": {
+        "r": 96,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "7553": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7555": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7557": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7561": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7559": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7563": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7567": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7565": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7569": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7571": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7573": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7575": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7577": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7579": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7581": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7583": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7585": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2304": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2312": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2320": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2328": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2332": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2336": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2340": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "2344": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2352": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2356": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2372": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2368": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2384": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2380": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "3006": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "7554": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7556": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7562": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7558": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7560": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7564": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7568": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7572": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7574": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7566": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7570": {
+        "r": 25,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "7576": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7578": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7582": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7580": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7584": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "7586": {
+        "r": -6,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24313": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24311": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24317": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24319": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24315": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24369": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24371": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24373": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24375": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24377": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24379": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24381": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24421": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24425": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24423": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24427": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24383": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24431": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24433": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24435": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24429": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24437": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24439": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24445": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24449": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24441": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24447": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24443": {
+        "r": 12,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24451": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24455": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24453": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24461": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24459": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24457": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24463": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24465": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24467": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24316": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24314": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24366": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24370": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24368": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24372": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24374": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24376": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24378": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24380": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24382": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24418": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24384": {
+        "r": 0,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24386": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24422": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24420": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24424": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24426": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24428": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24430": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24432": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24434": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24436": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24438": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24440": {
+        "r": 21,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "24442": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24444": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24446": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24448": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24450": {
+        "r": 21,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "24452": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24454": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24456": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24458": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24460": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24462": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24464": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2811": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2813": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2815": {
+        "r": -5,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2817": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2819": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2821": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2823": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2825": {
+        "r": 90,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "2827": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2829": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2831": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2835": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2833": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2837": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2839": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2841": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2843": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2857": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2812": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2814": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2816": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2818": {
+        "r": 7,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "2820": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2822": {
+        "r": 21,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2824": {
+        "r": 54,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "2826": {
+        "r": 13,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2828": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2830": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "2832": {
+        "r": -4,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2834": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2836": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2838": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2840": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2842": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2844": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2874": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10313": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10315": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10317": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10325": {
+        "r": 11,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "10327": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10329": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10331": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10333": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "10335": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10337": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10339": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10341": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10308": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10310": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10314": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10316": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10320": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10318": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10322": {
+        "r": -1,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "10324": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "10326": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10328": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10332": {
+        "r": 14,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10330": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10338": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10290": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10297": {
+        "r": 14,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "10294": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "10296": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2511": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2513": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2515": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2517": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2519": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2521": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2523": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2525": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2529": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2527": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2531": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2533": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2535": {
+        "r": 17,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2537": {
+        "r": 21,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2541": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2539": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2543": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2508": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2510": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2514": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2512": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2516": {
+        "r": 16,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2518": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2522": {
+        "r": 11,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2520": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2526": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2524": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "2528": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2530": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2532": {
+        "r": 16,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2534": {
+        "r": 3,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2536": {
+        "r": 20,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "2538": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2542": {
+        "r": 9,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "2540": {
+        "r": 10,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24111": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24115": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24113": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24117": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24121": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24119": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24125": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24123": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24129": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24133": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24127": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24131": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24137": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24135": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24139": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24141": {
+        "r": 4,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24143": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24145": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24147": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24149": {
+        "r": 50,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "24153": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24157": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24155": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24151": {
+        "r": 38,
+        "c": true,
+        "s": "LIMITATO"
+      },
+      "24161": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24159": {
+        "r": 5,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24163": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24165": {
+        "r": -2,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24169": {
+        "r": 6,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24167": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24171": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24175": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24177": {
+        "r": -1,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24173": {
+        "r": 7,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24181": {
+        "r": -2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24114": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24116": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24118": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24120": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24122": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24124": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24126": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24128": {
+        "r": 2,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "24132": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24130": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24134": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24136": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24138": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24142": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24140": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24144": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24146": {
+        "r": 40,
+        "c": true,
+        "s": "RITARDO"
+      },
+      "24148": {
+        "r": -2,
+        "c": true,
+        "s": "PARZ. SOPPRESSO"
+      },
+      "24150": {
+        "r": 8,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "24156": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24154": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "24152": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24158": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24160": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24162": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24164": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24166": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24170": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24168": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24172": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24174": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24178": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24176": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "24182": {
+        "r": -3,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "24180": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "801": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "811": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "803": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "813": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "815": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "817": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "821": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "825": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "823": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "829": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "827": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "831": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "835": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "833": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "837": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "839": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "841": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "845": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "847": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "849": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "851": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "855": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "859": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "857": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "861": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "865": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "869": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "871": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "875": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "877": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "885": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "883": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "881": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "887": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "889": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "893": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "895": {
+        "r": 1,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "802": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "806": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "812": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "814": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "897": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "818": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "822": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "824": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "828": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "826": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "830": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "832": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "834": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "836": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "838": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "840": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "842": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "844": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "846": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "848": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "852": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "850": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "854": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "856": {
+        "r": 0,
+        "c": true,
+        "s": "SOPPRESSO"
+      },
+      "858": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "862": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "868": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "866": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "872": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "876": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "874": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "878": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "882": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "880": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "884": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "886": {
+        "r": 0,
+        "c": false,
+        "s": "REGOLARE"
+      },
+      "890": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
+      },
+      "888": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
+      },
+      "892": {
+        "r": 0,
+        "c": false,
+        "s": "INATTIVO"
       }
     }
   }
