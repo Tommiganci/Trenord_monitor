@@ -801801,7 +801801,7 @@
         "s": "RITARDO"
       },
       "10087": {
-        "r": -2,
+        "r": -1,
         "c": false,
         "s": "REGOLARE"
       },
@@ -802806,14 +802806,14 @@
         "s": "RITARDO"
       },
       "11880": {
-        "r": 13,
-        "c": false,
+        "r": 132,
+        "c": true,
         "s": "RITARDO"
       },
       "11884": {
         "r": 2,
-        "c": false,
-        "s": "RITARDO"
+        "c": true,
+        "s": "LIMITATO"
       },
       "10407": {
         "r": 1,
@@ -805651,9 +805651,9 @@
         "s": "REGOLARE"
       },
       "25592": {
-        "r": 0,
+        "r": 116,
         "c": true,
-        "s": "SOPPRESSO"
+        "s": "RITARDO"
       },
       "25408": {
         "r": 2,
