@@ -835169,12 +835169,12 @@
         "s": "RITARDO"
       },
       "2647": {
-        "r": 0,
+        "r": -1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "2645": {
-        "r": 0,
+        "r": -1,
         "c": false,
         "s": "REGOLARE"
       },
@@ -836074,9 +836074,9 @@
         "s": "RITARDO"
       },
       "10087": {
-        "r": 0,
+        "r": -1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "10024": {
         "r": -2,
@@ -837084,14 +837084,14 @@
         "s": "RITARDO"
       },
       "11880": {
-        "r": 3,
-        "c": false,
-        "s": "RITARDO"
-      },
-      "11884": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
+      },
+      "11884": {
+        "r": 2,
+        "c": false,
+        "s": "RITARDO"
       },
       "10407": {
         "r": 1,
@@ -837404,9 +837404,9 @@
         "s": "REGOLARE"
       },
       "10889": {
-        "r": 0,
+        "r": -1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "10854": {
         "r": 2,
@@ -838929,9 +838929,9 @@
         "s": "RITARDO"
       },
       "24386": {
-        "r": 0,
+        "r": 3,
         "c": false,
-        "s": "INATTIVO"
+        "s": "RITARDO"
       },
       "24420": {
         "r": 2,
@@ -839664,9 +839664,9 @@
         "s": "RITARDO"
       },
       "25592": {
-        "r": 0,
+        "r": -1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "25412": {
         "r": 0,
@@ -840229,9 +840229,9 @@
         "s": "RITARDO"
       },
       "24682": {
-        "r": 0,
+        "r": 1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "RITARDO"
       },
       "2411": {
         "r": 8,
@@ -841011,7 +841011,7 @@
       "897": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "818": {
         "r": 0,
@@ -841181,7 +841181,7 @@
       "892": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "2917": {
         "r": 3,
@@ -841364,14 +841364,14 @@
         "s": "RITARDO"
       },
       "2987": {
-        "r": -5,
+        "r": -3,
         "c": false,
         "s": "REGOLARE"
       },
       "2989": {
-        "r": 0,
+        "r": -1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "2916": {
         "r": 10,
@@ -841534,7 +841534,7 @@
         "s": "RITARDO"
       },
       "80390": {
-        "r": -5,
+        "r": -3,
         "c": false,
         "s": "REGOLARE"
       },
@@ -841559,9 +841559,9 @@
         "s": "REGOLARE"
       },
       "80392": {
-        "r": 0,
+        "r": -1,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "313": {
         "r": 0,
@@ -841736,7 +841736,7 @@
       "395": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "304": {
         "r": 0,
@@ -841926,7 +841926,7 @@
       "392": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "701": {
         "r": 0,
@@ -842036,7 +842036,7 @@
       "797": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "4727": {
         "r": 0,
@@ -842446,7 +842446,7 @@
       "25089": {
         "r": 0,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "25016": {
         "r": 9,
@@ -842624,14 +842624,14 @@
         "s": "RITARDO"
       },
       "25192": {
-        "r": 0,
+        "r": -3,
         "c": false,
-        "s": "INATTIVO"
+        "s": "REGOLARE"
       },
       "25088": {
-        "r": 0,
+        "r": 2,
         "c": false,
-        "s": "INATTIVO"
+        "s": "RITARDO"
       },
       "25503": {
         "r": 6,
