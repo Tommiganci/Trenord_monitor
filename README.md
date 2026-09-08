@@ -199,11 +199,12 @@ Un treno viene contrassegnato come **Critico** (`critico = True`) quando si veri
 
 ## 📊 Stato del Monitoraggio
 
-Tutte le **38 direttrici ferroviarie** di Trenord (ad esclusione della 13 che è gestita esclusivamente tramite bus sostitutivi e della 38 che non è definita nell'orario ufficiale) sono completamente coperte e monitorate. 
+Tutte le **40 direttrici ferroviarie** monitorate dal sistema (inclusa la **Direttrice 13 Seregno - Carnate** riaperta ed integrata con i suoi 30 treni reali `10254` – `10283`) sono completamente coperte e tracciate. 
 
-I dati di popolamento delle corse sono estratti e generati automaticamente a partire dal feed orario ufficiale **GTFS statico** di Trenord. Questo ha permesso di completare tutte le relazioni precedentemente escluse o parziali (come le direttrici 26 e 29, e le linee R39, R40, RE13, R32 e la tratta di Brescia-Iseo).
+I dati di popolamento delle corse sono estratti e generati automaticamente a partire dal feed orario ufficiale **GTFS statico** di Trenord e integrati con la telemetria in tempo reale di ViaggiaTreno.
 
 **Note di Mappatura Specifica:**
+- **Direttrice 13 (Seregno - Carnate)**: integra i 30 treni reali `10254`–`10283` della linea riaperta al traffico passeggeri.
 - **R32 (Mortara - Alessandria)**: incorporata nella direttrice 25 associando le corse R25 (Novara-Mortara-Alessandria).
 - **S34 (Brescia - Iseo)**: mappata sulle corse identificate come S31 nel GTFS.
 - **R33 (Pavia - Voghera)**: in questa versione dell'orario non è presente come servizio autonomo nel GTFS, ma la tratta Pavia-Voghera è pienamente monitorata tramite i treni della linea **RE13**.
@@ -235,13 +236,14 @@ Lo stato di progresso generale è consultabile nel foglio Excel nella cartella `
 
 ---
 
-## ⚖️ Note Legali e Diritti d'Autore
+## ⚖️ Note Legali, Disclaimer e Diritti d'Autore
 
-Questo progetto è stato sviluppato a scopo didattico e per uso personale. 
+Questo progetto è stato sviluppato a scopo didattico, informativo e per uso personale. 
 
 * **Proprietà del Codice e Licenza:** Tutto il codice sorgente, l'architettura e la logica applicativa definiti in questo repository sono di proprietà intellettuale esclusiva dell'autore (**Tommaso Ganci** / **Tommiganci**). È severamente vietato riutilizzare, ridistribuire, modificare o incorporare questo codice per scopi commerciali, di lucro o per qualsiasi altra finalità non concordata senza il preventivo consenso scritto dell'autore.
 * **Uso Consentito:** È liberamente consentita la consultazione pubblica dello stato delle linee e del servizio ferroviario tramite il sito web pubblico del progetto.
-* **Proprietà dei Dati:** Tutti i dati relativi a treni, orari, stazioni, ritardi e stato del servizio sono di proprietà intellettuale ed esclusiva dei rispettivi gestori ed erogatori del servizio ferroviario (in particolare **Trenord S.r.l.**, **RFI - Rete Ferroviaria Italiana S.p.A.** e il servizio **Viaggiatreno**).
+* **Proprietà dei Dati e Avvisi:** Tutti i dati relativi a treni, orari, stazioni, ritardi, avvisi di circolazione e comunicati ufficiali di linea sono di proprietà intellettuale ed esclusiva dei rispettivi gestori ed erogatori del servizio ferroviario (in particolare **Trenord S.r.l.**, **RFI - Rete Ferroviaria Italiana S.p.A.** e il servizio **Viaggiatreno**).
 * **Nessuna Affiliazione Ufficiale:** Questo sistema non è in alcun modo affiliato, associato, autorizzato, sponsorizzato o supportato ufficialmente da Trenord S.r.l., RFI, Ferrovie dello Stato Italiane o da una qualsiasi delle loro sussidiarie e affiliate. 
+* **Disclaimer sugli Avvisi di Circolazione:** Gli avvisi di circolazione e i bollettini ufficiali di linea (box rossi) sono riprodotti a puro titolo informativo ed estrapolati dai canali pubblici ufficiali. L'applicazione non garantisce né risponde dell'accuratezza, completezza o tempestività di tali informazioni.
 * **Responsabilità:** L'utilizzo delle API pubbliche e dei dati di monitoraggio avviene in conformità con le modalità di consultazione personale destinate agli utenti passeggeri. L'autore non si assume alcuna responsabilità per un eventuale uso improprio dello strumento o per decisioni di viaggio basate sulle informazioni qui mostrate.
 
