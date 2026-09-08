@@ -162723,6 +162723,696 @@
       "origine": "Carnate Usmate",
       "destinazione": "Seregno",
       "note": "INATTIVO"
+    },
+    "10255": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "07:08",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:12",
+      "ultima_rilevazione": "2026-09-08T16:03:12",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": -2
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10255
+    },
+    "10257": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": -2,
+      "ritardo_picco": -2,
+      "ritardo_capolinea": -2,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "08:08",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:13",
+      "ultima_rilevazione": "2026-09-08T16:03:13",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": -2
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10257
+    },
+    "10259": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "09:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:13",
+      "ultima_rilevazione": "2026-09-08T16:03:13",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10259
+    },
+    "10261": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "10:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:14",
+      "ultima_rilevazione": "2026-09-08T16:03:14",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10261
+    },
+    "10263": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "11:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:14",
+      "ultima_rilevazione": "2026-09-08T16:03:14",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10263
+    },
+    "10265": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "12:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:14",
+      "ultima_rilevazione": "2026-09-08T16:03:14",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10265
+    },
+    "10267": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "13:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:15",
+      "ultima_rilevazione": "2026-09-08T16:03:15",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10267
+    },
+    "10269": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "14:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:15",
+      "ultima_rilevazione": "2026-09-08T16:03:15",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10269
+    },
+    "10271": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "15:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:15",
+      "ultima_rilevazione": "2026-09-08T16:03:15",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10271
+    },
+    "10273": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "16:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:15",
+      "ultima_rilevazione": "2026-09-08T16:03:15",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10273
+    },
+    "10275": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "17:08",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:16",
+      "ultima_rilevazione": "2026-09-08T16:03:16",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10275
+    },
+    "10277": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "18:08",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:16",
+      "ultima_rilevazione": "2026-09-08T16:03:16",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10277
+    },
+    "10279": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "19:08",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:16",
+      "ultima_rilevazione": "2026-09-08T16:03:16",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10279
+    },
+    "10281": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "20:08",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:17",
+      "ultima_rilevazione": "2026-09-08T16:03:17",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10281
+    },
+    "10283": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "SEREGNO",
+      "destinazione": "CARNATE USMATE",
+      "orario_programmato": "21:08",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:17",
+      "ultima_rilevazione": "2026-09-08T16:03:17",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10283
+    },
+    "10254": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "06:37",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:17",
+      "ultima_rilevazione": "2026-09-08T16:03:17",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10254
+    },
+    "10256": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "07:37",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:18",
+      "ultima_rilevazione": "2026-09-08T16:03:18",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10256
+    },
+    "10258": {
+      "stato": "REGOLARE",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "08:37",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:18",
+      "ultima_rilevazione": "2026-09-08T16:03:18",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10258
+    },
+    "10260": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "09:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:19",
+      "ultima_rilevazione": "2026-09-08T16:03:19",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10260
+    },
+    "10262": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "10:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:19",
+      "ultima_rilevazione": "2026-09-08T16:03:19",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10262
+    },
+    "10264": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "11:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:19",
+      "ultima_rilevazione": "2026-09-08T16:03:19",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10264
+    },
+    "10266": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "12:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:19",
+      "ultima_rilevazione": "2026-09-08T16:03:19",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10266
+    },
+    "10268": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "13:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:20",
+      "ultima_rilevazione": "2026-09-08T16:03:20",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10268
+    },
+    "10270": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "14:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:20",
+      "ultima_rilevazione": "2026-09-08T16:03:20",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10270
+    },
+    "10272": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "15:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:20",
+      "ultima_rilevazione": "2026-09-08T16:03:20",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10272
+    },
+    "10274": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "16:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:21",
+      "ultima_rilevazione": "2026-09-08T16:03:21",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10274
+    },
+    "10276": {
+      "stato": "SOPPRESSO",
+      "critico": true,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "17:37",
+      "note": "Treno cancellato",
+      "prima_rilevazione": "2026-09-08T16:03:21",
+      "ultima_rilevazione": "2026-09-08T16:03:21",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10276
+    },
+    "10278": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "18:37",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:21",
+      "ultima_rilevazione": "2026-09-08T16:03:21",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10278
+    },
+    "10280": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "19:37",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:22",
+      "ultima_rilevazione": "2026-09-08T16:03:22",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10280
+    },
+    "10282": {
+      "stato": "INATTIVO",
+      "critico": false,
+      "ritardo_attuale": 0,
+      "ritardo_picco": 0,
+      "ritardo_capolinea": 0,
+      "origine": "CARNATE USMATE",
+      "destinazione": "SEREGNO",
+      "orario_programmato": "20:37",
+      "note": "",
+      "prima_rilevazione": "2026-09-08T16:03:22",
+      "ultima_rilevazione": "2026-09-08T16:03:22",
+      "scansioni": 1,
+      "storico_ritardi": [
+        {
+          "ts": "16:03",
+          "rit": 0
+        }
+      ],
+      "direttrice": "Direttrice 13 (Seregno - Carnate)",
+      "linea": "R",
+      "numero": 10282
     }
   }
 }
