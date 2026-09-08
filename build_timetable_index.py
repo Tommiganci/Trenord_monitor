@@ -40,16 +40,22 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             trip_short_name = row['trip_short_name'].strip()
             trip_id = row['trip_id']
             
-            if route_id == 'Bus':
-                continue
-                
-            line_name = routes_map.get(route_id, "")
-            
             # Extract train number
             if " - " in trip_short_name:
                 train_num = trip_short_name.split(" - ")[1].strip()
             else:
                 train_num = trip_short_name
+
+            clean_train_num = ''.join(c for c in train_num if c.isdigit())
+
+            if route_id == 'Bus':
+                if clean_train_num and 5000 <= int(clean_train_num) <= 5035:
+                    train_num = clean_train_num
+                    line_name = "Seregno - Carnate"
+                else:
+                    continue
+            else:
+                line_name = routes_map.get(route_id, "")
                 
             if train_num.isdigit():
                 trips_map[trip_id] = (train_num, line_name)

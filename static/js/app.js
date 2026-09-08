@@ -29,6 +29,7 @@ const DIRETTRICI_CODES = {
   "Direttrice 10 (Como - Molteno - Lecco)": "D009",
   "Direttrice 11 (Bergamo - Brescia / Lecco - Bergamo)": "D010",
   "Direttrice 12 (Bergamo - Carnate - Milano)": "D011",
+  "Direttrice 13 (Seregno - Carnate)": "D039",
   "Direttrice 14 (Bergamo - Treviglio)": "D040",
   "Direttrice 15 (Bergamo - Pioltello \u2013 Milano)": "D012",
   "Direttrice 16 (Cremona - Treviglio)": "D013",
