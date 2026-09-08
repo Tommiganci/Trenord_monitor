@@ -49,15 +49,11 @@ with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             clean_train_num = ''.join(c for c in train_num if c.isdigit())
 
             if route_id == 'Bus':
-                if clean_train_num and 5000 <= int(clean_train_num) <= 5035:
-                    train_num = clean_train_num
-                    line_name = "R"
-                else:
-                    continue
-            else:
-                line_name = routes_map.get(route_id, "")
-                if clean_train_num and 10250 <= int(clean_train_num) <= 10285:
-                    line_name = "R"
+                continue
+                
+            line_name = routes_map.get(route_id, "")
+            if clean_train_num and 10250 <= int(clean_train_num) <= 10285:
+                line_name = "R"
                 
             if train_num.isdigit():
                 trips_map[trip_id] = (train_num, line_name)
