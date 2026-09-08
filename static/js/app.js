@@ -851,22 +851,33 @@ function updateDetailView(dirName) {
             
             // 1. Renderizza gli avvisi di linea ufficiali (se presenti)
             if (officialNews.length > 0) {
+                const firstOfficialNewsStr = sanitizeNewsText(officialNews[0].description.split('\n')[0]);
                 html += `
                     <div class="direttrice-alerts-box" style="border-color: rgba(239, 68, 68, 0.25); background-color: rgba(239, 68, 68, 0.05); margin-bottom: 15px;">
-                        <div class="alerts-box-header" style="border-bottom-color: rgba(239, 68, 68, 0.15); margin-bottom: 12px; padding-bottom: 8px;">
-                            <span class="warning-alert-icon">🚨</span>
-                            <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--danger);">AVVISI DI CIRCOLAZIONE UFFICIALI</h4>
+                        <div class="alerts-box-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;" onclick="toggleDirettriceOfficialAlertsExpand(event)">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="warning-alert-icon">🚨</span>
+                                <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--danger);">AVVISI DI CIRCOLAZIONE UFFICIALI (${officialNews.length})</h4>
+                            </div>
+                            <button id="btn-toggle-direttrice-official-alerts" class="filter-btn" onclick="toggleDirettriceOfficialAlertsExpand(event)" style="padding: 4px 10px; font-size: 0.8rem; background: rgba(239, 68, 68, 0.15); border-color: rgba(239, 68, 68, 0.3); color: var(--danger); font-weight: 600;">
+                                Mostra Dettagli ▼
+                            </button>
                         </div>
-                        <div style="white-space: pre-line; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
+
+                        <div id="direttrice-official-alerts-preview" style="font-size: 0.85rem; color: var(--text-main); margin-top: 8px; font-weight: 500;">
+                            <span style="color: var(--danger); font-weight: 600;">📌 ${officialNews.length > 1 ? officialNews.length + ' avvisi:' : 'Avviso:'}</span> ${firstOfficialNewsStr.length > 95 ? firstOfficialNewsStr.substring(0, 92) + '...' : firstOfficialNewsStr}
+                        </div>
+
+                        <div id="direttrice-official-alerts-details" class="hidden" style="margin-top: 15px; border-top: 1px solid rgba(239, 68, 68, 0.15); padding-top: 12px; white-space: pre-line; font-size: 0.9rem; line-height: 1.5; color: var(--text-main);">
                             ${officialNews.map((n, idx) => `
                                 <div style="${idx > 0 ? 'margin-top: 15px; border-top: 1px solid rgba(239, 68, 68, 0.15); padding-top: 15px;' : ''}">
                                     <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">PUBBLICATO IL: ${new Date(n.date).toLocaleString('it-IT')}</div>
                                     <div>${linkify(sanitizeNewsText(n.description))}</div>
                                 </div>
                             `).join('')}
-                        </div>
-                        <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 15px; border-top: 1px dotted rgba(239, 68, 68, 0.2); padding-top: 8px; font-style: italic; line-height: 1.4;">
-                            Nota: Gli avvisi di linea sopra riportati sono riprodotti a scopo informativo dai canali di comunicazione ufficiali di Trenord. Questo sito non ha alcuna affiliazione, controllo o responsabilità riguardo all'accuratezza o tempestività delle informazioni di circolazione fornite.
+                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-top: 15px; border-top: 1px dotted rgba(239, 68, 68, 0.2); padding-top: 8px; font-style: italic; line-height: 1.4;">
+                                Nota: Gli avvisi di linea sopra riportati sono riprodotti a scopo informativo dai canali di comunicazione ufficiali di Trenord. Questo sito non ha alcuna affiliazione, controllo o responsabilità riguardo all'accuratezza o tempestività delle informazioni di circolazione fornite.
+                            </div>
                         </div>
                     </div>
                 `;
@@ -2458,6 +2469,24 @@ function toggleStationTrainAlertsExpand(event) {
     const details = document.getElementById('station-train-alerts-details');
     const preview = document.getElementById('station-train-alerts-preview');
     const btn = document.getElementById('btn-toggle-station-train-alerts');
+    if (!details || !btn) return;
+    
+    if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        if (preview) preview.classList.add('hidden');
+        btn.innerHTML = 'Nascondi ▲';
+    } else {
+        details.classList.add('hidden');
+        if (preview) preview.classList.remove('hidden');
+        btn.innerHTML = 'Mostra Dettagli ▼';
+    }
+}
+
+function toggleDirettriceOfficialAlertsExpand(event) {
+    if (event) event.stopPropagation();
+    const details = document.getElementById('direttrice-official-alerts-details');
+    const preview = document.getElementById('direttrice-official-alerts-preview');
+    const btn = document.getElementById('btn-toggle-direttrice-official-alerts');
     if (!details || !btn) return;
     
     if (details.classList.contains('hidden')) {
