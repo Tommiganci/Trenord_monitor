@@ -466,20 +466,45 @@ function renderDashboardData(data) {
     }
 
     const direttriciMap = {};
-    allTrainsData.forEach(t => {
-        const dName = t.direttrice;
-        if (!direttriciMap[dName]) {
+
+    if (typeof STATIC_MONTHLY === 'object' && STATIC_MONTHLY) {
+        Object.keys(STATIC_MONTHLY).forEach(dName => {
+            if (dName !== "Tutto Trenord") {
+                direttriciMap[dName] = {
+                    nome: dName,
+                    treni: [],
+                    critici: 0,
+                    totali: 0
+                };
+            }
+        });
+    } else if (typeof DIRETTRICI_CODES === 'object' && DIRETTRICI_CODES) {
+        Object.keys(DIRETTRICI_CODES).forEach(dName => {
             direttriciMap[dName] = {
                 nome: dName,
                 treni: [],
                 critici: 0,
                 totali: 0
             };
-        }
-        direttriciMap[dName].treni.push(t);
-        direttriciMap[dName].totali++;
-        if (t.critico && t.stato !== "INATTIVO") {
-            direttriciMap[dName].critici++;
+        });
+    }
+
+    allTrainsData.forEach(t => {
+        const dName = t.direttrice;
+        if (dName) {
+            if (!direttriciMap[dName]) {
+                direttriciMap[dName] = {
+                    nome: dName,
+                    treni: [],
+                    critici: 0,
+                    totali: 0
+                };
+            }
+            direttriciMap[dName].treni.push(t);
+            direttriciMap[dName].totali++;
+            if (t.critico && t.stato !== "INATTIVO") {
+                direttriciMap[dName].critici++;
+            }
         }
     });
 
