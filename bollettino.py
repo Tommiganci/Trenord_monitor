@@ -67,11 +67,11 @@ def print_bollettino(data):
             treni_anomali += 1
 
         emoji = get_emoji_stato(stato, critico)
-        rit_att = f"{t.get('ritardo_attuale', 0)}'"
-        rit_picco = f"{t.get('ritardo_picco', 0)}'"
-        rit_cap = f"{t.get('ritardo_capolinea', 0)}'"
-        prog = t.get('orario_programmato', '')
-        note = t.get('note', '')
+        rit_att = f"{t.get('ritardo_attuale') if t.get('ritardo_attuale') is not None else 0}'"
+        rit_picco = f"{t.get('ritardo_picco') if t.get('ritardo_picco') is not None else 0}'"
+        rit_cap = f"{t.get('ritardo_capolinea') if t.get('ritardo_capolinea') is not None else 0}'"
+        prog = t.get('orario_programmato', '') or ''
+        note = t.get('note', '') or ''
         
         if stato in ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]:
             note = f"{stato} - {note}"
@@ -120,7 +120,7 @@ def load_reconstructed_history(filter_month=None):
             t_info = mappatura.get(num_str, {})
             day_dict["treni"][num_str] = {
                 "critico": t.get("c", False),
-                "ritardo_capolinea": t.get("r", 0),
+                "ritardo_capolinea": t.get("r") if t.get("r") is not None else 0,
                 "stato": t.get("s", "REGOLARE"),
                 "direttrice": t_info.get("direttrice", ""),
                 "linea": t_info.get("linea", ""),
@@ -152,7 +152,7 @@ def load_reconstructed_history(filter_month=None):
             for num_str, t in day_db.get("treni", {}).items():
                 cleaned_db["treni"][num_str] = {
                     "critico": t.get("critico", False),
-                    "ritardo_capolinea": t.get("ritardo_capolinea", 0),
+                    "ritardo_capolinea": t.get("ritardo_capolinea") if t.get("ritardo_capolinea") is not None else 0,
                     "stato": t.get("stato", "REGOLARE"),
                     "direttrice": t.get("direttrice", ""),
                     "linea": t.get("linea", ""),
@@ -415,7 +415,7 @@ def export_html(data):
                 train_history[num_str] = []
             train_history[num_str].append({
                 "data": date_str,
-                "ritardo_capolinea": t.get("ritardo_capolinea", 0),
+                "ritardo_capolinea": t.get("ritardo_capolinea") if t.get("ritardo_capolinea") is not None else 0,
                 "critico": t.get("critico", False),
                 "stato": t.get("stato", "REGOLARE")
             })

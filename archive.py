@@ -53,9 +53,9 @@ def archive_old_data():
 
                     # Salva solo i dati di stato e ritardo per la giornata
                     day_summary[num_str] = {
-                        "r": t.get("ritardo_capolinea", 0),
-                        "c": t.get("critico", False),
-                        "s": t.get("stato", "REGOLARE")
+                        "r": t.get("ritardo_capolinea") if t.get("ritardo_capolinea") is not None else 0,
+                        "c": bool(t.get("critico", False)),
+                        "s": t.get("stato", "REGOLARE") or "REGOLARE"
                     }
 
                 if date_str not in registro_db["registro"]:

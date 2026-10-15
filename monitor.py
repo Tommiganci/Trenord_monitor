@@ -118,20 +118,36 @@ def fetch_andamento_treno(codice_stazione, numero, timestamp):
         return None
 
 def calcola_stato(api_data, linea, capolinea_attesi):
-    provvedimento = api_data.get("provvedimento", 0)
-    ritardo_attuale = api_data.get("ritardo", 0)
-    origine = api_data.get("origine", "")
-    destinazione = api_data.get("destinazione", "")
-    fermate = api_data.get("fermate", [])
+    provvedimento = api_data.get("provvedimento", 0) or 0
+    ritardo_attuale = api_data.get("ritardo")
+    if ritardo_attuale is None:
+        ritardo_attuale = 0
+        
+    origine = api_data.get("origine", "") or ""
+    destinazione = api_data.get("destinazione", "") or ""
+    fermate = api_data.get("fermate") or []
     
     ritardo_capolinea = 0
-    fermate_raggiunte = [f for f in fermate if f.get("effettiva") is not None or f.get("ritardoArrivo", 0) > 0]
+    fermate_raggiunte = [
+        f for f in fermate 
+        if f.get("effettiva") is not None or (f.get("ritardoArrivo") is not None and f.get("ritardoArrivo") > 0)
+    ]
     
     if fermate_raggiunte:
         ultima = fermate_raggiunte[-1]
-        ritardo_capolinea = ultima.get("ritardoArrivo", ultima.get("ritardoPartenza", ritardo_attuale))
+        r_arr = ultima.get("ritardoArrivo")
+        r_part = ultima.get("ritardoPartenza")
+        if r_arr is not None:
+            ritardo_capolinea = r_arr
+        elif r_part is not None:
+            ritardo_capolinea = r_part
+        else:
+            ritardo_capolinea = ritardo_attuale
     else:
         ritardo_capolinea = ritardo_attuale
+
+    if ritardo_capolinea is None:
+        ritardo_capolinea = 0
 
     stato_calcolato = "REGOLARE"
     if provvedimento == 1:
@@ -155,7 +171,7 @@ def calcola_stato(api_data, linea, capolinea_attesi):
         else:
             stato_calcolato = "INATTIVO"
     else:
-        sub_desc = api_data.get("subTitle", "").upper()
+        sub_desc = (api_data.get("subTitle") or "").upper()
         is_lavori = any(x in sub_desc for x in ["LAVORI", "POTENZIAMENTO", "PROGRAMMAT"])
         
         # Rileva fermate soppresse (actualFermataType == 3 o "3")
@@ -180,17 +196,17 @@ def calcola_stato(api_data, linea, capolinea_attesi):
                  # Destinazione raggiunta coincide con RFI ma non è tra i capolinea attesi (lavori programmati)
                  pass
                      
-    if stato_calcolato == "REGOLARE" and ritardo_attuale > 0:
+    if stato_calcolato == "REGOLARE" and (ritardo_attuale or 0) > 0:
         stato_calcolato = "RITARDO"
 
     return {
         "stato": stato_calcolato,
-        "ritardo_attuale": ritardo_attuale,
-        "ritardo_capolinea": ritardo_capolinea,
+        "ritardo_attuale": ritardo_attuale if ritardo_attuale is not None else 0,
+        "ritardo_capolinea": ritardo_capolinea if ritardo_capolinea is not None else 0,
         "origine": origine,
         "destinazione": destinazione,
-        "orario_programmato": api_data.get("compOrarioPartenzaZero", api_data.get("compOrarioPartenzaZeroEffettivo", "")),
-        "note": api_data.get("subTitle", ""),
+        "orario_programmato": api_data.get("compOrarioPartenzaZero", api_data.get("compOrarioPartenzaZeroEffettivo", "")) or "",
+        "note": api_data.get("subTitle", "") or "",
         "non_partito": api_data.get("nonPartito", False),
         "provvedimento": provvedimento
     }
@@ -201,59 +217,68 @@ def merge_dati(old_data, new_scan, now_dt):
     
     non_ok_states = ["SOPPRESSO", "PARZ. SOPPRESSO", "LIMITATO"]
 
+    new_rit_cap = new_scan.get("ritardo_capolinea")
+    if new_rit_cap is None:
+        new_rit_cap = 0
+    new_rit_att = new_scan.get("ritardo_attuale")
+    if new_rit_att is None:
+        new_rit_att = 0
+
     if not old_data:
-        is_critico = new_scan["ritardo_capolinea"] > 15 or new_scan["stato"] in non_ok_states
+        is_critico = new_rit_cap > 15 or new_scan.get("stato") in non_ok_states
         return {
-            "stato": new_scan["stato"],
+            "stato": new_scan.get("stato", "REGOLARE"),
             "critico": is_critico,
-            "ritardo_attuale": new_scan["ritardo_attuale"],
-            # FIX: picco del ritardo al capolinea, non dell'attuale intra-corsa
-            "ritardo_picco": new_scan["ritardo_capolinea"],
-            "ritardo_capolinea": new_scan["ritardo_capolinea"],
-            "origine": new_scan["origine"],
-            "destinazione": new_scan["destinazione"],
-            "orario_programmato": new_scan["orario_programmato"],
-            "note": new_scan["note"],
+            "ritardo_attuale": new_rit_att,
+            "ritardo_picco": new_rit_cap,
+            "ritardo_capolinea": new_rit_cap,
+            "origine": new_scan.get("origine", ""),
+            "destinazione": new_scan.get("destinazione", ""),
+            "orario_programmato": new_scan.get("orario_programmato", ""),
+            "note": new_scan.get("note", ""),
             "prima_rilevazione": timestamp_str,
             "ultima_rilevazione": timestamp_str,
             "scansioni": 1,
-            "storico_ritardi": [{"ts": time_min, "rit": new_scan["ritardo_attuale"]}]
+            "storico_ritardi": [{"ts": time_min, "rit": new_rit_att}]
         }
     
-    old_stato = old_data["stato"]
+    old_stato = old_data.get("stato", "REGOLARE")
+    new_stato = new_scan.get("stato", "REGOLARE")
     new_non_partito = new_scan.get("non_partito", False)
     new_provvedimento = new_scan.get("provvedimento", 0)
 
-    if new_scan["stato"] in non_ok_states:
+    if new_stato in non_ok_states:
         # Stato grave è sempre irreversibile
-        stato = new_scan["stato"]
+        stato = new_stato
     elif old_stato == "INATTIVO" and not new_non_partito:
         # Il treno era in attesa ed ora è partito: aggiorna lo stato
-        stato = new_scan["stato"]
+        stato = new_stato
     elif old_stato == "SOPPRESSO" and not new_non_partito and new_provvedimento != 1:
         # Il treno era segnato come SOPPRESSO (magari per timeout di partenza), ma ora è partito
         # e non c'è un provvedimento ufficiale di soppressione. Ripristiniamo lo stato attivo.
-        stato = new_scan["stato"]
+        stato = new_stato
     elif old_stato in non_ok_states:
         # Stato grave precedente: mantienilo
         stato = old_stato
     else:
         # Per REGOLARE/RITARDO: non retrocedere mai a INATTIVO
-        stato = new_scan["stato"] if new_scan["stato"] != "INATTIVO" else old_stato
+        stato = new_stato if new_stato != "INATTIVO" else old_stato
 
     # FIX: il flag critico per stato grave è irreversibile, ma quello da ritardo
     # viene ricalcolato sulla base dello stato e del ritardo capolinea CORRENTE.
     # Questo evita che una lettura errata notturna blocchi il treno come critico
     # per tutta la giornata.
     stato_critico_irreversibile = old_data.get("critico", False) and old_stato in non_ok_states
-    is_critico = stato_critico_irreversibile or new_scan["ritardo_capolinea"] > 15 or stato in non_ok_states
+    is_critico = stato_critico_irreversibile or new_rit_cap > 15 or stato in non_ok_states
 
-    ritardo_attuale = new_scan["ritardo_attuale"]
-    # FIX: picco del ritardo al capolinea, non dell'attuale intra-corsa
-    ritardo_picco = max(old_data.get("ritardo_picco", 0), new_scan["ritardo_capolinea"])
+    ritardo_attuale = new_rit_att
+    old_picco = old_data.get("ritardo_picco")
+    if old_picco is None:
+        old_picco = 0
+    ritardo_picco = max(old_picco, new_rit_cap)
     
     storico = old_data.get("storico_ritardi", [])
-    if not storico or storico[-1]["ts"] != time_min:
+    if not storico or storico[-1].get("ts") != time_min:
         storico.append({"ts": time_min, "rit": ritardo_attuale})
         
     return {
@@ -261,11 +286,11 @@ def merge_dati(old_data, new_scan, now_dt):
             "critico": is_critico,
             "ritardo_attuale": ritardo_attuale,
             "ritardo_picco": ritardo_picco,
-            "ritardo_capolinea": new_scan["ritardo_capolinea"],
-            "origine": new_scan["origine"] or old_data["origine"],
-            "destinazione": new_scan["destinazione"] or old_data["destinazione"],
-            "orario_programmato": new_scan["orario_programmato"] or old_data["orario_programmato"],
-            "note": new_scan["note"] or old_data["note"],
+            "ritardo_capolinea": new_rit_cap,
+            "origine": new_scan.get("origine") or old_data.get("origine", ""),
+            "destinazione": new_scan.get("destinazione") or old_data.get("destinazione", ""),
+            "orario_programmato": new_scan.get("orario_programmato") or old_data.get("orario_programmato", ""),
+            "note": new_scan.get("note") or old_data.get("note", ""),
             "prima_rilevazione": old_data.get("prima_rilevazione", timestamp_str),
             "ultima_rilevazione": timestamp_str,
             "scansioni": old_data.get("scansioni", 0) + 1,
@@ -368,12 +393,15 @@ def main():
             dep_date_str = scan["dep_date_str"]
             api_data = scan["api_data"]
             
-            parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
-            
-            db_data = get_db_data(dep_date_str)
-            db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
-            db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
-            success_count += 1
+            try:
+                parsed_data = calcola_stato(api_data, linea, capolinea_attesi)
+                
+                db_data = get_db_data(dep_date_str)
+                db_data["treni"][str(num)] = merge_dati(db_data["treni"].get(str(num)), parsed_data, now_it)
+                db_data["treni"][str(num)].update({"direttrice": direttrice, "linea": linea, "numero": num})
+                success_count += 1
+            except Exception as e:
+                logging.error(f"Errore elaborazione dati per treno {num}: {e}")
 
     if success_count == 0:
         logging.error("Zero treni aggiornati. Qualcosa non va con la connessione o le API.")
